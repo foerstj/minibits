@@ -1,0 +1,53 @@
+[t:template,n:eos_bg_hire_m_r]
+{
+	category_name = "1W_character";
+	doc = "eos bg hire m r";
+	specializes = base_pm_fb;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_nardulo;
+        // Skills from Naidi
+		[skills]
+		{
+			strength 		=   0.75, 0, 10;
+			intelligence 	=  	0.39, 0, 10;
+			dexterity 		=   1.86, 0, 10;
+            Ranged 			= 	3, 0, 0;
+            uber 			= 	3, 0, 0;
+		}
+	}
+	[aspect]
+	{
+        gold_value = 300;
+		model = m_c_gah_fb_pos_a1;
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m1;
+			1 = b_c_pos_a1_ba-utraean_eos_m1;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Utraean male ranged level 3";
+	}
+	
+	[conversation]{}
+	
+	[inventory]
+	{
+        // Inventory from Naidi adapted
+		[equipment]
+		{
+            es_feet = #boots/-no_mod/6-10;
+            es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+			il_main = bw_g_c_s_s_r_avg;
+        }
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}

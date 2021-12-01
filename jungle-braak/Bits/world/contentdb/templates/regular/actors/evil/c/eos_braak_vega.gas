@@ -1,0 +1,304 @@
+// Desert Braak with stats of kikclaw_2
+[t:template,n:eos_braak_vega]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee (desert)";
+	specializes = base_braak;
+	[common]
+	{
+		screen_name="Jungle Braak";
+		membership = party_braak_boss, monster;
+	}
+
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 	=  15, 0;
+			intelligence   	=  8, 0;
+			dexterity 	 	=  10, 0;
+			melee 	 		=  13, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 348;
+		life 			= 173;
+		max_life 		= 173;
+		mana 			= 10;
+		max_mana 		= 10;
+
+        scale_base = 0.8;  // smaller
+		[textures] { 0 = b_c_ecm_bk-04; }  // edited
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 73;
+		damage_min = 67;
+	}
+	[defend] { defense = 101; }
+
+	[inventory]
+	{
+        // pcontent from normal snow braak
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                il_main = #weapon/30-38;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/32-44;
+	                il_main = #armor/-rare(1)/72-104;
+                    il_main = #*/-rare(1)/32-44;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/32-44;
+	                il_main = #armor/-unique(2)/72-104;
+                    il_main = #*/-unique(2)/32-44;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+}
+
+// Ferocious Braak with stats of Ice Warrior Boss
+[t:template,n:eos_braak_vega_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee (desert)boss 01";
+	specializes = base_braak;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  18, 0;
+			intelligence =  5, 0;
+			dexterity 	=  11, 0;
+            melee 		=  13,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 550;
+		life = 327;
+        max_life = 327;
+        mana = 8;
+		max_mana = 8;
+
+        scale_base = 0.9;  // smaller
+		[textures] { 0 = b_c_ecm_bk-04; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+        // dmg a bit higher than the normal jungle braak above
+		damage_max = 100;
+		damage_min = 75;
+	}
+	[body]
+	{
+		max_move_velocity = 7.0;
+	}
+	[common]
+	{
+		screen_name="Jungle Braak Chieftain";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_yellow(sgx)");
+			}
+		}
+	}
+	[defend] { defense=202; }
+	[inventory]
+	{
+        // pcontent of snow braak boss (pitiful braak)
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+	                il_main = #spell/12-14;
+				}
+				[oneof*]
+				{
+					il_main = #armor,f/90-108;
+	                il_main = #weapon/35-38;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/41-52;
+	                il_main = #armor/-rare(1)/109-127;
+                    il_main = #*/-rare(1)/41-52;
+                }
+				[oneof*]
+				{
+                	chance = 0.2;
+	                il_main = #weapon/-unique(2)/41-52;
+	                il_main = #armor/-unique(2)/109-127;
+                    il_main = #*/-unique(2)/41-52;
+	            }
+				[gold*]
+				{
+					max = 364;
+					min = 221;
+					min_pile = 57;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.75
+			&friend_template 	= false
+			&friends			= party_braak_boss
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_braak_boss";
+	}
+}
+
+[t:template,n:eos_braak_vega_mage]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee (desert)";
+	specializes = base_braak;
+	[common]
+	{
+		screen_name="Jungle Braak";
+		membership = party_braak_desert_boss, monster;
+	}
+
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 	=  15, 0;
+			intelligence   	=  8, 0;
+			dexterity 	 	=  10, 0;
+			melee 	 		=  13, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 348;
+		life 			= 173;
+		max_life 		= 173;
+		mana 			= 10;
+		max_mana 		= 10;
+
+        scale_base = 0.7;  // smaller
+		[textures] { 0 = b_c_ecm_bk-04; }  // edited
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 73;
+		damage_min = 67;
+	}
+	[defend] { defense = 101; }
+
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_braak_vega_boulder; }
+
+        // pcontent from snow braak mage
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_small;
+				   il_main = potion_mana_small;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/25-32;
+					il_main = #armor/13-66;
+	                il_main = #weapon/25-32;
+                    il_main = #body,ro/30-66;
+                }
+                [oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/29-38;
+	                   il_main = #armor/-rare(1)/52-91;
+                       il_main = #*/-rare(1)/29-38;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/29-38;
+	                   il_main = #armor/-unique(2)/52-91;
+                       il_main = #*/-unique(2)/29-38;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 147;
+					min = 88;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+}
