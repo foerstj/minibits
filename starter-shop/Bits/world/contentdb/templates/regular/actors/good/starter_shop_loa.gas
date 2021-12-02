@@ -1,7 +1,7 @@
-[t:template,n:starter_shop]
+[t:template,n:starter_shop_loa]
 {
 	category_name = "1W_shopkeep";
-	doc = "starter_shop (MP)";
+	doc = "starter_shop LOA (MP)";
 	specializes = mp_townfolk_female_05;
 	[actor]
 	{
@@ -98,8 +98,18 @@
 					max = 3;
 					min = 3;
 				}
+                [all*]
+                {
+                    il_main = DSX_backpack_empty;
+                    max = 3;
+                    min = 2;
+                }
 			}
 		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
 	}
 	[respawn_shrine]
 	{
