@@ -1,0 +1,72 @@
+[t:template,n:aunt_luna_base]
+{
+	category_name = "1W_character";
+	doc = "aunt luna";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_aunt_luna;
+		[skills]
+		{
+			strength =   		1, 0, 10;
+			intelligence =  	1, 0, 10;
+			dexterity =   		1, 0, 10;
+            melee 	=  			2, 0, 0;
+            ranged 	=  			2, 0, 0;
+            combat_magic 	=  	2, 0, 0;
+            nature_magic 	=  	2, 0, 0;
+            uber 			=  	2.5, 0, 0;
+
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		model = m_c_gah_fg_pos_a1;
+		[textures]
+		{
+			0 = b_c_gan_fg_skin_aunt_luna;
+			1 = b_c_pos_a1_024;
+		}
+	}
+	[common]
+	{
+		screen_name = "Aunt Luna";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
+	}
+    [mind]
+    {
+		jat_talk 	= world\ai\jobs\common\job_talk.skrit;
+    }
+}
+
+// I'd rather do this on object level, at least I separated it from the base template
+[t:template,n:aunt_luna]
+{
+    specializes = aunt_luna_base;
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+        [equipment]
+        {
+			es_chest = bd_ro_m_g_c_auntluna;
+            es_spellbook = book_glb_magic_01;
+        }
+        [other]
+        {
+            il_active_primary_spell = spell_zap;
+			il_active_secondary_spell = spell_healing_hands;
+
+			il_main = starstone_betelgeuse;
+			il_main = potion_health_small;
+			il_main = potion_mana_small;
+			il_main = potion_health_small;
+			il_main = dg_g_d_1h_fun;
+			il_main = spell_fireshot;
+            il_main = DSX_backpack_empty;
+        }
+	}
+}

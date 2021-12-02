@@ -1,0 +1,35 @@
+[t:template,n:eos_amulet_ember]
+{
+	category_name = "set_item";
+	doc = "eos ember amulet";
+	specializes = amulet;
+	
+	[common]
+    {
+        b allow_modifiers = false;
+        is_pcontent_allowed = false;
+        screen_name = "Ember Amulet of Stars";
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script( "sparkle_cyan" );
+				condition* = receive_world_message("we_dropped");
+			}
+		}
+    }
+    [set_item]
+    {
+        set_name = "The Astral Set";
+        set_compare_name = eos;
+        modifier_file = "ember_amulet_of_stars";
+        number_items_in_set = 21;
+        item_power_modifier = 4;
+    }
+	[gui]
+    {
+        tooltip_color = set_item;
+    }
+	
+	[magic] {}
+}

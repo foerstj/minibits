@@ -1,0 +1,299 @@
+[t:template,n:book_glb_lore_last_letter_from_aunt]
+{
+	category_name = "lorebook";
+	doc = "last letter from aunt";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Last letter from Aunt Luna";
+	}
+	[gui]
+	{
+		lore_key = lore_last_letter_from_aunt;
+	}
+}
+[t:template,n:book_glb_lore_loggermans_letter]
+{
+	category_name = "lorebook";
+	doc = "loggermans letter";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Loggerman's Letter";
+	}
+	[gui]
+	{
+		lore_key = lore_loggermans_letter;
+	}
+}
+[t:template,n:book_glb_lore_teleportanium]
+{
+	category_name = "lorebook";
+	doc = "teleportanium";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Paper on the Theory of Teleportanium";
+	}
+	[gui]
+	{
+		lore_key = lore_teleportanium;
+	}
+}
+[t:template,n:book_glb_lore_aunt_lunas_journal]
+{
+	category_name = "lorebook";
+	doc = "aunt lunas journal";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Aunt Luna's Journal";
+	}
+	[gui]
+	{
+		lore_key = lore_aunt_lunas_journal;
+	}
+}
+[t:template,n:book_glb_lore_iliyara_ruins]
+{
+	category_name = "lorebook";
+	doc = "iliyara ruins";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Tourist flyer about ancient Iliyara";
+	}
+	[gui]
+	{
+		lore_key = lore_iliyara_ruins;
+	}
+}
+
+[t:template,n:book_glb_lore_altair_1]
+{
+	category_name = "lorebook";
+	doc = "altairs way vol 1";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Thawhorn's Way, Volume One";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_altair_1;
+	}
+}
+[t:template,n:book_glb_lore_altair_2]
+{
+	category_name = "lorebook";
+	doc = "altairs way vol 2";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Thawhorn's Way, Volume Two";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_altair_2;
+	}
+}
+[t:template,n:book_glb_lore_altair_3]
+{
+	category_name = "lorebook";
+	doc = "altairs way vol 3";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Thawhorn's Way, Volume Three";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_altair_3;
+	}
+}
+[t:template,n:book_glb_lore_rigel_alpha_orionis]
+{
+	category_name = "lorebook";
+	doc = "True Alpha Orionis";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The True Alpha Orionis";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book;
+		lore_key = lore_rigel_alpha_orionis;
+	}
+}
+[t:template,n:book_glb_lore_rigel_ruins_and_skull]
+{
+	category_name = "lorebook";
+	doc = "Ruins and Skull";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "A Dustbrain's Guide to the Wetlands";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book;
+		lore_key = lore_rigel_ruins_and_skull;
+	}
+}
+
+// ALDEBARAN LORE LIB
+[t:template,n:book_glb_lore_iliyuna_ruins]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Welcome to Iliyuna";
+	}
+	[gui]
+	{
+		lore_key = lore_iliyuna_ruins;
+	}
+}
+[t:template,n:book_glb_lore_agalla]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "History of Agalla";
+	}
+	[gui]
+	{
+		lore_key = lore_agalla;
+	}
+}
+[t:template,n:book_glb_lore_empire2]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "History of the Empire of Stars";
+	}
+	[gui]
+	{
+		lore_key = lore_empire2;
+	}
+}
+[t:template,n:book_glb_lore_war_of_legions]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The War of Legions";
+	}
+	[gui]
+	{
+		lore_key = lore_war_of_legions;
+	}
+}
+[t:template,n:book_glb_lore_reptiloids]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "On the Reptiloids";
+	}
+	[gui]
+	{
+		lore_key = lore_reptiloids;
+	}
+}
+[t:template,n:book_glb_lore_ashtar]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Our Lord and Saviour Ashtar Sheran";
+	}
+	[gui]
+	{
+		lore_key = lore_ashtar;
+	}
+}
+[t:template,n:book_glb_lore_set_items]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Stellar Treasure";
+	}
+	[gui]
+	{
+		lore_key = lore_set_items;
+	}
+}
+[t:template,n:book_glb_lore_creator_gods]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Creator Gods";
+	}
+	[gui]
+	{
+		lore_key = lore_creator_gods;
+	}
+}
+[t:template,n:book_glb_lore_pillars_of_the_legion]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Pillars of the Legion";
+	}
+	[gui]
+	{
+		lore_key = lore_pillars_of_the_legion;
+	}
+}
+[t:template,n:book_glb_lore_hub]
+{
+	category_name = "lorebook";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Interstellar Hub";
+	}
+	[gui]
+	{
+		lore_key = lore_hub;
+	}
+}

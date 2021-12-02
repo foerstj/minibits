@@ -1,0 +1,404 @@
+// Half-giant hireable soldiers of Aldebaran.
+
+[t:template,n:ad_hg_hire_base]
+{
+	category_name = "1W_character";
+	doc = "Hireable Half-Giant";
+	specializes = base_pm_giant;
+
+	[actor]
+	{
+		can_level_up = true;
+		race = human;
+	}
+	[aspect]
+	{
+		is_collidable		= true;
+		is_invincible		= false;
+		life_recovery_period = 4;
+		life_recovery_unit = 1;
+		mana_recovery_period = 3;
+		mana_recovery_unit = 1;
+
+		is_collidable		= true;
+		is_invincible		= false;
+		draw_selection_indicator = true;
+
+        [voice]
+        {
+            [die]		{ priority = high; * = s_v_najj_die; }
+        }
+
+        gold_value = 200000;
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant";
+		auto_expiration_class = never;
+		forced_expiration_class = never;
+		membership = hero;
+	}
+	[conversation]
+	{
+	}
+   	[inventory]
+	{
+		grid_height = 13;
+		grid_width = 4;
+	}
+    [mind]
+	{
+		actor_auto_defends_others = true;
+		actor_auto_heals_others_life = true;
+		actor_auto_switches_to_karate              = false;
+		actor_auto_switches_to_melee               = false;
+		actor_weapon_preference         = WP_NONE;
+
+		actor_life_ratio_high_threshold = 0.8;
+		actor_life_ratio_low_threshold = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold = 0.5;
+
+		actor_may_attack = true;
+		actor_may_be_attacked = true;
+
+		jat_brain = world\ai\jobs\common\brain_hero.skrit;
+		jat_listen = world\ai\jobs\common\job_listen.skrit;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+
+		movement_orders = mo_limited;
+		on_enemy_entered_icz_switch_to_melee = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+
+		melee_engage_range = 0.9;
+		ranged_engage_range = 5.5;
+		sensor_scan_period = 0.25;
+		sight_range = 12.0;
+ 	}
+	[water_effects]
+	{
+	}
+}
+
+[t:template,n:ad_hg_hire_m1]
+{
+	specializes = ad_hg_hire_base;
+	doc = "Hireable Half-Giant Melee 1";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_wym;
+		[skills]
+		{
+			strength 		=   12.8, 0, 10;
+			dexterity 		=   5.4, 0, 10;
+			intelligence 	=  	1.8, 0, 10;
+			
+            melee 			= 	20, 0, 0;
+            uber 			= 	20, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_01;
+			1 = b_c_pos_a1_100;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant Melee 1";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_melee_weapon;
+    }
+}
+[t:template,n:ad_hg_hire_r1]
+{
+	specializes = ad_hg_hire_base;
+	doc = "Hireable Half-Giant Ranged 1";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_acha;
+		[skills]
+		{
+			strength 		=   5, 0, 10;
+			dexterity 		=   12.4, 0, 10;
+			intelligence 	=  	2.6, 0, 10;
+			
+            ranged 			= 	20, 0, 0;
+            uber 			= 	20, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_02;
+			1 = b_c_pos_a1_200;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant Ranged 1";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_ranged_weapon;
+    }
+}
+[t:template,n:ad_hg_hire_c1]
+{
+	specializes = ad_hg_hire_base;
+	doc = "Hireable Half-Giant CombatMagic 1";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_tass;
+		[skills]
+		{
+			strength 		=   2.6, 0, 10;
+			dexterity 		=   3.4, 0, 10;
+			intelligence 	=  	14, 0, 10;
+			
+            combat_magic    = 	20, 0, 0;
+            uber 			= 	20, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_04;
+			1 = b_c_pos_a1_300;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant CombatMagic 1";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_primary_spell;
+        [other]
+        {
+            il_active_primary_spell = spell_explosive_powder;
+        }
+        [pcontent]
+        {
+			[all*]
+			{
+    	        il_main = st_un_eos_legion_1;
+			}
+        }
+    }
+}
+[t:template,n:ad_hg_hire_n1]
+{
+	specializes = ad_hg_hire_base;
+	doc = "Hireable Half-Giant NatureMagic 1";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_najj;
+		[skills]
+		{
+			strength 		=   1.8, 0, 10;
+			dexterity 		=   3.6, 0, 10;
+			intelligence 	=  	14.6, 0, 10;
+			
+            nature_magic	= 	20, 0, 0;
+            uber 			= 	20, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_07;
+			1 = b_c_pos_a1_102;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant NatureMagic 1";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_primary_spell;
+        [other]
+        {
+            il_active_primary_spell = spell_flash;
+            il_active_secondary_spell = spell_healing_wind;
+        }
+    }
+}
+
+[t:template,n:ad_hg_hire_base2]
+{
+	specializes = ad_hg_hire_base;
+    [aspect]
+    {
+        gold_value = 500000;
+        scale_base = 1.2;
+    }
+}
+[t:template,n:ad_hg_hire_m2]
+{
+	specializes = ad_hg_hire_base2;
+	doc = "Hireable Half-Giant Melee 2";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_wym;
+		[skills]
+		{
+			strength 		=   16, 0, 10;
+			dexterity 		=   6.75, 0, 10;
+			intelligence 	=  	2.25, 0, 10;
+			
+            melee 			= 	25, 0, 0;
+            uber 			= 	25, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_01;
+			1 = b_c_pos_a1_100;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant Melee 2";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_melee_weapon;
+    }
+}
+[t:template,n:ad_hg_hire_r2]
+{
+	specializes = ad_hg_hire_base2;
+	doc = "Hireable Half-Giant Ranged 2";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_acha;
+		[skills]
+		{
+			strength 		=   6.25, 0, 10;
+			dexterity 		=   15.5, 0, 10;
+			intelligence 	=  	3.25, 0, 10;
+			
+            ranged 			= 	25, 0, 0;
+            uber 			= 	25, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_02;
+			1 = b_c_pos_a1_200;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant Ranged 2";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_ranged_weapon;
+    }
+}
+[t:template,n:ad_hg_hire_c2]
+{
+	specializes = ad_hg_hire_base2;
+	doc = "Hireable Half-Giant CombatMagic 2";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_tass;
+		[skills]
+		{
+			strength 		=   3.25, 0, 10;
+			dexterity 		=   4.25, 0, 10;
+			intelligence 	=  	17.5, 0, 10;
+			
+            combat_magic	= 	25, 0, 0;
+            uber 			= 	25, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_04;
+			1 = b_c_pos_a1_300;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant CombatMagic 2";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_primary_spell;
+        [other]
+        {
+            il_active_primary_spell = spell_fireball;
+        }
+        [pcontent]
+        {
+			[all*]
+			{
+    	        il_main = st_un_eos_legion_2;
+			}
+        }
+    }
+}
+[t:template,n:ad_hg_hire_n2]
+{
+	specializes = ad_hg_hire_base2;
+	doc = "Hireable Half-Giant NatureMagic 2";
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_najj;
+		[skills]
+		{
+			strength 		=   2.25, 0, 10;
+			dexterity 		=   4.5, 0, 10;
+			intelligence 	=  	18.25, 0, 10;
+			
+            nature_magic	= 	25, 0, 0;
+            uber 			= 	25, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_07;
+			1 = b_c_pos_a1_102;
+		}
+    }
+	[common]
+	{
+		screen_name = "Hireable Half-Giant NatureMagic 2";
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_primary_spell;
+        [other]
+        {
+            il_active_primary_spell = spell_iceblast;
+            il_active_secondary_spell = spell_healing_wind;
+        }
+    }
+}
