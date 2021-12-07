@@ -1,0 +1,71 @@
+[mood_setting*]
+{
+	// This is the mood used whenever anyone rides on the hub teleporters
+	// As they go up into the sky, everything gets dark.
+	// The frustum is pulled in so that they aren't loading very much when
+	// they pop over to their destination region.
+	mood_name				= multiplayer_world_teleport;
+	transition_time			= 2.0f;
+	interior				= true;
+
+	[frustum]
+	{
+		frustum_width		= 25.0f;
+		frustum_height		= 60.0f;
+	}
+
+	[fog]
+	{
+		fog_near_dist		= 20.0f;
+		fog_far_dist		= 25.0f;
+		fog_lowdetail_near_dist		= 15.0f; //moved in by 5 to compensate for fardist
+		fog_lowdetail_far_dist		= 20.0f;
+		fog_color			= 0xFF000000;
+		fog_density			= 0.5f;
+	}
+
+	[rain] {} // empty [rain] block for lightning manipulation
+
+	[music]
+	{
+		ambient_track		= "";
+		// No music for this...seems to work pretty well, actually
+		//standard_track		= "s_m_Battle";
+		room_type			= rt_generic;
+	}
+}
+[mood_setting*]
+{
+	// --this variant is faster--a half-second as opposed to two seconds
+	// Created for sf_r2.
+	// As they go up into the sky, everything gets dark.
+	// The frustum is pulled in so that they aren't loading very much when
+	// they pop over to their destination region.
+	mood_name				= multiplayer_world_teleport_fast;
+	transition_time			= 0.5f;
+	interior				= true;
+
+	[frustum]
+	{
+		frustum_width		= 25.0f;
+		frustum_height		= 60.0f;
+	}
+
+	[fog]
+	{
+		fog_near_dist		= 20.0f;
+		fog_far_dist		= 25.0f;
+		fog_lowdetail_near_dist		= 15.0f; //moved in by 5 to compensate for fardist
+		fog_lowdetail_far_dist		= 20.0f;
+		fog_color			= 0xFF000000;
+		fog_density			= 0.5f;
+	}
+
+	[rain] {} // empty [rain] block for lightning manipulation
+
+	[music]
+	{
+		ambient_track		= "";
+		room_type			= rt_generic;
+	}
+}
