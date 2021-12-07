@@ -10,4 +10,5 @@ Includes the Seth Queen Mother which is based on the dragon, incl. the explosion
 
 src: foerstj / EoS
 
-![pic](pic2.jpg)
+![pic](pic-mages.jpg)
+![pic](pic-sqm.jpg)
