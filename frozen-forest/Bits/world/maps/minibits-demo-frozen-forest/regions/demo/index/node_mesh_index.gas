@@ -1,0 +1,9 @@
+[node_mesh_index]
+{
+	0x001006a9 = t_xxx_flr_04x08-v0;
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x00100702 = t_xxx_for_tx-wal-12-l;
+	0x00100706 = t_xxx_for_wal-cnr-concave-a;
+	0x0010070a = t_xxx_for_wal-diag-16-l;
+	0x00100a26 = t_xxx_wal_12-thin;
+}
