@@ -1,5 +1,7 @@
 # gremals
 
+![pic](pic.jpg)
+
 A variety of the iconic Gremals in different colors:
 - (beige original gremals)
 - white snow gremals (incl. small gremal that attacks you)
