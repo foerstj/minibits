@@ -1,0 +1,23 @@
+[node_mesh_index]
+{
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x00100890 = t_xxx_rvr_08-bridge-left-tx-right-a;
+	0x00100891 = t_xxx_rvr_08-bridge-right-tx-left-a;
+	0x00100892 = t_xxx_rvr_08-left-a;
+	0x00100893 = t_xxx_rvr_08-left-b;
+	0x00100894 = t_xxx_rvr_08-left-turn;
+	0x00100895 = t_xxx_rvr_08-left-tx-right-a;
+	0x00100896 = t_xxx_rvr_08-right-a;
+	0x00100897 = t_xxx_rvr_08-right-b;
+	0x00100898 = t_xxx_rvr_08-right-turn;
+	0x00100899 = t_xxx_rvr_08-right-tx-left-a;
+	0x0010089b = t_xxx_rvr_12-left-a;
+	0x0010089c = t_xxx_rvr_12-left-b;
+	0x0010089d = t_xxx_rvr_12-left-c;
+	0x0010089f = t_xxx_rvr_12-right-a;
+	0x001008a0 = t_xxx_rvr_12-right-b;
+	0x001008a1 = t_xxx_rvr_12-right-c;
+	0x001008b0 = t_xxx_rvr_12-tx-08-left-b;
+	0x001008b6 = t_xxx_rvr_wfall-04-tx-12;
+	0x001008b9 = t_xxx_rvr_wfall-08-tx-12;
+}
