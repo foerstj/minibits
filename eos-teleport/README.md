@@ -1,5 +1,7 @@
 # eos-teleport
 
+![pic](pic.jpg)
+
 Everything related to teleporting in Empire of Stars:
 - Hub decals & effects
 - Elevator up&down effects
@@ -9,3 +11,5 @@ Everything related to teleporting in Empire of Stars:
 - Starstone signs
 
 src: foerstj / EoS
+
+![pic](pic2.jpg)
