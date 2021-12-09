@@ -1,0 +1,60 @@
+[t:template,n:tree_ice_pine_04_base]  // = tree_ice_pine_04
+{
+	category_name = "trees";
+	doc = "ice_pine_6m";
+	specializes = base_tree;
+	[aspect]
+	{
+		lodfi_lower = 0.1;
+		lodfi_upper = 0.7;
+		model = m_i_glb_tree-02;
+		[textures]
+		{
+			0 = b_i_ice_tree-pine;
+		}
+	}
+}
+
+[t:template,n:tree_ice_xmas] { specializes = tree_ice_xmas_base; }
+[t:template,n:tree_ice_xmas_base]
+{
+    specializes = tree_ice_pine_04_base;
+
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("xmas_tree(sgx)");
+			}
+		}
+	}
+}
+
+[t:template,n:tree_ice_xmas_lg] { specializes = tree_ice_xmas_lg_base; }
+[t:template,n:tree_ice_xmas_lg_base]
+{
+    specializes = tree_ice_pine_04_base;
+
+    [aspect]
+    {
+        scale_base = 2;
+    }
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("xmas_tree_lg(sgx)");
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+[effect_script*]
+{
+	name	=xmas_tree;
+
+	script	=[[
+			sfx create lightsource #TARGET
+				"color0(.375,.3,0)color1(.375,.3,0)frequency(2)iradius(1)radius(4)offset(0,-1.5,0)";
+			sfx start #POP;
+
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(16)scale(.5)radius(1)ts(.1)offset(0,1,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(64)scale(.5)radius(2)ts(.1)offset(0,-1,0)";
+            sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=xmas_tree_lg;
+
+	script	=[[
+			sfx create lightsource #TARGET
+				"color0(.375,.3,0)color1(.375,.3,0)frequency(2)iradius(2)radius(8)offset(0,-3,0)";
+			sfx start #POP;
+
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(32)scale(.5)radius(2)ts(.1)offset(0,2,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(128)scale(.5)radius(4)ts(.1)offset(0,-2,0)";
+            sfx start #POP;
+			]];
+}
