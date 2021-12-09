@@ -1,0 +1,14 @@
+[t:tree_ice_xmas,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -2.68621,0,-2.24468,0xf66454fc;
+	}
+}
+[t:tree_ice_xmas_lg,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 2.2279,0,2.80013,0xf66454fc;
+	}
+}
