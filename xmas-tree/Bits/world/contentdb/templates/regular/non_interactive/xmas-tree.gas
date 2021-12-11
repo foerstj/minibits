@@ -58,3 +58,47 @@
 		}
 	}
 }
+
+[t:template,n:tree_ice_xmas_white] { specializes = tree_ice_xmas_white_base; }
+[t:template,n:tree_ice_xmas_white_base]
+{
+    specializes = tree_ice_pine_04_base;
+
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("xmas_tree_white(sgx)");
+			}
+		}
+	}
+}
+
+[t:template,n:tree_ice_xmas_white_lg] { specializes = tree_ice_xmas_white_lg_base; }
+[t:template,n:tree_ice_xmas_white_lg_base]
+{
+    specializes = tree_ice_pine_04_base;
+
+    [aspect]
+    {
+        scale_base = 2;
+    }
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("xmas_tree_white_lg(sgx)");
+			}
+		}
+	}
+}
