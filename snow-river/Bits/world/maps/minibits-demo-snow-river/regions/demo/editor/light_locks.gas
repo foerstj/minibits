@@ -1,6 +1,9 @@
 [light_locks]
 {
+  b 0x001cbea3 = false;
+  b 0x009aa4d2 = false;
   b 0x01602beb = false;
+  b 0x0351ad03 = false;
   b 0x0620ed65 = false;
   b 0x18429118 = false;
   b 0x2160d4e1 = false;
@@ -8,13 +11,30 @@
   b 0x2f718350 = false;
   b 0x3d3ad565 = false;
   b 0x3fc73ed5 = false;
+  b 0x4014bfd5 = false;
   b 0x401bfbc8 = false;
+  b 0x40a90e0f = false;
+  b 0x433fd4b2 = false;
+  b 0x43649b9a = false;
+  b 0x5da7a2f9 = false;
   b 0x70cfd0cf = false;
+  b 0x74e43353 = false;
   b 0x7d2b2d69 = false;
+  b 0x7eac362c = false;
+  b 0x81ab8d90 = false;
+  b 0x821e9e44 = false;
+  b 0x85935bff = false;
   b 0x890d12e0 = false;
   b 0x8d528cd2 = false;
+  b 0x95a3aca2 = false;
+  b 0x9b2e0476 = false;
+  b 0x9fe234af = false;
+  b 0xa19a4bae = false;
+  b 0xb1025c4c = false;
+  b 0xb67d356e = false;
   b 0xb96e5492 = false;
   b 0xbdad9b89 = false;
+  b 0xc4705d13 = false;
   b 0xc7b2661b = false;
   b 0xd0b4b9d2 = false;
   b 0xda5a4a64 = false;
@@ -22,4 +42,5 @@
   b 0xe0b085f5 = false;
   b 0xe563fe49 = false;
   b 0xf50fc46c = false;
+  b 0xfff7654a = false;
 }

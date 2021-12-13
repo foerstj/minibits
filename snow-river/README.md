@@ -2,6 +2,6 @@
 
 ![pic](pic.jpg)
 
-Textures to use the generic river nodes with nodeset Snow 2.
+Textures to use the generic river nodes with nodesets Snow 2 and Ice Caves.
 
 src: foerstj / Wintermod
