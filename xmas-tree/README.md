@@ -2,6 +2,9 @@
 
 ![pic](pic.jpg)
 
-A Christmas tree (medium & large), based on ice_pine, with added effects of light source & sparkles.
+Christmas trees, based on pine trees, with added effects of light source & sparkles.
+- snowy xmas tree medium/large with warm yellow glow
+- snowy xmas tree medium/large with neutral white glow for situations where yellow snow looks weird
+- green xmas tree medium/large
 
-src: foerstj
+src: foerstj / Christmas mod
