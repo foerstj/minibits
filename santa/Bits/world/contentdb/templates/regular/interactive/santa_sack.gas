@@ -1,0 +1,69 @@
+[t:template,n:axe_santa_sack]
+{
+	doc = "Sack";
+	specializes = base_axe;
+	[aspect]
+	{
+		model = m_w_axe_santa-sack;
+		selection_indicator_scale = 0.65;
+		material = wood;
+		[voice]
+		{
+			[put_down]
+			{
+				* = s_e_gui_put_down_robe;
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+	  f damage_max = 10.000000;
+	  f damage_min = 4.000000;
+		is_two_handed = true;
+	}
+	[common]
+	{
+		screen_name = "Santa's Sack";
+		is_pcontent_allowed = false;
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_axe_sack;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_axe_sack;
+		inventory_width = 2;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_melee_damage_max;
+				description = "Progessive weapon\nRe-equip at each melee level for bonus";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = #melee;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = #melee;
+			}
+			[*]
+			{
+				alteration = alter_armor;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = (#melee * 5);
+			}
+		}
+	}
+}
+

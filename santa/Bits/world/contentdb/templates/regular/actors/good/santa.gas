@@ -1,0 +1,37 @@
+[t:template,n:santa]
+{
+	doc = "Battle Santa";
+	specializes = base_farmboy;
+	[actor]
+	{
+		is_hero=true;
+		screen_class = "Farmer";
+	}
+	[aspect]
+	{
+		model = m_c_gbn_ja_pos_1;
+	}
+	[common]
+	{
+		screen_name = "Santa";
+	}
+	[inventory]
+	{
+		[equipment] 
+		{
+			es_weapon_hand = axe_santa_sack;
+			es_spellbook = book_glb_magic_01;
+		}
+	        [pcontent]
+	        {
+			[gold*]
+			{
+				chance = 1.0;
+				max = 30;
+				min = 30;
+			}
+        	}
+	}
+	[water_effects] {}
+}
+
