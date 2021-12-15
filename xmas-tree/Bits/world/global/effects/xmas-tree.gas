@@ -1,3 +1,5 @@
+// sparkles count = 8*radius³
+
 [effect_script*]
 {
 	name	=xmas_tree;
@@ -8,10 +10,13 @@
 			sfx start #POP;
 
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(16)scale(.5)radius(1)ts(.1)offset(0,1,0)";
+				"color0(.75,.6,0)count(8)scale(.5)radius(1)ts(.1)offset(0,1.5,0)";
             sfx start #POP;
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(64)scale(.5)radius(2)ts(.1)offset(0,-1,0)";
+				"color0(.75,.6,0)count(27)scale(.5)radius(1.5)ts(.1)offset(0,0,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(64)scale(.5)radius(2)ts(.1)offset(0,-1.5,0)";
             sfx start #POP;
 			]];
 }
@@ -25,10 +30,13 @@
 			sfx start #POP;
 
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(32)scale(.5)radius(2)ts(.1)offset(0,2,0)";
+				"color0(.75,.6,0)count(27)scale(.5)radius(1.5)ts(.1)offset(0,3,0)";
             sfx start #POP;
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(128)scale(.5)radius(4)ts(.1)offset(0,-2,0)";
+				"color0(.75,.6,0)count(125)scale(.5)radius(2.5)ts(.1)offset(0,0,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(343)scale(.5)radius(3.5)ts(.1)offset(0,-3,0)";
             sfx start #POP;
 			]];
 }
@@ -42,10 +50,13 @@
 			sfx start #POP;
 
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(16)scale(.5)radius(1)ts(.1)offset(0,1,0)";
+				"color0(.75,.6,0)count(8)scale(.5)radius(1)ts(.1)offset(0,1.5,0)";
             sfx start #POP;
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(64)scale(.5)radius(2)ts(.1)offset(0,-1,0)";
+				"color0(.75,.6,0)count(27)scale(.5)radius(1.5)ts(.1)offset(0,0,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(64)scale(.5)radius(2)ts(.1)offset(0,-1.5,0)";
             sfx start #POP;
 			]];
 }
@@ -59,10 +70,13 @@
 			sfx start #POP;
 
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(32)scale(.5)radius(2)ts(.1)offset(0,2,0)";
+				"color0(.75,.6,0)count(27)scale(.5)radius(1.5)ts(.1)offset(0,3,0)";
             sfx start #POP;
 			sfx create sparkles #TARGET
-				"color0(.75,.6,0)count(128)scale(.5)radius(4)ts(.1)offset(0,-2,0)";
+				"color0(.75,.6,0)count(125)scale(.5)radius(2.5)ts(.1)offset(0,0,0)";
+            sfx start #POP;
+			sfx create sparkles #TARGET
+				"color0(.75,.6,0)count(343)scale(.5)radius(3.5)ts(.1)offset(0,-3,0)";
             sfx start #POP;
 			]];
 }
