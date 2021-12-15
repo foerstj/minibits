@@ -1,0 +1,17 @@
+[t:template,n:santa_npc] { specializes = santa_npc_base; }
+[t:template,n:santa_npc_base]
+{
+	category_name = "1W_character";
+	doc = "santa_npc";
+	specializes = base_npc_fb;
+
+	[aspect]
+	{
+		model = m_c_gbn_ja_pos_1;
+        textures:0 = b_c_gbn_ja_99;
+	}
+	[common]
+	{
+		screen_name = "Santa";
+	}
+}
