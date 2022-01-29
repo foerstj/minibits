@@ -2,6 +2,6 @@
 
 ![pic](pic.jpg)
 
-A blank wooden sign that does not say "Warning" or "BEWARE".
+Some blank wooden signs without any writings or symbols on them.
 
 src: foerstj / EoS
