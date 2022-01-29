@@ -1,0 +1,4 @@
+[light_locks]
+{
+  b 0x5a01990a = false;
+}
