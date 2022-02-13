@@ -1,0 +1,21 @@
+[t:beta_mucosa,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -0.108573,0,-1.5452,0x3d89ace9;
+	}
+}
+[t:beta_mucosa_large,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.6573,0,-1.63914,0x3d89ace9;
+	}
+}
+[t:beta_mucosa_small,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 2.51723,0,-1.71653,0x3d89ace9;
+	}
+}
