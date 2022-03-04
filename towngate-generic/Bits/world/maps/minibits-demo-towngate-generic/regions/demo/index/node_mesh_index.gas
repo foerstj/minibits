@@ -1,0 +1,7 @@
+[node_mesh_index]
+{
+	0x00100a84 = t_xxx_towngate-top;
+	0x00100a85 = t_xxx_towngate;
+	0x00100dc5 = t_nt01_towngate-top;
+	0x00100dc6 = t_nt01_towngate;
+}
