@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_for01_towngate-stonewall-top]
+{
+	layer1texture1 = b_t_for01_flr_04x04-a;
+  i texturedetail = 2;
+}
