@@ -1,0 +1,16 @@
+[node_mesh_index]
+{
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x00100a84 = t_xxx_watchtower-ele-plank;
+	0x00100a85 = t_xxx_watchtower-ele-strip-btm;
+	0x00100a86 = t_xxx_watchtower-ele-strip-top;
+	0x00100a87 = t_xxx_watchtower-roof;
+	0x00100a88 = t_xxx_watchtower-walkway;
+	0x00100a89 = t_xxx_watchtower;
+	0x00100dcb = t_nt01_watchtower-ele-plank;
+	0x00100dcc = t_nt01_watchtower-ele-strip-btm;
+	0x00100dcd = t_nt01_watchtower-ele-strip-top;
+	0x00100dce = t_nt01_watchtower-roof;
+	0x00100dcf = t_nt01_watchtower-walkway;
+	0x00100dd0 = t_nt01_watchtower;
+}
