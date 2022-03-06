@@ -1,0 +1,12 @@
+[t:tsd,n:b_t_grs01_watchtower-stonewall]
+{
+	//layer1texture1 = b_t_fh00_stones-4a;
+	//layer1texture1 = b_t_fh00_stones-8a;
+	//layer1texture1 = b_t_grs01_house-stones-4x4;
+	//layer1texture1 = b_t_grs01_house-ext-wall;
+	layer1texture1 = b_t_grs01_dgentry-wall;
+	//layer1texture1 = b_t_grs01_guardhouse-wall-1;
+	//layer1texture1 = b_t_nt_fireplace-rock;
+    //layer1texture1 = b_t_grs01_watchtower-stonewall;
+  i texturedetail = 2;
+}

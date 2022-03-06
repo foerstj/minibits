@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_grs01_watchtower-ele-plank]
+{
+	layer1texture1 = b_t_grs01_woodboard-v;
+  i texturedetail = 2;
+}

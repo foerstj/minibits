@@ -1,0 +1,7 @@
+[t:tsd,n:b_t_grs01_watchtower-ele-base]
+{
+	//layer1texture1 = b_t_grs01_guardhouse-wall-top;
+    //layer1texture1 = b_t_grs01_dgentry-floor;
+	layer1texture1 = b_t_grs01_dgentry-wall;
+  i texturedetail = 2;
+}

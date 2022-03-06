@@ -1,0 +1,7 @@
+[t:tsd,n:b_t_grs01_woodboard-h]
+{
+  b dither = true;
+  b hasalpha = true;
+    layer1texture1 = b_t_grs01_woodboard-h;
+  i texturedetail = 0;
+}

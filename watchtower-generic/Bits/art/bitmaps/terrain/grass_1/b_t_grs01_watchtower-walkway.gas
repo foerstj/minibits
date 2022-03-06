@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_grs01_watchtower-walkway]
+{
+	layer1texture1 = b_t_grs01_woodboard-h;
+  i texturedetail = 2;
+}
