@@ -1,0 +1,26 @@
+[start_positions]
+{
+	[t:start_group,n:default]
+	{
+	  b default = true;
+		description = "";
+	  b dev_only = false;
+	  i id = 1699120;
+		screen_name = "";
+		[start_position]
+		{
+		  i id = 1;
+			position = -8.075123,2.074917,-10.025412,0x2333683E;
+			[camera]
+			{
+			  f azimuth = 0.500000;
+			  f distance = 20.000000;
+			  f orbit = 0.000000;
+				position = -8.075123,2.074917,-10.025412,0x2333683E;
+			}
+		}
+		[world_levels]
+		{
+		}
+	}
+}
