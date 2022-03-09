@@ -1,7 +1,6 @@
 [node_mesh_index]
 {
 	0x0000016b = t_dc01_cnr-tx-ledge-a;
-	0x00000213 = t_dc01_statue-wall-12-a;
 	0x000004e2 = t_xxx_brdg_rck-16-c;
 	0x000004ea = t_xxx_brdg_rck-32-r;
 	0x000004ec = t_xxx_brdg_rop-08;
@@ -208,5 +207,6 @@
 	0x00000aca = t_xxx_dwelling-d4-spire;
 	0x00000acb = t_xxx_dwelling-d4-walls;
 	0x00000acc = t_xxx_dwelling-d4;
-	0x00000d23 = t_grs01_heal-area-8x8;
+	0x00000acd = t_xxx_statue-wall-12-a;
+	0x00000d24 = t_grs01_heal-area-8x8;
 }
