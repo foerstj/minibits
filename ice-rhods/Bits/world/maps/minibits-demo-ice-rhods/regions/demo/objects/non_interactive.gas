@@ -1,0 +1,28 @@
+[t:bush_ice_rhod_01,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 2.19884,0,-1.94266,0x4c4cef98;
+	}
+}
+[t:bush_ice_rhod_02,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.30646,0,-2.14654,0x4c4cef98;
+	}
+}
+[t:bush_ice_rhod_03,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -1.60468,-9.53674e-007,2.07897,0x4c4cef98;
+	}
+}
+[t:bush_ice_rhod_04,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 1.91572,-9.53674e-007,1.64662,0x4c4cef98;
+	}
+}
