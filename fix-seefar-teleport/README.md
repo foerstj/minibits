@@ -1,5 +1,7 @@
 # fix-seefar-teleport
 
+![pic](pic.jpg)
+
 Fixes the teleport moods of the SeeFar mod, which had their view distances (fog & frustum) increased together with all the other moods. However, during teleport, we actually _want_ the world to become invisible.
 
 It defines world/global/moods/multiplayer_world/moods0.gas which takes precendence over moods1.gas, and contains only the two original teleport moods of multiplayer_world.
