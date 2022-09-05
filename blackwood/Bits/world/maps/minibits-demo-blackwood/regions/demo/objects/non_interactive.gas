@@ -1,0 +1,115 @@
+[t:tree_grs_blackwood_sequoia_12m,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -1.42681,0,1.60519,0x858cf031;
+	}
+}
+[t:tree_grs_blackwood_sequoia_9m,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 2.29949,0,1.37982,0x858cf031;
+	}
+}
+[t:tree_glb_pine_sequoia_01,n:0x00100003]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 2.07701,0,-2.84897,0x36b1ae4c;
+	}
+}
+[t:tree_glb_pine_sequoia_02,n:0x0010000a]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -1.05318,0,-2.92438,0x36b1ae4c;
+	}
+}
+[t:tree_grs_blackwood_sequoia_trunk_large,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -1.80459,0,2.78907,0x451a20a1;
+	}
+}
+[t:tree_grs_blackwood_sequoia_trunk_roots,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = -1.72914,0,-1.51783,0x451a20a1;
+	}
+}
+[t:tree_grs_blackwood_sequoia_trunk_uproot,n:0x00100009]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 2.12415,0,2.02956,0x451a20a1;
+	}
+}
+[t:tree_grs_sequoia_01,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = 2.23434,0,-2.18558,0xed83a7c1;
+	}
+}
+[t:tree_grs_sequoia_02,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -2.07094,0,-2.12618,0xed83a7c1;
+	}
+}
+[t:tree_grs_sequoia_03,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 2.43182,-3.8147e-006,1.76312,0xed83a7c1;
+	}
+}
+[t:tree_glb_pine_sequoia_03,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.0131273,0,2.56451,0x7ff2e148;
+	}
+}
+[t:tree_glb_pine_sequoia_03,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = 2.96558,0,2.14795,0x7ff2e148;
+	}
+}
+[t:tree_grs_hemlock_01,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -3.14926,0,2.43263,0x7ff2e148;
+	}
+}
+[t:tree_grs_blackwood_hemlock,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 2.64459,0,1.09503,0x8a3b7ff2;
+	}
+}
+[t:tree_grs_blackwood_sequoia_4m,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -0.407471,0,1.06795,0x8a3b7ff2;
+	}
+}
+[t:tree_grs_blackwood_sequoia_6m,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -2.41516,0,1.07175,0x8a3b7ff2;
+	}
+}
