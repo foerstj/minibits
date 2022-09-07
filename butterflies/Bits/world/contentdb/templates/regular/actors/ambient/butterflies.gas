@@ -132,8 +132,8 @@
     }
 }
 
-[t:template,n:butterfly_blue-turquoise] { specializes = butterfly_blue-turquoise_base; }
-[t:template,n:butterfly_blue-turquoise_base] {
+[t:template,n:butterfly_blue_turquoise] { specializes = butterfly_blue_turquoise_base; }
+[t:template,n:butterfly_blue_turquoise_base] {
     specializes = butterfly_base;
     [aspect]
     {
@@ -150,8 +150,8 @@
     }
 }
 
-[t:template,n:butterfly_blue-violet] { specializes = butterfly_blue-violet_base; }
-[t:template,n:butterfly_blue-violet_base] {
+[t:template,n:butterfly_blue_violet] { specializes = butterfly_blue_violet_base; }
+[t:template,n:butterfly_blue_violet_base] {
     specializes = butterfly_base;
     [aspect]
     {
