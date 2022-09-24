@@ -1,0 +1,35 @@
+[t:bear_brown_zombie,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -1.5805,0,-2.80241,0xe1109849;
+	}
+}
+[t:bear_white_zombie,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 1.36444,0,-2.55863,0xe1109849;
+	}
+}
+[t:wolf_black_zombie,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -2.33113,0,1.83501,0xe1109849;
+	}
+}
+[t:wolf_white_zombie,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -0.0870904,0,1.74378,0xe1109849;
+	}
+}
+[t:wolf_gray_zombie,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 2.14507,0,1.55209,0xe1109849;
+	}
+}
