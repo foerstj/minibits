@@ -12,3 +12,4 @@ Color variant textures for zombie wolves & ursae, courtesy of Eksevis' Halloween
 src: Eksevis / Halloween Mod; foerstj / EoS
 
 ![pic](pic-wolves.jpg)
+![pic](pic-ursae.jpg)
