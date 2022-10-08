@@ -1,0 +1,24 @@
+[t:spell_light,n:0x00100000]
+{
+	[placement]
+	{
+	  q orientation = 0,0.177377,0,0.984143;
+	  p position = -0.0153438,-9.53674e-007,-2.01892,0x6a9c05a6;
+	}
+}
+[t:spell_magic_armor,n:0x00100002]
+{
+	[placement]
+	{
+	  q orientation = 0,0.63195,0,0.775009;
+	  p position = -2.33946,0,2.86247,0x6a9c05a6;
+	}
+}
+[t:spell_orb_ice,n:0x00100003]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.4901,0,0.871666;
+	  p position = -0.475909,-1.90735e-006,2.88762,0x6a9c05a6;
+	}
+}
