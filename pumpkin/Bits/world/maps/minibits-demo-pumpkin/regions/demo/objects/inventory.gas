@@ -3,7 +3,7 @@
 	[placement]
 	{
 	  q orientation = 0,-0.182264,0,0.98325;
-	  p position = -0.0209544,0,-2.39628,0xba816d86;
+	  p position = -2.02299,0,-2.80193,0xba816d86;
 	}
 }
 [t:he_ca_pumpkin,n:0x00100003]
@@ -11,7 +11,7 @@
 	[placement]
 	{
 	  q orientation = 0,0.701275,0,0.712891;
-	  p position = -0.548455,0,-2.53518,0xba816d86;
+	  p position = -2.64447,0,-2.66321,0xba816d86;
 	}
 }
 [t:he_ca_un_pumpkin_progressive,n:0x00100004]
@@ -19,7 +19,7 @@
 	[placement]
 	{
 	  q orientation = 0,0.668666,0,0.743563;
-	  p position = -0.637471,9.53674e-007,-1.9168,0xba816d86;
+	  p position = 1.13261,9.53674e-007,-2.80677,0xba816d86;
 	}
 }
 [t:hs_un_reaper,n:0x00100006]
@@ -27,7 +27,7 @@
 	[placement]
 	{
 	  q orientation = 0,-0.59848,0,0.801138;
-	  p position = -2.11916,-4.76837e-007,1.88353,0xba816d86;
+	  p position = 2.26023,-4.76837e-007,-0.541596,0xba816d86;
 	}
 }
 [t:hs_pumpkin_rags,n:0x00100007]
@@ -35,6 +35,6 @@
 	[placement]
 	{
 	  q orientation = 0,-0.562279,0,0.826948;
-	  p position = 0.837577,0,3.09957,0xba816d86;
+	  p position = 2.53467,0,0.209158,0xba816d86;
 	}
 }
