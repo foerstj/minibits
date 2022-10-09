@@ -1,0 +1,12 @@
+[t:hs_pumpkin_base,n:0x00100002]
+{
+	[haste_manager]
+	{
+	  f base_run_speed = 4.5;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.279288,0,-0.960208;
+	  p position = 2.49569,0,-2.71735,0xba816d86;
+	}
+}
