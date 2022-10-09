@@ -2,14 +2,14 @@
 {
 	doc = "Pumpkin";
 	specializes = base_helm;
-        [aspect]
+    [aspect]
 	{
 		gold_value = 10;
 	}
 	[common]
 	{
 		is_pcontent_allowed = false;
-        	allow_modifiers = false;
+        allow_modifiers = false;
 		screen_name = "Pumpkin";
 		description = "Makes you look seasonal.\n\nAdds <alter_armor> to Toughness.";
 	}
@@ -17,7 +17,7 @@
 	{
 		armor_style = pumpkin;
 		armor_type = pumpkin;
-		f defense = 2.000000;
+	  f defense = 2.000000;
 	}
 	[gui]
 	{
