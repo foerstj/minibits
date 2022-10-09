@@ -1,0 +1,17 @@
+[t:template,n:pumpkin]
+{
+	specializes = non_interactive_nonblocking;
+
+	category_name = "outdoor";
+	doc = "pumpkin";
+	[aspect]
+	{
+		lodfi_lower = 0.05;
+		lodfi_upper = 0.15;
+		model = m_i_glb_pumpkin;
+		[textures]
+		{
+			0 = b_i_glb_pumpkin;
+		}
+	}
+}
