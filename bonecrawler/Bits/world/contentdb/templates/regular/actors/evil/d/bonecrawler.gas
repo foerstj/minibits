@@ -42,7 +42,7 @@
 		}
 		[chore_dictionary]
 		{
-			chore_prefix = a_c_edm_bc_fs;
+			chore_prefix = a_c_edm_dc_fs;
 			[chore_attack]
 			{
 				chore_stances = 0;
