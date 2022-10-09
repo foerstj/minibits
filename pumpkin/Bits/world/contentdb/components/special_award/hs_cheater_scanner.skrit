@@ -1,0 +1,148 @@
+/////////////////////////////////////////////////////////////////////////////////////////
+// File: hs_cheater_scanner.skrit
+// Author: Xaa
+// The original version of this skrit, along with all the relevant notes, can be
+// found in Xaa's "Learn skrit and gas in 30 days" article.
+// Altered by Charietto to block cheats other than +drdeath, and to test players'
+// characters only. Hope I didn't wreak the whole thing!
+/////////////////////////////////////////////////////////////////////////////////////////
+
+property float seconds_between_scanning$ = 4.0 doc = "this is the length of my breaks between looking for cheaters";
+
+owner = GoSkritComponent;
+
+Go   temp$;
+Goid   scanner$;
+string   flag1$;
+
+startup state Startup$
+{
+   transition -> Idle$: OnGoHandleMessage( WE_ENTERED_WORLD );
+}
+
+state Idle$
+{
+   Event OnGoHandleMessage$(eWorldEvent e$, WorldMessage /*msg$*/)
+   {
+      If (e$ == we_friend_spotted)
+      {
+         scanner$ = owner.GOID;
+         flag1$="";
+         SetState Scanning$;
+      }
+      If (e$ == we_enemy_spotted)
+      {
+         scanner$ = owner.GOID;
+         flag1$="";
+         SetState Scanning$;
+      }
+   }
+}
+
+state Scanning$
+{
+   event OnEnterState$
+   {
+	  scanner$.go.mind.TempGopColl1.Clear;
+      scanner$.go.mind.GetVisible( QT_ACTOR, scanner$.go.mind.TempGopColl1, 1000.0 );
+
+      int i$ = 0;
+
+      flag1$="";
+
+      while( i$ < scanner$.go.mind.TempGopColl1.Size() )
+      {
+         temp$ = scanner$.go.mind.TempGopColl1.Get( i$ );
+
+		 if ( (temp$.Player.Controller == PC_HUMAN) )
+	     {
+		 	float level$ = temp$.Actor.GetSkillLevel( "Uber" );
+         	float MaxLife$ = temp$.Aspect.GetMaxLife();
+		 	float melee$ = temp$.Actor.GetSkillLevel( "Melee" );
+		 	float ranged$ = temp$.Actor.GetSkillLevel( "Ranged" );
+		 	float combatm$ = temp$.Actor.GetSkillLevel( "Combat Magic" );
+	     	float naturem$ = temp$.Actor.GetSkillLevel( "Nature Magic" );
+	     	float str$ = temp$.Actor.GetSkillLevel( "strength" );
+	     	float dex$ = temp$.Actor.GetSkillLevel( "dexterity" );
+	     	float int$ = temp$.Actor.GetSkillLevel( "intelligence" );
+
+		 	if (temp$.inventory.GetGold >= 9999999)
+	     	{ Temp$.Inventory.RCSetGold(0); }
+		 	if (temp$.inventory.GetGold < 0)
+	     	{ Temp$.Inventory.RCSetGold(0); }
+   		 	if ( (level$ >= 150) && (MaxLife$ >= 6908) )
+         	{
+            	flag1$="boom";
+         	}
+ 		 	if (MaxLife$ >= 6908)
+         	{
+            	flag1$="boom";
+         	}
+	     	if (melee$ >= 162)
+         	{
+            	flag1$="boom";
+         	}
+         	if (ranged$ >= 162)
+         	{
+            	flag1$="boom";
+         	}
+         	if (combatm$ >= 162)
+         	{
+            	flag1$="boom";
+         	}
+         	if (naturem$ >= 162)
+         	{
+            	flag1$="boom";
+         	}
+		 	if (str$ >= 117)
+         	{
+            	flag1$="boom";
+         	}
+         	if (dex$ >= 114)
+         	{
+            	flag1$="boom";
+         	}
+         	if (int$ >= 118)
+         	{
+            	flag1$="boom";
+         	}
+         	if ( temp$.Aspect.IsInvincible == true )
+ 		 	{
+            	flag1$="boom";
+         	}
+         	if ( flag1$ != "" )
+         	{
+            	report.screen( "CHEATER DETECTED." );
+				Physics.SExplodeGo( temp$.goid, 50, MakeVector(0,1,0) );
+            	GoDb.SMarkGoAndChildrenForDeletion( temp$ );
+				report.screen( "CHEATER ELIMINATED." );
+				flag1$="";
+        	 }
+         }
+         	 i$ += 1;
+      }
+      if ( flag1$ != "" )
+      {
+         flag1$="";
+      }
+	  This.CreateTimer(1, seconds_between_scanning$);
+   }
+   transition -> TakeABreak$: OnTimer( 1 );
+   trigger OnWorldMessage$( WE_KILLED ) { SetState Finished$; }
+   trigger OnWorldMessage$( WE_EXPLODED ) { SetState Finished$; }
+}
+
+state TakeABreak$
+{
+   event OnEnterState$
+   {
+		SetState Scanning$;
+   }
+}
+
+state Finished$
+{
+   event OnEnterState$
+   {
+   }
+}
