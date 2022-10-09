@@ -199,7 +199,7 @@
             es_chest = #hs_pumpkin_rags;
             es_feet = #bo_bo_le_black01;
             es_forearms = #gl_gl_le_of;
-            es_head = #he_ca_pumpkin;
+            es_head = #he_ca_un_pumpkin_progressive;
         }
 		[pcontent]
 		{
@@ -215,7 +215,7 @@
 				chance = 1.0;
 				max = 1;
 				min = 1;
-				il_main = he_ca_pumpkin;
+				il_main = he_ca_un_pumpkin_progressive;
             }
 		}		
 	}
