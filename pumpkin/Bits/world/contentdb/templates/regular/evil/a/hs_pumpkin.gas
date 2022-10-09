@@ -241,8 +241,6 @@
 		}
 	}
 	[enchantment_manager] {}
-	[hs_cheater_scanner] {}
-	[haste_manager] {}
 }
 /////////////////////////////////// Pumpkin Gear
 [t:template,n:hs_pumpkin_rags]

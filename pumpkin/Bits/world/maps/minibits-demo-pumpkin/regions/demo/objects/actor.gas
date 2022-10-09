@@ -1,9 +1,5 @@
 [t:hs_pumpkin_base,n:0x00100002]
 {
-	[haste_manager]
-	{
-	  f base_run_speed = 4.5;
-	}
 	[placement]
 	{
 	  q orientation = 0,0.279288,0,-0.960208;
