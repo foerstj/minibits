@@ -1,5 +1,7 @@
 # pumpkin
 
+![pic](pic.jpg)
+
 Pumpkin resources from the "Halloween Special Late Late Show" map.
 - Pumpkin helmet: original unique progressive item, and a simple pcontent-available variant.
 - Mr. Pumpkin Head: figure wearing the pumpkin helmet, also including his special rags and reaper scythe.\
