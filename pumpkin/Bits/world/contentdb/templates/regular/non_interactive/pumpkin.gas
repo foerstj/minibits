@@ -1,4 +1,5 @@
-[t:template,n:pumpkin]
+[t:template,n:pumpkin] { specializes = pumpkin_base; }
+[t:template,n:pumpkin_base]
 {
 	specializes = non_interactive_nonblocking;
 

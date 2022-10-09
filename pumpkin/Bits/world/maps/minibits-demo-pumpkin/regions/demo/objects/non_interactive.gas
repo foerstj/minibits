@@ -82,11 +82,15 @@
 	  p position = -0.699797,0,3.24357,0xba816d86;
 	}
 }
-[t:pumpkin,n:0x00100019]
+[t:pumpkin_lantern,n:0x00100019]
 {
 	[aspect]
 	{
 	  f scale_multiplier = 1.5;
+	}
+	[light_flicker_lightweight]
+	{
+	  x siege_light = 0xA7FAFF71;
 	}
 	[placement]
 	{
