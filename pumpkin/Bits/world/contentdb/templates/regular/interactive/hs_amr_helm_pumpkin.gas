@@ -1,17 +1,19 @@
-[t:template,n:he_ca_pumpkin]
+[t:template,n:he_ca_pumpkin_base]
 {
-	doc = "Pumpkin";
 	specializes = base_helm;
+
+	doc = "Pumpkin";
     [aspect]
 	{
 		gold_value = 10;
 	}
 	[common]
 	{
+		screen_name = "Pumpkin";
+		description = "Makes you look seasonal.";
+
 		is_pcontent_allowed = false;
         allow_modifiers = false;
-		screen_name = "Pumpkin";
-		description = "Makes you look seasonal.\n\nAdds <alter_armor> to Toughness.";
 	}
 	[defend]
 	{
@@ -33,6 +35,21 @@
 		  f modifier_max = 0.000000;
 		  f modifier_min = 0.000000;
 		}
+	}
+}
+
+[t:template,n:he_ca_pumpkin]
+{
+    specializes = he_ca_pumpkin_base;
+}
+
+[t:template,n:he_ca_pumpkin_progressive]
+{
+    specializes = he_ca_pumpkin_base;
+
+	[common]
+	{
+		description = "Makes you look seasonal.\n\nAdds <alter_armor> to Toughness.";
 	}
 	[magic]
 	{

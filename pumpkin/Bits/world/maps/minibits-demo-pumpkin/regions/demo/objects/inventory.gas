@@ -14,7 +14,7 @@
 	  p position = -0.548455,0,-2.53518,0xba816d86;
 	}
 }
-[t:he_ca_pumpkin,n:0x00100004]
+[t:he_ca_pumpkin_progressive,n:0x00100004]
 {
 	[placement]
 	{
