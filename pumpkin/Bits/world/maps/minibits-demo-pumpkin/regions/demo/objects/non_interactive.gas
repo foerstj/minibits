@@ -82,3 +82,15 @@
 	  p position = -0.699797,0,3.24357,0xba816d86;
 	}
 }
+[t:pumpkin,n:0x00100019]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.5;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.940403,0,0.340063;
+	  p position = 3.12693,0,3.24339,0xba816d86;
+	}
+}

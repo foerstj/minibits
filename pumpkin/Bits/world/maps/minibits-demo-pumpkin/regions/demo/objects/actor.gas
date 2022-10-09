@@ -1,12 +1,8 @@
 [t:hs_mister_pumpkin_head,n:0x00100002]
 {
-	[actor]
-	{
-		alignment = aa_neutral;
-	}
 	[placement]
 	{
-	  q orientation = 0,0.279288,0,-0.960208;
-	  p position = 2.49569,0,-2.71735,0xba816d86;
+	  q orientation = 0,-0.279288,0,0.960207;
+	  p position = -0.00648189,-0.85,-0.407403,0x68e4cd4e;
 	}
 }

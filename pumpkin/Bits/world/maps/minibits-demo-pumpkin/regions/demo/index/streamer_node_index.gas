@@ -1,4 +1,6 @@
 [streamer_node_index]
 {
+  x * = 0x504E42E8;
+  x * = 0x68E4CD4E;
   x * = 0xBA816D86;
 }
