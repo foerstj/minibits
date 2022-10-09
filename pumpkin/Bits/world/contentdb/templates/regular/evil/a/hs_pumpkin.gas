@@ -22,27 +22,21 @@
 			0 = b_c_gah_fb_skin_34;
 			1 = b_c_pos_a1_041;
 		}
-				
+
 		life = 607;
 		max_life = 607;
 		mana = 129;
 		max_mana = 129;
 
-   		//life_recovery_unit   = 1;
-		//life_recovery_period = 4;
-
-		//mana_recovery_unit   = 1;
-		//mana_recovery_period = 3;
-
 		experience_value = 655;
-		
+
 		[voice]
 		{
-			[die]		{ priority = high; * = s_e_die_bandit; }
-			[enemy_spotted]	{ priority = high; * = s_e_call_bandit_SED; }
-			[hit_critical]	{ priority = low; * = s_e_hit_bandit_SED; }
-			[hit_glance]	{ priority = low; * = s_e_hit_bandit_SED; }
-			[hit_solid]	{ priority = low; * = s_e_hit_bandit_SED; }
+			[die]           { priority = high; * = s_e_die_bandit; }
+			[enemy_spotted] { priority = high; * = s_e_call_bandit_SED; }
+			[hit_critical]  { priority = low; * = s_e_hit_bandit_SED; }
+			[hit_glance]    { priority = low; * = s_e_hit_bandit_SED; }
+			[hit_solid]     { priority = low; * = s_e_hit_bandit_SED; }
 		}
 	}
 	[guts_manager]
@@ -184,9 +178,9 @@
 		melee_engage_range = 16.0;
 		ranged_engage_range = 16.0;
 		sight_range = 16.0;
-        	job_travel_distance_limit = 30;
-        	on_job_reached_travel_distance_abort_attack = true;
-		
+        job_travel_distance_limit = 30;
+        on_job_reached_travel_distance_abort_attack = true;
+
 		jat_brain					= world\ai\jobs\common\brain_hero.skrit
 			?actor_creates_own_party		= true
 			&actor_joins_existing_party		= true
@@ -199,15 +193,14 @@
 	}
 	[inventory]
 	{
-		
 		spew_equipped_kill_count = <ignore>;
 		[equipment]
 		{
-				es_chest = #hs_pumpkin_rags;
-				es_feet = #bo_bo_le_black01;
-				es_forearms = #gl_gl_le_of;
-				es_head = #he_ca_pumpkin;
-                }
+            es_chest = #hs_pumpkin_rags;
+            es_feet = #bo_bo_le_black01;
+            es_forearms = #gl_gl_le_of;
+            es_head = #he_ca_pumpkin;
+        }
 		[pcontent]
 		{
 			[all*]
@@ -216,14 +209,14 @@
 				max = 1;
 				min = 1;
 				il_main = hs_un_reaper;
-                	}
+            }
 			[all*]
 			{	
 				chance = 1.0;
 				max = 1;
 				min = 1;
 				il_main = he_ca_pumpkin;
-                	}
+            }
 		}		
 	}
 	[magic]
@@ -242,7 +235,10 @@
 	}
 	[enchantment_manager] {}
 }
+
+
 /////////////////////////////////// Pumpkin Gear
+
 [t:template,n:hs_pumpkin_rags]
 {
 	doc = "Rags";
@@ -279,6 +275,7 @@
 		}
 	}
 }
+
 [t:template,n:hs_un_reaper]
 {
 	doc = "Reaper";
