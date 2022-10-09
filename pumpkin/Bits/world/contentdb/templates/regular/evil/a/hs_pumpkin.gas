@@ -1,4 +1,4 @@
-[t:template,n:hs_pumpkin_base]
+[t:template,n:hs_mister_pumpkin_head]
 {
 	category_name = "1W_evil_a";
 	doc = "hs_pumpkin_dude";
