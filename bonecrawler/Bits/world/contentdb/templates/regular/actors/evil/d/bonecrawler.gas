@@ -1,6 +1,6 @@
 [t:template,n:base_bonecrawler]
 {
-    specializes = base_dungeon_crawler;
+	specializes = base_dungeon_crawler;
 
 	[aspect]
 	{
@@ -16,7 +16,7 @@
 
 	[common] { screen_name="Bonecrawler"; }
 
-    // stats & loot from tortured_corpse
+	// stats & loot from tortured_corpse
 	[actor]
 	{
 		[skills]
@@ -33,7 +33,7 @@
 		life = 34;
 		max_life = 34;
 		mana = 6;
-        max_mana = 6;
+		max_mana = 6;
 	}
 	[attack]
 	{
@@ -42,9 +42,9 @@
 		damage_min = 10;
 	}
 	[defend] { defense=8; }
-   	[inventory]
+	[inventory]
 	{
-    	[pcontent]
+		[pcontent]
 		{
 			[oneof*]
 			{
@@ -52,15 +52,15 @@
 				{
 					chance = 0.2;
 					il_main = #weapon/5-7;
-                	il_main = #armor/8-41;
+					il_main = #armor/8-41;
 				}
-        		[oneof*]
+				[oneof*]
 				{
-	        		chance = 0.002;
-	            	il_main = #weapon/-rare(1)/8-10;
-	            	il_main = #armor/-rare(1)/16-22;
-                }
-	        }
-        }
+					chance = 0.002;
+					il_main = #weapon/-rare(1)/8-10;
+					il_main = #armor/-rare(1)/16-22;
+				}
+			}
+		}
 	}
 }
