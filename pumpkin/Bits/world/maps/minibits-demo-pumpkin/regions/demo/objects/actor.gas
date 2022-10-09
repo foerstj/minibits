@@ -1,5 +1,9 @@
 [t:hs_mister_pumpkin_head,n:0x00100002]
 {
+	[actor]
+	{
+		alignment = aa_neutral;
+	}
 	[placement]
 	{
 	  q orientation = 0,0.279288,0,-0.960208;
