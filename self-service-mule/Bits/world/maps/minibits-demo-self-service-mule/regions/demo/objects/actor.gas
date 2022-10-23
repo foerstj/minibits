@@ -1,0 +1,20 @@
+[t:self_service_mule,n:0x00100000]
+{
+	[aspect]
+	{
+	  f max_life = 66.5;
+	  f max_mana = 109;
+		model = m_c_na_pm_pos_2;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = self_service_mule;
+		}
+	}
+	[placement]
+	{
+	  p position = -1.49889,0,-2.84756,0x95ade1bf;
+	}
+}
