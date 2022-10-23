@@ -167,7 +167,8 @@
 	[store] { can_sell_self = true; }
     [mind]
     {
-        jat_talk = world\ai\jobs\common\job_talk.skrit;
 		jat_brain = world\ai\jobs\common\brain_hero.skrit;
+        jat_talk = world\ai\jobs\common\job_talk.skrit;
+        jat_listen = world\ai\jobs\common\job_listen.skrit;
     }
 }
