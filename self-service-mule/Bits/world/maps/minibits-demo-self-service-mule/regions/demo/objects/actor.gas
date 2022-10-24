@@ -15,16 +15,14 @@
 		[conversations]
 		{
 			* = self_service_mule_join;
-			* = self_service_mule_rejoin;
 			* = self_service_mule_reject;
 			* = self_service_mule_accept_have_money;
 			* = self_service_mule_disband;
-			* = self_service_mule_disband_rejoin;
 		}
 	}
 	[mind]
 	{
-		jat_talk = world\ai\jobs\job_talk_companion.skrit?namespace=self_service_mule&oid=0x100000;
+		jat_talk = world\ai\jobs\actors\good\job_talk_self_service_mule.skrit?namespace=self_service_mule&oid=0x100000;
 	}
 	[placement]
 	{
@@ -54,13 +52,8 @@
 	{
 		[conversations]
 		{
-			* = mule_merchant_has_packmules;
-			* = mule_merchant_no_packmules;
+			* = mule_merchant;
 		}
-	}
-	[mind]
-	{
-		jat_talk = world\ai\jobs\job_talk_mule_merchant.skrit;
 	}
 	[placement]
 	{
@@ -73,13 +66,8 @@
 	{
 		[conversations]
 		{
-			* = mule_merchant_has_packmules;
-			* = mule_merchant_no_packmules;
+			* = mule_merchant;
 		}
-	}
-	[mind]
-	{
-		jat_talk = world\ai\jobs\job_talk_mule_merchant.skrit;
 	}
 	[placement]
 	{

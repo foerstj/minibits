@@ -7,11 +7,8 @@ Goid		m_Target$;
 #include "k_job_c_mcp_fidget_utils"
 #include "k_job_c_talk_utils"
 
-property    string  namespace$  = "companion"   doc = "Namespace for conversations and flags";
-property    string  oid$                        doc = "Object ID, lower-case hex, no leading zeroes, e.g. 0x17001af";
-property    int     more_gold$  = 0             doc = "Demand more gold to rejoin after being disbanded";
-property    int     more_gold2$ = 0             doc = "Demand more gold to join when asked twice";
-property    bool    first$      = false         doc = "Whether to have a first conversation";
+property    string  namespace$  = "self_service_mule"   doc = "Namespace for conversations and flags";
+property    string  oid$                        doc = "Object SCID, lower-case hex, no leading zeroes, e.g. 0x17001af";
 
 startup state STARTUP$
 {
@@ -93,34 +90,18 @@ state Talk$
 		}
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_disbanded_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_disband_rejoin", namespace$ ) );
-            if ( more_gold$ > 0 )
-            {
-                m_Go$.Aspect.SetGoldValue( more_gold$ );
-            }
+			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
 		} 
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_rejoin", namespace$ ) );
+			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ), false );
-            if ( more_gold2$ > 0 )
-            {
-                m_Go$.Aspect.SetGoldValue( more_gold2$ );
-            }
 		}
 		else
 		{
-            if ( first$ && !GameAuditor.GetDb.GetBool( MakeStringF( "%s_talked_to", namespace$ ) ) )
-            {
-                GameAuditor.GetDb.SetBool( MakeStringF( "%s_talked_to", namespace$ ), true );
-                m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_first", namespace$ ) );
-            }
-            else
-            {
-                m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
-            }
+            m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
         }
-        TryAnim$('talk');
+        //TryAnim$('talk');
 
 		m_Go$.GetConversation.RSActivateDialogue();
 	}

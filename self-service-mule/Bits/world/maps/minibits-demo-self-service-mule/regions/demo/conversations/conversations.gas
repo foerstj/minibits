@@ -1,14 +1,12 @@
-[mule_merchant_has_packmules]
+[mule_merchant]
 {
 	[text*]
 	{
+        order = 0;
 		choice = buy_packmule;
 		screen_text = "Packmule?";
 	  f scroll_rate = 10.000000;
 	}
-}
-[mule_merchant_no_packmules]
-{
 	[text*]
 	{
 		screen_text = "No more packmules!";
@@ -17,15 +15,6 @@
 }
 
 [self_service_mule_join]
-{
-	[text*]
-	{
-		choice = potential_member;
-		screen_text = "Would you like to add this mule to your group?";
-	  f scroll_rate = 10.000000;
-	}
-}
-[self_service_mule_rejoin]
 {
 	[text*]
 	{
@@ -55,15 +44,6 @@
 	[text*]
 	{
 		screen_text = "Disbanded";
-	  f scroll_rate = 10.000000;
-	}
-}
-[self_service_mule_disband_rejoin]
-{
-	[text*]
-	{
-		choice = potential_member;
-		screen_text = "Would you like to add this mule to your group?";
 	  f scroll_rate = 10.000000;
 	}
 }
