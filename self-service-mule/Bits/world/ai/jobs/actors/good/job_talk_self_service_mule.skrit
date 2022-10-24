@@ -60,7 +60,10 @@ state Talk$
 	
 	trigger OnWorldMessage$( WE_ANIM_DONE )
 	{
-		TryAnim$('talk');
+        if( m_Go$.Mind.ActorAutoFidgets )
+        {
+            StartFidgetIfRequired$();
+        }
 	}
 
 	event OnEnterState$
@@ -101,7 +104,6 @@ state Talk$
 		{
             m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
         }
-        //TryAnim$('talk');
 
 		m_Go$.GetConversation.RSActivateDialogue();
 	}
