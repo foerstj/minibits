@@ -1,0 +1,30 @@
+[t:party_humanoid,n:0x00100004]
+{
+	[party]
+	{
+		[add_members]
+		{
+		  x * = 0x00100003;
+		  x * = 0x00100002;
+		}
+	}
+	[placement]
+	{
+	  p position = 3.05897,0,-2.66362,0x95ade1bf;
+	}
+}
+[t:party_humanoid,n:0x00100005]
+{
+	[party]
+	{
+		[add_members]
+		{
+		  x * = 0x00100006;
+		  x * = 0x00100007;
+		}
+	}
+	[placement]
+	{
+	  p position = 2.65848,0,3.5063,0x95ade1bf;
+	}
+}

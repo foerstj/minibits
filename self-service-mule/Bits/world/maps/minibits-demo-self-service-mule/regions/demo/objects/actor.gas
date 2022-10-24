@@ -6,15 +6,92 @@
 	  f max_mana = 109;
 		model = m_c_na_pm_pos_2;
 	}
+	[common]
+	{
+		screen_name = "Self-Service Mule";
+	}
 	[conversation]
 	{
 		[conversations]
 		{
-			* = self_service_mule;
+			* = self_service_mule_join;
+			* = self_service_mule_rejoin;
+			* = self_service_mule_reject;
+			* = self_service_mule_accept_have_money;
+			* = self_service_mule_disband;
+			* = self_service_mule_disband_rejoin;
 		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\job_talk_companion.skrit?namespace=self_service_mule&oid=0x100000;
 	}
 	[placement]
 	{
 	  p position = -1.49889,0,-2.84756,0x95ade1bf;
+	}
+}
+[t:self_service_mule,n:0x00100002]
+{
+	[aspect]
+	{
+	  f max_life = 66.5;
+	  f max_mana = 109;
+		model = m_c_na_pm_pos_2;
+	}
+	[common]
+	{
+		screen_name = "Self-Service Mule";
+	}
+	[placement]
+	{
+	  p position = 1.88514,9.53674e-007,-2.45525,0x95ade1bf;
+	}
+}
+[t:merchant_packmule,n:0x00100003]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = mule_merchant_has_packmules;
+			* = mule_merchant_no_packmules;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\job_talk_mule_merchant.skrit;
+	}
+	[placement]
+	{
+	  p position = 2.5863,0,-1.37759,0x95ade1bf;
+	}
+}
+[t:merchant_packmule,n:0x00100006]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = mule_merchant_has_packmules;
+			* = mule_merchant_no_packmules;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\job_talk_mule_merchant.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = 2.72463,0,2.01382,0x95ade1bf;
+	}
+}
+[t:mule,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = 1.46219,0,2.89512,0x95ade1bf;
 	}
 }
