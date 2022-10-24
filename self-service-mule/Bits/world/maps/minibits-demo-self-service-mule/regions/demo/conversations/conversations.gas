@@ -23,27 +23,3 @@
 	  f scroll_rate = 10.000000;
 	}
 }
-[self_service_mule_reject]
-{
-	[text*]
-	{
-		screen_text = "Rejected";
-	  f scroll_rate = 10.000000;
-	}
-}
-[self_service_mule_accept_have_money]
-{
-	[text*]
-	{
-		screen_text = "Added";
-	  f scroll_rate = 10.000000;
-	}
-}
-[self_service_mule_disband]
-{
-	[text*]
-	{
-		screen_text = "Disbanded";
-	  f scroll_rate = 10.000000;
-	}
-}

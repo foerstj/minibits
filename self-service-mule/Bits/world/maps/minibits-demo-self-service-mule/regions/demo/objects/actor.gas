@@ -15,9 +15,6 @@
 		[conversations]
 		{
 			* = self_service_mule_join;
-			* = self_service_mule_reject;
-			* = self_service_mule_accept_have_money;
-			* = self_service_mule_disband;
 		}
 	}
 	[mind]

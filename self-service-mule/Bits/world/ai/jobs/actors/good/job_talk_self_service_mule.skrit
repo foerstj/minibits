@@ -68,44 +68,44 @@ state Talk$
 
 	event OnEnterState$
 	{
+        m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
 		if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_accept_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_accept_have_money", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_accept_%s", oid$ ), false );
+			SetState Exiting$;
 		}
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_accept_no_money_%s", oid$ ) ) )
 		{
 			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_accept_no_money", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_accept_no_money_%s", oid$ ), false );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ), true );
+            m_Go$.GetConversation.RSActivateDialogue();
 		}
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_decline_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_reject", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_decline_%s", oid$ ), false );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ), true );
+			SetState Exiting$;
 		}
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_disband_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_disband", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_disband_%s", oid$ ), false );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_disbanded_%s", oid$ ), true );
+			SetState Exiting$;
 		}
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_disbanded_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
+            m_Go$.GetConversation.RSActivateDialogue();
 		} 
 		else if ( GameAuditor.GetDb.GetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ) ) )
 		{
-			m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
 			GameAuditor.GetDb.SetBool( MakeStringF( "party_allow_rejoin_%s", oid$ ), false );
+            m_Go$.GetConversation.RSActivateDialogue();
 		}
 		else
 		{
-            m_Go$.GetConversation.RSSelectConversation( MakeStringF( "%s_join", namespace$ ) );
+            m_Go$.GetConversation.RSActivateDialogue();
         }
-
-		m_Go$.GetConversation.RSActivateDialogue();
 	}
 }
 
