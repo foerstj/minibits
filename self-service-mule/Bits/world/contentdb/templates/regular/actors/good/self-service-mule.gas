@@ -153,7 +153,8 @@
 	[water_effects] {}
 }
 
-[t:template,n:self_service_mule]
+[t:template,n:self_service_mule] { specializes = self_service_mule_base; }
+[t:template,n:self_service_mule_base]
 {
     specializes = pack_mule_base;
 
