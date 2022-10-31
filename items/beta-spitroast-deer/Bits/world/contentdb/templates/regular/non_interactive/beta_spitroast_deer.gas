@@ -1,7 +1,9 @@
-[t:template,n:spit_grs_01]
+[t:template,n:beta_spitroast_deer] { specializes = beta_spitroast_deer_base; }
+[t:template,n:beta_spitroast_deer_base]
 {
+	specializes = non_interactive_blocking;
+
 	category_name = "dead";
 	doc = "spit_deer";
-	specializes = non_interactive_blocking;
 	[aspect] { model=m_i_grs_spit-01; }
 }
