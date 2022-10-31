@@ -1,5 +1,4 @@
-[t:template,n:pack_mule] { specializes = pack_mule_base; }
-[t:template,n:pack_mule_base]
+[t:template,n:pack_mule]
 {
 	category_name = "1W_character";
 	doc = "pack_mule";
