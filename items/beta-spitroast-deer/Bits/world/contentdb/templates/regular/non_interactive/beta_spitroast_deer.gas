@@ -1,0 +1,7 @@
+[t:template,n:spit_grs_01]
+{
+	category_name = "dead";
+	doc = "spit_deer";
+	specializes = non_interactive_blocking;
+	[aspect] { model=m_i_grs_spit-01; }
+}
