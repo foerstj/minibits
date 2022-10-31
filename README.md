@@ -16,4 +16,5 @@ Categories:
   - The readme may contain one or several pictures (first at the top, additional ones at the bottom).
 - The Bits folder contains the resource files in the structure required for dsres. Using the resource for your project should be as simple as copy-pasting into your main Bits folder.
   - There may be a demo map included called minibits-demo-\<sub-name\>.
+  - Each leaf template "xyz" shall be empty and derive from a "xyz_base" template, to aid further specialization. This is not required for frags & generators.
 - There may be a build folder that provides ready-to-use assets. Used for minimods.
