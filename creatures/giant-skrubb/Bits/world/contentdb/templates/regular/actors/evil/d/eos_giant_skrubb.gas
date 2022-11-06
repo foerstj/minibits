@@ -2,7 +2,7 @@
 [t:template,n:eos_giant_skrubb]
 {
 	category_name = "1W_evil_d";
-	doc = "pg_skrubb";
+	doc = "eos_giant_skrubb";
 	specializes = base_skrubb;
 	[common]
 	{
