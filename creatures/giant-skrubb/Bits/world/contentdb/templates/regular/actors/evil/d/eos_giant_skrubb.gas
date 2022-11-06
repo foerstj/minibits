@@ -77,7 +77,7 @@
 	}
     [inventory]
     {
-		[other] { il_active_primary_spell = spell_giant_skrubb_spit; }
+		[other] { il_active_primary_spell = spell_eos_giant_skrubb_spit; }
     }
 
     // stats & loot from drake_white
