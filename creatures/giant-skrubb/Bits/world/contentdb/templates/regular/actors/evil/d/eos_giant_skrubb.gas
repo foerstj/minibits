@@ -65,16 +65,28 @@
 	}
 }
 
-// Giant Skrubb, stats from white drake
-[t:template,n:eos_giant_skrubb]
+[t:template,n:giant_skrubb] { specializes = giant_skrubb_base; }
+[t:template,n:giant_skrubb_base]
 {
     specializes = skrubb_base;
 
-	doc = "eos_giant_skrubb";
+	doc = "giant_skrubb";
 	[common]
 	{
 		screen_name = "Giant Skrubb";
 	}
+    [inventory]
+    {
+		[other] { il_active_primary_spell = spell_giant_skrubb_spit; }
+    }
+}
+
+// Giant Skrubb, stats from white drake
+[t:template,n:eos_giant_skrubb]
+{
+    specializes = giant_skrubb_base;
+
+	doc = "eos_giant_skrubb";
     [inventory]
     {
 		[other] { il_active_primary_spell = spell_eos_giant_skrubb_spit; }
