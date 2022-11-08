@@ -1,0 +1,133 @@
+[t:bandit_ranged,n:0x00100001]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -0.421663,0,1.60765,0x37589450;
+	}
+}
+[t:bandit_melee,n:0x00100002]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.684183,0,0.0184479,0x37589450;
+	}
+}
+[t:bandit_melee,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -3.40191,0,-1.41786,0x37589450;
+	}
+}
+[t:bandit_melee,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 1.65969,0,-3.48305,0xf26a135e;
+	}
+}
+[t:bandit_ranged,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 1.38702,0,-1.68998,0xf26a135e;
+	}
+}
+[t:bandit_ranged,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 2.73969,0,-3.60892,0xce3212a8;
+	}
+}
+[t:bandit_mage,n:0x00100008]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -2.8579,0,-0.582027,0xcb2ca4b9;
+	}
+}
+[t:bandit_mage,n:0x00100009]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -3.20628,0,0.878478,0xcb2ca4b9;
+	}
+}
+[t:bandit_mage,n:0x0010000a]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -3.09324,0,-2.98912,0xcb2ca4b9;
+	}
+}
+[t:bandit_ranged,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = -2.59581,0,-3.60845,0x7f89166a;
+	}
+}
+[t:krug_scout,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.429145,0,-0.0596714,0x8a785176;
+	}
+}
+[t:krug_scout,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -0.147755,0,2.46742,0x8a785176;
+	}
+}
+[t:krug_scout,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -1.57271,0,0.95793,0x8a785176;
+	}
+}
+[t:krug_shaman,n:0x0010000e]
+{
+	[placement]
+	{
+	  q orientation = 0,2.98023e-008,0,1;
+	  p position = 0.00683498,0,0.99596,0x8a785176;
+	}
+}
+[t:bandit_ranged,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = 3.50868,0,-2.44088,0x8a785176;
+	}
+}
+[t:bandit_melee,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -2.20223,0,-3.63989,0x8a28f003;
+	}
+}
+[t:bandit_melee,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = -1.2631,0,-1.9134,0x8a28f003;
+	}
+}
+[t:bandit_mage,n:0x00100000]
+{
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = 0.747746,0,2.80436,0xb3c2eff3;
+	}
+}
