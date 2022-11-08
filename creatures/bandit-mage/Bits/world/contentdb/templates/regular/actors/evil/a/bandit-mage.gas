@@ -1,0 +1,124 @@
+[t:template,n:bandit_mage] { specializes = bandit_mage_base; }
+[t:template,n:bandit_mage_base]
+{
+	specializes = base_bandit;
+
+	doc = "bandit_mage";
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_35;  // Bandit Boss
+			1 = b_c_pos_a3_045;  // Hovart's armor
+		}
+    }
+	[common]
+	{
+		screen_name = "Bandit Mage";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+    [inventory]
+    {
+        selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell   = spell_explosive_powder;
+			il_active_secondary_spell = spell_resurrect_monster;
+		}
+        [equipment]
+        {
+            es_feet = bo_bo_le_light;
+            es_weapon_hand = st_g_c_b_fun;  // Gnarled Staff
+        }
+    }
+	[mind]
+    {
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		actor_auto_reanimates_friends        = true;
+		actor_auto_uses_stored_items         = true;
+		actor_auto_switches_to_melee         = false;
+
+  		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		= true
+			&actor_joins_existing_party		= true
+			&party_template					= "party_bandit_ranged";  // all bandits use the "ranged" party, also bandit_melee
+
+    	jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+    		?social							= 0.35
+    		&still							= false;
+    }
+
+    // stats & loot from bandit_ranged, adapted
+	[actor]
+	{
+		[skills]
+		{
+			strength =   10, 0;  // adapted
+			intelligence = 14, 0;  // adapted
+			dexterity =   12, 0;
+			combat_magic =  15,  0;  // adapted
+		}
+	}
+	[aspect]
+	{
+		life = 315;
+		max_life = 315;
+		mana = 3150;  // adapted
+		max_mana = 3150;  // adapted
+   		experience_value = 1138;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_medium;
+				   il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-141;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/60-78;
+	                il_main = #armor/-rare(1)/140-225;
+                    il_main = #*/-rare(1)/60-78;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/60-78;
+	                il_main = #armor/-unique(2)/140-225;
+                    il_main = #*/-unique(2)/60-78;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+            }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=150; }
+}
