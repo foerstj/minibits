@@ -4,6 +4,6 @@
 
 A Bandit Mage that casts Explosive Powder and occasionally resurrects a fellow Bandit.
 
-src: foerstj / GR
+src: foerstj
 
 ![pic](pic2.jpg)
