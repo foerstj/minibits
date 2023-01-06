@@ -14,6 +14,20 @@
 	  i stop_hour = 1;
 	}
 }
+[t:emt_sfx_timed,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 1.07315,4.964,-37.4699,0x55192c71;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
 [t:emt_sound,n:0x00100004]
 {
 	[placement]
@@ -28,6 +42,34 @@
 	  f repeat_rate = 10;
 	  i start_hour = 20;
 	  i stop_hour = 1;
+	}
+}
+[t:emt_sfx_timed,n:0x00100006]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 3.29206,6.76143,-46.4773,0x917dc0f9;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
+[t:emt_sfx_timed,n:0x0010000c]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 8.35525,5.10973,-30.0127,0x917dc0f9;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
 	}
 }
 [t:emt_sound,n:0x00100001]
@@ -46,6 +88,34 @@
 	  i stop_hour = 1;
 	}
 }
+[t:emt_sfx_timed,n:0x00100005]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 7.00715,5.8988,-50.2687,0x49340781;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
+[t:emt_sfx_timed,n:0x0010000b]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = -2.43607,4.27419,-34.2909,0x49340781;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
 [t:emt_sound,n:0x00100002]
 {
 	[placement]
@@ -62,16 +132,44 @@
 	  i stop_hour = 1;
 	}
 }
-[t:emt_sfx_timed,n:0x00100005]
+[t:emt_sfx_timed,n:0x00100008]
 {
 	[placement]
 	{
-	  q orientation = 0,0.149337,0,0.988786;
-	  p position = -0.84053,0,0.862488,0x8d50f6ba;
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 17.6923,5.59997,-49.9485,0xb80b1053;
 	}
 	[sfx_emitter_timed]
 	{
-		effect = "eagle_statue";
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
+[t:emt_sfx_timed,n:0x00100009]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = 5.38099,4.5505,-33.8818,0xb80b1053;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
+[t:emt_sfx_timed,n:0x0010000a]
+{
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = -8.73091,5.66332,-51.6326,0xb80b1053;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "glowworms";
 	  i start_hour = 20;
 	  i stop_hour = 3;
 	}
