@@ -62,3 +62,17 @@
 	  i stop_hour = 1;
 	}
 }
+[t:emt_sfx_timed,n:0x00100005]
+{
+	[placement]
+	{
+	  q orientation = 0,0.149337,0,0.988786;
+	  p position = -0.84053,0,0.862488,0x8d50f6ba;
+	}
+	[sfx_emitter_timed]
+	{
+		effect = "eagle_statue";
+	  i start_hour = 20;
+	  i stop_hour = 3;
+	}
+}
