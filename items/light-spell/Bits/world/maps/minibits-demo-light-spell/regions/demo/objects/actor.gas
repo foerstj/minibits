@@ -1,0 +1,38 @@
+[t:adwana,n:0x00100004]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = shop;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.998076,0,0.0620004;
+	  p position = 1.69099,0,2.02629,0x5a7b5d57;
+	}
+}
+[t:mage_trianna_lelaine,n:0x00100006]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = shop;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.986352,0,0.164651;
+	  p position = -0.97989,0,2.0573,0x5a7b5d57;
+	}
+}
