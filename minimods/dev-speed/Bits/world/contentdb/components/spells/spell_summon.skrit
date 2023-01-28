@@ -161,7 +161,11 @@ startup state CastBegin$
 			{
 				// buff the summoned guy up.
 				owner.go.magic.SApplyEnchantments( summoned_goid$, caster$ );
-				
+
+                // EDITED: 10x speed!
+                float originalVelocity$ = summoned_goid$.Go.Body.GetAvgMoveVelocity();
+                summoned_goid$.Go.Body.SetAvgMoveVelocity(originalVelocity$ * 10.0);
+
 				summoned_goid$.Go.Aspect.IsInvincible = false;
 				
 				// Setup where experience will go from who this actor damages
