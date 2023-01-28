@@ -20,4 +20,5 @@
 	0x001008b0 = t_xxx_rvr_12-tx-08-left-b;
 	0x001008b6 = t_xxx_rvr_wfall-04-tx-12;
 	0x001008b9 = t_xxx_rvr_wfall-08-tx-12;
+	0x001009fb = t_xxx_wal_04-thin;
 }
