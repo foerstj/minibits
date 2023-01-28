@@ -1,4 +1,4 @@
-[t:tsd,n:b_t_ic01_rvr_bridge-log-a]
+[t:tsd,n:b_t_sn02_rvr_bridge-logend-a]
 {
   b dither = false;
   b hasalpha = false;
@@ -10,7 +10,7 @@
 	layer1colorop = modulate;
   i layer1numframes = 1;
   f layer1secondsperframe = 0.0;
-	layer1texture1 = b_t_ic01_rvr_bridge-log-a;
+	layer1texture1 = b_t_sn02_rvr_bridge-logend-a;
   f layer1ushiftpersecond = 0.0;
   b layer1uwrap = true;
   f layer1vshiftpersecond = 0.0;
