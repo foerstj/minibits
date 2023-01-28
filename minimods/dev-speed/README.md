@@ -1,5 +1,9 @@
 # dev-speed
 
-Dev mod to give created heroes, companions, and mules 10x speed. Useful for testing. (Or very impatient gamers.)
+Dev mod to give you 10x walking speed. Useful for testing. (Or very impatient gamers.)
+- Heroes
+- Companions
+- Mules
+- Summons
 
 src: foerstj
