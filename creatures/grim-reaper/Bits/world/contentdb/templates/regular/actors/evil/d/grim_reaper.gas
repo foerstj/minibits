@@ -90,10 +90,20 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = select_walk;
-				[anim_files] { 00=wl; }  // EDITED walk not run
+				[anim_files] { 00=wl; }  // EDITED walk, not run
 			}
 		}
 	}
+    [mind]
+    {
+        // make reaper stand still
+        jat_fidget = world\ai\jobs\common\job_fidget.skrit
+				?wander								= 0
+				&social								= 0.1
+				&delay_min							= 6
+				&delay_max							= 10
+				&still								= true;
+    }
 }
 
 [t:template,n:grim_reaper] { specializes = grim_reaper_base; }
@@ -103,11 +113,11 @@
 
     [aspect]
     {
-		scale_base = 1.5;
+		//scale_base = 1.5;
     }
 	[body]
 	{
-		avg_move_velocity = 2.5;
+		avg_move_velocity = 2;
     }
 
     // stats from dsx_rune_guardian_boss - "Balanced to level 18, hard melee+"
