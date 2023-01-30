@@ -10,7 +10,7 @@
 		[start_position]
 		{
 		  i id = 1;
-			position = 0.000000,0.000000,0.000000,0x6921C35F;
+			position = 0.015333,0.000000,2.126006,0x6921C35F;
 			[camera]
 			{
 			  f azimuth = 0.500000;

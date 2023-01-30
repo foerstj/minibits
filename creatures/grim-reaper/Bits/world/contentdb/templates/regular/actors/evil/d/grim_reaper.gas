@@ -1,0 +1,10 @@
+[t:template,n:grim_reaper]
+{
+    specializes = actor_evil;
+
+	category_name = "1W_evil_d";
+    [aspect]
+    {
+        model = m_c_edm_rp_pos_1;
+    }
+}
