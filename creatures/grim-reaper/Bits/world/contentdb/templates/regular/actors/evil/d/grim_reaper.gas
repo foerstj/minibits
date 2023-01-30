@@ -1,10 +1,28 @@
-[t:template,n:grim_reaper]
+[t:template,n:base_grim_reaper]
 {
-    specializes = actor_evil;
+    specializes = base_skeleton;
 
 	category_name = "1W_evil_d";
     [aspect]
     {
         model = m_c_edm_rp_pos_1;
     }
+	[common]
+	{
+		screen_name = "Grim Reaper";
+	}
+}
+
+[t:template,n:grim_reaper] { specializes = grim_reaper_base; }
+[t:template,n:grim_reaper_base]
+{
+    specializes = base_grim_reaper;
+
+	[inventory]
+	{
+		[equipment]
+		{
+			es_weapon_hand = st_un_dsx_angk_guardian;
+		}
+	}
 }
