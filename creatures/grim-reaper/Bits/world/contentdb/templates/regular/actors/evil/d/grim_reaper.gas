@@ -11,6 +11,55 @@
 	{
 		screen_name = "Grim Reaper";
 	}
+
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					02 = at-03;
+					04 = at-05;
+					05 = at-06;
+				}
+			}
+			[chore_default]
+			{
+				// EDITED to use specific anim
+				chore_stances = ignore;
+				skrit = infinite_loop;
+				[anim_files] { 00=a_c_edm_rp_fs5_ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				// EDITED to use specific anim
+				chore_stances = ignore;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = a_c_edm_rp_fs5_dsf;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files] { 00=wl-02; }
+			}
+		}
+	}
 }
 
 [t:template,n:grim_reaper] { specializes = grim_reaper_base; }
@@ -22,7 +71,7 @@
 	{
 		[equipment]
 		{
-			es_weapon_hand = st_un_dsx_angk_guardian;
+			es_weapon_hand = st_un_dsx_angk_guardian;  // from dsx_rune_guardian_boss
 		}
 	}
 }
