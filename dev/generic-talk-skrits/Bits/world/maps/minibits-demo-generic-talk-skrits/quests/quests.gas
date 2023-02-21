@@ -1,0 +1,16 @@
+[quests]
+{
+	[quest]
+	{
+		screen_name = Quest;
+		victory_sample = s_e_level_up_quest;
+		[*]
+		{
+			description = Pull the lever;
+		  b is_consumable = true;
+		  i order = 0;
+		  b required = true;
+			speaker = ;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+[t:bran_torath,n:0x00100001]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = quest_activate;
+			* = quest_complete;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\generic-talk-skrits\job_talk_quest.skrit?quest=quest;
+	}
+	[placement]
+	{
+	  p position = 0.0145113,0,-2.88762,0x45a06722;
+	}
+}

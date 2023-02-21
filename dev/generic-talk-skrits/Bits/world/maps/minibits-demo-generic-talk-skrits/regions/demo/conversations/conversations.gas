@@ -1,0 +1,17 @@
+[quest_activate]
+{
+	[text*]
+	{
+		activate_quest* = quest,0;
+		screen_text = "Please pull the lever!";
+	  f scroll_rate = 10.000000;
+	}
+}
+[quest_complete]
+{
+	[text*]
+	{
+		screen_text = "Thank you!";
+	  f scroll_rate = 10.000000;
+	}
+}
