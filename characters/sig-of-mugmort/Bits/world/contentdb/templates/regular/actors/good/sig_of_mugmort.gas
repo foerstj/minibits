@@ -1,6 +1,6 @@
-[t:template,n:at_hire_m]
+[t:template,n:sig_of_mugmort] { specializes = sig_of_mugmort_base; }
+[t:template,n:sig_of_mugmort_base]
 {
-    // Hireable melee fighter on Altair.
     // Torg dwarf with Kroduk stats / equipment.
 	category_name = "1W_character";
 	doc = "dwarf_foreman";
