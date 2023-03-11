@@ -1,0 +1,63 @@
+[t:gr_witch,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -0.576737,0,-3.25649,0x499e8e6a;
+	}
+}
+[t:gr_witch_boss,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 1.29748,0,-3.40975,0x499e8e6a;
+	}
+}
+[t:gr_water_spirit_boss,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -3.02598,0,-1.64743,0x499e8e6a;
+	}
+}
+[t:gr_water_spirit_lg,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -3.01437,0,-0.190811,0x499e8e6a;
+	}
+}
+[t:gr_water_spirit_sm,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -2.82919,9.53674e-007,1.01817,0x499e8e6a;
+	}
+}
+[t:gr_water_spirit_fish,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -2.83172,0,2.79674,0x499e8e6a;
+	}
+}
+[t:gr_wind_spirit_boss,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 2.71244,0,-1.74735,0x499e8e6a;
+	}
+}
+[t:gr_wind_spirit_lg,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 2.7891,0,-0.241198,0x499e8e6a;
+	}
+}
+[t:gr_wind_spirit_sm,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = 2.63265,0,0.995659,0x499e8e6a;
+	}
+}
