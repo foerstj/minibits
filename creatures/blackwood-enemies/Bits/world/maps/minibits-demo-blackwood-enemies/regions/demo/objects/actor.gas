@@ -1,0 +1,70 @@
+[t:gr_boar_black,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -3.12928,0,-2.84056,0xbde7b4bc;
+	}
+}
+[t:gr_bubber_black,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.1045,4.76837e-007,-2.80106,0xbde7b4bc;
+	}
+}
+[t:gr_darkling,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -1.01468,4.76837e-007,-2.77735,0xbde7b4bc;
+	}
+}
+[t:gr_drake_black,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 0.559597,0,-2.84328,0xbde7b4bc;
+	}
+}
+[t:gr_klaw_black,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 2.88196,0,-3.07571,0xbde7b4bc;
+	}
+}
+[t:gr_larch_black,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -3.20403,0,-0.717972,0xbde7b4bc;
+	}
+}
+[t:gr_phrak_black,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -0.931239,0,-0.183876,0xbde7b4bc;
+	}
+}
+[t:gr_phrak_piercer_black,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 0.0231026,0,-0.632547,0xbde7b4bc;
+	}
+}
+[t:gr_wraith_black,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 2.20394,0,-0.7177,0xbde7b4bc;
+	}
+}
+[t:gr_wraith_black_boss,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 3.19853,0,0.0417477,0xbde7b4bc;
+	}
+}
