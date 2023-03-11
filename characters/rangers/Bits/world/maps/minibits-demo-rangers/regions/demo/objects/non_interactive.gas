@@ -1,0 +1,15 @@
+[t:gr_banner_rangers,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -3.06574,9.53674e-007,-3.29453,0xf25ddae7;
+	}
+}
+[t:gr_flag_rangers,n:0x00100001]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.79001,-9.53674e-007,-3.35767,0xf25ddae7;
+	}
+}

@@ -1,0 +1,94 @@
+[t:gr_npc_ranger_droog_ruins,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.0288287,4.76837e-007,-2.8828,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_bwg,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 1.23799,0,-3.09336,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_greylin_coast,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 2.82993,0,-3.14973,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_longbourne_bbq,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -0.840066,0,-2.01551,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_longbourne_tavern,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 0.632954,-4.76837e-007,-2.05138,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_pentachoron_garden,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 1.95046,0,-2.16991,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_snowpeak,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = 3.60111,0,-2.21671,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_tms_chief,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 0.201121,0,-1.06289,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_tms_f,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 1.41484,0,-1.20563,0xf25ddae7;
+	}
+}
+[t:gr_npc_ranger_tms_m,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = 2.80792,0,-1.32567,0xf25ddae7;
+	}
+}
+[t:gr_pm_ranger,n:0x0010000d]
+{
+	[aspect]
+	{
+	  f max_life = 78.4;
+	  f max_mana = 42;
+	}
+	[placement]
+	{
+	  p position = 1.07511,0,0.00419474,0xf25ddae7;
+	}
+}
+[t:gr_pm_ranger2,n:0x0010000e]
+{
+	[aspect]
+	{
+	  f max_life = 284.2;
+	  f max_mana = 124;
+	}
+	[placement]
+	{
+	  p position = 2.31699,0,-0.184764,0xf25ddae7;
+	}
+}
