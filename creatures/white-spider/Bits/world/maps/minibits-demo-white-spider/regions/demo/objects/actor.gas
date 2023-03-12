@@ -1,0 +1,35 @@
+[t:spider_adolescent_white,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -2.62011,-9.53674e-007,-0.5833,0x3d9d61b7;
+	}
+}
+[t:spider_adolescent_white_2,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -1.4482,0,-0.596642,0x3d9d61b7;
+	}
+}
+[t:spider_arakun_baby_white,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.412534,0,-0.591949,0x3d9d61b7;
+	}
+}
+[t:spider_arakun_white,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -0.296421,0,-2.45822,0x3d9d61b7;
+	}
+}
+[t:spider_white,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -2.25511,0,-2.25819,0x3d9d61b7;
+	}
+}
