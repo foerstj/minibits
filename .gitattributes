@@ -5,8 +5,15 @@
 # textures
 *.raw filter=lfs diff=lfs merge=lfs -text
 
+# meshes
+*.asp filter=lfs diff=lfs merge=lfs -text
+
+# animations
+*.prs filter=lfs diff=lfs merge=lfs -text
+
 # terrain nodes
 *.sno filter=lfs diff=lfs merge=lfs -text
+
 
 # pics for readmes
 *.jpg filter=lfs diff=lfs merge=lfs -text

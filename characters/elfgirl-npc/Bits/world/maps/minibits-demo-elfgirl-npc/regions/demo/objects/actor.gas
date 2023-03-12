@@ -1,0 +1,56 @@
+[t:elfgirl_npc_h1_dk,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -2.71296,0,-3.21051,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h1_lt,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.74547,0,-2.00651,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h2_dk,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.0498596,0,-3.27746,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h2_lt,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -0.081065,0,-2.23757,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h2_lt_03,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -0.12913,0,-1.01216,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h3_dk,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 2.98255,0,-3.57559,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h3_lt,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 2.86541,0,-2.30063,0x6c660e45;
+	}
+}
+[t:elfgirl_npc_h3_lt_02,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 2.82678,0,-1.1518,0x6c660e45;
+	}
+}
