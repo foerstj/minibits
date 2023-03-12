@@ -1,0 +1,192 @@
+[t:gr_dwarf_guard_01,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -3.32385,0,-3.42241,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_02,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -1.99941,-9.53674e-007,-3.52686,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_03,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.376379,0,-3.74498,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_04,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 1.25247,0,-3.47729,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_05,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 2.93652,-9.53674e-007,-3.70621,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_06,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -3.2679,0,-2.73655,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_07,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -2.00134,-9.53674e-007,-2.71503,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_08,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -0.261237,0,-2.89968,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_09,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 1.19201,9.53674e-007,-2.84045,0xe9660767;
+	}
+}
+[t:gr_dwarf_guard_10,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = 2.85796,0,-3.00086,0xe9660767;
+	}
+}
+[t:gr_pm_dwarf_m8,n:0x0010000a]
+{
+	[aspect]
+	{
+	  f max_life = 215.6;
+	  f max_mana = 43;
+	}
+	[placement]
+	{
+	  p position = -3.07735,0,1.82021,0xe9660767;
+	}
+}
+[t:gr_pm_dwarf_m9,n:0x0010000b]
+{
+	[aspect]
+	{
+	  f max_life = 215.6;
+	  f max_mana = 43;
+	}
+	[placement]
+	{
+	  p position = -1.4788,0,1.56557,0xe9660767;
+	}
+}
+[t:dwarf_npc_01,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -3.1682,-9.53674e-007,-0.88606,0xe9660767;
+	}
+}
+[t:dwarf_npc_02,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -1.88459,0,-1.19967,0xe9660767;
+	}
+}
+[t:dwarf_npc_03,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = 0.0475547,0,-1.22274,0xe9660767;
+	}
+}
+[t:dwarf_npc_04,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = 1.37432,0,-1.34817,0xe9660767;
+	}
+}
+[t:dwarf_npc_05,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 2.88754,0,-1.38483,0xe9660767;
+	}
+}
+[t:dwarf_npc_06,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -3.11035,0,-0.0703306,0xe9660767;
+	}
+}
+[t:dwarf_npc_07,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = -1.66858,-9.53674e-007,-0.225693,0xe9660767;
+	}
+}
+[t:dwarf_npc_08,n:0x00100013]
+{
+	[placement]
+	{
+	  p position = 0.0378663,0,-0.2785,0xe9660767;
+	}
+}
+[t:dwarf_npc_09,n:0x00100014]
+{
+	[placement]
+	{
+	  p position = 1.42761,0,-0.294729,0xe9660767;
+	}
+}
+[t:dwarf_npc_10,n:0x00100015]
+{
+	[placement]
+	{
+	  p position = 2.95621,0,-0.446332,0xe9660767;
+	}
+}
+[t:gr_shop_dm_armor,n:0x00100016]
+{
+	[placement]
+	{
+	  p position = 1.30815,0,1.5569,0xe9660767;
+	}
+}
+[t:gr_shop_dm_magic,n:0x00100017]
+{
+	[placement]
+	{
+	  p position = 2.7543,0,1.25788,0xe9660767;
+	}
+}
+[t:gr_shop_dm_mules,n:0x00100019]
+{
+	[placement]
+	{
+	  p position = 1.29899,0,2.51728,0xe9660767;
+	}
+}
+[t:gr_shop_dm_weaponry,n:0x0010001a]
+{
+	[placement]
+	{
+	  p position = 2.63744,0,2.37195,0xe9660767;
+	}
+}
