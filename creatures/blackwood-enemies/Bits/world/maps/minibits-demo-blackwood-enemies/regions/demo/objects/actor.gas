@@ -2,7 +2,7 @@
 {
 	[placement]
 	{
-	  p position = -3.12928,0,-2.84056,0xbde7b4bc;
+	  p position = -2.91615,0,-1.13767,0xbde7b4bc;
 	}
 }
 [t:gr_bubber_black,n:0x00100001]
@@ -37,7 +37,7 @@
 {
 	[placement]
 	{
-	  p position = -3.20403,0,-0.717972,0xbde7b4bc;
+	  p position = -3.20453,0,-2.90831,0xbde7b4bc;
 	}
 }
 [t:gr_phrak_black,n:0x00100006]
