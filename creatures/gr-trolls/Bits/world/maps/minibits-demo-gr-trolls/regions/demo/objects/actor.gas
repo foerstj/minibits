@@ -1,0 +1,91 @@
+[t:gr_troll_mini,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -3.09449,0,3.57016,0xe06a2a6f;
+	}
+}
+[t:gr_troll_mini_2,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -1.59281,0,3.46944,0xe06a2a6f;
+	}
+}
+[t:gr_troll_dgn_king,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 1.59114,0,0.697096,0xe06a2a6f;
+	}
+}
+[t:gr_troll_dgn,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -1.95132,0,0.972953,0xe06a2a6f;
+	}
+}
+[t:gr_troll_dgn_throw,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -0.516863,0,0.936384,0xe06a2a6f;
+	}
+}
+[t:gr_troll_rain,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 2.18816,0,3.19303,0xe06a2a6f;
+	}
+}
+[t:gr_troll_steppe,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 0.431596,0,3.41016,0xe06a2a6f;
+	}
+}
+[t:gr_troll_mountain,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -1.82999,0,-2.66377,0xe06a2a6f;
+	}
+}
+[t:gr_troll_mountain_boss,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = -0.121812,0,-2.99735,0xe06a2a6f;
+	}
+}
+[t:gr_troll_mountain_large,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = 1.88307,0,-2.91248,0xe06a2a6f;
+	}
+}
+[t:gr_troll_mountain_giant,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 3.76472,0,-2.84231,0xe06a2a6f;
+	}
+}
+[t:gr_shop_troll_magic,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 3.49496,0,2.9225,0xe06a2a6f;
+	}
+}
+[t:gr_npc_troll_mountain_large,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -3.96968,0,-2.93387,0xe06a2a6f;
+	}
+}
