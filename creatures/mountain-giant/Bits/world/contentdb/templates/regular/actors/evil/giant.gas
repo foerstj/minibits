@@ -1,0 +1,183 @@
+[t:template,n:gr_giant] { specializes = gr_giant_base; }
+[t:template,n:gr_giant_base]
+{
+	specializes = cave_giant_base;
+
+    [aspect]
+    {
+        scale_base = 1.1;
+    }
+	[common]
+    {
+        screen_name = "Mountain Giant";
+    }
+    [inventory]
+    {
+		//spew_equipped_kill_count = <ignore>;
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+        [equipment]
+        {
+            es_weapon_hand = cb_un_gr_giant;
+        }
+    }
+
+    // stats & loot from ice_warrior, edited
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  18, 0;
+			intelligence =  4, 0;
+			dexterity 	=  10, 0;
+            melee 		=  7,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 696;  // doubled, was 348
+		life = 864;  // tripled, was 288
+        max_life = 864;  // tripled, was 288
+        mana = 8;
+		max_mana = 8;
+    }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 33;
+		damage_min = 29;
+	}
+    [defend] { defense=98; }
+    [inventory]
+    {
+        [pcontent]
+        {
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_small;
+				   il_main = potion_mana_small;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/10-14;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/6-11;
+					il_main = #armor/18-98;
+	                il_main = #weapon/36-44;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/42-59;
+	                il_main = #armor/-rare(1)/126-144;
+                    il_main = #*/-rare(1)/42-59;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/42-59;
+	                il_main = #armor/-unique(2)/126-144;
+                    il_main = #*/-unique(2)/42-59;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 328;
+					min = 239;
+				}
+			}
+        }
+    }
+}
+
+
+[t:template,n:krug_dog_killer_base]  // = krug_dog_killer
+{
+	category_name = "1W_evil_d";
+	doc = "Krug_dog_killer";
+	specializes = base_krug_dog;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  9, 0;
+			intelligence =  3, 0;
+			dexterity =  8, 0;
+			melee =  4,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 46;
+		life = 46;
+		max_life = 46;
+		mana = 6;
+		max_mana = 6;
+		model = m_c_edm_kd_pos_1;
+		scale_base = 1.25;
+		[textures] { 0=b_c_edm_kd-02; }
+	}
+	[attack]
+	{
+		damage_max = 32;
+		damage_min = 28;
+	}
+	[common] { screen_name="Krug Killer Dog"; }
+	[defend] { defense=34; }
+	[mind]
+	{
+		on_enemy_spotted_alert_friends = true;
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:gr_giant_dog] { specializes = gr_giant_dog_base; }
+[t:template,n:gr_giant_dog_base]
+{
+    specializes = krug_dog_killer_base;
+
+    [aspect]
+    {
+        scale_base = 1.5;  // krug killer dog is 1.25
+    }
+    [common]
+    {
+        screen_name = "Mountain Giant Dog";
+    }
+
+    // stats from chitterskrag baby
+	[actor]
+	{
+		[skills]
+		{
+			strength =     14, 0;
+			intelligence = 8, 0;
+			dexterity =    10, 0;
+			melee =        11, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 262;
+		life             = 157;
+		max_life         = 157;
+		mana             = 50;
+		max_mana         = 50;
+    }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 53;
+		damage_min = 47;
+	}
+	[defend] { defense = 90; }
+}
