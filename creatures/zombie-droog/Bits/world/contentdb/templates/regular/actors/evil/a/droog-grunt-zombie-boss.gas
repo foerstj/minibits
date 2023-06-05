@@ -110,4 +110,8 @@
     {
         screen_name = "Zombie Droog Captain";
     }
+    [guts_manager]
+    {
+        effect_name = green_blood;
+    }
 }
