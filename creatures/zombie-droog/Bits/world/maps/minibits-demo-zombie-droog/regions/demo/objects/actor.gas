@@ -1,0 +1,56 @@
+[t:droog_mage_zombie,n:0x00100006]
+{
+	[placement]
+	{
+	  q orientation = 0,1.78814e-007,0,1;
+	  p position = 2.13935,0,-0.16608,0x5665cf68;
+	}
+}
+[t:droog_mage_zombie_reveal,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.98023e-008;
+	  p position = 2.05201,0,1.35104,0xc3f600b1;
+	}
+}
+[t:droog_archer_zombie,n:0x00100000]
+{
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = -1.97364,0,-0.373169,0x5665cf68;
+	}
+}
+[t:droog_archer_zombie_reveal,n:0x00100001]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = -2.38057,0,0.917088,0xc3f600b1;
+	}
+}
+[t:droog_grunt_zombie,n:0x00100003]
+{
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = 0.241261,0,-0.0625763,0x5665cf68;
+	}
+}
+[t:droog_grunt_zombie_reveal,n:0x00100004]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = -0.244072,0,1.05016,0xc3f600b1;
+	}
+}
+[t:droog_grunt_zombie_boss_01,n:0x00100005]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.59515,0,0.0814319,0x4fd66f2d;
+	}
+}
