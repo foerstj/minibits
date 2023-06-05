@@ -23,6 +23,13 @@
     {
         effect_name = green_blood;
     }
+	[inventory]
+	{
+		[other]
+		{
+			il_active_primary_spell = spell_droog_zombie_starburst;
+		}
+	}
 }
 
 [t:template,n:droog_mage_zombie_reveal]
