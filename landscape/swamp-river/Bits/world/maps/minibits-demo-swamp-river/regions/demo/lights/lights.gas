@@ -1,3 +1,45 @@
 [lights]
 {
+	[t:directional,n:light_0xdec9a513]
+	{
+	  b active = true;
+	  b affects_actors = true;
+	  b affects_items = true;
+	  b affects_terrain = true;
+	  x color = 0xFFFFFFFF;
+	  b draw_shadow = true;
+	  f inner_radius = 0.000000;
+	  f intensity = 0.500000;
+	  b occlude_geometry = true;
+	  b on_timer = true;
+	  f outer_radius = 0.000000;
+		[direction]
+		{
+		  x node = 0x4BA639B9;
+		  f x = 0.489371;
+		  f y = 0.743145;
+		  f z = -0.456346;
+		}
+	}
+	[t:directional,n:light_0xeb6f498c]
+	{
+	  b active = true;
+	  b affects_actors = true;
+	  b affects_items = true;
+	  b affects_terrain = true;
+	  x color = 0xFF8080FF;
+	  b draw_shadow = false;
+	  f inner_radius = 0.000000;
+	  f intensity = 0.350000;
+	  b occlude_geometry = false;
+	  b on_timer = false;
+	  f outer_radius = 0.000000;
+		[direction]
+		{
+		  x node = 0x4BA639B9;
+		  f x = -0.422817;
+		  f y = 0.694658;
+		  f z = 0.581958;
+		}
+	}
 }
