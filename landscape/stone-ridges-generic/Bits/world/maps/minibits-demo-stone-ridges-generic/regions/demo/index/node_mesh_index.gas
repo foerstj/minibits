@@ -1,0 +1,23 @@
+[node_mesh_index]
+{
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x00100978 = t_xxx_rdge_cnr-02-ccav;
+	0x00100979 = t_xxx_rdge_cnr-02-cnvx;
+	0x0010097a = t_xxx_rdge_cnr-02-tx-wal-02b-ccav-l;
+	0x0010097b = t_xxx_rdge_cnr-02-tx-wal-02b-ccav-r;
+	0x0010097c = t_xxx_rdge_cnr-tee-02-02-hal-04-l;
+	0x0010097d = t_xxx_rdge_cnr-tee-02-02-hal-04-r;
+	0x0010097e = t_xxx_rdge_hal_04-a;
+	0x0010097f = t_xxx_rdge_ramp-a;
+	0x00100980 = t_xxx_rdge_stairs-a-l;
+	0x00100981 = t_xxx_rdge_stairs-a-r;
+	0x00100982 = t_xxx_rdge_wal-02-diag-thick-l;
+	0x00100983 = t_xxx_rdge_wal-02-diag-thick-r;
+	0x00100984 = t_xxx_rdge_wal-02-diag-thin-l;
+	0x00100985 = t_xxx_rdge_wal-02-diag-thin-r;
+	0x00100986 = t_xxx_rdge_wal-02-tx-wal-02b-thick-l;
+	0x00100987 = t_xxx_rdge_wal-02-tx-wal-02b-thick-r;
+	0x00100988 = t_xxx_rdge_wal-02-tx-wal-02b-thin-l;
+	0x00100989 = t_xxx_rdge_wal-02-tx-wal-02b-thin-r;
+	0x0010098a = t_xxx_rdge_wal_02-a;
+}
