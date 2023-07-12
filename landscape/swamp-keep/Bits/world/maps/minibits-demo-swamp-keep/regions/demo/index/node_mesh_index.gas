@@ -1,0 +1,17 @@
+[node_mesh_index]
+{
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x0010073b = t_xxx_keep_cnr_outside-cncv-a;
+	0x0010073d = t_xxx_keep_cnr_outside-cnvx-a;
+	0x00100765 = t_xxx_keep_flr_outside-pillar-04x04-a;
+	0x00100766 = t_xxx_keep_flr_outside-pillar-04x04-b;
+	0x00100768 = t_xxx_keep_flr_path-08x04-a;
+	0x00100769 = t_xxx_keep_flr_path-cap-08x04-a;
+	0x00100793 = t_xxx_keep_wall_clm-win-a-tx-a;
+	0x00100795 = t_xxx_keep_wall_clm-win-a;
+	0x001007a4 = t_xxx_keep_wall_outside-a;
+	0x001007ad = t_xxx_keep_wall_outside-cap-a;
+	0x001007b3 = t_xxx_keep_wall_outside-clmn-a;
+	0x001007b8 = t_xxx_keep_wall_portal-base-a;
+	0x001007bb = t_xxx_keep_wall_portal-frontgate-base-a;
+}
