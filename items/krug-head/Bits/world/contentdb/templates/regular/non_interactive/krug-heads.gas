@@ -1,0 +1,27 @@
+[t:template,n:head_krug_01]
+{
+	specializes = non_interactive_nonblocking;
+
+	category_name = "dead";
+	doc = "head_krug_01";
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		model = m_i_glb_krug-head-01;
+	}
+}
+
+[t:template,n:head_krug_02]
+{
+	specializes = non_interactive_nonblocking;
+
+	category_name = "dead";
+	doc = "head_krug_02";
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		model = m_i_glb_krug-head-02;
+	}
+}
