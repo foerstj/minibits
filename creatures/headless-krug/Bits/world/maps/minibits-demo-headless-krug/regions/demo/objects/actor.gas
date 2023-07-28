@@ -1,0 +1,29 @@
+[t:krug_grunt_headless,n:0x00100000]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 7.21251,5.59997,-52.8883,0x82870829;
+	}
+}
+[t:krug_grunt_headless,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 3.56865,5.60005,-53.2292,0x82870829;
+	}
+}
+[t:krug_grunt_headless,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 0.126396,5.60004,-52.0072,0x82870829;
+	}
+}
+[t:krug_grunt_headless,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 16.9559,5.59998,-29.815,0x202f9f7a;
+	}
+}

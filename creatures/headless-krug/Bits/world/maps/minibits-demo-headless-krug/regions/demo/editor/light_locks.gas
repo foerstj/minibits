@@ -1,0 +1,8 @@
+[light_locks]
+{
+  b 0x0bec36b6 = false;
+  b 0x202f9f7a = false;
+  b 0x2f617f42 = false;
+  b 0x82870829 = false;
+  b 0xd64775f3 = false;
+}
