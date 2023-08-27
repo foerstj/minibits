@@ -321,6 +321,14 @@
 					max = 40;
 					min = 40;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-7;
+					max = 8;
+					min = 8;
+				}
 			}
 			[misc]
 			{
@@ -1047,6 +1055,14 @@
 					max = 5;
 					min = 5;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-22;
+					max = 6;
+					min = 6;
+				}
 			}
 			[misc]
 			{
@@ -1665,6 +1681,14 @@
 					max = 5;
 					min = 5;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-61;
+					max = 6;
+					min = 6;
+				}
 			}
 			[misc]
 			{
@@ -1756,6 +1780,14 @@
 					max = 10;
 					min = 10;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-18;
+					max = 10;
+					min = 10;
+				}
 			}
 			[misc]
 			{
@@ -1841,6 +1873,14 @@
 				[all*]
 				{
 					il_main = #spell/0-29;
+					max = 10;
+					min = 10;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-50;
 					max = 10;
 					min = 10;
 				}
@@ -2091,6 +2131,14 @@
 					max = 5;
 					min = 5;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-28;
+					max = 6;
+					min = 6;
+				}
 			}
 			[misc]
 			{
@@ -2331,6 +2379,14 @@
 					il_main = #spell/0-9;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-29;
+					max = 6;
+					min = 6;
 				}
 			}
 			[misc]
@@ -3245,6 +3301,14 @@
 					max = 5;
 					min = 5;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-42;
+					max = 6;
+					min = 6;
+				}
 			}
 			[misc]
 			{
@@ -3485,6 +3549,14 @@
 					il_main = #spell/0-29;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-50;
+					max = 6;
+					min = 6;
 				}
 			}
 			[misc]
@@ -4034,6 +4106,14 @@
 					il_main = #spell/0-24;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-42;
+					max = 6;
+					min = 6;
 				}
 			}
 
@@ -4630,6 +4710,14 @@
 					il_main = #spell/0-9;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-28;
+					max = 6;
+					min = 6;
 				}
 			}
 			[misc]

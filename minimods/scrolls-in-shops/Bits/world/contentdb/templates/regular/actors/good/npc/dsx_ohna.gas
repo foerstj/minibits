@@ -71,6 +71,14 @@
 									max = 8;
 									min = 5;
 								}
+
+                            // ADDED
+							[all*]
+								{
+									il_main = #scroll/0-24;
+									max = 12;
+									min = 8;
+								}
 						}
 					[misc]
 						{

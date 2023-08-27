@@ -347,6 +347,15 @@
 					max = 10;
 					min = 10;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-13;
+					max = 2;
+					min = 2;
+				}
+
 				[all*]
 				{
 					il_main = scroll_resurrect;
@@ -445,6 +454,14 @@
 				[all*]
 				{
 					il_main = #spell/0-3;
+					max = 10;
+					min = 10;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-12;
 					max = 10;
 					min = 10;
 				}
@@ -704,6 +721,14 @@
 					il_main = #spell/0-14;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-36;
+					max = 6;
+					min = 6;
 				}
 			}
 			[misc]

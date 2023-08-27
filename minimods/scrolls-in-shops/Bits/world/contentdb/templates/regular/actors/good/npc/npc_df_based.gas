@@ -376,6 +376,14 @@
 					max = 10;
 					min = 10;
 				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-18;
+					max = 10;
+					min = 10;
+				}
 			}
 			[misc]
 			{
@@ -677,6 +685,14 @@
 					il_main = #spell/0-3;
 					max = 5;
 					min = 5;
+				}
+
+                // ADDED
+				[all*]
+				{
+					il_main = #scroll/0-23;
+					max = 6;
+					min = 6;
 				}
 			}
 			[misc]
