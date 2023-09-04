@@ -1,0 +1,70 @@
+[t:template,n:firepit_glb_03_lightable] { specializes = firepit_glb_03_lightable_base; }
+[t:template,n:firepit_glb_03_lightable_base]
+{
+	specializes = base_lightable;
+
+	doc = "firepit with rocks lightable";
+	[aspect]
+	{
+		model = m_i_glb_firepit-03;
+		[textures]
+		{
+			0 = b_i_glb_firepit-02;
+		}
+	}
+    [common]
+    {
+        screen_name = "Firepit";
+    }
+	[generic_emitter_act]
+	{
+		other_effect = "fireplace_fire";
+	}
+}
+
+[t:template,n:fire_grs_campfire_lightable] { specializes = fire_grs_campfire_lightable_base; }
+[t:template,n:fire_grs_campfire_lightable_base]
+{
+	specializes = base_lightable;
+
+	doc = "campfire lightable";
+	[aspect]
+	{
+		does_block_path = true;
+		model = m_i_grs_campfire;
+	}
+    [common]
+    {
+        screen_name = "Firepit";
+    }
+	[generic_emitter_act]
+	{
+		other_effect = "fireplace_fire";
+	}
+}
+
+
+[t:template,n:brazier_glb_brass_01_lightable] { specializes = brazier_glb_brass_01_lightable_base; }
+[t:template,n:brazier_glb_brass_01_lightable_base]
+{
+	specializes = base_lightable;
+
+	doc = "brazier lightable";
+	[aspect]
+	{
+		does_block_path = true;
+		model = m_i_glb_brazier-01;
+		[textures]
+		{
+			0 = b_i_glb_brazier-01;
+		}
+	}
+    [common]
+    {
+        screen_name = "Brazier";
+    }
+	[generic_emitter_act]
+	{
+		other_effect = "brazier_fire";
+	}
+}

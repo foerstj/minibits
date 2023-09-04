@@ -1,0 +1,59 @@
+[t:template,n:base_lightable]
+{
+	specializes = interactive;
+
+	category_name = "lighting";
+	doc = "lightable";
+	[aspect]
+	{
+		does_block_path = TRUE;
+
+		is_selectable = TRUE;
+		draw_selection_indicator = FALSE;
+		rollover_highlight = TRUE;
+
+		is_usable = TRUE;
+		use_range = 3;
+
+		lodfi_lower = -1;
+		lodfi_upper = -1;
+	}
+	[common]
+	{
+		auto_expiration_class = immediate;
+		forced_expiration_class = immediate;
+	}
+	[generic_emitter_act]
+	{
+		//other_effect = "torch_firews";
+	}
+	[light_enable]
+	{
+		initially_active = false;
+
+        use_flare = true;
+        flare_duration = 0.2;
+        flare_magnitude = 1.2;
+        use_fizzle = true;
+        fizzle_duration = 0.2;
+	}
+	[light_flicker]
+	{
+		initially_active = false;
+		duration = 0;
+
+		flicker_frequency_min = 10;
+		flicker_frequency_max = 12;
+		magnitude = 0.15;
+	}
+
+    // Added for UPZA lightables
+    // switch WE_REQ_USE to WE_REQ_ACTIVATE / WE_REQ_DEACTIVATE:
+	[use_toggle]
+	{
+	}
+    // forward WE_REQ_ACTIVATE / WE_REQ_DEACTIVATE to e.g. smoke emitter and/or sound emitter
+    [toggle_forward]
+    {
+    }
+}
