@@ -1,0 +1,23 @@
+[t:template,n:frag_glb_upza_skull] { specializes = frag_glb_upza_skull_base; }
+[t:template,n:frag_glb_upza_skull_base]
+{
+	doc = "bone fragment";
+	specializes = fragment;
+	[aspect]
+	{
+		model=m_i_glb_frag-bone-06;
+		[textures] {0 = b_c_ecm_sk-02; }
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("gib_blood");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+}
