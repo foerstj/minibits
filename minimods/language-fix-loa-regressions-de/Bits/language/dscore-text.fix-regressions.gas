@@ -1,0 +1,128 @@
+[t:0x0407,n:text]
+{
+	[0x0000]
+	{
+		from = "Dark Mucosa";
+		to = "Dunkler Mukosa";
+	}
+	[0x0000]
+	{
+		from = "Starburst";
+		to = "Sternenschauer";
+	}
+	[0x0000]
+	{
+		from = "Fireshot Armor";
+		to = "<ms>Feuerbolzenpanzer";
+	}
+	[0x0000]
+	{
+		from = "Fireskull";
+		to = "Feuerschädel";
+	}
+	[0x0000]
+	{
+		from = "Multi-Spark";
+		to = "Vielfacher Funke";
+	}
+	[0x0000]
+	{
+		from = "Firespray";
+		to = "Feuerregen";
+	}
+	[0x0000]
+	{
+		from = "Fireshot";
+		to = "Feuerbolzen";
+	}
+	[0x0000]
+	{
+		from = "Summons a Mucosa Predator to guard the Caster.";
+		to = "Beschwört einen Mukosa-Jäger, der den Anwender verteidigt.";
+	}
+	[0x0000]
+	{
+		from = "Conjures a flurry of intense flameballs to pelt the Enemy.";
+		to = "Ruft einen Wirbelwind glühender Flammenbälle hervor, die auf den Gegner geschleudert werden.";
+	}
+	[0x0000]
+	{
+		from = "Flesh Splitter";
+		to = "<ms>Fleischreißer";
+	}
+	[0x0000]
+	{
+		from = "Summon Mucosa Predator";
+		to = "Mukosa-Jäger beschwören";
+	}
+	[0x0000]
+	{
+		from = "Mucosa Raider";
+		to = "Mukosa-Räuber";
+	}
+	[0x0000]
+	{
+		from = "Mucosa";
+		to = "Mukosa";
+	}
+	[0x0000]
+	{
+		from = "Adds <alter_armor> to Armor and blasts a Fireshot back at attacking Enemies.";
+		to = "Fügt der Rüstung <alter_armor> hinzu und schießt einen Feuerbolzen auf angreifende Gegner.";
+	}
+	[0x0000]
+	{
+		from = "Mucosa Brute";
+		to = "Mukosa-Schläger";
+	}
+	[0x0000]
+	{
+		from = "Placeholder Quest Reward Item";
+		to = "Platzhalter Auftragsbelohnungsgegenstand";
+	}
+	[0x0000]
+	{
+		from = "Vile Mucosa";
+		to = "Gemeiner Mukosa";
+	}
+	[0x0000]
+	{
+		from = "Mucosa Predator";
+		to = "Mukosa-Jäger";
+	}
+	[0x0000]
+	{
+		from = "Shadow Lunger";
+		to = "Schattenspringer";
+	}
+	[0x0000]
+	{
+		from = "Sends Multiple Fireshots fanning out from the Caster's hand.";
+		to = "Es werden mehrere Feuerbolzen aus der Hand des Anwenders geschleudert.";
+	}
+	[0x0000]
+	{
+		from = "Firerain";
+		to = "Feuerregen";
+	}
+	[0x0000]
+	{
+		from = "Summon Mucosa";
+		to = "Mukosa beschwören";
+	}
+	[0x0000]
+	{
+		from = "Summons a Mucosa to guard the Caster.";
+		to = "Beschwört einen Mukosa, der den Anwender verteidigt.";
+	}
+	[0x0000]
+	{
+		from = "To pick up an item on the ground (such as the Fireshot spell you just walked past), simply left-click it.";
+		to = "Wenn Sie einen Gegenstand vom Boden aufheben möchten (wie den Feuerbolzenzauber, an dem Sie gerade vorbeigegangen sind), klicken Sie darauf mit der linken Maustaste.";
+	}
+	[0x0000]
+	{
+		from = "Starburst Sword";
+		to = "<ns>Sternenbesetztes Schwert";
+	}
+}

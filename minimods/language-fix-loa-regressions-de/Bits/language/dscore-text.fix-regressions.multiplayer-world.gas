@@ -1,0 +1,725 @@
+[t:0x0407,n:text]
+{
+	[0x0000]
+	{
+		from = "Town of Crystwind, 48";
+		to = "Stadt Kristallwind, 48";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 44";
+		to = "Stadt Kristallwind, 44";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 41";
+		to = "Stadt Kristallwind, 41";
+	}
+	[0x0000]
+	{
+		from = "As you know, the Utraeans disappeared centuries ago, leaving behind only the ruins scattered around the land and the mystical temple we call the Basilicus. While I have not traveled to it myself, I am told that Hiroth's own ruined Circle is remarkably similar to the Basilicus. I have done much research into the two, and it is obvious that the Utraeans were fascinated with rapid methods of travel. I am convinced that they built our Circle to leave this land for a better place. When you place the Townstones in the Circle, we will see where the Utraeans went!";
+		to = "Wie Ihr wisst, sind die Uträer schon vor Jahrhunderten verschwunden. Nur Ruinen ließen sie im Land zurück und den mystischen Tempel, den wir Basilikus nennen. Zwar bin ich selbst noch nie dorthin gereist, doch habe ich gehört, dass die Kreisruine von Hiroth dem Basilikus erstaunlich ähnlich sein soll. Ich habe viel über beide Bauwerke gelesen, und es ist offensichtlich, dass schnelle Reisemethoden ein große Faszination auf die Uträer ausübten. Ich bin davon überzeugt, dass sie unseren Kreis errichteten, um dieses Land zugunsten eines besseren Ortes zu verlassen. Wenn Ihr die Stadtsteine in den Kreis legt, werden wir sehen, wohin die Uträer gingen!";
+	}
+	[0x0000]
+	{
+		from = "Worst of all, he took the Snowflake Stone with him. The call for the Circle of Stones came just two days after Priest Lagreth left, and I've been beside myself trying to figure out what to do. The Townstones MUST be assembled -- how else will we reopen the road to Crystwind? Priest Lagreth says there's a vast store of Utraean magics and armaments hidden in a magically sealed temple. When the Townstones are united, we'll finally have the supplies to protect ourselves once and for all. If you could go after Priest Lagreth and find Fallraen's Snowflake Stone, we'd be that much closer to safety!";
+		to = "Noch schlimmer aber ist, dass er den Schneeflockenstein mitgenommen hat. Der Ruf nach dem Kreis der Steine traf schon zwei Tage nach der Abreise von Priester Lagreth ein, und ich war verzweifelt, da ich nicht wusste, was ich tun sollte. Die Stadtsteine müssen unbedingt zusammengetragen werden! Wie sonst können wir die Straße nach Kristallwind wieder eröffnen? Priester Lagreth sagt, dass sich im magisch versiegelten Tempel ein riesiges Arsenal von Zaubern und Waffen der Uträer befindet. Wenn alle Stadtsteine vereint sind, haben wir endlich die Mittel, um uns richtig zu verteidigen. Wenn Ihr Priester Lagreth folgen und den Schneeflockenstein von Fallraen finden könntet, wären wir unserer Sicherheit schon sehr viel näher!";
+	}
+	[0x0000]
+	{
+		from = "Hiroth to Mesa Desert Displacer";
+		to = "Dislokator (von Hiroth zur Wüste der Tafelberge)";
+	}
+	[0x0000]
+	{
+		from = "Show the Utraean Signet Ring to Utraean Priest Sarden in the town of Crystwind.";
+		to = "Zeigt dem uträischen Priester Sarden in Kristallwind den uträischen Siegelring.";
+	}
+	[0x0000]
+	{
+		from = "You are welcome to peruse my shelves for anything which might be of use to you. If you are able to find the Elddim Townstone -- what, you already have the stone? By the stars, we are lucky indeed to have one as resourceful as you! If you would be willing to further aid the Society, we would be much indebted to you. If you show my signet ring to others of my sect, they will know you are a friend.";
+		to = "Es ist Euch freigestellt, meine Regale nach allem zu durchsuchen, das für Euch von Nutzen sein könnte. Wenn Ihr den Stadtstein von Elddim finden könnt - was, Ihr habt den Stein bereits? Bei allen Sternen! Eure Gewitztheit ist ein Segen! Wenn Ihr bereit wäret, auch weiterhin der Gemeinschaft zu helfen, stünden wir tief in Eurer Schuld. Zeigt meinen Siegelring meinen Glaubensgeschwistern, und sie werden Euch als einen Freund erkennen.";
+	}
+	[0x0000]
+	{
+		from = "
+
+
+
+
+
+                             Climb to the sky on the sunbaked mesa.
+
+                            Give to the moon with the treble stones.
+
+                          Place down the eye of the crystal temple.
+
+                              Gift of the steel from a virgin hand.
+
+                               The final piece is within your grasp.
+
+                                A leap of faith convenes his trial.";
+		to = "
+
+
+
+
+
+                             Hoch gen Himmel auf Tafelberg.
+
+                            Zum Mond mit den Dreifachsteinen.
+
+                          Hernieder mit des Kristalltempels Auge.
+
+                              Stählerne Gabe aus Jungfrauenhand.
+
+                               Das letzte Stück zum Greifen nah.
+
+                                Ein Akt des Glaubens beruft seine Richter.";
+	}
+	[0x0000]
+	{
+		from = "Bring the Diamond Runestone to Trella Lauron in the town of Crystwind for a reward.";
+		to = "Bringt die Diamantrune zu Trella Lauron nach Kristallwind. Ihr erhaltet dafür eine Belohnung.";
+	}
+	[0x0000]
+	{
+		from = "The longer the Townstones remain scattered, the greater the danger for us all. May Azunai bless you and send you luck!";
+		to = "Je länger die Stadtsteine in aller Welt verstreut sind, desto gefährlicher wird es für uns alle. Möge Azunai Euch segnen und Euch Glück bringen!";
+	}
+	[0x0000]
+	{
+		from = "Hail, friend. If you're off for a jaunt in the Crystwind Mines, you might find it a tad on the slow side. While they certainly won't pose any danger to one as experienced as yourself, the Krug in these parts will pursue you just the same.";
+		to = "Seid gegrüßt, Freund. Falls Ihr auf dem Weg in die Minen von Kristallwind seid, solltet Ihr Euch das vielleicht noch mal überlegen. Zwar besteht dort für einen erfahrenen Reisenden wie Euch keine Gefahr, aber die Krugs in diesem Gebiet werden Euch trotzdem verfolgen.";
+	}
+	[0x0000]
+	{
+		from = "Wait, did you say you have the Fallraen Townstone? Right this minute? Oh, you have no idea how thrilled I am! The call for the Circle of Stones came just two days after Priest Lagreth left, and I've been beside myself trying to figure out what to do. The Townstones MUST be assembled -- how else will we reopen the road to Crystwind? Priest Lagreth says there's a vast store of Utraean magics and armaments hidden in a magically sealed temple. When all the Townstones are united, we'll finally have the supplies to protect ourselves once and for all. Thanks to you, Fallraen will have done its part!";
+		to = "Wartet! Habt Ihr gesagt, Ihr hättet den Stein der Stadt Fallraen? Hier? Jetzt? Ihr könnt Euch nicht vorstellen, wie erfreut ich bin! Der Ruf nach dem Kreis der Steine traf schon zwei Tage nach der Abreise des Priesters Lagreth ein, und ich war verzweifelt, da ich nicht wusste, was ich tun sollte. Die Stadtsteine müssen unbedingt zusammengetragen werden! Wie sonst können wir die Straße nach Kristallwind wieder eröffnen? Priester Lagreth sagt, dass sich im magisch versiegelten Tempel ein riesiges Arsenal von Zaubern und Waffen der Uträer befindet. Wenn alle Stadtsteine vereint sind, haben wir endlich die Mittel, um uns jetzt und für immer zu verteidigen. Wir haben es Euch zu verdanken, dass Fallraen sein Teil getan hat!";
+	}
+	[0x0000]
+	{
+		from = "Well met, traveller. You'd be wise not to travel that way, if you value your neck. Krug raiding parties have been scouted all week, and they're not the friendly sort. If you really must go to the Crystwind Mines, I'd advise you to go east through the Ancient Crypts.";
+		to = "Seid mir gegrüßt, Reisender. Wenn Euch Euer Leben lieb ist, solltet Ihr nicht diesen Weg wählen. Unsere Aufklärer haben dort seit einer Woche immer wieder Räuberbanden der Krugs gesehen, und mit denen ist nicht zu spaßen. Wenn Ihr wirklich die Minen von Kristallwind erreichen müsst, dann rate ich Euch durch die alte Gruft im Osten zu gehen.";
+	}
+	[0x0000]
+	{
+		from = "So, you are up to the task of aiding the Society, are you? I'm sure you've heard of the Townstones and how nearly all have been lost over the centuries, yes? Well, it's time for them to be found. The Circle has called for the unification of the Townstones in Hiroth, and all must be present.";
+		to = "Ihr seid also bereit, der Gemeinschaft zu Diensten zu sein?! Ich bin mir sicher, dass Ihr von den Stadtsteinen gehört habt und davon, dass sie fast alle im Laufe der Jahrhunderte verloren gingen. Nun, es ist an der Zeit, dass sie wieder gefunden werden. Der Kreis fordert die Vereinigung der Stadtsteine in Hiroth und nicht einer darf fehlen.";
+	}
+	[0x0000]
+	{
+		from = "You don't know where to start? Well, you might want to try speaking to the townspeople. If you show them Priestess Kelti's signet ring, they might be willing to discuss the Townstone with you.";
+		to = "Ihr wisst nicht, wie Ihr beginnen sollt? Ihr könntet versuchen, mit den Stadtbewohnern zu reden. Wenn Ihr ihnen den Siegelring der Priesterin Kelti zeigt, sind sie vielleicht gewillt, mit Euch über den Stadtstein zu reden.";
+	}
+	[0x0000]
+	{
+		from = "Fallraen Townstone";
+		to = "Fallraen-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "Quest: townstone ruins in hiroth";
+		to = "Auftrag: Ruinen der Stadtsteine in Hiroth";
+	}
+	[0x0000]
+	{
+		from = "When all the Townstones of the Circle are assembled again in Hiroth, all citizens of the land will be allowed to pass through the Basilicus. Why else would the Utraeans construct the place, if not to provide access for all? The ruins outside Crystwind show evidence of a terrible battle waged with all sorts of incomprehensible magicks. I am certain that is what led to the closure of the Basilicus to everyday townsfolk. If the Legion could travel through the H.U.B., it'd be much easier to destroy these piddling Krug once and for all.";
+		to = "Wenn die gesamten Stadtsteine wieder in Hiroth zusammengebracht werden, können wieder alle Bewohner des Reichs durch den Basilikus reisen. Wofür haben die Uträer diesen Ort errichtet, wenn nicht dazu, jedermann Zutritt zu gewähren? Die Ruinen außerhalb von Kristallwind tragen die Spuren einer gewaltigen Schlacht, die mit allerlei unbegreiflichem Zauber geführt wurde. Ich bin davon überzeugt, dass es diese Schlacht war, die dazu führte, dass der Basilikus für normal Sterbliche geschlossen wurde. Diese verflixten Krugs könnten endgültig vernichtet werden, wenn die Legion den HUB verwenden könnte.";
+	}
+	[0x0000]
+	{
+		from = "The road to Crystwind is a bit overrun with Krug right now, but you look like the type who will be able to handle it.";
+		to = "Auf der Straße nach Kristallwind werdet Ihr viele Krugs antreffen, aber Ihr seht aus, als könntet Ihr mit ihnen umgehen.";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Townstone";
+		to = "Kristallwind-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "I spent a few months lost in the endless dunes. Somehow I reached the Mesa Desert and its towering cliffs, and while they were amazing to see, they were just as lifeless as the dunes.";
+		to = "Monatelang bin ich durch die endlosen Dünen geirrt. Irgendwie stieß ich dann auf die Wüste der Tafelberge mit ihren gewaltigen Klippen. Zwar waren diese beeindruckend anzusehen, aber auch sie waren so leblos wie die Dünen.";
+	}
+	[0x0000]
+	{
+		from = "Don't tell Jornus, but I'm afraid he'll never see his scythe nor brother again. A couple of Crystwind mine workers broke through yesterday via that ancient Crypt to the east. They weren't able to stop for long, but they said Forben Heald's home was in shambles and there was nary a sign of him nor his family.";
+		to = "Sagt es Jornus nicht, aber ich fürchte, dass er weder seine Sense noch seinen Bruder jemals wiedersehen wird. Einige Bergleute aus Kristallwind sind gestern über die alte Gruft im Osten zu uns durchgebrochen. Sie konnten nicht lange hier bleiben, aber sie haben berichtet, dass Forben Healds Haus in Schutt und Asche lag und es keine Spur von ihm oder seiner Familie gab.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 79";
+		to = "Stadt Kristallwind, 79";
+	}
+	[0x0000]
+	{
+		from = "Found your way to the Desert Mesas on the edge of the Endless Dunes, have you? That takes a fair bit of courage. There is a chance you could find your way to Grescal southwest through the Dunes, but I'd wager even the bravest of explorers would quickly find nothing but mirages as far as the eye can see. You'd do far better evading the drakes here in their Nest. Quillrabe is within reach that way, and Hiroth is even closer if you stay west at the fork.";
+		to = "Ah, also habt Ihr den Weg zur Wüste der Tafelberge am Rande des Dünenmeers gefunden? Dazu muss man schon Mumm in den Knochen haben. Vielleicht findet Ihr sogar den Weg durch die Dünen nach Grescal im Südwesten, aber ich wette, auch der tapferste Forscher würde dort nur auf Fata Morganas stoßen, soweit das Auge reicht. Ihr solltet besser den Drachen hier in ihrem Nest aus dem Weg gehen. Quillrabe ist nicht weit in diese Richtung und Hiroth ist sogar noch näher, wenn Ihr Euch an der Gabelung westlich haltet.";
+	}
+	[0x0000]
+	{
+		from = "Well met, traveller. The road to the Crystwind Mines is crawling with Krug, but you look like the sort who doesn't mind a few hazards.";
+		to = "Seid gegrüßt, Wanderer! Auf der Straße zu den Minen von Kristallwind wimmelt es von Krugs, aber Ihr seht aus, als könnten Euch ein paar Gefahren nicht aus der Ruhe bringen.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 37";
+		to = "Stadt Kristallwind, 37";
+	}
+	[0x0000]
+	{
+		from = "Beware, traveler, you appear too inexperienced to survive for long away from the safety of Crystwind.";
+		to = "Seht Euch vor, Reisender! Ihr scheint nicht die Erfahrung zu besitzen, um außerhalb der Sicherheit Kristallwinds lange überleben zu können.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 34";
+		to = "Stadt Kristallwind, 34";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 75";
+		to = "Stadt Kristallwind, 75";
+	}
+	[0x0000]
+	{
+		from = "Speak to the townspeople of Crystwind about the Crystwind Hammer Stone.";
+		to = "Redet mit den Bewohnern von Kristallwind über den Hammerstein der Stadt.";
+	}
+	[0x0000]
+	{
+		from = "the town of Crystwind";
+		to = "die Stadt Kristallwind";
+	}
+	[0x0000]
+	{
+		from = " Crystwind Mines, 28";
+		to = " Minen von Kristallwind, 28";
+	}
+	[0x0000]
+	{
+		from = "Go east through Hovart's Folly to Elddim or Crystwind while you still can! This weather isn't fit for man nor beast!";
+		to = "Geht nach Osten über Hovarts Torheit nach Elddim oder Kristallwind, solange Ihr noch könnt! In diesem Wetter jagt man ja keinen Hund vor die Tür!";
+	}
+	[0x0000]
+	{
+		from = " Crystwind Mines";
+		to = "Minen von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Good day to you, Stranger. You might want to stop by the tavern for an ale to warm you up on this frosty day. Liorne's got some fine, fur-lined boots for sale over at the Fire and Ice Forge if you're needing supplies. I'm afraid there's not much to be had in terms of quality weapons. With the road to Crystwind blocked, we havn't received any ore in months.";
+		to = "Guten Tag, Fremdling. Wärmt Euch doch an diesem frostigen Tag in der Taverne bei einem Bierchen auf. Liorne hält in der Schmiede 'Feuer und Eis' eine paar schöne Fellstiefel feil, falls Ihr welche braucht. Ich fürchte aber, dass es hier keine guten Waffen gibt. Die Straße nach Kristallwind ist blockiert und wird haben schon seit Monaten kein Erz mehr erhalten.";
+	}
+	[0x0000]
+	{
+		from = "Here is my ring. Our Townstown needs to be brought to High Priest Kavaren in Hiroth. However, I am certain we are not the only town who could use your help. Seek out Utraean Priest Sarden in Crystwind.";
+		to = "Hier ist mein Ring. Der Stein unserer Stadt muss zu Hohepriester Kavaren in Hiroth gebracht werden. Ich bin jedoch sicher, dass auch andere Städte Eure Hilfe gebrauchen könnten. Sucht den uträischen Priester Sarden in Kristallwind auf.";
+	}
+	[0x0000]
+	{
+		from = "So, you're the one they say is marked with fire. If you're headed to Grescal, why not go through the Utraean's Basilicus? It's rumored that you can travel there overland if you enter the Mausoleum underneath Castle Hiroth. I've heard there's an entrance within one of the castle towers, and the Mausoleum still has the old criminal's exit to the Mesa Desert. If you head east, eventually you'll hit the edge of the Grescal Dunes. Grescal itself is somewhere east of there around the oasis. However, only a fool would try to cross the desert without a guide. Grescal is a hermit's village for a reason, you know.";
+		to = "Ihr tragt also das Feuermal! Wenn Ihr auf dem Weg nach Grescal seid, könnt Ihr doch durch den Uträischen Basilikus gehen. Es heißt, dass man auf dem Landwege dorthin gelangt, wenn man durch das Mausoleum unterhalb von Burg Hiroth geht. Ich habe gehört, dass sich in einem der Burgtürme ein Eingang befinden soll, und im Mausoleum befindet sich immer noch der Ausgang der Verbrecher, der in die Wüste der Tafelberge führt. Wenn Ihr Euch nach Osten wendet, so gelangt Ihr nach einiger Zeit die Dünen von Grescal. Die Stadt Grescal liegt östlich von dort auf der anderen Seite der Oase. Es würde jedoch nur einem Narren in den Sinn kommen, die Wüste ohne Führer zu durchqueren. Grescal ist nicht umsonst eine Einsiedelei.";
+	}
+	[0x0000]
+	{
+		from = "Mesa Desert to Hiroth Displacer";
+		to = "Dislokator (von der Wüste der Tafelberge nach Hiroth)";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines, 16";
+		to = "Minen von Kristallwind, 16";
+	}
+	[0x0000]
+	{
+		from = "By the gods, friend, you have found the Crystwind Hammer Stone! I did not truly think we would ever succeed in testing my theory... But thanks to you, perhaps it really will happen as I'm hoping!";
+		to = "Bei den Göttern, Ihr habt den Hammerstein von Kristallwind gefunden! Ich hatte nicht damit gerechnet, dass ich meine Theorie jemals testen könnte ... Aber dank Euch geschieht vielleicht doch noch alles so wie in meinen Wünschen!";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines, 15";
+		to = "Minen von Kristallwind, 15";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 17";
+		to = "Stadt Kristallwind, 17";
+	}
+	[0x0000]
+	{
+		from = "Crystwind to Crystwind Old Mines Displacer";
+		to = "Dislokator (von Kristallwind zu den alten Minen von Kristallwind)";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 14";
+		to = "Stadt Kristallwind, 14";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 95";
+		to = "Stadt Kristallwind, 95";
+	}
+	[0x0000]
+	{
+		from = "When all the Townstones of the Circle are assembled again in Hiroth, all citizens of the land will be allowed to pass through the Basilicus. Why else would the Utraeans construct the place, if not to provide access for all? The ruins outside Crystwind show evidence of a terrible battle waged with all sorts of incomprehensible magicks. I am certain that is what led to the closure of the Basilicus to everyday townsfolk. Anyway, if the Legion could travel through the H.U.B., it'd be much easier to destroy these piddling Krug once and for all.";
+		to = "Wenn die gesamten Stadtsteine wieder in Hiroth zusammengebracht werden, können wieder alle Bewohner des Reichs durch den Basilikus reisen. Wofür haben die Uträer diesen Ort errichtet, wenn nicht dazu, jedermann Zutritt zu gewähren? Die Ruinen außerhalb von Kristallwind tragen die Spuren einer gewaltigen Schlacht, die mit allerlei unbegreiflichem Zauber geführt wurde. Ich bin davon überzeugt, dass es diese Schlacht war, die dazu führte, dass der Basilikus für normal Sterbliche geschlossen wurde. Diese verflixten Krugs könnten endgültig vernichtet werden, wenn die Legion den HUB verwenden könnte.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 53";
+		to = "Stadt Kristallwind, 53";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 12";
+		to = "Stadt Kristallwind, 12";
+	}
+	[0x0000]
+	{
+		from = "Wot are ye doing out here so far away from the safety of town, eh? This ain't no place for civilians, by golly. It's true these Displacer Platforms need checking every now and then, but I lost me mates along the way and me helm was stolen by some stinkin' Krug. If ye was smart, ye'd head south to Crystwind through the mines and leave me to my fate. I've been enjoying a bit of a starin' contest with these unholy dung sniffers, and I don't mean to leave until they feel the edge o' my blade.";
+		to = "Was macht'n Ihr hier, so weit vonner Stadt weg, eh? Das is' echt kein Ort für Zivilisten. Stimmt schon, die Dislokationsplattformen müssen ab un' zu kontrolliert werden, aber ich hab meine Kumpels auf dem Weg verloren un' so'n Drecks-Krug hat meinen Helm geklaut. Wenn Ihr was auf'm Kasten habt, verzieht Ihr Euch durch die Minen nach Kristallwind im Süden un' überlasst mich meinem Schicksal. Ich hab mich hier auf 'ne längere Beobachtung eingerichtet un' ich geh erst, wenn diese dreckigen Biester meine Klinge zu spüren gekriegt haben.";
+	}
+	[0x0000]
+	{
+		from = "If I was you, I'd run back to Crystwind and get out of this foul wind. I bet the Droog will use it as cover for a nasty ambush.";
+		to = "Ich an Eurer Stelle würde im Laufschritt nach Kristallwind zurückkehren und zusehen, dass ich aus diesem Verwesungswind rauskomme. Ich wette, die Droog verwenden ihn als Tarnung für einen gemeinen Hinterhalt.";
+	}
+	[0x0000]
+	{
+		from = "Welcome, friend. Your task is considerable, but you have proven your fortitude to the Society time and time again. I have placed Hiroth's own Crown Stone in the Utraean Circle; it is ready to receive the Townstones. We of the Utraean Society are praying for your success in placing them correctly. Soon, we shall learn the secrets of the Utraeans.";
+		to = "Seid willkommen! Ihr habt eine schwierige Aufgabe vor Euch, aber Ihr habt der Gemeinschaft Eure Stärke wiederholt unter Beweis gestellt. Ich habe den Kronenstein von Hiroth in den uträischen Kreis eingebracht. Jetzt können die Stadtsteine folgen. Wir Mitglieder der Gemeinschaft des Uträischen Kreises beten für Euren Erfolg, auf dass Ihr die Steine richtig anordnen möget. Bald werden wir die Geheimnisse der Uträer gelüftet haben.";
+	}
+	[0x0000]
+	{
+		from = "Guard Captain of Crystwind";
+		to = "Wachhauptmann von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "By the stars, this cannot be! I...er, I see with my own two eyes that you have the Quillrabe Mask Stone, but, I... How did you... I'm... I'm speechless! No, no, please do not tell me how you managed to rescue our Townstone and free us from the Dragon Queen's wrath. The very thought of venturing into that cave makes me feel ill. Um, we are indebted to you forever more. Never can, er, repay you... Take this trifle as thanks?";
+		to = "Bei allen Sternen, das ist unmöglich! Ich ... äh ... Ich sehe, dass Ihr den Maskenstein von Quillrabe bei Euch habt, aber ... trügen mich meine ... Wie ... Mir fehlen die Worte! Nein, nein, sagt mir nicht, wie Ihr es geschafft habt, unseren Stadtstein zu retten und gleichzeitig den Zorn der Drachenkönigin von uns abzuwenden. Allein der Gedanke, diese Höhle zu betreten, lässt mich ganz schwach werden. Tja, wir stehen auf ewig in Eurer Schuld. Können Euch das nie ... hm ... vergelten... Hier - Nehmt diese kleine Aufmerksamkeit als Zeichen der Dankbarkeit!";
+	}
+	[0x0000]
+	{
+		from = "What? You again? Uh, you're alive! You failed, did you? No?! By the stars, this cannot be! I...er, I see with my own two eyes that you have the Quillrabe Mask Stone, but, I... How did you... I'm... I'm speechless! No, no, please do not tell me how you managed to, uh, rescue our Townstone and free us from the Dragon Queen's wrath. The very thought of venturing into that cave makes me feel ill. Um, we are indebted to you forever more. Never can, er, repay you... Take this trifle as thanks?";
+		to = "Was? Ihr schon wieder? Ihr seid am Leben! Ihr wart nicht erfolgreich, oder? Doch?! Bei allen Sternen, das ist unmöglich! Ich ... äh ... Ich sehe, dass Ihr den Maskenstein von Quillrabe bei Euch habt, aber ... trügen mich meine ... Wie ... Mir fehlen die Worte! Nein, nein, sagt mir nicht, wie Ihr es geschafft habt, unseren Stadtstein zu retten und gleichzeitig den Zorn der Drachenkönigin von uns abzuwenden. Allein der Gedanke, diese Höhle zu betreten, lässt mich ganz schwach werden. Tja, wir stehen auf ewig in Eurer Schuld. Können Euch das nie ... hm ... vergelten... Hier - Nehmt diese kleine Aufmerksamkeit als Zeichen der Dankbarkeit!";
+	}
+	[0x0000]
+	{
+		from = "the Crystwind Grasslands";
+		to = "Grasland von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "the Crystwind Mines";
+		to = "die Minen von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 68";
+		to = "Stadt Kristallwind, 68";
+	}
+	[0x0000]
+	{
+		from = "the Crystwind Old Mines";
+		to = "die alten Minen von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Yer in luck! Here in Iliarth Canyon, ye can travel to three of the finest towns in the Utraean Peninsula. Just follow the Iliarth River upstream, and yer in Elddim! Follow it downstream, and ye'll run into Quillrabe. Head north, and ye'll come across Crystwind in no time at all.";
+		to = "Ihr habt Glück! Hier durch die Iliarth-Schlucht kommt Ihr zu drei der schönsten Städte der Halbinsel Uträa. Folgt dem Iliarth flussaufwärts und schon seid Ihr in Elddim! Folgt ihm flussabwärts und Ihr kommt nach Quillrabe. Wendet Euch nach Norden und Ihr seid im Handumdrehen in Kristallwind.";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines, 24";
+		to = "Minen von Kristallwind, 24";
+	}
+	[0x0000]
+	{
+		from = "Mesa Desert";
+		to = "Wüste der Tafelberge";
+	}
+	[0x0000]
+	{
+		from = "the Forgotten Mesas";
+		to = "die vergessenen Tafelberge";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 25";
+		to = "Stadt Kristallwind, 25";
+	}
+	[0x0000]
+	{
+		from = "Heading to the town of Fallraen, are ye? Ye'll want to head east through the Crystwind Old Mines then. Follow the tracks in an easterly direction until ye come to the old lift. It'll take ye up into the Fallraen Forest. Aye, it's a fair bit snowy this time o' year, but the Legion usually keeps it clear enough. Keep following the road east and ye'll run into the Fallraen gates eventually. Can't miss it!";
+		to = "Seid Ihr auf dem Weg nach Fallraen? Haltet Euch ostwärts durch die alten Minen von Kristallwind und folgt dann dem Weg in östlicher Richtung, bis Ihr zum alten Aufzug kommt. Er bringt Euch hinauf in den Wald von Fallraen. Um diese Jahreszeit ist es dort oben tief verschneit, aber die Legion hält den Durchgang frei. Geht dann einfach der Straße entlang Richtung Osten, bis Ihr zu den Toren von Fallraen gelangt. Ihr könnt es nicht verfehlen!";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 62";
+		to = "Stadt Kristallwind, 62";
+	}
+	[0x0000]
+	{
+		from = "Quest: final part of hovart quest (Crystwind captain)";
+		to = "Auftrag: Letzter Teil des Hovart-Auftrags (Hauptmann von Kristallwind)";
+	}
+	[0x0000]
+	{
+		from = "Ahh, Priestess Kelti speaks highly of you. We here in Crystwind could also use your help, if you have the time. Without our Townstone, no one in the Society will be able to experience the wonders that lay ahead.";
+		to = "Ahh, Priesterin Kelti lobt Euch in höchsten Tönen. Auch wir in Kristallwind könnten Eure Hilfe gebrauchen, wenn Ihr Zeit entbehren könnt. Ohne den Stein unserer Stadt kann kein Mitglied der Gemeinschaft die Wunder erfahren, die uns erwarten.";
+	}
+	[0x0000]
+	{
+		from = "Return to Priest Sarden in the town of Crystwind.";
+		to = "Kehrt zu Priester Sarden in Kristallwind zurück.";
+	}
+	[0x0000]
+	{
+		from = "Quest: starting point for Elddim & Townstones";
+		to = "&Auftrag: Ausgangspunkt für Elddim und Stadtsteine";
+	}
+	[0x0000]
+	{
+		from = "Quillrabe Townstone";
+		to = "Quillrabe-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Old Mines";
+		to = "Alte Minen von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Shh, can't you see Kavern's still sleeping? He needs his rest if he's going to join me in clearing the vermin out of the Crystwind Mines.";
+		to = "Pssst! Kavern schläft noch! Er braucht Ruhe, wenn er mir dabei helfen soll, das Gewürm aus den Minen von Kristallwind zu vertreiben.";
+	}
+	[0x0000]
+	{
+		from = "Travel to Crystwind";
+		to = "Reise nach Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "The Utraean Circle is ready to be completed, but you are missing the Crystwind Hammer Stone. Speak with Utraean Priest Sarden in Crystwind, then return here to me.";
+		to = "Der Uträische Kreis ist beinahe vollständig, aber es fehlt der Hammerstein von Kristallwind. Fragt den uträischen Priester Sarden in Kristallwind um Rat und kehrt dann zu mir zurück.";
+	}
+	[0x0000]
+	{
+		from = "Ye gods, friend. Ye would be mad to take the lift down to the canyon floor as ill-prepared as ye are. Ye really should stay near Crystwind afore the Krug cook ye fer supper!";
+		to = "Ihr Götter, Freund, Ihr wärt verrückt den Aufzug zum Grund der Schlucht zu nehmen, so wie Ihr ausgerüstet seid. Bleibt lieber in Kristallwind, bevor die Krugs Euch zum Abendessen verspeisen!";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Stone";
+		to = "Kristallwind-Stein";
+	}
+	[0x0000]
+	{
+		from = "There's a bumper crop of corn this year, and Jornus still hasn't started harvesting. If he doesn't get his act together, there'll be no bread for the winter, and we'll all starve. I'd fire him, but it's not like there's anyone else to do the work with all the young men off fighting Krug in the Crystwind Mines.";
+		to = "Da gibt es einmal eine gewaltige Ernte einzubringen, und Jornus hat immer noch nicht damit angefangen. Wenn er nicht bald etwas unternimmt, gibt es kein Brot im Winter und wir werden hungern. Ich würde ihn ja entlassen, aber es gibt niemanden, der die ganze Arbeit sonst tun würde. Die jungen Männer sind ja alle fort, um die Krugs in den Minen von Kristallwind zu bekämpfen.";
+	}
+	[0x0000]
+	{
+		from = "You want to talk about stones? If this dry weather keeps up, even the mossy ruins to the west will crumble to dust. Seems the eastern grasslands turn browner every day. What with the mines producing fewer crystals all the time, it won't be long before there'll be no more 'cryst' in Crystwind.";
+		to = "Ihr möchtet über Steine reden? Wenn das Wetter so trocken bleibt, zerfallen sogar die moosbewachsenen Ruinen im Südosten zu Staub. Die Grasgebiete im Osten trocknen täglich mehr aus. Jetzt, da die Kristallausbeute immer geringer wird, heißt 'Kristallwind' wohl bald nur noch 'Wind'.";
+	}
+	[0x0000]
+	{
+		from = "We call them Townstones, but they are really just pieces of a puzzle. When assembled together in their natural state, in the ruined Circle in Hiroth, they will open the way to the ethereal realms of the Utraeans. I cannot leave this post until the time is ripe, but you, you are the One Who Gathers. You may enter the Sacred Temple of the Stars deep in the forest to the south. The Meren Fish Stone rests there upon the altar, take it and return to show me that you have it.";
+		to = "Wir nennen sie die Stadtsteine, aber eigentlich sind es nur die Teile eines Puzzles. Wenn sie im Ruinenkreis von Hiroth in ihrer ursprünglichen Form zusammengefügt werden, dann öffnen sie einen Weg in die himmlischen Gefilde der Uträer. Ich darf diesen Posten nicht verlassen, bis es an der Zeit ist, doch Ihr, Ihr seid ein Sammler der Steine. Ihr könnt den geheiligten Sternentempel tief im Waldesinneren südlich von hier betreten. Der Fischstein von Meren ruht dort auf dem Altar. Nehmt ihn an Euch und kehrt mit ihm zu mir zurück.";
+	}
+	[0x0000]
+	{
+		from = "Ye gods, friend. Ye would be mad to take the high bridges across the canyon as ill-prepared as ye are. Ye really should stay near Crystwind afore the Droog cook ye fer supper!";
+		to = "Ihr Götter! Mein Freund, es wäre verrückt, bei Eurer schlechten Vorbereitung die hohen Brücken über die Schlucht zu nehmen. Ihr solltet wirklich in der Nähe von Kristallwind bleiben, damit die Droog Euch nicht zum Abendessen verspeisen!";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines, Town of Crystwind";
+		to = "Minen von Kristallwind, Stadt Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Crystwind has need of a brave adventurer, but how do I know you won't just rob us blind? I'm not so good at reading people, myself. If you travel to Elddim, speak with Utraean Priestess Kelti in the Shrine of Passion there. She is seeking one with a strong soul and daring heart, and she is much better equipped to deal with those who...don't quite fit the mold.";
+		to = "Kristallwind benötigt einen mutigen Abenteurer, aber woher soll ich wissen, dass Ihr uns nicht hinters Licht führen wollt? Die Gabe, andere Leute zu beurteilen, ist mir nicht gegeben. Wenn Ihr nach Elddim reist, dann sprecht dort mit der uträischen Priesterin Kelti im dortigen Schrein der Passion. Sie benötigt jemand von treuer Seele und mit Mut im Herzen; gleichzeitig ist sie weitaus besser darin, mit denjenigen umzugehen, die ... anders sind.";
+	}
+	[0x0000]
+	{
+		from = "Yes, I know my goods are pricey, but materials are dear what with the banditry these days. Can't hardly get anything through from Crystwind by the forest road, and strange things have been emerging from the Glacial Caverns to the North.";
+		to = "Ja, ich weiß, meine Waren sind nicht billig, aber in diesen Zeiten der Räuberei sind Rohstoffe teuer. Die Waldstraße von Kristallwind ist unsicher und merkwürdige Wesen kommen aus den Gletscherhöhlen im Norden.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 57";
+		to = "Stadt Kristallwind, 57";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 16";
+		to = "Stadt Kristallwind, 16";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 15";
+		to = "Stadt Kristallwind, 15";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 91";
+		to = "Stadt Kristallwind, 91";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 51";
+		to = "Stadt Kristallwind, 51";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 52";
+		to = "Stadt Kristallwind, 52";
+	}
+	[0x0000]
+	{
+		from = "Hail, friend. Are you sure you want to be exploring the Great Northern Forest with times such as they are? The forest critters are more aggressive than I've seen them in years, even my brethren and I have been forced to stay closer to civilization than we normally prefer. I highly advise you to seek safer company. Aye, it's true old Lord Hovart has been seen prowling, but you'd still fare far better heading east into Hovart's Folly. There's the old servant's entrance to the east beyond the ballroom that exits directly in between Elddim and the Crystwind Mines.";
+		to = "Seid gegrüßt, Freund. Seid Ihr sicher, dass Ihr in diesen Zeiten den großen Wald des Nordens erkunden wollt? So aggressiv habe ich die Waldgeschöpfe seit Jahren nicht mehr gesehen. Sogar meine Brüder und ich mussten uns näher an der Zivilisation aufhalten als uns normalerweise genehm ist. Ich würde Euch den dringenden Rat geben, eine sicherere Gegend aufzusuchen. Sicher, Fürst Hovart ist wieder gesichtet worden, aber Ihr solltet dennoch nach Osten in Richtung Hovarts Torheit weiterreisen. Dort gibt es den alten Dienstboteneingang im Osten hinter dem Ballsaal, dessen Ausgang direkt zwischen Elddim und den Minen von Kristallwind hinausführt.";
+	}
+	[0x0000]
+	{
+		from = "Journey to Crystwind";
+		to = "Reise nach Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Old Mines to Crystwind Displacer";
+		to = "Dislokator (von den alten Minen von Kristallwind nach Kristallwind)";
+	}
+	[0x0000]
+	{
+		from = "You know the rest and to you I am indubitably grateful. You just let me know if there is ever anything I can do to help you with. In fact, since you are so adept at vivifying stupid old historians, maybe you'd be willing to take the Fallraen Townstone to Lang yourself? I'm not so spry as I used to be, and I really shouldn't stay away from Apprentice Flessen for so long. The magicatorium is likely burnt to the ground by now from his fumblings. If you'd check on him, and then continue on to Lang, the Society will reward you well, I'm sure. I'm just going to rest up for a bit before heading back.";
+		to = "Den Rest kennt Ihr bereits, und ich bin Euch zweifellos dankbar. Lasst es mich wissen, wenn ich Euch jemals behilflich sein kann. Da Ihr einem närrischen, alten Historiker so geschickt neues Leben verliehen habt, seid Ihr vielleicht gewillt, den Stadtstein von Fallraen selbst nach Lang zu bringen? Ich bin nicht mehr der Jüngste und sollte meinen Lehrling Flessan wirklich nicht so lange alleine lassen. Bestimmt hat der Tollpatsch das Magicatorium in der Zwischenzeit abgefackelt. Wenn Ihr auf Eurem Weg nach Lang bei ihm vorbeischaut, wird Euch die Gemeinschaft sicherlich reich belohnen. Ich will jetzt noch ein wenig ruhen und mich dann auf den Rückweg machen.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 27";
+		to = "Stadt Kristallwind, 27";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 21";
+		to = "Stadt Kristallwind, 21";
+	}
+	[0x0000]
+	{
+		from = "You! You are still alive? It's a miracle! How could we have misjudged the Townstones so tragically? How can anyone even think of what to do with the air so full of ash and brimstone? ";
+		to = "Ihr ... Ihr lebt! Ein Wunder! Wie konnten wir die Stadtsteine nur so falsch einschätzen? Wie ist es bei all der Asche und dem Schwefelgestank in der Luft überhaupt möglich, einen kühlen Kopf zu bewahren?";
+	}
+	[0x0000]
+	{
+		from = "the Mesa Desert";
+		to = "die Tafelbergwüste";
+	}
+	[0x0000]
+	{
+		from = "Serves me right, I suppose. I couldn't take any more of that dimwitted apprentice of mine, Flessen, so I set off for parts unknown - That is, to Lang, if it hasn't sunk into the stinking swamp by now. You understand, I'm sure, the lengths to which one will travel in the name of duty and honor. Anyhow, I set off with the Fallraen Snowflake stone, so as to gather the Lang Mosquito stone and carry them both to the Circle in Hiroth. All the Society's Townstones must be assembled to access the Ancient Armory, you know. I suppose I took a wrong turn somehwere in this dratted ice field, and ended up face to face with a horde of toothy bumbles.";
+		to = "Geschieht mir wohl recht. Ich konnte meinen begriffsstutzigen Lehrling Flessan nicht mehr ertragen und habe mich einfach auf den Weg gemacht, ganz ohne Ziel. Besser gesagt, mein Ziel war Lang, falls es noch nicht im stinkenden Sumpf versunken ist. Ihr wisst bestimmt, welche Strapazen man im Namen von Pflicht und Ehre auf sich nimmt. Ich brach mit dem Schneeflockenstein aus Fallraen auf und hatte die Absicht, den Schnakenstein aus Lang abzuholen und beide zum Kreis in Hiroth zu bringen. Alle Stadtsteine der Gemeinschaft müssen zusammengetragen werden, um Zugang zum Alten Arsenal zu erhalten. Ich muss wohl irgendwo in diesem vermaledeiten Eisfeld vom rechten Weg abgekommen sein und stand plötzlich einer Horde Zähne fletschender Bumbles gegenüber.";
+	}
+	[0x0000]
+	{
+		from = "Maybe ye noticed, but it's a bit unruly these days. If ye are 'eading to the town of Crystwind, ye might consider following the river 'stead of going through the mines. Aye, it's goodly bit longer, and ye never know wot's crawling along the banks, but at least ye won't be trapped underground when all 'ell breaks loose!";
+		to = "Ist Euch vielleicht aufgefallen: Augenblicklich geht es drunter und drüber. Wenn Ihr nach Kristallwind wollt, wär' der Fluss wahrscheinlich besser als die Minen. Klar, is' weiter und man weiß nie, was so am Ufer rumlungert, aber zumindest wird man dann anner frischen Luft fertig gemacht!";
+	}
+	[0x0000]
+	{
+		from = "Quest: 1st part of Crystwind quest (Sarden)";
+		to = "Auftrag: 1. Teil des Kristallwind-Auftrags (Sarden)";
+	}
+	[0x0000]
+	{
+		from = "I killed three Maljin that crawled in through the windows. These creatures are not natural! We must destroy them all -- they seem to be coming up through the Utraean Circle, which means there must be a way down through there as well! I have a Tenstone from the legion I've been holding all these years. Take it and carry it to where the Maljin gather their power beneath the Utraean Circle. You were able to slay the Dragon Queen and recapture the Grescal Townstone. Only you have the courage and skills to save us from the Maljin. Please, do not fail us now!";
+		to = "Ich habe drei Maljin getötet, die zum Fenster hereingeklettert sind. Das sind keine Naturgeschöpfe! Wir müssen sie ausrotten! Sie scheinen durch den uträischen Kreis heraufzukommen, und dies bedeutet, dass es dort auch einen Weg nach unten gibt! Ich habe schon seit Jahren einen Zehntstein von der Legion in meinem Besitz. Hier, bringt ihn an den Ort unterhalb des uträischen Kreises, an dem die Maljin ihre Kraft schöpfen. Ihr habt die Drachenkönigin bezwungen und konntet den Stein der Stadt Grescal zurückgewinnen. Nur Ihr habt den Mut und die Fähigkeit, uns von den Maljin zu befreien. Bitte, lasst uns jetzt nicht im Stich!";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 49";
+		to = "Stadt Kristallwind, 49";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind";
+		to = "Stadt Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "What? You found the Crystwind Hammer Stone? By the gods, that's it! Well done, friend! I admit I was not confident that it would be found. Perhaps the Society really will have a chance to prove my theory... Hmmm.";
+		to = "Was? Ihr habt den Hammerstein von Kristallwind gefunden? Bei den Göttern, das ist er! Gut gemacht, mein Freund! Ich gebe zu, dass ich nicht sehr zuversichtlich war, dass er jemals gefunden würde. Vielleicht wird die Gemeinschaft tatsächlich die Möglichkeit haben, meine Theorie zu bestätigen ... Hmmm.";
+	}
+	[0x0000]
+	{
+		from = "Find the Diamond Runestone in the ruins near the town of Crystwind.";
+		to = "Suchen Sie die Diamantrune in den Ruinen nahe der Stadt Kristallwind.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 45";
+		to = "Stadt Kristallwind, 45";
+	}
+	[0x0000]
+	{
+		from = "dwarven town of Crystwind";
+		to = "Zwergenstadt Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "The Grescal Palm Stone was stolen from us a few nights back. I fear there is something living in the ruined Utraean temple northeast of town. We found the Stone Guardian with his throat slashed and the Townstone gone from its resting place. I have heard tales of your bravery -- I am certain you are the one who can find our Stone and carry it safely to Hiroth. Please do not fail us now!";
+		to = "Der Palmenstein von Grescal wurde vor ein paar Nächten gestohlen. Ich fürchte, in den Ruinen des uträischen Tempels nordöstlich der Stadt lebt etwas. Wir haben den Bewacher des Steins mit durchschnittener Kehle gefunden; der Stadtstein war aus seinem Behältnis verschwunden. Ich habe von Eurem Mut gehört. Ich bin mir sicher, dass es Euch gelingt, den Stein zu finden und wieder sicher nach Hiroth zu bringen. Lasst uns jetzt nicht im Stich!";
+	}
+	[0x0000]
+	{
+		from = "Beware, traveller, you appear too inexperienced to survive for long away from the safety of Crystwind.";
+		to = "Seht Euch vor, Reisender! Ihr scheint nicht die Erfahrung zu besitzen, um außerhalb der Sicherheit Kristallwinds lange überleben zu können.";
+	}
+	[0x0000]
+	{
+		from = "Hmm, Priestess Kelti didn't mention anything about secrecy. Supposedly the uprising isn't confined to the Krug. Seems all of the kingdom is reporting troubles, and some towns are in threat of being overwhelmed. High Priest Kavaren in Hiroth has ordered the Townstone Circle to be built for the first time in living memory. If it's assembled in time, it may be enough to protect us...";
+		to = "Hmm, Priesterin Kelti hat nichts von Geheimhaltung gesagt. Wahrscheinlich ist der Aufstand nicht auf die Krugs beschränkt. Anscheinend sind im ganzen Königreich Unruhen ausgebrochen, manche der Städte sind fast schon überrannt worden. Hohepriester Kavaren in Hiroth hat angeordnet, dass der Kreis der Stadtsteine zum ersten Mal seit Menschengedenken zusammengefügt werden soll. Wenn der Kreis rechtzeitig zusammengefügt wird, wäre das möglicherweise bereits genug, um uns zu schützen ...";
+	}
+	[0x0000]
+	{
+		from = "Crystwind";
+		to = "Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "There is nothing more you can do to help us in Elddim; you may best serve the Society by helping Utraean Priest Sarden in Crystwind.";
+		to = "Ihr könnt uns in Elddim nicht weiter helfen. Der Gemeinschaft dient Ihr am besten, indem Ihr dem uträischen Priester Sarden in Kristallwind helft.";
+	}
+	[0x0000]
+	{
+		from = "Give the Gavel of Convening to the Guard Captain of Crystwind and inform him that Lord Hovart is dead.";
+		to = "Gebt dem Wachkapitän in Kristallwind den Hammer der Zusammenkunft und teilt ihm mit, dass Fürst Hovart tot ist.";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines";
+		to = "Minen von Kristallwind";
+	}
+	[0x0000]
+	{
+		from = "Gather all of the eight Townstones, representing all of the towns of the Circle, and bring them to Utraean High Priest Kavaren in Hiroth.";
+		to = "Sammelt alle acht Stadtsteine, die für die acht Städte des Kreises stehen, und bringt sie zum uträischen Hohepriester Kavaren in Hiroth.";
+	}
+	[0x0000]
+	{
+		from = "So, you are up to the task of aiding the Society, are you? I'm sure you've heard of the Townstones and how nearly all have been lost over the centuries, yes? Well, it's time for them to be found. The Society has called for the unification of the Townstones in Hiroth, and all must be present.";
+		to = "Ihr seid also bereit, dem Gemeinschaft zu Diensten zu sein?! Ich bin mir sicher, dass Ihr von den Stadtsteinen gehört habt und davon, dass sie fast alle im Laufe der Jahrhunderte verloren gingen. Nun, es ist an der Zeit, dass sie wieder gefunden werden. Die Gemeinschaft fordert die Vereinigung der Stadtsteine in Hiroth und nicht einer darf fehlen.";
+	}
+	[0x0000]
+	{
+		from = "Grescal Townstone";
+		to = "Grescal-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "Meren Townstone";
+		to = "Meren-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "Here is my ring. Our Townstone needs to be brought to High Priest Kavaren in Hiroth. However, I am certain we are not the only town who could use your help. Seek out Utraean Priest Sarden in Crystwind.";
+		to = "Hier ist mein Ring. Der Stein unserer Stadt muss zu Hohepriester Kavaren in Hiroth gebracht werden. Ich bin jedoch sicher, dass auch andere Städte Eure Hilfe gebrauchen könnten. Sucht den uträischen Priester Sarden in Kristallwind auf.";
+	}
+	[0x0000]
+	{
+		from = "Please accept this humble offering as a thanks from the town of Crystwind. I'm certain Utraean Apprentice Flessan in Fallraen would be honored to have your help as well, if you would like to continue helping the Society with this momentous task.";
+		to = "Nehmt diese bescheidene Gabe als Dank der Stadt Kristallwind. Ich bin sicher, der uträische Lehrling Flessan in Fallraen wäre ebenfalls geehrt, von Euch Hilfe zu empfangen, wenn Ihr der Gemeinschaft weiter bei dieser bedeutenden Aufgabe zur Seite stehen wollt.";
+	}
+	[0x0000]
+	{
+		from = "Townstone Quest Dungeon";
+		to = "Verlies des Stadtsteinauftrags";
+	}
+	[0x0000]
+	{
+		from = "Ugh, you can almost feel the decay in this thing. And it's said our own Conjuror Orkin crafted the thing. He won't be up to any more trouble with Utraean Priest Sarden keeping an eye on him. Well, here's a little something for your troubles. By the way, if you are courageous enough to do battle with that ghoul Hovart, perhaps you'd be willing to take a crack at helping us regain control of the Crystwind Mines, eh?";
+		to = "Bäh, man kann den Moder in diesem Ding fast spüren. Es wird behauptet, dass unser Beschwörer Orkin das Ding gemacht hat. Aber jetzt kann er kein Unheil mehr anrichten, da der uträische Priester Sarden ihm auf die Finger sieht. Hier, nehmt diese Kleinigkeit für Eure Mühe. Übrigens, wenn Ihr tapfer genug seid, um mit diesem Unhold Hovart zu kämpfen, könnt Ihr uns vielleicht dabei helfen, die Minen von Kristallwind wieder zurückzugewinnen. Was meint Ihr?";
+	}
+	[0x0000]
+	{
+		from = "You are welcome to peruse my shelves for anything which might be of use to you. If you are able to find the Elddim Townstone, I will give you my signet ring to help you on your journies.";
+		to = "Es ist Euch freigestellt, meine Regale nach allem zu durchsuchen, das für Euch von Nutzen sein könnte. Wenn Ihr den Stadtstein von Elddim finden könnt, werde ich Euch meinen Siegelring geben. Dieser wird Euch auf Euren Reisen helfen.";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 107";
+		to = "Stadt Kristallwind, 107";
+	}
+	[0x0000]
+	{
+		from = "There are a few routes to the town of Crystwind, but I suggest you follow the road east. You'll travel near the Iliarth River through Iliarth Valley, then across the deep gorge in Iliarth Divide, and into the Ancient Crypt to the south. If you can get past the undead, you'll find yourself emerging back outside in Hovart Marsh. It's a bit of a trek to Hovart's Folly, but the scenery is worth the journey. Once you clear your way through the Folly, it's a quick walk south through Elddim Glade to the Crystwind Mines. And the mines exit right into the town of Crystwind itself.";
+		to = "Es gibt mehrere Wege nach Kristallwind, aber ich würde Euch folgenden Weg empfehlen: Nehmt die Straße nach Osten, folgt dem Iliarth durch das Iliarth-Tal, durchquert dann die tiefe Iliarth-Schlucht und begebt Euch in die Alte Gruft im Süden. Wenn es Euch gelingt, Euch an den Untoten vorbeizuschleusen, gelangt Ihr im Hovart-Sumpf wieder ans Freie. Die Reise zu Hovarts Torheit ist zwar beschwerlich, doch die Landschaft ist der Mühe wert. Wenn Ihr Hovarts Torheit durchquert habt, kommt Ihr nach kurzer Zeit Richtung Süden durch die Elddim-Lichtung zu den Minen von Kristallwind. Der Ausgang der Minen befindet sich direkt in der Stadt Kristallwind.";
+	}
+	[0x0000]
+	{
+		from = "Elddim Townstone";
+		to = "Elddim-Stadtstein";
+	}
+	[0x0000]
+	{
+		from = "Crystwind, Dwarven Mining Village";
+		to = "Kristallwind, zwergische Minensiedlung";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 78";
+		to = "Stadt Kristallwind, 78";
+	}
+	[0x0000]
+	{
+		from = "Please accept this humble offering as a thanks from the town of Crystwind. I'm certain Utraean Apprentice Flessan in Fallraen would be grateful to have the help of one who is so adept at finding things, if you would like to further help the Society with this momentous task.";
+		to = "Nehmt dieses bescheidene Geschenk als Dank der Stadt Kristallwind. Ihr scheint eine Gabe für das Finden von Verlorenem zu besitzen. Ich bin sicher, der uträische Lehrling Flessan in Fallraen würde Eure Hilfe begrüßen, sofern Ihr der Gemeinschaft bei dieser bedeutsamen Aufgabe weiterhin zu helfen gewillt seid.";
+	}
+	[0x0000]
+	{
+		from = "Crystwind Mines, 31";
+		to = "Minen von Kristallwind, 31";
+	}
+	[0x0000]
+	{
+		from = "Hidden door entry to Forgotten Mesas (requires Book)";
+		to = "Geheimtür zu vergessenen Tafelbergen (Buch erforderlich)";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 77";
+		to = "Stadt Kristallwind, 77";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 36";
+		to = "Stadt Kristallwind, 36";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 30";
+		to = "Stadt Kristallwind, 30";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 33";
+		to = "Stadt Kristallwind, 33";
+	}
+	[0x0000]
+	{
+		from = "Town of Crystwind, 72";
+		to = "Stadt Kristallwind, 72";
+	}
+	[0x0000]
+	{
+		from = "Place each Townstone on its corresponding dais in the Utraean Circle on the north edge of the town.";
+		to = "Legen Sie jeden Stadtstein auf das entsprechende Podium des Uträischen Kreises nördlich der Stadt.";
+	}
+}
