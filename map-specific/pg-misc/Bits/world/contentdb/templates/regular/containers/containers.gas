@@ -91,32 +91,34 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_park_sub";
 
+    // loot & damage from crate_glb_path2crypts
 	[inventory]
 	{
 		[pcontent]
 		{
-			[all*]
+			[oneof*]
 			{
-				[oneof*]
+				[gold*]
 				{
-					il_main = #weapon/1-10;
-					il_main = #body/1-20;
-					max = 2;
-					min = 1;
+					chance = 0.1;
+					max = 12;
+					min = 8;
+					min_pile = 1;
+					piles = 2 - 3;
 				}
 				[oneof*]
 				{
-					chance = 0.5;
-					il_main = potion_mana_small;
-					il_main = potion_health_small;
+					chance = 0.3;
+					il_main = #weapon/2-7;
+					il_main = #armor/2-7;
 				}
 			}
 		}
 	}
 	[attack]
 	{
-		damage_max = 19;
-		damage_min = 13;
+		damage_max = 10;
+		damage_min = 6;
 	}
 	[trapped]
 	{
@@ -132,6 +134,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_vale_boss";
 
+    // damage & loot from chest_csl_02_fh_r3
 	[inventory]
 	{
 		[pcontent]
@@ -187,11 +190,12 @@
 		}
 	}
 
+    // damage & loot from chest_csl_03_sd_r1
 	[inventory]
 	{
 		[pcontent]
 		{
-			[all*]
+			[oneof*]
 			{
 				[gold*]
 				{
@@ -201,6 +205,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.5;
 					il_main = #weapon/9-18;
 					il_main = #armor/20-50;
 					il_main = #*/9-18;
@@ -236,6 +241,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_gy_boss";
 
+    // damage & loot from chest_csl_02_dm_r10
 	[inventory]
 	{
 		[pcontent]
@@ -250,6 +256,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.6;
 					il_main = #weapon/17-23;
 					il_main = #armor/40-55;
 					il_main = #*/17-23;
@@ -299,11 +306,12 @@
 		}
 	}
 
+    // damage & loot from chest_csl_03_dm_r10
 	[inventory]
 	{
 		[pcontent]
 		{
-			[all*]
+			[oneof*]
 			{
 				[gold*]
 				{
@@ -313,6 +321,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.5;
 					il_main = #weapon/10-23;
 					il_main = #armor/30-55;
 					il_main = #*/10-23;
@@ -356,6 +365,7 @@
 		}
 	}
 
+    // damage & loot from chest_gob_01_dm_r11
 	[inventory]
 	{
 		[pcontent]
@@ -372,6 +382,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.7;
 					il_main = #weapon/15-22;
 					il_main = #armor/30-45;
 					il_main = #*/15-22;
@@ -414,6 +425,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_kw_sub";
 
+    // damage & loot from chest_csl_02_dm_r11
 	[inventory]
 	{
 		[pcontent]
@@ -428,6 +440,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.8;
 					il_main = #weapon/17-23;
 					il_main = #armor/40-55;
 					il_main = #*/17-23;
@@ -477,6 +490,7 @@
 		}
 	}
 
+    // damage & loot from chest_csl_03_dm_r11
 	[inventory]
 	{
 		[pcontent]
@@ -492,6 +506,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.7;
 					il_main = #weapon/15-23;
 					il_main = #armor/40-55;
 					il_main = #*/15-23;
@@ -535,6 +550,7 @@
 		}
 	}
 
+    // damage & loot from chest_cav_01_sd_r1
 	[inventory]
 	{
 		[pcontent]
@@ -549,6 +565,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.4;
 					il_main = #weapon/9-18;
 					il_main = #armor/20-50;
 					il_main = #*/9-18;
@@ -598,11 +615,12 @@
 		}
 	}
 
+    // damage & loot from chest_cav_01_sd_r2
 	[inventory]
 	{
 		[pcontent]
 		{
-			[all*]
+			[oneof*]
 			{
 				[gold*]
 				{
@@ -614,6 +632,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.4;
 					il_main = #weapon/9-19;
 					il_main = #armor/20-50;
 					il_main = #*/9-19;
@@ -649,6 +668,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_rd_side";
 
+    // damage & loot from chest_csl_02_dm_r11
 	[inventory]
 	{
 		[pcontent]
@@ -713,6 +733,7 @@
 		}
 	}
 
+    // damage & loot from chest_gob_01_dm_r11
 	[inventory]
 	{
 		[pcontent]
@@ -729,6 +750,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.7;
 					il_main = #weapon/15-22;
 					il_main = #armor/30-45;
 					il_main = #*/15-22;
@@ -779,11 +801,12 @@
 		}
 	}
 
+    // damage & loot from chest_ice_01_path2ac
 	[inventory]
 	{
 		[pcontent]
 		{
-			[all*]
+			[oneof*]
 			{
 				[gold*]
 				{
@@ -795,6 +818,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.5;
 					il_main = #weapon/12-32;
 					il_main = #armor/19-95;
 					il_main = #*/12-32;
@@ -837,6 +861,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_ww_mage";
 
+    // damage & loot from chest_csl_02_un_nt_r1
 	[inventory]
 	{
 		[pcontent]
@@ -893,6 +918,7 @@
 		}
 	}
 
+    // damage & loot from chest_ice_01_mm_r1
 	[inventory]
 	{
 		[pcontent]
@@ -906,6 +932,7 @@
 				}
 				[oneof*]
 				{
+					chance = 0.7;
 					il_main = #weapon/12-32;
 					il_main = #armor/19-95;
 					il_main = #*/12-32;
