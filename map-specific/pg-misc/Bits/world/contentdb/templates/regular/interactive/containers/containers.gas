@@ -91,7 +91,7 @@
 	category_name = "pg";
 	doc = "chest_csl_02_pg_park_sub";
 
-    // loot & damage from crate_glb_path2crypts, edited to guarantee non-empty
+    // loot from crate_glb_path2crypts, edited to guarantee non-empty
 	[inventory]
 	{
 		[pcontent]
@@ -114,16 +114,6 @@
 				}
 			}
 		}
-	}
-	[attack]
-	{
-		damage_max = 10;
-		damage_min = 6;
-	}
-	[trapped]
-	{
-		trap = trp_generator_arrow_chest;
-		fire_event = WE_REQ_USE;
 	}
 }
 
