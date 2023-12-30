@@ -71,15 +71,36 @@
 	specializes = skrubb_base;
 
 	doc = "pg_skrubb";
+	[inventory]
+	{
+		[other] { il_active_primary_spell=spell_pg_skrubb_spit; }
+	}
+
+    // stats from dsx_scorpiot_ranged_rusted
+	[actor]
+	{
+		[skills]
+		{
+		  strength 		= 11, 0; 
+		  intelligence  =  7, 0;
+		  dexterity 	=  8, 0;
+		  ranged 		=  7, 0;
+		  combat_magic	=  7, 0;
+		  nature_magic	=  7, 0;
+		}
+	}
 	[aspect]
 	{
-		life = 200;
-		max_life = 200;
+		experience_value = 156;
+		life             = 196;
+		max_life         = 196;
+		mana             = 33;
+		max_mana         = 33;
 	}
 	[attack]
 	{
-		damage_min = 15;
-		damage_max = 20;
+		damage_max = 45;
+		damage_min = 30;
 	}
-	[defend] { defense=50; }
+	[defend] { defense = 73; }
 }
