@@ -1,0 +1,959 @@
+[t:template,n:base_chest_02]
+{
+	specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-02;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_i_glb;
+			[chore_close]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-02-close;
+				}
+			}
+			[chore_open]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-02-open;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:base_chest_03]
+{
+    specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-03;
+	}
+}
+
+[t:template,n:base_chest_05]
+{
+    specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-05;
+	}
+}
+
+[t:template,n:base_chest_06]
+{
+	specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-06;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_i_glb;
+			[chore_close]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-06-open;
+				}
+			}
+			[chore_open]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-06-open;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_park_sub]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_park_sub";
+
+    // loot from 3W_crate_glb_path2crypts, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]  // EDITED
+			{
+				[gold*]
+				{
+					chance = 0.1;
+					max = 49441;
+					min = 24721;
+					min_pile = 1;
+					piles = 2 - 3;
+				}
+				[oneof*]
+				{
+					//chance = 0.3;  // REMOVED
+					il_main = #weapon/66-231;
+					il_main = #armor/89-312;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_vale_boss]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_vale_boss";
+
+    // damage & loot from 3W_chest_csl_02_fh_r3
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/225-257;
+					il_main = #body/582-728;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/257-305;
+					il_main = #body/-rare(1)/637-837;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 287;
+		damage_min = 191;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_03_pg_sw]
+{
+	specializes = base_chest_03;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_03_pg_sw";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_chest-01;
+		}
+	}
+
+    // damage & loot from 3W_chest_csl_03_sd_r1, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]  // EDITED
+			{
+				[gold*]
+				{
+					chance = 0.1;
+					max = 194386;
+					min = 155509;
+				}
+				[oneof*]
+				{
+					//chance = 0.5;  // REMOVED
+					il_main = #weapon/127-254;
+					il_main = #armor/313-783;
+					il_main = #*/127-254;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/254-296;
+					il_main = #armor/-rare(1)/736-862;
+					il_main = #*/-rare(1)/254-296;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 296;
+		damage_min = 198;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_gy_boss]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_gy_boss";
+
+    // damage & loot from 3W_chest_csl_02_dm_r10, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.6;
+					max = 218958;
+					min = 175166;
+				}
+				[oneof*]
+				{
+					//chance = 0.6;  // REMOVED
+					il_main = #weapon/155-210;
+					il_main = #armor/388-534;
+					il_main = #*/155-210;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/182-237;
+					il_main = #armor/-rare(1)/330-582;
+					il_main = #*/-rare(1)/182-237;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 306;
+		damage_min = 204;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_03_pg_gy_klaws]
+{
+	specializes = base_chest_03;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_03_pg_gy_klaws";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_chest-01;
+		}
+	}
+
+    // damage & loot from 3W_chest_csl_03_dm_r10, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]  // EDITED
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					max = 218958;
+					min = 175166;
+				}
+				[oneof*]
+				{
+					//chance = 0.5;  // REMOVED
+					il_main = #weapon/91-210;
+					il_main = #armor/291-534;
+					il_main = #*/91-210;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/192-246;
+					il_main = #armor/-rare(1)/504-592;
+					il_main = #*/-rare(1)/192-246;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 306;
+		damage_min = 204;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_gob_01_pg_kw_klaws]
+{
+	specializes = base_chest_05;
+
+	category_name = "pg";
+	doc = "3W_chest_gob_01_pg_kw_klaws";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_gob_chest-01;
+		}
+	}
+
+    // damage & loot from 3W_chest_gob_01_dm_r11, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.5;
+					max = 227625;
+					min = 182100;
+					min_pile = 11;
+					piles = 2 - 4;
+				}
+				[oneof*]
+				{
+					//chance = 0.7;  // REMOVED
+					il_main = #weapon/126-185;
+					il_main = #armor/267-401;
+					il_main = #*/126-185;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/194-228;
+					il_main = #armor/-rare(1)/392-454;
+					il_main = #*/-rare(1)/194-228;
+				}
+				[oneof*]
+				{
+					chance = 0.002;
+					il_main = #weapon/-unique(2)/194-228;
+					il_main = #armor/-unique(2)/392-454;
+					il_main = #*/-unique(2)/194-228;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 311;
+		damage_min = 207;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_kw_sub]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_kw_sub";
+
+    // damage & loot from 3W_chest_csl_02_dm_r11, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.8;
+					max = 227625;
+					min = 182100;
+				}
+				[oneof*]
+				{
+					//chance = 0.8;  // REMOVED
+					il_main = #weapon/143-194;
+					il_main = #armor/356-490;
+					il_main = #*/143-194;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/143-219;
+					il_main = #armor/-rare(1)/401-535;
+					il_main = #*/-rare(1)/143-219;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 311;
+		damage_min = 207;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_03_pg_kw_boss]
+{
+	specializes = base_chest_03;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_03_pg_kw_boss";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_chest-01;
+		}
+	}
+
+    // damage & loot from 3W_chest_csl_03_dm_r11, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.5;
+					max = 227625;
+					min = 182100;
+					piles = 5 - 7;
+				}
+				[oneof*]
+				{
+					//chance = 0.7;  // REMOVED
+					il_main = #weapon/126-194;
+					il_main = #armor/356-490;
+					il_main = #*/126-194;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/177-228;
+					il_main = #armor/-rare(1)/463-552;
+					il_main = #*/-rare(1)/177-228;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 311;
+		damage_min = 207;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_cav_01_pg_sh_a]
+{
+	specializes = base_chest_06;
+
+	category_name = "pg";
+	doc = "3W_chest_cav_01_pg_sh_a";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_chest-stone;
+		}
+	}
+
+    // damage & loot from 3W_chest_cav_01_sd_r1, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.6;
+					max = 194386;
+					min = 155509;
+				}
+				[oneof*]
+				{
+					//chance = 0.4;  // REMOVED
+					il_main = #weapon/127-254;
+					il_main = #armor/313-783;
+					il_main = #*/127-254;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/155-296;
+					il_main = #armor/-rare(1)/423-846;
+					il_main = #*/-rare(1)/155-296;
+				}
+				[oneof*]
+				{
+					chance = 0.3;
+					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 296;
+		damage_min = 198;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_cav_01_pg_sh_b]
+{
+	specializes = base_chest_06;
+
+	category_name = "pg";
+	doc = "3W_chest_cav_01_pg_sh_b";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_chest-stone;
+		}
+	}
+
+    // damage & loot from 3W_chest_cav_01_sd_r2, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]  // EDITED
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					max = 194386;
+					min = 155509;
+					min_pile = 12;
+					piles = 1 - 3;
+				}
+				[oneof*]
+				{
+					//chance = 0.4;  // REMOVED
+					il_main = #weapon/112-236;
+					il_main = #armor/271-679;
+					il_main = #*/112-236;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/136-273;
+					il_main = #armor/-rare(1)/380-746;
+					il_main = #*/-rare(1)/136-273;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 302;
+		damage_min = 202;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_rd_side]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_rd_side";
+
+    // damage & loot from 3W_chest_csl_02_dm_r11, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.8;
+					max = 227625;
+					min = 182100;
+				}
+				[oneof*]
+				{
+					//chance = 0.8;  // REMOVED
+					il_main = #weapon/143-194;
+					il_main = #armor/356-490;
+					il_main = #*/143-194;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/143-219;
+					il_main = #armor/-rare(1)/401-535;
+					il_main = #*/-rare(1)/143-219;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 311;
+		damage_min = 207;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_gob_01_pg_rd_boss]
+{
+	specializes = base_chest_05;
+
+	category_name = "pg";
+	doc = "3W_chest_gob_01_pg_rd_boss";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_gob_chest-01;
+		}
+	}
+
+    // damage & loot from 3W_chest_gob_01_dm_r11, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.5;
+					max = 227625;
+					min = 182100;
+					min_pile = 11;
+					piles = 2 - 4;
+				}
+				[oneof*]
+				{
+					//chance = 0.7;  // REMOVED
+					il_main = #weapon/126-185;
+					il_main = #armor/267-401;
+					il_main = #*/126-185;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/194-228;
+					il_main = #armor/-rare(1)/392-454;
+					il_main = #*/-rare(1)/194-228;
+				}
+				[oneof*]
+				{
+					chance = 0.002;
+					il_main = #weapon/-unique(2)/194-228;
+					il_main = #armor/-unique(2)/392-454;
+					il_main = #*/-unique(2)/194-228;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 311;
+		damage_min = 207;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_ice_01_pg_ww_boss]
+{
+	specializes = base_chest_03;
+
+	category_name = "pg";
+	doc = "3W_chest_ice_01_pg_ww_boss";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_ice_chest-open;
+		}
+	}
+
+    // damage & loot from 3W_chest_ice_01_path2ac, edited to guarantee non-empty
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]  // EDITED
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					max = 245698;
+					min = 196558;
+					min_pile = 2110;
+					piles = 6 - 8;
+				}
+				[oneof*]
+				{
+					//chance = 0.5;  // REMOVED
+					il_main = #weapon/103-275;
+					il_main = #armor/173-864;
+					il_main = #*/103-275;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/249-318;
+					il_main = #armor/-rare(1)/882-1045;
+					il_main = #*/-rare(1)/249-318;
+				}
+				[oneof*]
+				{
+					chance = 0.002;
+					il_main = #weapon/-unique(2)/249-318;
+					il_main = #armor/-unique(2)/882-1045;
+					il_main = #*/-unique(2)/249-318;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 314;
+		damage_min = 210;
+	}
+	[trapped]
+	{
+		trap = trp_generator_arrow_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_csl_02_pg_ww_mage]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "3W_chest_csl_02_pg_ww_mage";
+
+    // damage & loot from 3W_chest_csl_02_un_nt_r1
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					max = 236537;
+					min = 189230;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/85-196;
+					il_main = #armor/270-495;
+					il_main = #*/85-196;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.1;
+					il_main = #weapon/-rare(1)/187-221;
+					il_main = #armor/-rare(1)/423-540;
+					il_main = #*/-rare(1)/187-221;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 314;
+		damage_min = 210;
+	}
+	[trapped]
+	{
+		trap = trp_generator_explosion_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
+
+[t:template,n:3W_chest_ice_01_pg_pm]
+{
+	specializes = base_chest_03;
+
+	category_name = "pg";
+	doc = "3W_chest_ice_01_pg_pm";
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_ice_chest-open;
+		}
+	}
+
+    // damage & loot from 3W_chest_ice_01_mm_r1
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					max = 255113;
+					min = 204090;
+				}
+				[oneof*]
+				{
+					chance = 0.7;
+					il_main = #weapon/78-207;
+					il_main = #armor/128-640;
+					il_main = #*/78-207;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+					chance = 0.004;
+					il_main = #weapon/-rare(1)/188-239;
+					il_main = #armor/-rare(1)/653-774;
+					il_main = #*/-rare(1)/188-239;
+				}
+				[oneof*]
+				{
+					chance = 0.002;
+					il_main = #weapon/-unique(2)/188-239;
+					il_main = #armor/-unique(2)/653-774;
+					il_main = #*/-unique(2)/188-239;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		damage_max = 320;
+		damage_min = 214;
+	}
+	[trapped]
+	{
+		trap = trp_generator_frost_chest;
+		fire_event = WE_REQ_USE;
+	}
+}
