@@ -1,16 +1,10 @@
-[t:template,n:chest_csl_02_pg_park_sub]
+[t:template,n:base_chest_02]
 {
-	category_name = "pg";
-	doc = "chest_csl_02_pg_park_sub";
 	specializes = base_chest;
+
 	[aspect]
 	{
 		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 19;
-		damage_min = 13;
 	}
 	[body]
 	{
@@ -35,6 +29,68 @@
 			}
 		}
 	}
+}
+
+[t:template,n:base_chest_03]
+{
+    specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-03;
+	}
+}
+
+[t:template,n:base_chest_05]
+{
+    specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-05;
+	}
+}
+
+[t:template,n:base_chest_06]
+{
+	specializes = base_chest;
+
+	[aspect]
+	{
+		model = m_i_glb_chest-06;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_i_glb;
+			[chore_close]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-06-open;
+				}
+			}
+			[chore_open]
+			{
+				skrit = transition;
+				[anim_files]
+				{
+					00 = chest-06-open;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:chest_csl_02_pg_park_sub]
+{
+	specializes = base_chest_02;
+
+	category_name = "pg";
+	doc = "chest_csl_02_pg_park_sub";
+
 	[inventory]
 	{
 		[pcontent]
@@ -57,49 +113,25 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 19;
+		damage_min = 13;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_02_pg_vale_boss]
 {
+	specializes = base_chest_02;
+
 	category_name = "pg";
 	doc = "chest_csl_02_pg_vale_boss";
-	specializes = base_chest;
-	[aspect]
-	{
-		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 19;
-		damage_min = 13;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-close;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -128,30 +160,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 19;
+		damage_min = 13;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_03_pg_sw]
 {
+	specializes = base_chest_03;
+
 	category_name = "pg";
 	doc = "chest_csl_03_pg_sw";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-03;
 		[textures]
 		{
 			0 = b_i_glb_chest-01;
 		}
 	}
-	[attack]
-	{
-		damage_max = 25;
-		damage_min = 17;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -182,49 +217,25 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 25;
+		damage_min = 17;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_02_pg_gy_boss]
 {
+	specializes = base_chest_02;
+
 	category_name = "pg";
 	doc = "chest_csl_02_pg_gy_boss";
-	specializes = base_chest;
-	[aspect]
-	{
-		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 30;
-		damage_min = 20;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-close;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -261,30 +272,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 30;
+		damage_min = 20;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_03_pg_gy_klaws]
 {
+	specializes = base_chest_03;
+
 	category_name = "pg";
 	doc = "chest_csl_03_pg_gy_klaws";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-03;
 		[textures]
 		{
 			0 = b_i_glb_chest-01;
 		}
 	}
-	[attack]
-	{
-		damage_max = 30;
-		damage_min = 20;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -315,30 +329,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 30;
+		damage_min = 20;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_gob_01_pg_kw_klaws]
 {
+	specializes = base_chest_05;
+
 	category_name = "pg";
 	doc = "chest_gob_01_pg_kw_klaws";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-05;
 		[textures]
 		{
 			0 = b_i_gob_chest-01;
 		}
 	}
-	[attack]
-	{
-		damage_max = 36;
-		damage_min = 24;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -378,49 +395,25 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 36;
+		damage_min = 24;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_02_pg_kw_sub]
 {
+	specializes = base_chest_02;
+
 	category_name = "pg";
 	doc = "chest_csl_02_pg_kw_sub";
-	specializes = base_chest;
-	[aspect]
-	{
-		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 36;
-		damage_min = 24;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-close;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -457,30 +450,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 36;
+		damage_min = 24;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_03_pg_kw_boss]
 {
+	specializes = base_chest_03;
+
 	category_name = "pg";
 	doc = "chest_csl_03_pg_kw_boss";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-03;
 		[textures]
 		{
 			0 = b_i_glb_chest-01;
 		}
 	}
-	[attack]
-	{
-		damage_max = 36;
-		damage_min = 24;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -512,53 +508,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 36;
+		damage_min = 24;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_cav_01_pg_sh_a]
 {
+	specializes = base_chest_06;
+
 	category_name = "pg";
 	doc = "chest_cav_01_pg_sh_a";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-06;
 		[textures]
 		{
 			0 = b_i_glb_chest-stone;
 		}
 	}
-	[attack]
-	{
-		damage_max = 25;
-		damage_min = 17;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-06-open;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-06-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -595,53 +571,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 25;
+		damage_min = 17;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_cav_01_pg_sh_b]
 {
+	specializes = base_chest_06;
+
 	category_name = "pg";
 	doc = "chest_cav_01_pg_sh_b";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-06;
 		[textures]
 		{
 			0 = b_i_glb_chest-stone;
 		}
 	}
-	[attack]
-	{
-		damage_max = 29;
-		damage_min = 19;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-06-open;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-06-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -674,49 +630,25 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 29;
+		damage_min = 19;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_02_pg_rd_side]
 {
+	specializes = base_chest_02;
+
 	category_name = "pg";
 	doc = "chest_csl_02_pg_rd_side";
-	specializes = base_chest;
-	[aspect]
-	{
-		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 36;
-		damage_min = 24;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-close;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -754,30 +686,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 36;
+		damage_min = 24;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_gob_01_pg_rd_boss]
 {
+	specializes = base_chest_05;
+
 	category_name = "pg";
 	doc = "chest_gob_01_pg_rd_boss";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-05;
 		[textures]
 		{
 			0 = b_i_gob_chest-01;
 		}
 	}
-	[attack]
-	{
-		damage_max = 36;
-		damage_min = 24;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -817,30 +752,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 36;
+		damage_min = 24;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_ice_01_pg_ww_boss]
 {
+	specializes = base_chest_03;
+
 	category_name = "pg";
 	doc = "chest_ice_01_pg_ww_boss";
-	specializes = base_chest;
+
 	[aspect]
 	{
-		model = m_i_glb_chest-03;
 		[textures]
 		{
 			0 = b_i_ice_chest-open;
 		}
 	}
-	[attack]
-	{
-		damage_max = 40;
-		damage_min = 26;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -880,49 +818,25 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 40;
+		damage_min = 26;
+	}
 	[trapped]
 	{
 		trap = trp_generator_arrow_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_csl_02_pg_ww_mage]
 {
+	specializes = base_chest_02;
+
 	category_name = "pg";
 	doc = "chest_csl_02_pg_ww_mage";
-	specializes = base_chest;
-	[aspect]
-	{
-		model = m_i_glb_chest-02;
-	}
-	[attack]
-	{
-		damage_max = 40;
-		damage_min = 26;
-	}
-	[body]
-	{
-		[chore_dictionary]
-		{
-			chore_prefix = a_i_glb;
-			[chore_close]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-close;
-				}
-			}
-			[chore_open]
-			{
-				skrit = transition;
-				[anim_files]
-				{
-					00 = chest-02-open;
-				}
-			}
-		}
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -952,30 +866,33 @@
 			}
 		}
 	}
+	[attack]
+	{
+		damage_max = 40;
+		damage_min = 26;
+	}
 	[trapped]
 	{
 		trap = trp_generator_explosion_chest;
 		fire_event = WE_REQ_USE;
 	}
 }
+
 [t:template,n:chest_ice_01_pg_pm]
 {
+	specializes = base_chest_03;
+
 	category_name = "pg";
-	doc = "chest_ice_01_pg_pmchest_ice_01_pg_pm";
-	specializes = base_chest;
+	doc = "chest_ice_01_pg_pm";
+
 	[aspect]
 	{
-		model = m_i_glb_chest-03;
 		[textures]
 		{
 			0 = b_i_ice_chest-open;
 		}
 	}
-	[attack]
-	{
-		damage_max = 450;
-		damage_min = 234;
-	}
+
 	[inventory]
 	{
 		[pcontent]
@@ -1011,6 +928,11 @@
 				}
 			}
 		}
+	}
+	[attack]
+	{
+		damage_max = 450;
+		damage_min = 234;
 	}
 	[trapped]
 	{
