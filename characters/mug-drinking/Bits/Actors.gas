@@ -1,0 +1,573 @@
+[t:template,n:ee_npc_fg]
+{
+	doc = "Edens End Base template for non-hero actors specializing FG resources";
+	specializes = npc;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_fg_blonde;
+		is_male = false;
+		race = human;
+	}
+	[aspect]
+	{
+		model = m_c_gah_fg_pos_a1;
+		draw_selection_indicator = false;
+		does_block_path = false;
+
+	}
+	[ee_sheath]
+	{
+		enabled = false;
+	}
+	[ee_npc_indicator]
+	{
+	}
+	[body]
+	{
+		armor_version = gah_fg;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = ds;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_fidget_ee;
+				[anim_files]
+				{
+					00 = dsf;
+					01 = dsf-02;
+					02 = dff-sheath;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					sit1 = a_c_gah_fg_fs0_dsf-08;
+					lstn = a_c_gah_fg_fs0_dsf-07;
+					talk = a_c_gah_fg_fs0_dsf-04;
+					mage = a_c_gah_fg_fs0_mg-02;
+					attn = a_c_gah_fg_fs0_dsd-24;
+					dnc1 = a_c_gah_fg_fs0_ds-dance;
+					nek1 = a_c_gah_fg_fs0_dsf-24;
+					nek2 = a_c_gah_fg_fs0_dsf-25;
+					nek3 = a_c_gah_fg_fs0_dsf-26;
+					hdld = a_c_gah_fg_fs0_dsf-05;
+					hdlu = a_c_gah_fg_fs0_dsf-06;
+					stf1 = a_c_gah_fg_fs5_dsf-53;
+					arm1 = a_c_gah_fg_fs2_dsf-54;
+					pos1 = a_c_gah_fg_fs0_dsf-pose01;
+					stll = a_c_gah_fg_fs0_dsf-60;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+					01 = wl;
+					02 = rlsheath; // run with a sheathed weapon
+				}
+			}
+		}
+	}
+	[conversation]
+	{
+	}
+    [mind]
+    {
+		actor_may_attack = false;
+        actor_may_be_attacked = false;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+[t:template,n:ee_npc_fg_multiplayer]
+{
+	category_name = "1W_character";
+	doc = "Base template for non-hero actors specializing FG resources";
+	specializes = ee_npc_fg;
+}
+[t:template,n:ee_npc_fb]
+{
+	doc = "Base template for non-hero actors specializing FB resources";
+	specializes = npc;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_bs_son;
+		is_male = true;
+		race = human;
+	}
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a1;
+		draw_selection_indicator = false;
+		does_block_path = false;
+	}
+	[ee_sheath]
+	{
+		enabled = false;
+	}
+	[ee_npc_indicator]
+	{
+	}
+	[body]
+	{
+		armor_version = gah_fb;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fb_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					qffg = dff;
+					tch1 = ee-torch-at;
+					tch2 = ee-torch-at-02;
+					tch3 = ee-torch-at-03;
+					tch4 = ee-torch-at-04;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = ds;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = select_fidget_ee;
+				[anim_files]
+				{
+					00 = dsf;
+					//01 = dff-sheath
+					01 = ee-torch-dff;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					bed1 = a_c_gah_fb_fs0_dsf-05;
+					bed2 = a_c_gah_fb_fs0_dsf-06;
+					bed3 = a_c_gah_fb_fs0_dsf-07;
+					bed4 = a_c_gah_fb_fs0_dsf-11;
+					bed5 = a_c_gah_fb_fs0_dsf-12;
+					bed6 = a_c_gah_fb_fs0_dsf-13;
+					bed7 = a_c_gah_fb_fs0_dsf-14;
+					look = a_c_gah_fb_fs0_dsf;
+					sit1 = a_c_gah_fb_fs0_dsf-09;
+					sit2 = a_c_gah_fb_fs0_dsf-10;
+					sit3 = a_c_gah_fb_fs0_dsf-15;
+					talk = a_c_gah_fb_fs0_dsf-04;
+					wyme = a_c_gah_fb_fs0_dsf-02;
+					lsn2 = a_c_gah_fb_fs0_dsf-18;
+					hoe1 = a_c_gah_fb_fs5_dsf-02;
+					salu = a_c_gah_fb_fs0_dsf-23;
+					lean = a_c_gah_fb_fs0_dsf-24;
+					ded1 = a_c_gah_fb_fs0_dsf-50;
+					ded2 = a_c_gah_fb_fs0_dsf-51;
+					ded3 = a_c_gah_fb_fs0_dsf-52;
+					hide = a_c_gah_fb_fs0_dsf-25;
+					wnd1 = a_c_gah_fb_fs0_dsf-53;
+					tbl1 = a_c_gah_fb_fs0_dsf-54;
+					pos1 = a_c_gah_fb_fs0_dsf-pose01;
+					wnd2 = a_c_gah_fb_fs0_dsf-55;
+					wnd3 = a_c_gah_fb_fs0_dsf-56;
+					stll = a_c_gah_fb_fs0_dsf-60;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk_ee;
+				[anim_files]
+				{
+					00 = rl;
+					01 = wl;
+					02 = ee-torch-rl;
+					03 = ee-torch-wl;
+					//04 = rl-sheath;
+					//05 = wl-sheath;
+				}
+			}
+		}
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = ee_npc_boots_01;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = false;
+        actor_may_be_attacked = false;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+    }
+}
+[t:template,n:ee_npc_fb_multiplayer]
+{
+	doc = "Base template for non-hero actors specializing FB resources";
+	specializes = ee_npc_fb;
+}
+
+///FG/FB Drink from Mug
+[t:template,n:ee_npc_fg_alcohol]
+{
+	category_name = "1W_character";
+	doc = "Base template for non-hero actors designed to drink alcohol";
+	specializes = ee_npc_fg_multiplayer;
+	[body]
+	{
+		armor_version = gah_fg;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fg_fs;
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = ds;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = mug-00;
+					01 = mug-01;
+					02 = mug-02;
+					03 = mug-03;
+					04 = mug-04;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+	}
+}
+[t:template,n:ee_npc_fb_alcohol]
+{
+	category_name = "1W_character";
+	doc = "Base template for non-hero actors designed to drink alcohol";
+	specializes = ee_npc_fb_multiplayer;
+	[body]
+	{
+		armor_version = gah_fb;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fb_fs;
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = ds;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = mug-00;
+					01 = mug-01;
+					02 = mug-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+	}
+}
+///Drinking people. LIMITED TO VISUAL EFFECT ONLY. KEEP AWAY FROM COMBAT.
+[t:template,n:ee_townfolk_f_drink_01]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fg_drinker_01";
+	specializes = ee_npc_fg_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_14;
+			1 = b_c_pos_a1_026;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
+[t:template,n:ee_townfolk_f_drink_02]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fg_drinker_02";
+	specializes = ee_npc_fg_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_04;
+			1 = b_c_pos_a1_027;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
+[t:template,n:ee_townfolk_f_drink_03]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fg_drinker_03";
+	specializes = ee_npc_fg_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_09;
+			1 = b_c_pos_a1_013;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+			es_feet = bo_bo_le_f_g_c_satin;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
+[t:template,n:ee_townfolk_m_drink_01]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fb_drinker_01";
+	specializes = ee_npc_fb_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_05;
+			1 = b_c_pos_a1_003;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_f_g_c_satin;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
+[t:template,n:ee_townfolk_m_drink_02]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fb_drinker_02";
+	specializes = ee_npc_fb_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_03;
+			1 = b_c_pos_a1_015;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_f_g_c_satin;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
+[t:template,n:ee_townfolk_m_drink_03]
+{
+	category_name = "1W_townsperson";
+	doc = "ee_fb_drinker_03";
+	specializes = ee_npc_fb_alcohol;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_01;
+			1 = b_c_pos_a1_011;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_f_g_c_satin;
+			es_weapon_hand = ee_mug_pewter;
+		}
+	}
+}
