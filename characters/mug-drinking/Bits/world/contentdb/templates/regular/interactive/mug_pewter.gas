@@ -1,9 +1,10 @@
-//Mug used by NPC's in taverns who are drinking.
-[t:template,n:ee_mug_pewter]
+[t:template,n:mug_pewter] { specializes = mug_pewter_base; }
+[t:template,n:mug_pewter_base]
 {
-	doc = "ee_mug_pewter";
-	reload_delay = 0;
 	specializes = base_mace;
+
+	doc = "mug_pewter";
+	reload_delay = 0;
 	[aspect]
 	{
 		model = m_w_ee-mug;
