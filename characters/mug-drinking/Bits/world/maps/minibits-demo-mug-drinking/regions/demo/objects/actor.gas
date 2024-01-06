@@ -1,0 +1,42 @@
+[t:ee_townfolk_f_drink_01,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.8153,0,-2.38645,0xc0d0fabb;
+	}
+}
+[t:ee_townfolk_f_drink_02,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -1.79748,0,-2.42979,0xc0d0fabb;
+	}
+}
+[t:ee_townfolk_f_drink_03,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -0.875812,4.76837e-007,-2.51897,0xc0d0fabb;
+	}
+}
+[t:ee_townfolk_m_drink_01,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 0.769204,-4.76837e-007,-2.54598,0xc0d0fabb;
+	}
+}
+[t:ee_townfolk_m_drink_02,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 1.98895,-4.76837e-007,-2.53506,0xc0d0fabb;
+	}
+}
+[t:ee_townfolk_m_drink_03,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 3.10528,0,-2.57059,0xc0d0fabb;
+	}
+}

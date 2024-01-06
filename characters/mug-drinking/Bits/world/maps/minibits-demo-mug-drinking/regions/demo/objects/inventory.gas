@@ -1,0 +1,7 @@
+[t:ee_mug_pewter,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 0.0252508,0,2.98146,0xc0d0fabb;
+	}
+}
