@@ -15,13 +15,6 @@
 		does_block_path = false;
 
 	}
-	[ee_sheath]
-	{
-		enabled = false;
-	}
-	[ee_npc_indicator]
-	{
-	}
 	[body]
 	{
 		armor_version = gah_fg;
@@ -153,13 +146,6 @@
 		model = m_c_gah_fb_pos_a1;
 		draw_selection_indicator = false;
 		does_block_path = false;
-	}
-	[ee_sheath]
-	{
-		enabled = false;
-	}
-	[ee_npc_indicator]
-	{
 	}
 	[body]
 	{
