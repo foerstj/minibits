@@ -25,9 +25,9 @@
 				skrit = select_fidget;
 				[anim_files]
 				{
-					00 = mug-00;
-					01 = mug-01;
-					02 = mug-03;
+					00 = mug-00;  // static
+					01 = mug-01;  // talk
+					02 = mug-03;  // drink
 				}
 			}
 			[chore_walk]
