@@ -17,6 +17,7 @@
 
 # pics for readmes
 *.jpg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
 
 # builds
 *.dsres filter=lfs diff=lfs merge=lfs -text
