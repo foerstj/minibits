@@ -1,0 +1,56 @@
+[t:tree_ice_deciduous_04,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -3.41025,0,-3.0014,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_08,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -0.122954,-9.53674e-007,-3.4894,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_12,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 2.48383,0,-3.06878,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_16,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -3.09079,0,-0.81895,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_20,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 0.31635,9.53674e-007,-0.577042,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_24,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 2.91234,-9.53674e-007,-0.421098,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_sway_04,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -2.52928,0,3.12657,0xf00eda49;
+	}
+}
+[t:tree_ice_deciduous_sway_12,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 0.40404,0,3.21406,0xf00eda49;
+	}
+}
