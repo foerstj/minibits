@@ -1,56 +1,112 @@
-[t:tree_ice_deciduous_04,n:0x00100000]
+[t:tree_ice_ash_lg_bushy_snowy,n:0x00100000]
 {
 	[placement]
 	{
 	  p position = -3.41025,0,-3.0014,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_08,n:0x00100001]
+[t:tree_ice_ash_med_bushy_snowy,n:0x00100001]
 {
 	[placement]
 	{
 	  p position = -0.122954,-9.53674e-007,-3.4894,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_12,n:0x00100002]
+[t:tree_ice_ash_sm_bushy_snowy,n:0x00100002]
 {
 	[placement]
 	{
 	  p position = 2.48383,0,-3.06878,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_16,n:0x00100003]
+[t:tree_ice_ash_lg_snowy,n:0x00100003]
 {
 	[placement]
 	{
 	  p position = -3.09079,0,-0.81895,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_20,n:0x00100004]
+[t:tree_ice_ash_med_snowy,n:0x00100004]
 {
 	[placement]
 	{
 	  p position = 0.31635,9.53674e-007,-0.577042,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_24,n:0x00100005]
+[t:tree_ice_ash_sm_snowy,n:0x00100005]
 {
 	[placement]
 	{
 	  p position = 2.91234,-9.53674e-007,-0.421098,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_sway_04,n:0x00100006]
+[t:tree_ice_ash_lg_sway_snowy,n:0x00100006]
 {
 	[placement]
 	{
 	  p position = -2.52928,0,3.12657,0xf00eda49;
 	}
 }
-[t:tree_ice_deciduous_sway_12,n:0x00100007]
+[t:tree_ice_ash_med_sway_snowy,n:0x00100007]
 {
 	[placement]
 	{
 	  p position = 0.40404,0,3.21406,0xf00eda49;
+	}
+}
+[t:tree_ice_ash_lg_bare,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 2.63213,0,2.3141,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_lg_bushy_bare,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.0955326,0,2.14501,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_lg_sway_bare,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -2.83136,1.90735e-006,3.20827,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_med_bare,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = 2.51344,0,-0.759775,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_med_bushy_bare,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = -0.0765865,-1.90735e-006,0.307728,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_med_sway_bare,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -2.86466,-1.90735e-006,-0.31463,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_sm_bare,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 0.683554,0,-2.39841,0x9618e9a6;
+	}
+}
+[t:tree_ice_ash_sm_bushy_bare,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -1.61977,0,-2.69091,0x9618e9a6;
 	}
 }

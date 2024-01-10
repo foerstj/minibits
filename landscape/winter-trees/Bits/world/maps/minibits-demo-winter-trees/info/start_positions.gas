@@ -16,7 +16,7 @@
 			  f azimuth = 0.500000;
 			  f distance = 20.000000;
 			  f orbit = 0.000000;
-				position = 2.711478,0.000000,0.151820,0x32A73DC8;
+				position = 0.106026,0.000000,-0.015743,0x32A73DC8;
 			}
 		}
 		[world_levels]

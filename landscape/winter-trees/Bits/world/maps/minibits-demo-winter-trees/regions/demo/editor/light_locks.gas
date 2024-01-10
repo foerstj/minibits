@@ -2,11 +2,17 @@
 {
   b 0x0dcc473e = false;
   b 0x32a73dc8 = false;
+  b 0x3610260e = false;
+  b 0x5b4fbef5 = false;
   b 0x5ce20302 = false;
   b 0x71540184 = false;
+  b 0x7692394d = false;
   b 0x81c14024 = false;
   b 0x93e15798 = false;
+  b 0x9618e9a6 = false;
+  b 0xc0150cbe = false;
   b 0xc093a571 = false;
+  b 0xd96d2029 = false;
   b 0xf00eda49 = false;
   b 0xfe964449 = false;
 }
