@@ -1,8 +1,10 @@
-[t:template,n:tree_ice_deciduous_04]
+[t:template,n:tree_ice_deciduous_04] { specializes = tree_ice_deciduous_04_base; }
+[t:template,n:tree_ice_deciduous_04_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_lg_bushy";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.65;
@@ -14,11 +16,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_08]
+[t:template,n:tree_ice_ash_lg_bushy] { specializes = tree_ice_deciduous_04_base; }
+
+[t:template,n:tree_ice_deciduous_08] { specializes = tree_ice_deciduous_08_base; }
+[t:template,n:tree_ice_deciduous_08_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_med_bushy";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.3;
@@ -30,11 +36,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_12]
+[t:template,n:tree_ice_ash_med_bushy] { specializes = tree_ice_deciduous_08_base; }
+
+[t:template,n:tree_ice_deciduous_12] { specializes = tree_ice_deciduous_12_base; }
+[t:template,n:tree_ice_deciduous_12_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_sm_bushy";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.1;
@@ -46,11 +56,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_16]
+[t:template,n:tree_ice_ash_sm_bushy] { specializes = tree_ice_deciduous_12_base; }
+
+[t:template,n:tree_ice_deciduous_16] { specializes = tree_ice_deciduous_16_base; }
+[t:template,n:tree_ice_deciduous_16_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_lg";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.15;
@@ -62,11 +76,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_20]
+[t:template,n:tree_ice_ash_lg] { specializes = tree_ice_deciduous_16_base; }
+
+[t:template,n:tree_ice_deciduous_20] { specializes = tree_ice_deciduous_20_base; }
+[t:template,n:tree_ice_deciduous_20_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_med";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.4;
@@ -78,11 +96,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_24]
+[t:template,n:tree_ice_ash_med] { specializes = tree_ice_deciduous_20_base; }
+
+[t:template,n:tree_ice_deciduous_24] { specializes = tree_ice_deciduous_24_base; }
+[t:template,n:tree_ice_deciduous_24_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_sm";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.1;
@@ -94,11 +116,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_sway_04]
+[t:template,n:tree_ice_ash_sm] { specializes = tree_ice_deciduous_24_base; }
+
+[t:template,n:tree_ice_deciduous_sway_04] { specializes = tree_ice_deciduous_sway_04_base; }
+[t:template,n:tree_ice_deciduous_sway_04_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_lg_sway";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.2;
@@ -126,11 +152,15 @@
 		}
 	}
 }
-[t:template,n:tree_ice_deciduous_sway_12]
+[t:template,n:tree_ice_ash_lg_sway] { specializes = tree_ice_deciduous_sway_04_base; }
+
+[t:template,n:tree_ice_deciduous_sway_12] { specializes = tree_ice_deciduous_sway_12_base; }
+[t:template,n:tree_ice_deciduous_sway_12_base]
 {
+	specializes = base_tree;
+
 	category_name = "trees";
 	doc = "ice_ash_med_sway";
-	specializes = base_tree;
 	[aspect]
 	{
 		lodfi_lower = 0.35;
@@ -158,3 +188,4 @@
 		}
 	}
 }
+[t:template,n:tree_ice_ash_med_sway] { specializes = tree_ice_deciduous_sway_12_base; }
