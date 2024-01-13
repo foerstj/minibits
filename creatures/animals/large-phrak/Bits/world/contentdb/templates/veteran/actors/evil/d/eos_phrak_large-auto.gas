@@ -1,0 +1,69 @@
+[t:template,n:2W_phrak_large_base]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_phrak_large";
+	specializes = 2W_base_phrak;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 9, 0;
+			intelligence = 2, 0;
+			dexterity = 6, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 42541;
+		life = 796;
+		max_life = 819;
+		mana = 111;
+		max_mana = 113;
+		scale_base = 1.05;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 223;
+		damage_min = 143;
+	}
+	[common]
+	{
+		screen_name = "Large Phrak";
+	}
+}
+[t:template,n:2W_eos_phrak_large]
+{
+	specializes = 2W_eos_phrak_large_base;
+}
+[t:template,n:2W_eos_phrak_large_base]
+{
+	specializes = 2W_phrak_large_base;
+	doc = "2W_eos phrak_large";
+	[actor]
+	{
+		[skills]
+		{
+			strength = 9, 0;
+			intelligence = 2, 0;
+			dexterity = 17, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 42546;
+		life = 808;
+		max_life = 831;
+		mana = 111;
+		max_mana = 113;
+	}
+	[attack]
+	{
+		damage_max = 239;
+		damage_min = 152;
+	}
+	[defend]
+	{
+		defense = 497;
+	}
+}
