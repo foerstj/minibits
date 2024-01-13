@@ -1,9 +1,11 @@
-[t:template,n:eos_bg_shop_f]
+// Mix from Laeta and Bodrus
+[t:template,n:eos_bg_shop_f] { specializes = eos_bg_shop_f_base; }
+[t:template,n:eos_bg_shop_f_base]
 {
-    // Mix from Laeta and Bodrus
+	specializes = base_npc_fg;
+
 	category_name = "1W_shopkeep";
 	doc = "eos bg shop";
-	specializes = base_npc_fg;
 
 	[actor]
 	{
@@ -35,6 +37,17 @@
         {
             // no shoes
         }
+    }
+    [mind]
+    {
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+    }
+	[respawn_shrine]
+	{
+	}
+
+	[inventory]
+	{
 		[store_pcontent]
 		{
 			full_ratio = 0;
@@ -235,13 +248,6 @@
 			}
 		}
 	}
-    [mind]
-    {
-		jat_talk = world\ai\jobs\common\job_talk.skrit;
-    }
-	[respawn_shrine]
-	{
-	}
 	[store]
 	{
 		item_markup = 2;
@@ -262,12 +268,15 @@
 		}
 	}
 }
-[t:template,n:eos_bg_shop_m]
+
+// Same as above, just with male base model
+[t:template,n:eos_bg_shop_m] { specializes = eos_bg_shop_m_base; }
+[t:template,n:eos_bg_shop_m_base]
 {
-    // Same as above, just with male base model
+	specializes = base_npc_fb;
+
 	category_name = "1W_shopkeep";
 	doc = "eos bg shop";
-	specializes = base_npc_fb;
 
 	[actor]
 	{
@@ -299,6 +308,17 @@
         {
             // no shoes
         }
+    }
+    [mind]
+    {
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+    }
+	[respawn_shrine]
+	{
+	}
+
+	[inventory]
+	{
 		[store_pcontent]
 		{
 			full_ratio = 0;
@@ -498,13 +518,6 @@
 				}
 			}
 		}
-	}
-    [mind]
-    {
-		jat_talk = world\ai\jobs\common\job_talk.skrit;
-    }
-	[respawn_shrine]
-	{
 	}
 	[store]
 	{
