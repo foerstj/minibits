@@ -1,4 +1,4 @@
-[t:template,n:cos_crab]
+[t:template,n:crab_base]  // = crab
 {
 	category_name = "1W_ambients";
 	doc = "crab";
@@ -9,7 +9,6 @@
 		model=m_c_na_cb_pos_1;
 		is_selectable = false;
 		draw_shadow = false;
-		[textures]	{0=b_c_na_cbblk;}
 	}
 	[body]
 	{
@@ -63,7 +62,7 @@
 			}
 		}
 	}
-	[common] { screen_name="Chalice Crab"; }
+	[common] { screen_name="Crab"; }
 	[mind]
 	{
 		flee_count = 1000;
@@ -77,4 +76,16 @@
 		personal_space_range = 0.4;
 		sight_range = 6;
 	}
+}
+
+[t:template,n:cos_crab] { specializes = cos_crab_base; }
+[t:template,n:cos_crab_base]
+{
+    specializes = crab_base;
+
+	[aspect]
+	{
+		[textures]	{0=b_c_na_cbblk;}
+	}
+	[common] { screen_name="Chalice Crab"; }
 }
