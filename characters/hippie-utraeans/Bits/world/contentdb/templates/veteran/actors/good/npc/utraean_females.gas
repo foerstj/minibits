@@ -1,0 +1,311 @@
+[t:template,n:2W_eos_utraean_female_a1_base]
+{
+	specializes = 2W_dsx_base_npc_fg_multiplayer;
+
+	category_name = "2W_townsperson";
+	doc = "eos utraean_female_a1";
+	[inventory]
+	{
+		[equipment]
+		{
+			// remove boots
+		}
+	}
+	[mind]
+	{
+        jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+
+[t:template,n:2W_eos_utraean_female_a1_1a]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female_a1a";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_ta;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1b]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female_a1b";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_tb;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_tb;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1c]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female_a1c";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_tc;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_tc;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1d]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female_a1d";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_td;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_td;
+		}
+	}
+}
+
+[t:template,n:2W_eos_utraean_female_a1_1a_nude_base]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female nude";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta_barefeet;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l056;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_nude_shorthair]
+{
+    specializes = 2W_eos_utraean_female_a1_1a_nude_base;
+    [inventory]
+    {
+		custom_head = m_c_gah_fg_hlmt_head-03;  // short
+    }
+}
+[t:template,n:2W_eos_utraean_female_a1_1c_seminude]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female seminude";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_tc;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_tc_l056topless;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1b_nude_base]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female nude";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_tb_barefeet;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_tb_l056;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1b_nude_bun]
+{
+    specializes = 2W_eos_utraean_female_a1_1b_nude_base;
+    [inventory]
+    {
+		custom_head = m_c_gah_fg_hlmt_head-05;  // bun
+    }
+}
+
+[t:template,n:2W_eos_utraean_female_a1_1a_k008]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female k008";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_k008;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_l009]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l009";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l009;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_l026]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l026";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l026;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_21a_l026]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l026";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f2_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l026;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_l027]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l027";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l027;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_21c_l027]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female_a1b";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f2_tc;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_tc_l027;
+		}
+	}
+    [inventory]
+    {
+		custom_head = m_c_gah_fg_hlmt_head-05;  // bun
+    }
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_l037]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l037";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l037;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1a_l070]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l070";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_ta;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_l070;
+		}
+	}
+}
+[t:template,n:2W_eos_utraean_female_a1_1d_l070]
+{
+	specializes = 2W_eos_utraean_female_a1_base;
+	doc = "eos utraean_female l070";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f1_td;
+			1 = b_c_pos_a1_ba-utraean_eos_f1_td_l070;
+		}
+	}
+    [inventory]
+    {
+		custom_head = m_c_gah_fg_hlmt_head-02;  // up
+    }
+}
+
+
+[t:template,n:2W_eos_utraean_female_a2_base]
+{
+	specializes = 2W_dsx_base_npc_fg_multiplayer;
+
+	category_name = "2W_townsperson";
+	doc = "eos utraean_female_a2";
+	[aspect]
+	{
+		model = m_c_gah_fg_pos_a2;
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f2;
+			1 = b_c_pos_a2_ba-utraean_eos_f2;
+		}
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			// remove boots
+		}
+	}
+	[mind]
+	{
+        jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}	
+}
+
+[t:template,n:2W_eos_utraean_female_a2_2]
+{
+	specializes = 2W_eos_utraean_female_a2_base;
+	doc = "eos utraean_female_a2";
+}
+[t:template,n:2W_eos_utraean_female_a2_2_bald]
+{
+	specializes = 2W_eos_utraean_female_a2_base;
+
+	doc = "eos utraean_female_a2";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_f2_bald;
+			1 = b_c_pos_a2_ba-utraean_eos_f2;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-04;  // bald
+    }
+
+	[store]  // enable selling mules
+	{
+		item_markup = 2;
+	}
+}

@@ -1,0 +1,153 @@
+[t:template,n:3W_eos_utraean_male_a2_base]
+{
+	specializes = 3W_base_npc_fb_multiplayer;
+
+	category_name = "3W_townsperson";
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a2;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+            // delete the boots
+		}
+	}
+	[mind]
+	{
+        jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+
+[t:template,n:3W_eos_utraean_male_a2_3a]
+{
+	specializes = 3W_eos_utraean_male_a2_base;
+	doc = "eos utraean_male_a2a";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m3_ta;
+			1 = b_c_pos_a2_ba-utraean_eos_m3_ta;
+		}
+	}
+}
+[t:template,n:3W_eos_utraean_male_a2_3b]
+{
+	specializes = 3W_eos_utraean_male_a2_base;
+	doc = "eos utraean_male_a2b";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m3_tb;
+			1 = b_c_pos_a2_ba-utraean_eos_m3_tb;
+		}
+	}
+}
+[t:template,n:3W_eos_utraean_male_a2_3c]
+{
+	specializes = 3W_eos_utraean_male_a2_base;
+	doc = "eos utraean_male_a2c";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m3_tc;
+			1 = b_c_pos_a2_ba-utraean_eos_m3_tc;
+		}
+	}
+}
+[t:template,n:3W_eos_utraean_male_a2_3d]
+{
+	specializes = 3W_eos_utraean_male_a2_base;
+
+	doc = "eos utraean_male_a2d";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m3_td;
+			1 = b_c_pos_a2_ba-utraean_eos_m3_td;
+		}
+	}
+
+	[store]  // enable selling mules
+	{
+		item_markup = 2;
+	}
+}
+
+
+[t:template,n:3W_eos_utraean_male_a1_base]
+{
+	specializes = 3W_base_npc_fb_multiplayer;
+
+	category_name = "3W_townsperson";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m1;
+			1 = b_c_pos_a1_ba-utraean_eos_m1;
+		}
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+            // delete the boots
+		}
+	}
+	[mind]
+	{
+        jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+
+[t:template,n:3W_eos_utraean_male_a1_1]
+{
+	specializes = 3W_eos_utraean_male_a1_base;
+	doc = "eos utraean_male_03";
+}
+[t:template,n:3W_eos_utraean_male_a1_1d]
+{
+	specializes = 3W_eos_utraean_male_a1_base;
+	doc = "eos utraean_male_03";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m1_td;
+			1 = b_c_pos_a1_ba-utraean_eos_m1_td;
+		}
+    }
+}
+[t:template,n:3W_eos_utraean_male_a1_3c1b]
+{
+	specializes = 3W_eos_utraean_male_a1_base;
+	doc = "eos utraean_male_03";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m3_tc;
+			1 = b_c_pos_a1_ba-utraean_eos_m1_tb;
+		}
+    }
+}
+
+[t:template,n:3W_eos_utraean_male_a1_nude]
+{
+	specializes = 3W_eos_utraean_male_a1_base;
+	doc = "eos utraean_male_nude";
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin-eos_m1_barefeet;
+			1 = b_c_pos_a1_ba-utraean_eos_mn;
+		}
+	}
+}
