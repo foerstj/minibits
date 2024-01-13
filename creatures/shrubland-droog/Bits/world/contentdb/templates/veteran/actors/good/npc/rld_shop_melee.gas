@@ -1,0 +1,58 @@
+[t:template,n:2W_eos_rld_shop_melee] { specializes = 2W_eos_rld_shop_melee_base; }
+[t:template,n:2W_eos_rld_shop_melee_base]
+{
+	specializes = 2W_base_npc_dg;
+
+    category_name = "2W_shopkeep";
+	doc = "RLD melee shop";
+	[actor] { portrait_icon = b_gui_ig_i_ic_c_orellean; }
+	[aspect]
+	{
+		use_range = 1.0;
+		is_ghost_usable = TRUE;
+		[textures] { 0=b_c_eam_dg-05; }
+        scale_base = 1.1;
+	}
+	[conversation] { }
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+    [respawn_shrine]
+	{
+	}
+
+	[inventory]
+	{
+		[store_pcontent]
+		{
+			full_ratio = 0;
+			[weapons]
+			{
+                // melee from verma, balanced
+				[all*]
+				{
+					il_main = #melee/0-167;
+					max = 20;
+					min = 15;
+				}
+				[all*]
+				{
+					il_main = #melee/167-193;
+					max = 20;
+					min = 15;
+				}
+				[all*]
+				{
+					il_main = #melee/193-220;
+					max = 10;
+					min = 5;
+				}
+			}
+		}
+	}
+	[store]
+	{
+		item_markup = 2;
+	}
+}
