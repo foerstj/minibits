@@ -51,6 +51,8 @@
 		[store_pcontent]
 		{
 			full_ratio = 0;
+
+            // armor, shields, weapons & magic from bodrus
 			[armor]
 			{
 				[all*]
@@ -157,7 +159,6 @@
 					min = 4;
 				}
 			}
-
 			[weapons]
 			{
 				[all*]
@@ -197,7 +198,6 @@
 					min = 6;
 				}
 			}
-
 			[magic]
 			{
 				[all*]
@@ -213,6 +213,8 @@
 					min = 5;
 				}
 			}
+
+            // misc from dsx_laeta but only the lowest selection of spellbooks
 			[misc]
 			{
 				[all*]
@@ -252,6 +254,7 @@
 	{
 		item_markup = 2;
 
+        // from bodrus
 		[item_restock]
 		{
 			potion_health_small = 18;
@@ -322,6 +325,8 @@
 		[store_pcontent]
 		{
 			full_ratio = 0;
+
+            // armor, shields, weapons & magic from bodrus
 			[armor]
 			{
 				[all*]
@@ -428,7 +433,6 @@
 					min = 4;
 				}
 			}
-
 			[weapons]
 			{
 				[all*]
@@ -468,7 +472,6 @@
 					min = 6;
 				}
 			}
-
 			[magic]
 			{
 				[all*]
@@ -484,6 +487,8 @@
 					min = 5;
 				}
 			}
+
+            // misc from dsx_laeta but only the lowest selection of spellbooks
 			[misc]
 			{
 				[all*]
@@ -523,6 +528,7 @@
 	{
 		item_markup = 2;
 
+        // from bodrus
 		[item_restock]
 		{
 			potion_health_small = 18;
