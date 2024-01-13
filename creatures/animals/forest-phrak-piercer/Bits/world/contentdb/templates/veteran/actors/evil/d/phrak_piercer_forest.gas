@@ -1,0 +1,120 @@
+[t:template,n:2W_phrak_piercer_base]  // = 2W_phrak_piercer
+{
+	category_name = "2W_evil_d";
+	doc = "2W_phrak piercer";
+	specializes = 2W_base_phrak;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4.2, 0;
+			intelligence =  1.5, 0;
+			dexterity =  23.9, 0;
+			ranged =  53, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4172;
+		life = 116;
+        max_life = 116;
+        mana = 108;
+		max_mana = 108;
+		scale_base = 0.55;
+		textures:0 = b_c_edm_ph-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 156.4;
+		damage_min = 124.4;
+		damage_bonus_min_cmagic = 122;
+		damage_bonus_max_cmagic = 162;
+	}
+	[common]
+	{
+		screen_name="Phrak Piercer";
+		membership = phrak,monster;
+	}
+
+	[defend] { defense=540; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_phrak_dart; }
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true
+			&guard							= true
+			&friends						= phrak;
+	}
+		[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_phrak_piercer_01 = 1;
+			frag_glb_phrak_piercer_02 = 2;
+			frag_glb_phrak_piercer_03 = 2;
+			frag_glb_phrak_piercer_04 = 1;
+			frag_glb_phrak_piercer_05 = 2;
+		}
+	}
+}
+
+[t:template,n:2W_phrak_piercer_forest] { specializes = 2W_phrak_piercer_forest_base; }
+[t:template,n:2W_phrak_piercer_forest_base]
+{
+	specializes = 2W_phrak_piercer_base;
+
+	doc = "phrak_piercer_forest";
+	[aspect]
+	{
+		scale_base = 0.40;
+		textures:0 = b_c_edm_ph-02;
+	}
+	[common]
+	{
+		screen_name="Forest Phrak Piercer";
+		membership = monster, party_spiked_dweller;
+	}
+
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_phrak_forest_dart; }
+	}
+
+    // stats from 2W_phrak_forest
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	11.1, 0;
+			intelligence =  2.6, 0;
+			dexterity =  	27.2, 0;
+            melee = 		56, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 78000;
+		life = 400;
+        max_life = 400;
+        mana = 4.4;
+		max_mana = 4.4;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 256.7;
+		damage_min = 190;
+	}
+    [defend] { defense=296.7; }
+}
