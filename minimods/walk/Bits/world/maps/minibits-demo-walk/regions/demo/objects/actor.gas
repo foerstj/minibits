@@ -1,0 +1,48 @@
+[t:naidi,n:0x00100000]
+{
+	[aspect]
+	{
+	  i gold_value = 0;
+	  f max_life = 58.8;
+	  f max_mana = 34;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = -1.74247,0,-1.79971,0x855c5865;
+	}
+}
+[t:zed,n:0x00100001]
+{
+	[aspect]
+	{
+	  i gold_value = 0;
+	  f max_life = 68.6;
+	  f max_mana = 80;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 1.37396,0,-1.83088,0x855c5865;
+	}
+}

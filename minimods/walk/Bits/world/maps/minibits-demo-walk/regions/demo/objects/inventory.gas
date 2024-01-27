@@ -1,0 +1,77 @@
+[t:sh_m_g_c_r_s_low,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -2.345,0,2.33843,0x855c5865;
+	}
+}
+[t:sd_g_c_gl_1h_low,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -1.67384,0,2.40791,0x855c5865;
+	}
+}
+[t:ax_d_o_2h1b_avg,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -1.09094,0,2.49035,0x855c5865;
+	}
+}
+[t:ax_g_c_1h1b_fun,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -0.651936,0,2.32149,0x855c5865;
+	}
+}
+[t:bw_g_d_s_s_c_avg,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = -0.00988068,9.53674e-007,2.23833,0x855c5865;
+	}
+}
+[t:cb_g_c_r_1h_avg,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.312339,0,2.35002,0x855c5865;
+	}
+}
+[t:dg_g_d_1h_fun,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = 0.784604,-9.53674e-007,2.28161,0x855c5865;
+	}
+}
+[t:hm_g_c_1h1m_low,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = 1.24117,0,2.37876,0x855c5865;
+	}
+}
+[t:mc_g_c_dsx_tub_avg,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = 1.59593,0,2.33718,0x855c5865;
+	}
+}
+[t:shovel,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = 2.64562,0,2.31398,0x855c5865;
+	}
+}
+[t:cw_g_c_l_p_avg,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = 2.0793,0,2.43342,0x855c5865;
+	}
+}
