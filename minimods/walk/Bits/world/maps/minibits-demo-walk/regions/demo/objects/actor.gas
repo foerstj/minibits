@@ -46,3 +46,72 @@
 	  p position = 1.37396,0,-1.83088,0x855c5865;
 	}
 }
+[t:gloern,n:0x00100005]
+{
+	[aspect]
+	{
+	  f max_life = 147;
+	  f max_mana = 37;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 0.0107804,0,-3.4367,0x855c5865;
+	}
+}
+[t:skeleton_good,n:0x00100008]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = -3.04391,0,-3.68441,0x855c5865;
+	}
+}
+[t:giant,n:0x00100009]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 3.02931,0,-3.40707,0x855c5865;
+	}
+}
