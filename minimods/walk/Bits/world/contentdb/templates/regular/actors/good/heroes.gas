@@ -118,8 +118,12 @@
 	}
 	[body]
 	{
+		// EDITED:
+		min_move_velocity = 1.5;
+		avg_move_velocity = 2.0;
+		max_move_velocity = 3.0;
+
 		armor_version = gah_fb;
-		avg_move_velocity = 4.500000;
 		initial_chore = chore_fidget;
 		[bone_translator]
 		{
@@ -223,7 +227,13 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = select_walk;
-				[anim_files] { 05=rl; }
+
+				// EDITED:
+				[anim_files]
+				{
+					  00 = wl;
+					  01 = rl;
+				}
 			}
 		}
 	}
@@ -253,8 +263,12 @@
 	}
 	[body]
 	{
+		// EDITED:
+		min_move_velocity = 1.5;
+		avg_move_velocity = 2.0;
+		max_move_velocity = 3.0;
+
 		armor_version = gah_fg;
-		avg_move_velocity = 4.500000;
 		[bone_translator]
 		{
 			body_anterior = bip01_head;
@@ -360,7 +374,13 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = select_walk;
-				[anim_files] { 00=rl; }
+
+				// EDITED:
+				[anim_files]
+				{
+					  00 = wl;
+					  01 = rl;
+				}
 			}
 		}
 	}
