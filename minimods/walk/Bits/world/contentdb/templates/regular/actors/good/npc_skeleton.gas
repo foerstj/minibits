@@ -13,8 +13,12 @@
 	}
 	[body]
 	{
+		// EDITED:
+		min_move_velocity = 1.5;
+		avg_move_velocity = 2.0;
+		max_move_velocity = 3.0;
+
 		armor_version = ecm_sk;
-		avg_move_velocity = 4.500000;
 		[bone_translator]
 		{
 			body_anterior = bip01_head;
@@ -95,7 +99,13 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = select_walk;
-				[anim_files] { 00=rl; }
+
+				// EDITED:
+				[anim_files]
+				{
+					  00 = wl;
+					  01 = rl;
+				}
 			}
 		}
 	}
@@ -148,4 +158,7 @@
 			}
         }
 	}
+
+    // ADDED
+    [conversation] {}
 }

@@ -78,6 +78,129 @@
 	{
 	}
 	[store] { can_sell_self = true; }
+
+    // OVERRIDE
+	[body]
+	{
+		// EDITED:
+		min_move_velocity = 1.5;
+		avg_move_velocity = 2.0;
+		max_move_velocity = 3.0;
+
+		armor_version = gan_df;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gan_df_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					qffg = dff;
+				}
+
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gan_df_fs1_dk;
+					frtd = a_c_gan_df_fs0_dsf;
+					glrn = a_c_gan_df_fs1_dsf;
+					gtup = a_c_gan_df_fs0_up;
+					look = a_c_gan_df_fs1_dff;
+					talk = a_c_gan_df_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+
+				// EDITED:
+				[anim_files]
+				{
+					  00 = wl;
+					  01 = rl;
+				}
+			}
+		}
+		[weapon_scales]
+		{
+			as_bow_and_arrow = 0.8, 0.8, 0.8;
+			as_minigun = 0.8, 0.8, 0.8;
+			as_shield_only = 0.8, 1.0, 0.8;
+			as_single_melee = 0.9, 0.9, 0.9;
+			as_staff = 1.0, 1.0, 0.8;
+			as_two_handed_melee = 0.9, 0.9, 0.8;
+			as_two_handed_sword = 1.0, 1.0, 0.8;
+		}
+	}
 }
 [t:template,n:dwarf]
 {
