@@ -110,3 +110,61 @@
 	  p position = -1.61977,0,-2.69091,0x9618e9a6;
 	}
 }
+[t:tree_grs_deciduous_04,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = 3.08641,0,0.101505,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_08,n:0x00100013]
+{
+	[placement]
+	{
+	  p position = 0.193246,0,0.319225,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_12,n:0x00100014]
+{
+	[placement]
+	{
+	  p position = -2.63117,0,0.247796,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_16,n:0x00100015]
+{
+	[placement]
+	{
+	  q orientation = 0,2.98023e-008,0,1;
+	  p position = 2.83394,0,2.53913,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_20,n:0x00100016]
+{
+	[placement]
+	{
+	  p position = 0.494228,0,2.87312,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_24,n:0x00100017]
+{
+	[placement]
+	{
+	  p position = -3.06137,0,2.96932,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_sway_04,n:0x00100018]
+{
+	[placement]
+	{
+	  p position = 1.75038,0,-1.5179,0xfe964449;
+	}
+}
+[t:tree_grs_deciduous_sway_12,n:0x00100019]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -1.2149,0,-2.58927,0xfe964449;
+	}
+}
