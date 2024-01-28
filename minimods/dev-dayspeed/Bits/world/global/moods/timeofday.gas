@@ -1,6 +1,6 @@
 [timeofday]
 {
-	RealMinutesPerWorldHour	= 0.066667;
+	RealMinutesPerWorldHour	= 0.066667;  // = 1.6 / 24
 
 	00h00m:color = 0xFF9E4DCA;
 	01h00m:color = 0xFF000040;
