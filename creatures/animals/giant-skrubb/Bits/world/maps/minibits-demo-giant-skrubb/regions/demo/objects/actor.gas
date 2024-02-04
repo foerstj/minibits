@@ -1,0 +1,28 @@
+[t:skrubb_farm,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -2.58104,0,-1.81303,0x9636e091;
+	}
+}
+[t:skrubb_small,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 2.50095,0,-1.51581,0x9636e091;
+	}
+}
+[t:skrubb,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -1.81107,0,-1.27075,0xc756955f;
+	}
+}
+[t:giant_skrubb,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -0.292636,0,0.549763,0x23581fde;
+	}
+}
