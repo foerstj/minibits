@@ -1,0 +1,339 @@
+[mood_setting*]
+{
+  b interior = false;
+	mood_name = map_expansion_opening_nis;
+  f transition_time = 0.000000;
+	[fog]
+	{
+	  x fog_color = 0xFF000000;
+	  f fog_density = 1.000000;
+	  f fog_far_dist = 2.000000;
+	  f fog_lowdetail_far_dist = 1.000000;
+	  f fog_lowdetail_near_dist = 0.000000;
+	  f fog_near_dist = 0.000000;
+	}
+	[frustum]
+	{
+	  f frustum_height = 60.000000;
+	  f frustum_width = 45.000000;
+	}
+	[music]
+	{
+	  f ambient_intro_delay = 0.000000;
+	  f ambient_repeat_delay = 7.000000;
+		ambient_track = s_e_env_bats;
+	  f battle_intro_delay = 0.000000;
+	  f battle_repeat_delay = 0.000000;
+		battle_track = ;
+		room_type = rt_forest;
+	  f standard_intro_delay = 0.000000;
+	  f standard_repeat_delay = 0.000000;
+		standard_track = s_m_intro;
+	}
+	[rain]
+	{
+	  b lightning = true;
+	  f rain_density = 100.000000;
+	}
+	[sun]
+	{
+		[00h00m]
+		{
+			color = 0xff000000;
+		}
+		[05h00m]
+		{
+			color = 0xff1a1a00;
+		}
+		[06h00m]
+		{
+			color = 0xff66330d;
+		}
+		[07h00m]
+		{
+			color = 0xffb39a40;
+		}
+		[08h00m]
+		{
+			color = 0xffb3b3b3;
+		}
+		[10h00m]
+		{
+			color = 0xfff0f0ff;
+		}
+		[12h00m]
+		{
+			color = 0xffffffff;
+		}
+		[19h00m]
+		{
+			color = 0xffb39a9a;
+		}
+		[20h00m]
+		{
+			color = 0xff66334d;
+		}
+		[21h00m]
+		{
+			color = 0xff330d40;
+		}
+		[22h00m]
+		{
+			color = 0xff000000;
+		}
+	}
+}
+[mood_setting*]
+{
+  b interior = true;
+	mood_name = map_expansion_nis_snow_heavy;
+  f transition_time = 1.500000;
+	[fog]
+	{
+	  x fog_color = 0xFFB5D9EA;
+	  f fog_density = 1.000000;
+	  f fog_far_dist = 30.000000;
+	  f fog_lowdetail_far_dist = 25.000000;
+	  f fog_lowdetail_near_dist = 17.000000;
+	  f fog_near_dist = 17.000000;
+	}
+	[frustum]
+	{
+	  f frustum_height = 60.000000;
+	  f frustum_width = 45.000000;
+	}
+	[music]
+	{
+	  f ambient_intro_delay = 0.000000;
+	  f ambient_repeat_delay = 0.000000;
+		ambient_track = s_e_ambient_wind_ice_cavern;
+	  f battle_intro_delay = 0.000000;
+	  f battle_repeat_delay = 0.000000;
+		battle_track = ;
+		room_type = rt_forest;
+	  f standard_intro_delay = 0.000000;
+	  f standard_repeat_delay = 20.000000;
+		standard_track = s_m_intro;
+	}
+	[snow]
+	{
+	  f snow_density = 600.000000;
+	}
+	[sun]
+	{
+		[00h00m]
+		{
+			color = 0xff000000;
+		}
+		[05h00m]
+		{
+			color = 0xff1a1a00;
+		}
+		[06h00m]
+		{
+			color = 0xff66330d;
+		}
+		[07h00m]
+		{
+			color = 0xffb39a40;
+		}
+		[08h00m]
+		{
+			color = 0xffb3b3b3;
+		}
+		[10h00m]
+		{
+			color = 0xfff0f0ff;
+		}
+		[12h00m]
+		{
+			color = 0xffffffff;
+		}
+		[19h00m]
+		{
+			color = 0xffb39a9a;
+		}
+		[20h00m]
+		{
+			color = 0xff66334d;
+		}
+		[21h00m]
+		{
+			color = 0xff330d40;
+		}
+		[22h00m]
+		{
+			color = 0xff000000;
+		}
+	}
+}
+[mood_setting*]
+{
+  b interior = false;
+	mood_name = map_expansion_nis_ruintower;
+  f transition_time = 1.500000;
+	[fog]
+	{
+	  x fog_color = 0xFF000F00;
+	  f fog_density = 1.000000;
+	  f fog_far_dist = 40.000000;
+	  f fog_lowdetail_far_dist = 35.000000;
+	  f fog_lowdetail_near_dist = 10.000000;
+	  f fog_near_dist = 10.000000;
+	}
+	[frustum]
+	{
+	  f frustum_height = 60.000000;
+	  f frustum_width = 45.000000;
+	}
+	[music]
+	{
+	  f ambient_intro_delay = 0.000000;
+	  f ambient_repeat_delay = 25.000000;
+		ambient_track = s_e_env_scream_male;
+	  f battle_intro_delay = 0.000000;
+	  f battle_repeat_delay = 0.000000;
+		battle_track = ;
+		room_type = rt_forest;
+	  f standard_intro_delay = 0.000000;
+	  f standard_repeat_delay = 0.000000;
+		standard_track = s_m_intro;
+	}
+	[rain]
+	{
+	  b lightning = true;
+	  f rain_density = 800.000000;
+	}
+	[sun]
+	{
+		[00h00m]
+		{
+			color = 0xff000000;
+		}
+		[05h00m]
+		{
+			color = 0xff1a1a00;
+		}
+		[06h00m]
+		{
+			color = 0xff66330d;
+		}
+		[07h00m]
+		{
+			color = 0xffb39a40;
+		}
+		[08h00m]
+		{
+			color = 0xffb3b3b3;
+		}
+		[10h00m]
+		{
+			color = 0xfff0f0ff;
+		}
+		[12h00m]
+		{
+			color = 0xffffffff;
+		}
+		[19h00m]
+		{
+			color = 0xffb39a9a;
+		}
+		[20h00m]
+		{
+			color = 0xff66334d;
+		}
+		[21h00m]
+		{
+			color = 0xff330d40;
+		}
+		[22h00m]
+		{
+			color = 0xff000000;
+		}
+	}
+}
+[mood_setting*]
+{
+  b interior = false;
+	mood_name = map_expansion_nis_jungle;
+  f transition_time = 2.500000;
+	[fog]
+	{
+	  x fog_color = 0xFF001700;
+	  f fog_density = 1.000000;
+	  f fog_far_dist = 30.000000;
+	  f fog_lowdetail_far_dist = 25.000000;
+	  f fog_lowdetail_near_dist = 17.000000;
+	  f fog_near_dist = 17.000000;
+	}
+	[frustum]
+	{
+	  f frustum_height = 60.000000;
+	  f frustum_width = 45.000000;
+	}
+	[music]
+	{
+	  f ambient_intro_delay = 0.000000;
+	  f ambient_repeat_delay = 25.000000;
+		ambient_track = s_e_env_scream_male;
+	  f battle_intro_delay = 0.000000;
+	  f battle_repeat_delay = 0.000000;
+		battle_track = ;
+		room_type = rt_forest;
+	  f standard_intro_delay = 0.000000;
+	  f standard_repeat_delay = 0.000000;
+		standard_track = s_m_the_shadowjumper_theme;
+	}
+	[rain]
+	{
+	  b lightning = true;
+	  f rain_density = 600.000000;
+	}
+	[sun]
+	{
+		[00h00m]
+		{
+			color = 0xff000000;
+		}
+		[05h00m]
+		{
+			color = 0xff1a1a00;
+		}
+		[06h00m]
+		{
+			color = 0xff66330d;
+		}
+		[07h00m]
+		{
+			color = 0xffb39a40;
+		}
+		[08h00m]
+		{
+			color = 0xffb3b3b3;
+		}
+		[10h00m]
+		{
+			color = 0xfff0f0ff;
+		}
+		[12h00m]
+		{
+			color = 0xffffffff;
+		}
+		[19h00m]
+		{
+			color = 0xffb39a9a;
+		}
+		[20h00m]
+		{
+			color = 0xff66334d;
+		}
+		[21h00m]
+		{
+			color = 0xff330d40;
+		}
+		[22h00m]
+		{
+			color = 0xff000000;
+		}
+	}
+}

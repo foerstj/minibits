@@ -1,0 +1,22 @@
+[mood_setting*]
+{
+	mood_name				= map_world_fh_r1_intro_1_3;
+	transition_time			= 6.0f;
+	interior				= false;
+
+	[fog]
+	{
+		fog_near_dist		= 0.1f;
+		fog_far_dist		= 0.2f;
+		fog_color			= 0xFF000000;
+		fog_density			= 0.5f;
+	}
+
+	[music]
+	{
+		ambient_track		= "";
+		standard_repeat_delay = 10.0f;
+		standard_track		= "s_m_king_intro";
+		room_type			= rt_generic;
+	}
+}
