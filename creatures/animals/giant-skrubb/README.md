@@ -2,8 +2,10 @@
 
 ![pic](pic.jpg)
 
-Based on the originally unused "skrubb" template, with higher stats, and hi-res texture.
+Based on the originally unused "skrubb" template, with hi-res texture and a ground hole.
 
-src: AntonioR (HRT mod); foerstj / EoS
+Adaptions with higher stats fitting for EoS & PG.
+
+src: AntonioR (HRT mod); foerstj / EoS & PG
 
 ![pic](pic2.jpg)
