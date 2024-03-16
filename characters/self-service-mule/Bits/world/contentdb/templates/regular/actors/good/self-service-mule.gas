@@ -164,6 +164,6 @@
     [store] { can_sell_self = true; }
     [mind]
     {
-        jat_talk = world\ai\jobs\actors\good\job_talk_self_service_mule.skrit;
+        jat_talk = world\ai\jobs\minibits\self-service-mule\job_talk_self_service_mule.skrit;
     }
 }

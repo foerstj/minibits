@@ -19,7 +19,7 @@
 	}
 	[mind]
 	{
-		jat_talk = world\ai\jobs\actors\good\job_talk_self_service_mule.skrit?namespace=self_service_mule&oid=0x100000;
+		jat_talk = world\ai\jobs\minibits\self-service-mule\job_talk_self_service_mule.skrit?namespace=self_service_mule&oid=0x100000;
 	}
 	[placement]
 	{

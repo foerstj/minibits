@@ -10,7 +10,7 @@
 	}
 	[mind]
 	{
-		jat_talk = world\ai\jobs\generic-talk-skrits\job_talk_quest.skrit?quest=quest;
+		jat_talk = world\ai\jobs\minibits\generic-talk-skrits\job_talk_quest.skrit?quest=quest;
 	}
 	[placement]
 	{
