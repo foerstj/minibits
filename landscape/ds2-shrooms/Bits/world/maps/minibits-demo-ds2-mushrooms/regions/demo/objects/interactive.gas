@@ -1,0 +1,7 @@
+[t:lever_amren_mushroom,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 0.15941,0,1.31235,0x83ef13ef;
+	}
+}

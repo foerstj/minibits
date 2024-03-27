@@ -1,0 +1,208 @@
+[t:ds2_shroom_cav_glow_04,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 1.06156,0,-2.93699,0x27e0fd74;
+	}
+}
+[t:ds2_shroom_cav_glow_01,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = -2.74407,0,-3.0272,0x27e0fd74;
+	}
+}
+[t:mushroom_enf_01,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -1.83219,0,1.81513,0x27e0fd74;
+	}
+}
+[t:mushroom_enf_02,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -0.427073,0,1.82096,0x27e0fd74;
+	}
+}
+[t:mushroom_enf_03,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = 0.750862,0,1.8919,0x27e0fd74;
+	}
+}
+[t:mushroom_enf_04,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = 1.84455,0,1.83126,0x27e0fd74;
+	}
+}
+[t:ds2_shroom_cav_glow_02,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = -1.72404,0,-3.0845,0x27e0fd74;
+	}
+}
+[t:ds2_shroom_cav_glow_03,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -0.395847,0,-2.95124,0x27e0fd74;
+	}
+}
+[t:ds2_shroom_cav_glow_05,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = 2.48176,0,-2.90877,0x27e0fd74;
+	}
+}
+[t:shroom_cav_wall_05,n:0x00100005]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -1.70776,-1.22461,-0.537254,0xaf72cd45;
+	}
+}
+[t:shroom_cav_wall_01,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 1.31415,-0.740219,-0.340469,0xaf72cd45;
+	}
+}
+[t:shroom_cav_wall_02,n:0x00100008]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.518202,-1.25272,-0.574498,0xaf72cd45;
+	}
+}
+[t:shroom_cav_wall_03,n:0x00100009]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.131453,-0.701099,-0.28169,0xaf72cd45;
+	}
+}
+[t:shroom_cav_wall_04,n:0x0010000a]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.884735,-0.997355,-0.477332,0xaf72cd45;
+	}
+}
+[t:amren_mushroom,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -0.630052,0,-0.329892,0x83ef13ef;
+	}
+}
+[t:mushroom_voldane,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 1.05693,0,-0.176345,0x83ef13ef;
+	}
+}
+[t:shroom_cav_group_01,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 2.54233,0,-2.71924,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_02,n:0x00100013]
+{
+	[placement]
+	{
+	  p position = 2.54659,0,-1.06288,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_03,n:0x00100014]
+{
+	[placement]
+	{
+	  p position = 2.69076,-1.90735e-006,1.057,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_04,n:0x00100015]
+{
+	[placement]
+	{
+	  p position = 2.5626,0,2.96843,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_05,n:0x00100016]
+{
+	[placement]
+	{
+	  p position = 0.0360484,0,-3.03398,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_06,n:0x00100017]
+{
+	[placement]
+	{
+	  p position = -0.133362,0,-1.25165,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_07,n:0x00100018]
+{
+	[placement]
+	{
+	  p position = -0.0407729,0,0.728176,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_08,n:0x00100019]
+{
+	[placement]
+	{
+	  p position = 0.048599,0,3.21398,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_09,n:0x0010001a]
+{
+	[placement]
+	{
+	  p position = -2.11193,0,-3.09281,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_10,n:0x0010001b]
+{
+	[placement]
+	{
+	  p position = -2.77725,0,-1.25181,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_11,n:0x0010001c]
+{
+	[placement]
+	{
+	  p position = -2.28206,0,1.00091,0xb9ad0cbe;
+	}
+}
+[t:shroom_cav_group_12,n:0x0010001d]
+{
+	[placement]
+	{
+	  p position = -2.25376,0,3.30135,0xb9ad0cbe;
+	}
+}
+[t:mushroom_glb_cluster_01,n:0x0010001e]
+{
+	[placement]
+	{
+	  p position = -0.0591192,0,0.0251923,0x01b44637;
+	}
+}
