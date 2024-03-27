@@ -1,4 +1,4 @@
-[t:template,n:shroom_cav_glow_01]
+[t:template,n:ds2_shroom_cav_glow_01]
 {
 	category_name = "misc";
 	doc = "shroom_cyan_glow";
@@ -18,7 +18,7 @@
 	//	effect				= "efct_shroom_glow_01";
 	//}
 }
-[t:template,n:shroom_cav_glow_02]
+[t:template,n:ds2_shroom_cav_glow_02]
 {
 	category_name = "misc";
 	doc = "shroom_violet_glow";
@@ -38,7 +38,7 @@
 	//	effect				= "efct_shroom_glow_02";
 	//}
 }
-[t:template,n:shroom_cav_glow_03]
+[t:template,n:ds2_shroom_cav_glow_03]
 {
 	category_name = "misc";
 	doc = "shroom_blue_glow";
@@ -58,7 +58,7 @@
 	//	effect				= "efct_shroom_glow_03";
 	//}
 }
-[t:template,n:shroom_cav_glow_05]
+[t:template,n:ds2_shroom_cav_glow_05]
 {
 	category_name = "misc";
 	doc = "shroom_orange_glow";
