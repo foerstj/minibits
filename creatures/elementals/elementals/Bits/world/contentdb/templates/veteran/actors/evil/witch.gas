@@ -17,7 +17,7 @@
 		[other]
 		{
 			il_active_primary_spell = spell_gr_witch_attack;
-			il_spell_1 = spell_gr_witch_summon;
+			il_spell_1 = 2W_spell_gr_witch_summon;
 		}
     }
 	[mind]
