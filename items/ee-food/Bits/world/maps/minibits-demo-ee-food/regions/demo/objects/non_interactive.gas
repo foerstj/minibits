@@ -1,0 +1,72 @@
+[t:table_glb_01,n:0x00100000]
+{
+	[placement]
+	{
+	  q orientation = 0,0.704457,0,0.709747;
+	  p position = -0.00381458,0,-2.09136,0xdbe338b0;
+	}
+}
+[t:ee_food_apple,n:0x00100001]
+{
+	[placement]
+	{
+	  q orientation = 0,0.553501,0,0.832849;
+	  p position = 0.00420024,0.883784,-1.73005,0xdbe338b0;
+	}
+}
+[t:ee_food_lemon,n:0x00100002]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.831473,0,0.555566;
+	  p position = 0.104655,0.929222,-1.90357,0xdbe338b0;
+	}
+}
+[t:ee_food_orange,n:0x00100003]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.898489,0,0.438997;
+	  p position = 0.243649,0.883784,-1.71387,0xdbe338b0;
+	}
+}
+[t:ee_food_fish_blue,n:0x00100004]
+{
+	[placement]
+	{
+	  q orientation = 0,0.906111,0,0.423039;
+	  p position = -0.878937,0.893588,-1.88484,0xdbe338b0;
+	}
+}
+[t:ee_food_cheese_wheel,n:0x00100005]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.180663,0,0.983545;
+	  p position = -0.482009,0.883783,-1.86788,0xdbe338b0;
+	}
+}
+[t:ee_food_cheese_slice,n:0x00100006]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.282812,0,0.959175;
+	  p position = -0.335507,0.883784,-1.86421,0xdbe338b0;
+	}
+}
+[t:ee_food_squash-01,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.169062,0,0.985605;
+	  p position = 0.426707,0.883784,-2.04691,0xdbe338b0;
+	}
+}
+[t:ee_food_squash-02,n:0x00100008]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.705135,0,0.709073;
+	  p position = 0.669307,0.883784,-1.96697,0xdbe338b0;
+	}
+}
