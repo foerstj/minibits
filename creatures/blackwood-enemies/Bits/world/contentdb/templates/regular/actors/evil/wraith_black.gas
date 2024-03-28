@@ -207,7 +207,7 @@
 		}
 	}
 
-    // stats & loot from grizzly furok
+    // stats & loot from furok_boss_01
 	[actor]
 	{
 		[skills]

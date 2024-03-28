@@ -164,7 +164,7 @@
 		}
 	}
 
-    // stats from ice braak
+    // stats from braak_magic_base
 	[inventory]
 	{
 		[other] { il_active_primary_spell=gr_spell_phrak_black_dart; }
