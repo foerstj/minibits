@@ -8,8 +8,8 @@
     {
 		[textures]
 		{
-			0 = b_c_gah_fb_skin_35;  // Bandit Boss
-			1 = b_c_pos_a3_045;  // Hovart's armor
+			0 = b_c_gah_fb_skin_34;
+			1 = b_c_pos_a3_033;
 		}
     }
 	[common]
@@ -19,10 +19,11 @@
 	}
     [inventory]
     {
+        custom_head = m_c_gah_fb_hlmt_head-05;
         selected_active_location = il_active_primary_spell;
 		[other]
 		{
-			il_active_primary_spell   = spell_explosive_powder;
+			il_active_primary_spell   = spell_firespray;
 			il_active_secondary_spell = spell_resurrect_monster;
 		}
         [equipment]
@@ -37,7 +38,7 @@
 		actor_auto_switches_to_magic         = true;
 		actor_auto_reanimates_friends        = true;
 		actor_auto_uses_stored_items         = true;
-		actor_auto_switches_to_melee         = false;
+		actor_auto_switches_to_melee         = true;  // switch to staff if mana ever runs out
 
   		jat_brain						= world\ai\jobs\common\brain_hero.skrit
 			?actor_creates_own_party		= true
@@ -68,6 +69,14 @@
 		max_mana = 3150;  // adapted
    		experience_value = 1138;
 	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=150; }
+
 	[inventory]
 	{
 		[pcontent]
@@ -114,11 +123,4 @@
             }
 		}
 	}
-	[attack]
-	{
-		attack_range = 0.5;
-		damage_max = 60;
-		damage_min = 50;
-	}
-	[defend] { defense=150; }
 }

@@ -2,7 +2,7 @@
 
 ![pic](pic.jpg)
 
-A Bandit Mage that casts Explosive Powder and occasionally resurrects a fellow Bandit.
+A Bandit Mage that casts Firespray and occasionally resurrects a fellow Bandit.
 
 src: foerstj
 
