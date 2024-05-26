@@ -118,3 +118,52 @@
 	  p position = -2.63166,0,3.20818,0xfd7ede8e;
 	}
 }
+[t:npc_shortling_d01,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -3.31282,0,2.26811,0x0df58b88;
+	}
+}
+[t:npc_shortling_d04,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = 0.0736864,0,2.35826,0x0df58b88;
+	}
+}
+[t:npc_shortling_d03,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = -1.05487,-9.53674e-007,2.40127,0x0df58b88;
+	}
+}
+[t:npc_shortling_d02,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -2.24204,0,2.30601,0x0df58b88;
+	}
+}
+[t:npc_shortling_d05,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 1.12459,-9.53674e-007,2.38455,0x0df58b88;
+	}
+}
+[t:npc_shortling_d06,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = 2.27425,9.53674e-007,2.40464,0x0df58b88;
+	}
+}
+[t:npc_shortling_d07,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = 3.36016,0,2.39564,0x0df58b88;
+	}
+}

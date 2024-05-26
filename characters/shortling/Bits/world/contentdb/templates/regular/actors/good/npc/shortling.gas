@@ -100,9 +100,8 @@
 		[textures]
 		{
 			0 = b_c_gan_hg_skin_04;
-			1 = b_c_pos_a2_226;
+			1 = b_c_pos_a1_100;
 		}
-		model = m_c_gan_hg_pos_a2;
     }
 }
 
@@ -118,7 +117,7 @@
 		[textures]
 		{
 			0 = b_c_gan_hg_skin_05;
-			1 = b_c_pos_a1_200;
+			1 = b_c_pos_a1_100;
 		}
     }
 }
@@ -135,7 +134,7 @@
 		[textures]
 		{
 			0 = b_c_gan_hg_skin_06;
-			1 = b_c_pos_a1_200;
+			1 = b_c_pos_a1_100;
 		}
     }
 }
@@ -153,6 +152,128 @@
 		{
 			0 = b_c_gan_hg_skin_07;
 			1 = b_c_pos_a1_102;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d01]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_wym;
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_01;
+			1 = b_c_pos_a1_shd100;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d02]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_acha;
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_02;
+			1 = b_c_pos_a1_shd200;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d03]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_03;
+			1 = b_c_pos_a1_shd300;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d04]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_tass;
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_04;
+			1 = b_c_pos_a1_shd100;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d05]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_05;
+			1 = b_c_pos_a1_shd100;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d06]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_06;
+			1 = b_c_pos_a1_shd100;
+		}
+    }
+}
+
+[t:template,n:npc_shortling_d07]
+{
+    specializes = base_npc_shortling;
+
+	[actor]
+	{
+	}
+    [aspect]
+    {
+		[textures]
+		{
+			0 = b_c_gan_sh_skin_07;
+			1 = b_c_pos_a1_shd102;
 		}
     }
 }
