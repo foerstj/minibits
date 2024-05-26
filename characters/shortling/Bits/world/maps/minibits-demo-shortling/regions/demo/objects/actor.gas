@@ -1,7 +1,120 @@
-[t:npc_shortling,n:0x00100002]
+[t:npc_shortling_02,n:0x00100001]
 {
 	[placement]
 	{
-	  p position = 0.0111341,0,-2.43288,0xfd7ede8e;
+	  p position = -2.15135,0,-2.66416,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_01,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -3.17423,0,-2.67307,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_03,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -1.05344,0,-2.56797,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_04,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 0.0525582,0,-2.53392,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_05,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 1.04416,0,-2.51313,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_06,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 2.08753,4.76837e-007,-2.51119,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_07,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 3.13306,0,-2.51679,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_01,n:0x00100008]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_le_f_g_c_avg;
+			es_feet = bo_bo_le_light;
+			es_forearms = gl_gl_sl_f_g_c_avg;
+			es_head = he_ca_le_avg;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = 2.46882,4.76837e-007,3.14945,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_01,n:0x00100009]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_ba_f_g_c_avg;
+			es_feet = bo_bo_le_light;
+			es_weapon_hand = ax_d_c_2h2b_avg;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = 0.871547,0,3.29885,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_01,n:0x0010000a]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_ro_m_d_c_003;
+			es_feet = bo_bo_le_light;
+			es_head = he_fl_pl_m_beaded_wrap_dsx;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = -1.2265,-4.76837e-007,3.39091,0xfd7ede8e;
+	}
+}
+[t:npc_shortling_01,n:0x0010000b]
+{
+	[inventory]
+	{
+		selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+			es_chest = bd_pl_f_g_c_avg;
+			es_feet = bo_bo_le_light;
+			es_head = he_fu_pl_desert;
+			es_shield_hand = bw_g_c_c_l_4_avg;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = -2.63166,0,3.20818,0xfd7ede8e;
 	}
 }
