@@ -1,0 +1,7 @@
+[t:npc_shortling,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 0.0111341,0,-2.43288,0xfd7ede8e;
+	}
+}
