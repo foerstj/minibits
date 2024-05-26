@@ -1,0 +1,21 @@
+[t:npc_witchling_01,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 0.0579209,-9.53674e-007,-2.09921,0x564ed9b8;
+	}
+}
+[t:npc_witchling_02,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.1633,0,-3.11888,0x564ed9b8;
+	}
+}
+[t:npc_witchling_03,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 2.10254,4.76837e-007,-3.06884,0x564ed9b8;
+	}
+}

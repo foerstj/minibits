@@ -1,0 +1,55 @@
+[t:template,n:base_npc_witchling]
+{
+    specializes = base_npc_fb;
+
+	category_name = "1W_townsperson";
+	[aspect]
+	{
+		model = m_c_edm_sw_pos_1;
+        scale_base = 1.1;
+	}
+    [common]
+    {
+        screen_name = "Witchling";
+    }
+	[inventory]
+	{
+		[equipment]
+		{
+			//es_feet = bo_bo_le_light;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = false;
+        actor_may_be_attacked = false;
+    }
+}
+
+[t:template,n:npc_witchling_01]
+{
+    specializes = base_npc_witchling;
+
+    [aspect]
+    {
+		textures:0 = b_c_edm_sw;
+    }
+}
+[t:template,n:npc_witchling_02]
+{
+    specializes = base_npc_witchling;
+
+    [aspect]
+    {
+		textures:0 = b_c_edm_sw-02;
+    }
+}
+[t:template,n:npc_witchling_03]
+{
+    specializes = base_npc_witchling;
+
+    [aspect]
+    {
+		textures:0 = b_c_edm_sw-03;
+    }
+}
