@@ -1,0 +1,12 @@
+[t:xaa,n:0x00100000]
+{
+	[aspect]
+	{
+	  f max_life = 1391.6;
+	  f max_mana = 339;
+	}
+	[placement]
+	{
+	  p position = 0.0512203,0,-2.41108,0x210d41c1;
+	}
+}
