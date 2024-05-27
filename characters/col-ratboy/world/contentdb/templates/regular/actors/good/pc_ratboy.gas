@@ -1,0 +1,401 @@
+[t:template,n:pc_ratboy]
+{
+	doc = "pc_ratboy";
+	// ratboy instead of farmboy.  Get it?  
+	// alright, alright, it was a lame joke.
+	specializes = base_farmboy;
+	[actor]
+	{
+		race = mus;
+		// is_hero=true;
+		screen_class = "Samurai";
+		portrait_icon = b_gui_ig_i_ic_c_rb;
+		[skills]
+		{
+			strength 	=	0, 0, 13;
+			intelligence	= 	0, 0, 10;
+			dexterity	= 	0, 0, 8;
+		}
+	}
+	[aspect]
+	{
+		megamap_override = true; // RAID#7185: MP: Teammates in MP should be non-Line of Sight on map.  -MM 02.03.2002
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_99b;
+			1 = b_c_pos_a1_021;
+		}
+		[voice]
+		{
+			[die]		{	* = s_e_die_fury;		}
+		}
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_weapon_hand=dg_g_d_1h_fun;
+			es_feet = bo_bo_le_light;
+			es_spellbook = book_glb_magic_01;
+		}
+	        [pcontent]
+	        {
+				[gold*]
+				{
+					chance = 1.0;
+					max = 30;
+					min = 30;
+				}
+	        }
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero_ratboy.skrit
+			?hhead			= "rat_head"
+			&ttail			= "rat_tail";
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range = 24.0; //              = 0.9;
+		ranged_engage_range = 24.5; //             = 5.5;
+		sensor_scan_period = 0.10; //              = 0.25;
+		sight_range = 25.0; //                     = 12.0;
+
+		actor_life_ratio_low_threshold = 0.3; //  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+
+		actor_weapon_preference         = WP_NONE;
+
+		////////////////////////////////////////
+		//	permissions
+
+		combat_orders                              = CO_LIMITED;
+		movement_orders                            = MO_LIMITED;
+
+		actor_auto_switches_to_magic               = false;
+		actor_auto_defends_others		   = true;
+		actor_auto_heals_self_life                 = true;
+		actor_auto_heals_self_mana                 = true;
+		actor_auto_heals_others_life               = true;
+		actor_auto_heals_others_mana               = true;
+		actor_auto_switches_to_karate              = false;
+	        actor_auto_switches_to_melee               = false;
+		actor_auto_xfers_mana			   = true;
+
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+		on_engaged_fled_abort_attack		   = false;
+		on_enemy_spotted_alert_friends             = true;
+		on_alert_projectile_near_missed_attack     = true;
+
+	}
+
+	[water_effects] {}
+	[store] { can_sell_self = true; }
+}
+
+[t:template,n:rat_tail]
+{
+	doc = "ratboy's tail";
+	specializes = actor_custom;
+	[actor]
+	{
+		alignment			= aa_neutral;
+		[skills]
+		{
+			strength =  	1, 0;
+			dexterity =  	1, 0;
+			intelligence =  1, 0;
+		}
+	}
+	[aspect]
+	{
+		is_invincible = true;
+		is_collidable = false;
+		model = m_c_edm_gr_pos_1_tail;
+		[textures]
+		{
+			0 = b_c_edm_gr;
+		}
+		material = flesh;
+		[voice]
+		{
+		}
+	}
+	[body]
+	{
+		[bone_translator]
+		{
+			body_anterior = Bip01_Tail1;
+			body_mid = Bip01_Tail1;
+			body_posterior = Bip01_Tail1;
+			kill_bone = Bip01_Tail1;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_fidget;
+			[chore_default]
+			{
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = a_c_edm_gr_fs0_dfs_tail;
+				}
+			}
+			[chore_fidget]
+			{
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = a_c_edm_gr_fs0_dfs_tail;
+				}
+			}
+		}
+	}
+	[common]
+	{
+	}
+	[defend] { defense=9999; }
+	[follower]	{}
+	[inventory]
+	{
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit;
+
+		actor_auto_fidgets = true
+		melee_engage_range = 24.0; //              = 0.9;
+		ranged_engage_range = 24.5; //             = 5.5;
+		sensor_scan_period = 0.10; //              = 0.25;
+		sight_range = 25.0; //                     = 12.0;
+
+		actor_may_be_attacked = false;
+		actor_may_attack = false;
+
+		sensor_scan_period = 2.0;
+	}
+	[attach_rat_tail] 
+	{
+		ttail = "rat_tail";
+	}
+	[physics]
+	{
+		gib_gore_good = false;
+	}
+}
+
+[t:template,n:rat_head]
+{
+	doc = "ratboy's head";
+	specializes = actor_custom;
+	[actor]
+	{
+		alignment			= aa_neutral;
+		[skills]
+		{
+			strength =  	1, 0;
+			dexterity =  	1, 0;
+			intelligence =  1, 0;
+		}
+	}
+	[aspect]
+	{
+		is_invincible = true;
+		is_collidable = false;
+		model = m_c_edm_gr_pos_1_head_big;
+		[textures]
+		{
+			0 = b_c_edm_gr_b;
+		}
+		material = flesh;
+		[voice]
+		{
+		}
+	}
+	[body]
+	{
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+		}
+	}
+	[common]
+	{
+	}
+	[defend] { defense=9999; }
+	[follower]	{}
+	[inventory]
+	{
+	}
+	[mind]
+	{
+		actor_auto_fidgets = false;
+		melee_engage_range = 24.0; //              = 0.9;
+		ranged_engage_range = 24.5; //             = 5.5;
+		sensor_scan_period = 0.10; //              = 0.25;
+		sight_range = 25.0; //                     = 12.0;
+
+		actor_may_be_attacked = false;
+		actor_may_attack = false;
+
+		sensor_scan_period = 2.0;
+	}
+	[attach_rat_head] 
+	{
+		hhead = "rat_head";
+	}
+	[physics]
+	{
+		gib_gore_good = false;
+	}
+}
+
+[t:template,n:xaa]
+{
+	///////////////////////////////////////////////////////////////////
+	// ****OFFICIAL NOTICE OF COPYRIGHT****
+	// THE CHARACTER 'XAA' AND ALL LIKENESSES THEREOF ARE COPYRIGHT
+	// (C) 2002 JIM FARRIS, ALL RIGHTS RESERVED.  YOU MAY NOT REPRODUCE 
+	// OR DISTRIBUTE THIS CHARACTER IN ANY FORM, MECHANICAL, ELECTRONIC
+	// OR OTHERWISE, WITHOUT EXPRESS WRITTEN PERMISSION FROM ME,
+	// JIM FARRIS.  THIS MEANS YOU MAY NOT INCLUDE THIS 
+	// CHARACTER IN YOUR MODS UNLESS YOU SPECIFICALLY RECEIVE
+	// WRITTEN PERMISSION FROM ME.  THIS CHARACTER IS PROTECTED BY
+	// US COPYRIGHT LAWS AND UNDER INTERNATIONAL LAW VIA THE BERNE
+	// TREATY.  VIOLATIONS OF COPYRIGHT WILL BE DEALT WITH TO 
+	// THE FULLEST EXTENT OF APPLICABLE LAW.
+	//
+	// If you wish to use this character in your mods, you may
+	// reach me via e-mail at xaa@3lefties.com, or via snail-mail
+	// at the following address:
+	// 	Jim Farris
+	// 	612 S. Ave. 'E'
+	// 	Portales, NM 88130
+	// 
+	// ****LIMTED USE NOTICE****
+	// You may install, use, access, display, run, or otherwise interact
+	// with the character 'Xaa' as it appears in the Dungeon Siege 
+	// Siegelet (mod) "Circle of Lorent".  You may make "backup" or 
+	// "archive" copies of this character for personal, non-profit use.
+	// This permission does NOT grant you any rights in connection with 
+	// the character as a trademarks or service marks of Jim Farris.
+	// All Title and Intellectual Property rights to the character 
+	// 'Xaa' are retained by it's creator, Jim Farris.
+	///////////////////////////////////////////////////////////////////
+	doc = "Xaa, (C)2002 Jim Farris, ALL RIGHTS RESERVED";
+	category_name = "1W_character";
+	specializes = pc_ratboy;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_rb;
+		[skills]
+		{
+			strength	= 34.3107, 0, 13;
+			dexterity	= 18.8502, 0, 10;
+			intelligence	= 10.8469, 0, 8;
+			melee		= 55, 0, 0;
+			ranged		= 55, 0, 0;
+			combat_magic	= 55, 0, 0;
+			nature_magic	= 55,0, 0;
+			uber		= 64,0, 0;
+		}
+	}
+	[common]
+	{
+		screen_name = "Xaa";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = il_active_melee_weapon;
+		[other]
+		{
+			il_active_primary_spell = spell_healing_hands;
+			il_active_secondary_spell = spell_flame_blades;
+			il_spell_3 = spell_ambivalence;
+			il_spell_4 = spell_icefury;
+			il_spell_5 = spell_inferno;
+			il_spell_6 = spell_party_recharge;
+			il_spell_7 = spell_resurrect;
+			il_spell_8 = spell_mana_channel;
+			il_spell_9 = spell_healing_wind;
+			il_main = col_bo_friend;//Added by Trailstorm-Radeem
+		}
+		[pcontent]
+		{
+			es_spellbook	= book_glb_magic_01;
+			es_chest 	= #bd_un_sc_r_d_o_mag;
+			es_feet 	= #bo_bo_ch_f_g_c_avg:o_fin;
+			es_forearms	= #gl_gl_ch_f_g_c_avg:o_str;
+			es_weapon_hand	= st_un_axe_str_xaa;
+		}
+	}
+	[mind]
+	{
+		jat_talk 			= world\ai\jobs\common\job_talk.skrit;//Added by Trailstorm-Radeem
+	}
+}
+
+[t:template,n:st_un_axe_str_xaa]
+{
+	doc = "Xaa's Axe Staff";
+	specializes = base_staff;
+	[aspect]
+	{
+		model = m_w_stf_038;
+	}
+	[attack]
+	{
+	  reload_delay = -0.5;
+	  f damage_max = 294.000000;
+	  f damage_min = 196.000000;
+	}
+	[common]
+	{
+	        is_pcontent_allowed = false;
+	        allow_modifiers = false;
+		pcontent_special_type = unique;
+		screen_name = "Xaa's Axe Staff";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_stf_007;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_stf_078;
+		inventory_width = 1;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 0.000000;
+		  f modifier_min = 0.000000;
+		}
+	}
+	[single_pickup]
+	{
+	}
+	[race_limited]
+	{
+		race = "xaa";
+	}
+}

@@ -1,0 +1,6 @@
+[t:tsd,n:b_c_gah_fb_skin_99b]
+{
+  b hasalpha = true;
+	layer1texture1 = b_c_gah_fb_skin_99b;
+  i texturedetail = 1;
+}

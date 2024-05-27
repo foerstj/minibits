@@ -1,0 +1,78 @@
+////////////////////////////////////////////////////////////////////////////////
+// attach_rat_tail.skrit
+// This skrit glues the tail on.
+// Getting this to work, however, requires a bit of quaternion mathematics.
+////////////////////////////////////////////////////////////////////////////////
+
+// reserved tags
+property bool   _server_only$		= false;
+property string _doc$			= "made to put ratboy together";
+property string _required_component$	= "placement";
+
+property string	ttail$;
+
+owner = GoSkritComponent;
+
+//////////////////////////////////////////////////////////////////////////////
+// This is what we do when the skrit first loads
+startup state Start$
+{
+	// Let's wait a moment for sync.
+	trigger OnGoHandleMessage$( WE_ENTERED_WORLD )
+	{
+		This.CreateTimer( 1, 0 );
+	}
+	// Okay, done waiting, let's go to state-attach.
+	transition -> Attach$:OnTimer( 1 );
+}
+
+state Attach$
+{	
+	// Just in case something stopped us from attaching before, let's repeat the
+	// attempt when the timer expires again.  We'll reset the timer below.
+	transition -> Attach$:OnTimer( 1 );
+	// This is what we do when we enter the state.
+	event OnEnterState$
+	{
+		int i$ = 0;
+		int iend$ = Owner.Go.Parent.Children.Size();
+		// Let's create a variable we will use to assess the part to be attached.
+		Go tail$;
+		// Here's our WHILE loop.
+		while( i$ < iend$ )
+		{
+			tail$ = Owner.Go.Parent.Children.Get( i$ );
+			// Sanity Check - did we have a child to attach?  We should, 
+			// because this skrit is only called by the child when it spawns.
+			if( tail$ != NULL )
+			{
+				// Sanity check - is the child we spawned the correct 
+				// template?
+				if( StringTool.SameNoCase( tail$.templatename, ttail$))
+				{
+					Owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( tail$.Aspect.AspectHandle, "Bip01_pelvis", "Bip01_Tail1", MakeQuat(-0.5,0.5,-0.5,0.5),MakeVector(0.45,-0.35,1.15) );
+					i$ = iend$;
+					// Follow the legs!
+					MCPManager.MakeRequest(	tail$.Goid, PL_FOLLOW, Owner.Go.Goid );
+				}
+			}
+			i$ += 1;
+		}
+		if( tail$ == NULL )
+		{
+			// Something went drastically wrong, and we had no part to attach.
+			// This might be a problem with lag, so let's wait five frames and
+			// try again.
+			This.CreateFrameTimer( 1, 5 );
+			return;
+		}
+		// We're done.
+		SetState Done$;
+	}
+}
+
+state Done$
+{
+	// We're done, do nothing.  This skrit will be deleted when the 
+	// object it is attached to is deleted.
+}

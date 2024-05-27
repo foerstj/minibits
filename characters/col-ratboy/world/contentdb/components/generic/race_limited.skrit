@@ -1,0 +1,83 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+// File     :  race_limited.skrit
+// Author   :  Xaa
+//
+// This skrit is made to drop objects if the player is the wrong race.
+//
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+// public definitions
+
+// reserved tags
+property bool	_server_only$		= true;
+property string	_doc$			= "Drops objects equipped by the wrong player.";
+property string	race$			= "pc_valkyrie"	doc = "Input the race that may equip the item - the default is PC_VALKYRIE, since this is used primarily for the Soul-Sword.";
+property int	left$			= -1		doc = "if limted by race but NOT gender, input the left$ count to test.  For example, to tell the difference between farmboy and farmgirl, use left$ = 5";
+
+owner	= GoSkritComponent;
+
+goid player$;
+
+//////////////////////////////////////////////////////////////////////////////
+
+// wait until the object has entered the world.
+startup state WaitForEnter$
+{
+	trigger OnGoHandleMessage$( WE_ENTERED_WORLD )
+	{
+		SetState Waiting$;
+	}
+}
+
+state Waiting$
+{
+	// look at events that this objects recieve.
+	event OnGoHandleMessage$( eWorldEvent e$, WorldMessage msg$ )
+	{
+		// if we recieve the equipped world event then look to see if the person that picked us up is allowed to have us.
+		if ( e$ == WE_EQUIPPED )
+		{
+			player$ = msg$.SendFrom;
+
+			if( !player$.IsValid )
+			{
+				report.Error( "Bad player when trying to limit race items.\n" );
+			}
+
+			// pause a moment for sync.
+			this.CreateTimer( 1, 0 );
+		}
+	}
+	trigger OnTimer$( 1 )
+	{
+		setstate Remove$;
+	}
+}
+
+state Remove$
+{
+	event OnEnterState$
+	{
+		// If we didn't set the left$ variable, that means this item is limted by 
+		// race AND gender.  The template names must match exactly.
+		if ( !(StringTool.SameNoCase( player$.Go.TemplateName, race$)) && (left$ <= 0) )
+		{
+			// take the item out of the inventory. This character isn't 
+			// allowed to equip this item.
+			player$.Go.Inventory.RSRemove( owner.Go, false, player$.Go );
+			setstate Waiting$;
+		}
+		// If we DID set the left$ variable, that means that the item is limted by
+		// race, but not gender.  Both male and female members of that race may 
+		// use the item.
+		if ( !(StringTool.SameNoCase( StringTool.Left(player$.Go.TemplateName, Left$), race$)) && (left$ >= 1) )
+		{
+			// take the item out of the inventory. This character isn't 
+			// allowed to equip this item.
+			player$.Go.Inventory.RSRemove( owner.Go, false, player$.Go );
+			setstate Waiting$;
+		}
+	}
+}
