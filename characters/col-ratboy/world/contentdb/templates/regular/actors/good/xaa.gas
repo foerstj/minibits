@@ -1,38 +1,40 @@
-[t:template,n:xaa]
+/******************************************************************
+ * ****OFFICIAL NOTICE OF COPYRIGHT****
+ * THE CHARACTER 'XAA' AND ALL LIKENESSES THEREOF ARE COPYRIGHT
+ * (C) 2002 JIM FARRIS, ALL RIGHTS RESERVED.  YOU MAY NOT REPRODUCE 
+ * OR DISTRIBUTE THIS CHARACTER IN ANY FORM, MECHANICAL, ELECTRONIC
+ * OR OTHERWISE, WITHOUT EXPRESS WRITTEN PERMISSION FROM ME,
+ * JIM FARRIS.  THIS MEANS YOU MAY NOT INCLUDE THIS 
+ * CHARACTER IN YOUR MODS UNLESS YOU SPECIFICALLY RECEIVE
+ * WRITTEN PERMISSION FROM ME.  THIS CHARACTER IS PROTECTED BY
+ * US COPYRIGHT LAWS AND UNDER INTERNATIONAL LAW VIA THE BERNE
+ * TREATY.  VIOLATIONS OF COPYRIGHT WILL BE DEALT WITH TO 
+ * THE FULLEST EXTENT OF APPLICABLE LAW.
+ *
+ * If you wish to use this character in your mods, you may
+ * reach me via e-mail at xaa@3lefties.com, or via snail-mail
+ * at the following address:
+ * 	Jim Farris
+ * 	612 S. Ave. 'E'
+ * 	Portales, NM 88130
+ * 
+ * ****LIMTED USE NOTICE****
+ * You may install, use, access, display, run, or otherwise interact
+ * with the character 'Xaa' as it appears in the Dungeon Siege 
+ * Siegelet (mod) "Circle of Lorent".  You may make "backup" or 
+ * "archive" copies of this character for personal, non-profit use.
+ * This permission does NOT grant you any rights in connection with 
+ * the character as a trademarks or service marks of Jim Farris.
+ * All Title and Intellectual Property rights to the character 
+ * 'Xaa' are retained by it's creator, Jim Farris.
+ *****************************************************************/
+[t:template,n:xaa] { specializes = xaa_base; }
+[t:template,n:xaa_base]
 {
-	///////////////////////////////////////////////////////////////////
-	// ****OFFICIAL NOTICE OF COPYRIGHT****
-	// THE CHARACTER 'XAA' AND ALL LIKENESSES THEREOF ARE COPYRIGHT
-	// (C) 2002 JIM FARRIS, ALL RIGHTS RESERVED.  YOU MAY NOT REPRODUCE 
-	// OR DISTRIBUTE THIS CHARACTER IN ANY FORM, MECHANICAL, ELECTRONIC
-	// OR OTHERWISE, WITHOUT EXPRESS WRITTEN PERMISSION FROM ME,
-	// JIM FARRIS.  THIS MEANS YOU MAY NOT INCLUDE THIS 
-	// CHARACTER IN YOUR MODS UNLESS YOU SPECIFICALLY RECEIVE
-	// WRITTEN PERMISSION FROM ME.  THIS CHARACTER IS PROTECTED BY
-	// US COPYRIGHT LAWS AND UNDER INTERNATIONAL LAW VIA THE BERNE
-	// TREATY.  VIOLATIONS OF COPYRIGHT WILL BE DEALT WITH TO 
-	// THE FULLEST EXTENT OF APPLICABLE LAW.
-	//
-	// If you wish to use this character in your mods, you may
-	// reach me via e-mail at xaa@3lefties.com, or via snail-mail
-	// at the following address:
-	// 	Jim Farris
-	// 	612 S. Ave. 'E'
-	// 	Portales, NM 88130
-	// 
-	// ****LIMTED USE NOTICE****
-	// You may install, use, access, display, run, or otherwise interact
-	// with the character 'Xaa' as it appears in the Dungeon Siege 
-	// Siegelet (mod) "Circle of Lorent".  You may make "backup" or 
-	// "archive" copies of this character for personal, non-profit use.
-	// This permission does NOT grant you any rights in connection with 
-	// the character as a trademarks or service marks of Jim Farris.
-	// All Title and Intellectual Property rights to the character 
-	// 'Xaa' are retained by it's creator, Jim Farris.
-	///////////////////////////////////////////////////////////////////
+	specializes = pc_ratboy;
+
 	doc = "Xaa, (C)2002 Jim Farris, ALL RIGHTS RESERVED";
 	category_name = "1W_character";
-	specializes = pc_ratboy;
 	[actor]
 	{
 		portrait_icon = b_gui_ig_i_ic_c_rb;
@@ -70,7 +72,7 @@
 			il_spell_7 = spell_resurrect;
 			il_spell_8 = spell_mana_channel;
 			il_spell_9 = spell_healing_wind;
-			il_main = col_bo_friend;//Added by Trailstorm-Radeem
+			//il_main = col_bo_friend;//Added by Trailstorm-Radeem
 		}
 		[pcontent]
 		{
@@ -84,50 +86,5 @@
 	[mind]
 	{
 		jat_talk 			= world\ai\jobs\common\job_talk.skrit;//Added by Trailstorm-Radeem
-	}
-}
-
-[t:template,n:st_un_axe_str_xaa]
-{
-	doc = "Xaa's Axe Staff";
-	specializes = base_staff;
-	[aspect]
-	{
-		model = m_w_stf_038;
-	}
-	[attack]
-	{
-	  reload_delay = -0.5;
-	  f damage_max = 294.000000;
-	  f damage_min = 196.000000;
-	}
-	[common]
-	{
-	        is_pcontent_allowed = false;
-	        allow_modifiers = false;
-		pcontent_special_type = unique;
-		screen_name = "Xaa's Axe Staff";
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_stf_007;
-		inventory_height = 4;
-		inventory_icon = b_gui_ig_i_w_stf_078;
-		inventory_width = 1;
-	}
-	[pcontent]
-	{
-		[base]
-		{
-		  f modifier_max = 0.000000;
-		  f modifier_min = 0.000000;
-		}
-	}
-	[single_pickup]
-	{
-	}
-	[race_limited]
-	{
-		race = "xaa";
 	}
 }

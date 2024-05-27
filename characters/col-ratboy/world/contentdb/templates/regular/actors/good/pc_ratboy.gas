@@ -1,9 +1,10 @@
 [t:template,n:pc_ratboy]
 {
+	specializes = base_farmboy;
+
 	doc = "pc_ratboy";
 	// ratboy instead of farmboy.  Get it?  
 	// alright, alright, it was a lame joke.
-	specializes = base_farmboy;
 	[actor]
 	{
 		race = mus;
@@ -108,8 +109,9 @@
 
 [t:template,n:rat_tail]
 {
-	doc = "ratboy's tail";
 	specializes = actor_custom;
+
+	doc = "ratboy's tail";
 	[actor]
 	{
 		alignment			= aa_neutral;
@@ -199,8 +201,9 @@
 
 [t:template,n:rat_head]
 {
-	doc = "ratboy's head";
 	specializes = actor_custom;
+
+	doc = "ratboy's head";
 	[actor]
 	{
 		alignment			= aa_neutral;
