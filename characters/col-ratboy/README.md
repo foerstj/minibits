@@ -1,10 +1,12 @@
 # col-ratboy
 
+![pic](pic.jpg)
+
 The Ratboy from Circle of Lorent.
 
 src: Jim Farris; Trailstorm-Radeem / Circle of Lorent
 
-License: Copyright by Jim Farris! Don't sue me plzzz!!1
+## License
 
 ****OFFICIAL NOTICE OF COPYRIGHT****
 THE CHARACTER 'XAA' AND ALL LIKENESSES THEREOF ARE COPYRIGHT
