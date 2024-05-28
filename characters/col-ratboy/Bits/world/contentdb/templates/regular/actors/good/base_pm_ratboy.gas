@@ -25,6 +25,9 @@
 	{
 		screen_name = "Ratboy";
 	}
+	[conversation]
+	{
+	}
 	[inventory]
 	{
 		[equipment]
@@ -37,6 +40,7 @@
 		jat_brain 	= world\ai\jobs\common\brain_hero_ratboy.skrit
 			?hhead			= "rat_head"
 			&ttail			= "rat_tail";
+        jat_talk 	= world\ai\jobs\common\job_talk.skrit;
     }
 
 	[water_effects] {}

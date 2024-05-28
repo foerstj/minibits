@@ -2,4 +2,7 @@
 [t:template,n:pm_ratboy_base]
 {
     specializes = base_pm_ratboy;
+
+	doc = "Plain Ratboy, (C)2002 Jim Farris, ALL RIGHTS RESERVED";
+	category_name = "1W_character";
 }

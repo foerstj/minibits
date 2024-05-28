@@ -62,9 +62,6 @@
 	{
 		screen_name = "Xaa";
 	}
-	[conversation]
-	{
-	}
 	[inventory]
 	{
 		spew_equipped_kill_count = <ignore>;
@@ -93,16 +90,6 @@
 	}
 	[mind]
 	{
-		/*
-			In my mind's eye, I see... a bunch of skrit code.
-		*/
-
-		////////////////////////////////////////
-		//	jobs
-
-		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
-		jat_talk 			= world\ai\jobs\common\job_talk.skrit;//Added by Trailstorm-Radeem
-
 		////////////////////////////////////////
 		//	params
 
