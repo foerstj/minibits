@@ -7,16 +7,10 @@
 	{
 		race = mus;
 		portrait_icon = b_gui_ig_i_ic_c_rb;
-		[skills]
-		{
-			strength 	=	0, 0, 13;
-			intelligence	= 	0, 0, 10;
-			dexterity	= 	0, 0, 8;
-		}
 	}
 	[aspect]
 	{
-		megamap_override = true; // RAID#7185: MP: Teammates in MP should be non-Line of Sight on map.  -MM 02.03.2002
+		megamap_override = true;
 		[textures]
 		{
 			0 = b_c_gah_fb_skin_99b;
@@ -24,80 +18,26 @@
 		}
 		[voice]
 		{
-			[die]		{	* = s_e_die_fury;		}
+			[die]	{	* = s_e_die_rat;	}
 		}
+	}
+	[common]
+	{
+		screen_name = "Ratboy";
 	}
 	[inventory]
 	{
-		spew_equipped_kill_count = <ignore>;
 		[equipment]
 		{
-			es_weapon_hand=dg_g_d_1h_fun;
-			es_feet = bo_bo_le_light;
-			es_spellbook = book_glb_magic_01;
+			es_feet = bo_bo_le_f_g_c_avg;
 		}
-        [pcontent]
-        {
-            [gold*]
-            {
-                chance = 1.0;
-                max = 30;
-                min = 30;
-            }
-        }
 	}
-	[mind]
-	{
-		/*
-			In my mind's eye, I see... a bunch of skrit code.
-		*/
-
-		////////////////////////////////////////
-		//	jobs
-
+    [mind]
+    {
 		jat_brain 	= world\ai\jobs\common\brain_hero_ratboy.skrit
 			?hhead			= "rat_head"
 			&ttail			= "rat_tail";
-		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
-
-		////////////////////////////////////////
-		//	params
-
-		melee_engage_range = 24.0; //              = 0.9;
-		ranged_engage_range = 24.5; //             = 5.5;
-		sensor_scan_period = 0.10; //              = 0.25;
-		sight_range = 25.0; //                     = 12.0;
-
-		actor_life_ratio_low_threshold = 0.3; //  = 0.5;
-		actor_life_ratio_high_threshold = 0.8;
-		actor_mana_ratio_low_threshold  = 0.5;
-		actor_mana_ratio_high_threshold = 0.8;
-
-		actor_weapon_preference         = WP_NONE;
-
-		////////////////////////////////////////
-		//	permissions
-
-		combat_orders                              = CO_LIMITED;
-		movement_orders                            = MO_LIMITED;
-
-		actor_auto_switches_to_magic               = false;
-		actor_auto_defends_others		   = true;
-		actor_auto_heals_self_life                 = true;
-		actor_auto_heals_self_mana                 = true;
-		actor_auto_heals_others_life               = true;
-		actor_auto_heals_others_mana               = true;
-		actor_auto_switches_to_karate              = false;
-	        actor_auto_switches_to_melee               = false;
-		actor_auto_xfers_mana			   = true;
-
-		on_enemy_entered_icz_switch_to_melee       = false;
-		on_engaged_lost_consciousness_abort_attack = false;
-		on_engaged_fled_abort_attack		   = false;
-		on_enemy_spotted_alert_friends             = true;
-		on_alert_projectile_near_missed_attack     = true;
-
-	}
+    }
 
 	[water_effects] {}
 	[store] { can_sell_self = true; }

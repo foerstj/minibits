@@ -1,0 +1,5 @@
+[t:template,n:pm_ratboy] { specializes = pm_ratboy_base; }
+[t:template,n:pm_ratboy_base]
+{
+    specializes = base_pm_ratboy;
+}

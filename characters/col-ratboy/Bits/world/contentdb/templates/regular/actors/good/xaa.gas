@@ -51,6 +51,13 @@
 			uber		= 64,0, 0;
 		}
 	}
+    [aspect]
+    {
+		[voice]
+		{
+			[die]	{	* = s_e_die_fury;	}
+		}
+    }
 	[common]
 	{
 		screen_name = "Xaa";
@@ -86,6 +93,51 @@
 	}
 	[mind]
 	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
 		jat_talk 			= world\ai\jobs\common\job_talk.skrit;//Added by Trailstorm-Radeem
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range = 24.0; //              = 0.9;
+		ranged_engage_range = 24.5; //             = 5.5;
+		sensor_scan_period = 0.10; //              = 0.25;
+		sight_range = 25.0; //                     = 12.0;
+
+		actor_life_ratio_low_threshold = 0.3; //  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+
+		actor_weapon_preference         = WP_NONE;
+
+		////////////////////////////////////////
+		//	permissions
+
+		combat_orders                              = CO_LIMITED;
+		movement_orders                            = MO_LIMITED;
+
+		actor_auto_switches_to_magic               = false;
+		actor_auto_defends_others		   = true;
+		actor_auto_heals_self_life                 = true;
+		actor_auto_heals_self_mana                 = true;
+		actor_auto_heals_others_life               = true;
+		actor_auto_heals_others_mana               = true;
+		actor_auto_switches_to_karate              = false;
+	    actor_auto_switches_to_melee               = false;
+		actor_auto_xfers_mana			   = true;
+
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+		on_engaged_fled_abort_attack		   = false;
+		on_enemy_spotted_alert_friends             = true;
+		on_alert_projectile_near_missed_attack     = true;
 	}
 }
