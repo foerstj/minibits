@@ -37,3 +37,23 @@
 	  p position = 0.0254847,9.53674e-007,3.00945,0x210d41c1;
 	}
 }
+[t:pm_ratboy_02,n:0x00100003]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.66939e-007;
+	  p position = 2.36391,0,2.99068,0x210d41c1;
+	}
+}

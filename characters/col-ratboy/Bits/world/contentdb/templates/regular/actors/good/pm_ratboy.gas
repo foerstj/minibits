@@ -6,3 +6,41 @@
 	doc = "Plain Ratboy, (C)2002 Jim Farris, ALL RIGHTS RESERVED";
 	category_name = "1W_character";
 }
+
+
+[t:template,n:rat_head_02] { specializes = rat_head_02_base; }
+[t:template,n:rat_head_02_base]
+{
+	specializes = rat_head_base;
+
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_edm_gr_b-02;
+		}
+	}
+	[attach_rat_head] 
+	{
+		hhead = "rat_head_02";
+	}
+}
+
+[t:template,n:pm_ratboy_02] { specializes = pm_ratboy_02_base; }
+[t:template,n:pm_ratboy_02_base]
+{
+    specializes = base_pm_ratboy;
+
+	doc = "Monstrous Ratboy, (C)2002 Jim Farris, ALL RIGHTS RESERVED";
+	category_name = "1W_character";
+	[common]
+	{
+		screen_name = "Monstrous Ratboy";
+	}
+    [mind]
+    {
+		jat_brain 	= world\ai\jobs\common\brain_hero_ratboy.skrit
+			?hhead			= "rat_head_02"
+			&ttail			= "rat_tail";
+    }
+}

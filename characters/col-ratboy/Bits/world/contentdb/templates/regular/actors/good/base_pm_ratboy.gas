@@ -47,7 +47,8 @@
 	[store] { can_sell_self = true; }
 }
 
-[t:template,n:rat_tail]
+[t:template,n:rat_tail] { specializes = rat_tail_base; }
+[t:template,n:rat_tail_base]
 {
 	specializes = actor_custom;
 
@@ -139,7 +140,8 @@
 	}
 }
 
-[t:template,n:rat_head]
+[t:template,n:rat_head] { specializes = rat_head_base; }
+[t:template,n:rat_head_base]
 {
 	specializes = actor_custom;
 
