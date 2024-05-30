@@ -1,0 +1,7 @@
+[t:krug_dog_skeleton,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -0.018458,0,0.253313,0xa95047e0;
+	}
+}

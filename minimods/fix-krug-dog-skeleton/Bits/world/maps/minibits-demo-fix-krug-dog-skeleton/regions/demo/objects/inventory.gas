@@ -1,0 +1,7 @@
+[t:spell_summon_krug_dog_skeleton,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 2.25584,0,-0.071295,0x3246e558;
+	}
+}
