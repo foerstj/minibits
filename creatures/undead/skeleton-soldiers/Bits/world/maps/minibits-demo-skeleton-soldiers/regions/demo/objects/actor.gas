@@ -1,0 +1,35 @@
+[t:skeleton_soldier,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -1.28039,0,-2.43979,0x5813026c;
+	}
+}
+[t:skeleton_soldier_boss_01,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 0.149985,0,-2.55379,0x5813026c;
+	}
+}
+[t:skeleton_soldier_archer,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 1.49804,4.76837e-007,-2.45145,0x5813026c;
+	}
+}
+[t:skeleton_soldier_archer_reveal_02,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 2.92958,4.76837e-007,-2.35389,0x5813026c;
+	}
+}
+[t:skeleton_soldier_reveal_02,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -2.80261,0,-2.43168,0x5813026c;
+	}
+}
