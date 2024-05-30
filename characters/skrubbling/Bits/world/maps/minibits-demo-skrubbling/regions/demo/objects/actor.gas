@@ -1,0 +1,54 @@
+[t:pm_skrubbling,n:0x00100001]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[placement]
+	{
+	  p position = -0.0461383,0,-2.36793,0xca544e04;
+	}
+}
+[t:skrubb_farm,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -6.50062,5.04419,-37.9912,0x331f2b5a;
+	}
+}
+[t:skrubb_farm,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -8.09594,5.38426,-31.5767,0x331f2b5a;
+	}
+}
+[t:skrubb_farm,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -1.27203,3.38145,-31.7095,0x331f2b5a;
+	}
+}
+[t:skrubb_farm,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -2.07057,4.90339,-35.8639,0x331f2b5a;
+	}
+}
+[t:skrubb_farm,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -3.76195,3.55592,-26.8915,0x331f2b5a;
+	}
+}
