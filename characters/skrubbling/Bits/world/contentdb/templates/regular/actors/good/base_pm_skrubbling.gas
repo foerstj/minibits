@@ -1,0 +1,143 @@
+[t:template,n:base_pm_skrubbling]
+{
+	specializes = base_farmboy;
+
+	doc = "Base template for party members based on skrubbling.";
+	[actor]
+	{
+		race = mus;
+		portrait_icon = b_gui_ig_i_ic_c_rb;
+	}
+	[aspect]
+	{
+		megamap_override = true;
+		//[textures]
+		//{
+		//	0 = b_t_alpha;
+		//	1 = b_c_pos_a1_021;
+		//}
+		[voice]
+		{
+			[die]	{	* = s_e_die_skrubb_farm_SED;	}
+		}
+	}
+	[common]
+	{
+		screen_name = "Skrubbling";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_f_g_c_avg;
+		}
+	}
+    [mind]
+    {
+		jat_brain 	= world\ai\jobs\common\brain_hero_skrubbling.skrit
+			?hhead			= "skrubb_head";
+        jat_talk 	= world\ai\jobs\common\job_talk.skrit;
+    }
+
+	[water_effects] {}
+	[store] { can_sell_self = true; }
+}
+
+[t:template,n:skrubb_head] { specializes = skrubb_head_base; }
+[t:template,n:skrubb_head_base]
+{
+	specializes = actor_custom;
+
+	doc = "Skrubbling's head";
+	[actor]
+	{
+		alignment			= aa_neutral;
+		[skills]
+		{
+			strength =  	1, 0;
+			dexterity =  	1, 0;
+			intelligence =  1, 0;
+		}
+	}
+	[aspect]
+	{
+		is_invincible = true;
+		is_collidable = false;
+		model = m_c_edm_sb_pos_1;
+		[textures]
+		{
+			0 = b_c_edm_sb-03;
+		}
+		scale_base = 0.14;
+		material = flesh;
+		[voice]
+		{
+		}
+	}
+	[body]
+	{
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone09;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_fidget;
+			[chore_default]
+			{
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = a_c_edm_sb_fs0_dff;
+				}
+			}
+			[chore_fidget]
+			{
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = a_c_edm_sb_fs0_dff;
+				}
+			}
+		}
+	}
+	[common]
+	{
+	}
+	[defend] { defense=9999; }
+	[follower]	{}
+	[inventory]
+	{
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit;
+		actor_auto_fidgets = true;
+
+		melee_engage_range = 24.0; //              = 0.9;
+		ranged_engage_range = 24.5; //             = 5.5;
+		sensor_scan_period = 0.10; //              = 0.25;
+		sight_range = 25.0; //                     = 12.0;
+
+		actor_may_be_attacked = false;
+		actor_may_attack = false;
+
+		sensor_scan_period = 2.0;
+	}
+	[attach_skrubb_head] 
+	{
+		hhead = "skrubb_head";
+	}
+	[physics]
+	{
+		gib_gore_good = false;
+	}
+}

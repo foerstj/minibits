@@ -1,0 +1,8 @@
+[t:template,n:pm_skrubbling] { specializes = pm_skrubbling_base; }
+[t:template,n:pm_skrubbling_base]
+{
+    specializes = base_pm_skrubbling;
+
+	doc = "Plain Skrubbling";
+	category_name = "1W_character";
+}

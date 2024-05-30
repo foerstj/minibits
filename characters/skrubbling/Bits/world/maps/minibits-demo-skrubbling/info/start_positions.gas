@@ -1,0 +1,26 @@
+[start_positions]
+{
+	[t:start_group,n:default]
+	{
+	  b default = true;
+		description = "This is the default group.";
+	  b dev_only = false;
+	  i id = 0;
+		screen_name = "";
+		[start_position]
+		{
+		  i id = 1;
+			position = -0.013177,0.000000,2.664601,0xCA544E04;
+			[camera]
+			{
+			  f azimuth = 0.500000;
+			  f distance = 20.000000;
+			  f orbit = 0.000000;
+				position = -0.013177,0.000000,2.664601,0xCA544E04;
+			}
+		}
+		[world_levels]
+		{
+		}
+	}
+}
