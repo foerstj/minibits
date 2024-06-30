@@ -21,6 +21,9 @@
     {
         screen_name = "Shortling";
     }
+    [conversation]
+    {
+    }
 	[inventory]
 	{
 		[equipment]
