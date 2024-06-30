@@ -10,7 +10,7 @@
 	[aspect]
 	{
 		model = m_c_gan_hg_pos_a1;
-        scale_base = 0.9;
+        scale_base = 0.8;
 	}
 	[body]
 	{
