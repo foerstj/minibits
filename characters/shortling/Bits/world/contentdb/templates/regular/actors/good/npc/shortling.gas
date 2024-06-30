@@ -34,7 +34,8 @@
     }
 }
 
-[t:template,n:npc_shortling_01]
+[t:template,n:npc_shortling_01] { specializes = npc_shortling_01_base; }
+[t:template,n:npc_shortling_01_base]
 {
     specializes = base_npc_shortling;
 
@@ -52,7 +53,8 @@
     }
 }
 
-[t:template,n:npc_shortling_02]
+[t:template,n:npc_shortling_02] { specializes = npc_shortling_02_base; }
+[t:template,n:npc_shortling_02_base]
 {
     specializes = base_npc_shortling;
 
@@ -70,7 +72,8 @@
     }
 }
 
-[t:template,n:npc_shortling_03]
+[t:template,n:npc_shortling_03] { specializes = npc_shortling_03_base; }
+[t:template,n:npc_shortling_03_base]
 {
     specializes = base_npc_shortling;
 
@@ -87,7 +90,8 @@
     }
 }
 
-[t:template,n:npc_shortling_04]
+[t:template,n:npc_shortling_04] { specializes = npc_shortling_04_base; }
+[t:template,n:npc_shortling_04_base]
 {
     specializes = base_npc_shortling;
 
@@ -105,7 +109,8 @@
     }
 }
 
-[t:template,n:npc_shortling_05]
+[t:template,n:npc_shortling_05] { specializes = npc_shortling_05_base; }
+[t:template,n:npc_shortling_05_base]
 {
     specializes = base_npc_shortling;
 
@@ -122,7 +127,8 @@
     }
 }
 
-[t:template,n:npc_shortling_06]
+[t:template,n:npc_shortling_06] { specializes = npc_shortling_06_base; }
+[t:template,n:npc_shortling_06_base]
 {
     specializes = base_npc_shortling;
 
@@ -139,7 +145,8 @@
     }
 }
 
-[t:template,n:npc_shortling_07]
+[t:template,n:npc_shortling_07] { specializes = npc_shortling_07_base; }
+[t:template,n:npc_shortling_07_base]
 {
     specializes = base_npc_shortling;
 
@@ -156,7 +163,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d01]
+[t:template,n:npc_shortling_d01] { specializes = npc_shortling_d01_base; }
+[t:template,n:npc_shortling_d01_base]
 {
     specializes = base_npc_shortling;
 
@@ -174,7 +182,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d02]
+[t:template,n:npc_shortling_d02] { specializes = npc_shortling_d02_base; }
+[t:template,n:npc_shortling_d02_base]
 {
     specializes = base_npc_shortling;
 
@@ -192,7 +201,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d03]
+[t:template,n:npc_shortling_d03] { specializes = npc_shortling_d03_base; }
+[t:template,n:npc_shortling_d03_base]
 {
     specializes = base_npc_shortling;
 
@@ -209,7 +219,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d04]
+[t:template,n:npc_shortling_d04] { specializes = npc_shortling_d04_base; }
+[t:template,n:npc_shortling_d04_base]
 {
     specializes = base_npc_shortling;
 
@@ -227,7 +238,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d05]
+[t:template,n:npc_shortling_d05] { specializes = npc_shortling_d05_base; }
+[t:template,n:npc_shortling_d05_base]
 {
     specializes = base_npc_shortling;
 
@@ -244,7 +256,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d06]
+[t:template,n:npc_shortling_d06] { specializes = npc_shortling_d06_base; }
+[t:template,n:npc_shortling_d06_base]
 {
     specializes = base_npc_shortling;
 
@@ -261,7 +274,8 @@
     }
 }
 
-[t:template,n:npc_shortling_d07]
+[t:template,n:npc_shortling_d07] { specializes = npc_shortling_d07_base; }
+[t:template,n:npc_shortling_d07_base]
 {
     specializes = base_npc_shortling;
 
