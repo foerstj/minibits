@@ -1,4 +1,15 @@
 [node_mesh_index]
 {
+	0x0010057b = t_xxx_dgn_deep_04x04;
+	0x0010057c = t_xxx_dgn_deep_08x04;
+	0x0010057d = t_xxx_dgn_deep_08x08;
+	0x0010057e = t_xxx_dgn_deep_ccav;
+	0x0010057f = t_xxx_dgn_deep_cnvx;
+	0x00100580 = t_xxx_dgn_deep_stair-c;
+	0x00100581 = t_xxx_dgn_deep_stair-l;
+	0x00100582 = t_xxx_dgn_deep_stair-r;
+	0x00100583 = t_xxx_dgn_deep_thick;
+	0x00100584 = t_xxx_dgn_deep_thin;
+	0x001006b3 = t_xxx_flr_04x08-v0;
 	0x001006b4 = t_xxx_flr_08x08-v0;
 }
