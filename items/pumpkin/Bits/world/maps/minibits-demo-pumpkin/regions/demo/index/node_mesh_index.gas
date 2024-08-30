@@ -1,6 +1,6 @@
 [node_mesh_index]
 {
-	0x001006aa = t_xxx_flr_08x08-v0;
-	0x00100c1e = t_grs01_fence_generic_wood-04x04-d-l;
-	0x00100c1f = t_grs01_fence_generic_wood-04x04-d-r;
+	0x001006b4 = t_xxx_flr_08x08-v0;
+	0x00100c28 = t_grs01_fence_generic_wood-04x04-d-l;
+	0x00100c29 = t_grs01_fence_generic_wood-04x04-d-r;
 }

@@ -6,3 +6,26 @@
 	  p position = -0.00648189,-0.85,-0.407403,0x68e4cd4e;
 	}
 }
+[t:najj,n:0x00100005]
+{
+	[aspect]
+	{
+	  f max_life = 147;
+	  f max_mana = 37;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = -1.17956,-0.8,-1.17803,0x0e5c2171;
+	}
+}
