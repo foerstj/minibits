@@ -6,6 +6,53 @@
 	  p position = -0.00648189,-0.85,-0.407403,0x68e4cd4e;
 	}
 }
+[t:ulora,n:0x00100009]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 0.874788,-0.85,-1.24341,0xc0513520;
+	}
+}
+[t:zed,n:0x0010000a]
+{
+	[aspect]
+	{
+	  i gold_value = 0;
+	  f max_life = 68.6;
+	  f max_mana = 80;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = -1.25244,-0.85,-1.25394,0xc0513520;
+	}
+}
 [t:najj,n:0x00100005]
 {
 	[aspect]
@@ -27,5 +74,28 @@
 	[placement]
 	{
 	  p position = -1.17956,-0.8,-1.17803,0x0e5c2171;
+	}
+}
+[t:gloern,n:0x00100008]
+{
+	[aspect]
+	{
+	  f max_life = 147;
+	  f max_mana = 37;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 0.714218,-0.8,-1.28545,0x0e5c2171;
 	}
 }
