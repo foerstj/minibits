@@ -1,0 +1,28 @@
+[t:sarcophagus_stone_use_toggle,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = 1.61502,0,3.90327,0x9131f4f7;
+	}
+}
+[t:sarcophagus_csl_02,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -3.97333,0,-0.765682,0xfff00426;
+	}
+}
+[t:sarcophagus_csl_03,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 0.919114,0,-0.733402,0xfff00426;
+	}
+}
+[t:sarcophagus_cav_01,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 3.89174,0,3.52582,0xb7900460;
+	}
+}

@@ -1,0 +1,42 @@
+[t:sarcophagus_cav_01_open_01,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = -2.30182,0,3.21839,0x5220d5c1;
+	}
+}
+[t:sarcophagus_cav_01_open_02,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 1.4571,0,3.24281,0x5220d5c1;
+	}
+}
+[t:sarcophagus_cav_lid_01,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -1.35601,0,3.71363,0x9131f4f7;
+	}
+}
+[t:sarcophagus_csl_open,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -2.23556,0,-0.598671,0x9131f4f7;
+	}
+}
+[t:sarcophagus_csl_01,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 2.98572,0,-0.559031,0xb7900460;
+	}
+}
+[t:sarcophagus_csl_lid,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -0.116225,0,-0.565281,0xb7900460;
+	}
+}
