@@ -1,6 +1,6 @@
 # open-sarcophagus
 
-![pic](pic.jpg)
+![pic](pic.png)
 
 A sarcophagus that is initially open. Non-interactive, blocking.
 
