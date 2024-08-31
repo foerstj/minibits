@@ -1,0 +1,345 @@
+[t:template,n:c24_3_base_crystal_archer]
+{
+    specializes = ice_archer_base;
+
+    common:screen_name = "Crystal Archer";
+    [inventory]
+    {
+        spew_equipped_kill_count = 7;
+    }
+
+    // stats from krug_throw
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 10, 0;
+			  intelligence = 7, 0;
+			  ranged = 2,  0;
+			  strength = 7, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 27;
+		  life = 23;
+		  mana = 6;
+		  max_life = 23;
+		  max_mana = 6;
+	}
+	[attack]
+	{
+		  damage_max = 9;
+		  damage_min = 7;
+	}
+	[defend]
+	{
+		  defense = 22;
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_teal]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-01-static;  // teal
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_cyan(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_teal;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_teal = 2;
+			frag_c24_3_crystal_ice_02_teal = 2;
+			frag_c24_3_crystal_ice_03_teal = 3;
+			frag_c24_3_crystal_ice_04_teal = 2;
+			frag_c24_3_crystal_ice_05_teal = 1;
+			frag_c24_3_crystal_ice_06_teal = 2;
+			frag_c24_3_crystal_ice_07_teal = 2;
+			frag_c24_3_crystal_ice_08_teal = 2;
+		}
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_purple]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-02-static;  // purple
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_purple(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_purple;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_purple = 2;
+			frag_c24_3_crystal_ice_02_purple = 2;
+			frag_c24_3_crystal_ice_03_purple = 3;
+			frag_c24_3_crystal_ice_04_purple = 2;
+			frag_c24_3_crystal_ice_05_purple = 1;
+			frag_c24_3_crystal_ice_06_purple = 2;
+			frag_c24_3_crystal_ice_07_purple = 2;
+			frag_c24_3_crystal_ice_08_purple = 2;
+		}
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_green]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-03-static;  // green
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_green(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_green;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_green = 2;
+			frag_c24_3_crystal_ice_02_green = 2;
+			frag_c24_3_crystal_ice_03_green = 3;
+			frag_c24_3_crystal_ice_04_green = 2;
+			frag_c24_3_crystal_ice_05_green = 1;
+			frag_c24_3_crystal_ice_06_green = 2;
+			frag_c24_3_crystal_ice_07_green = 2;
+			frag_c24_3_crystal_ice_08_green = 2;
+		}
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_blue]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-04-static;  // blue
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_blue(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_blue;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_blue = 2;
+			frag_c24_3_crystal_ice_02_blue = 2;
+			frag_c24_3_crystal_ice_03_blue = 3;
+			frag_c24_3_crystal_ice_04_blue = 2;
+			frag_c24_3_crystal_ice_05_blue = 1;
+			frag_c24_3_crystal_ice_06_blue = 2;
+			frag_c24_3_crystal_ice_07_blue = 2;
+			frag_c24_3_crystal_ice_08_blue = 2;
+		}
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_red]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-05-static;  // red
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_red(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_red;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_red = 2;
+			frag_c24_3_crystal_ice_02_red = 2;
+			frag_c24_3_crystal_ice_03_red = 3;
+			frag_c24_3_crystal_ice_04_red = 2;
+			frag_c24_3_crystal_ice_05_red = 1;
+			frag_c24_3_crystal_ice_06_red = 2;
+			frag_c24_3_crystal_ice_07_red = 2;
+			frag_c24_3_crystal_ice_08_red = 2;
+		}
+	}
+}
+
+[t:template,n:c24_3_crystal_archer_gold]
+{
+    specializes = c24_3_base_crystal_archer;
+
+    aspect:textures:0 = b_i_cav_gems-06-static;  // gold
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+            // ADDED:
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_yellow(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+    	[pcontent]
+		{
+			[all*]
+			{
+                es_shield_hand = c24_3_crystal_bow_gold;
+			}
+        }
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_ice_01_gold = 2;
+			frag_c24_3_crystal_ice_02_gold = 2;
+			frag_c24_3_crystal_ice_03_gold = 3;
+			frag_c24_3_crystal_ice_04_gold = 2;
+			frag_c24_3_crystal_ice_05_gold = 1;
+			frag_c24_3_crystal_ice_06_gold = 2;
+			frag_c24_3_crystal_ice_07_gold = 2;
+			frag_c24_3_crystal_ice_08_gold = 2;
+		}
+	}
+}
