@@ -26,7 +26,7 @@
 	}
 	[placement]
 	{
-	  p position = 0.874788,-0.85,-1.24341,0xc0513520;
+	  p position = 1.18373,-0.85,-1.26037,0xc0513520;
 	}
 }
 [t:zed,n:0x0010000a]
@@ -50,7 +50,7 @@
 	}
 	[placement]
 	{
-	  p position = -1.25244,-0.85,-1.25394,0xc0513520;
+	  p position = -0.337271,-0.85,-1.25631,0xc0513520;
 	}
 }
 [t:najj,n:0x00100005]
@@ -96,6 +96,29 @@
 	}
 	[placement]
 	{
-	  p position = 0.714218,-0.8,-1.28545,0x0e5c2171;
+	  p position = 0.554237,-0.8,-1.24919,0x0e5c2171;
+	}
+}
+[t:pm_sk_lvl0,n:0x0010000b]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = join;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[placement]
+	{
+	  p position = 1.99063,-0.8,-1.29241,0x0e5c2171;
 	}
 }
