@@ -13,6 +13,9 @@ This folder also includes a build, so you can continue to use the pumpkin helmet
 Note: the pumpkin model/texture was made for LoA, and for some reason the texture misaligns in Vanilla.\
 To remedy this, use the Pumpkin-vanilla-fix.dsres. Do not use it with LoA.
 
+Note: the equippable pumpkin helmet was made for the Farmboy and Farmgirl model, but not for Dwarf, Skeleton or Halfgiant.\
+I've added more-or-less fitting head models. At least the inventory doesn't break when you try to use it.
+
 src: ghastley / HS LLS; foerstj / Halloween mod
 
 License: © 2007 Dominique Faure
