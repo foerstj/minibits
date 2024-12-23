@@ -86,19 +86,109 @@
 		ranged_engage_range = 10.0;
 		sight_range = 10.0;
 	}
+
+    // Stats from skrubb_farm
+    // Fitting to the original spell_pupod_gas which does 4-5 damage
+	[actor]
+	{
+		[skills]
+		{
+			strength =  6, 0;
+			intelligence =  2, 0;
+			dexterity =  2, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 6;
+		life = 8;
+		max_life = 8;
+		mana = 10;
+		max_mana = 10;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 5;
+		damage_min = 3;
+		reload_delay = 0;
+	}
+    [defend] { defense=6; }
 }
 
-[t:template,n:pupod_evil_lg]
+[t:template,n:pupod_evil_01] { specializes = pupod_evil_01_base; }
+[t:template,n:pupod_evil_01_base]
 {
 	specializes = base_pupod_evil;
 
 	doc = "Pupod evil lg";
 	[aspect] { model = m_c_edm_pu_pos_1; }
 }
-[t:template,n:pupod_evil_sm]
+
+[t:template,n:pupod_evil_02] { specializes = pupod_evil_02_base; }
+[t:template,n:pupod_evil_02_base]
 {
 	specializes = base_pupod_evil;
 
 	doc = "Pupod evil sm";
+	[aspect] { model = m_c_edm_pu_pos_2; }
+}
+
+
+[t:template,n:base_pupod_evil_ds]
+{
+    specializes = base_pupod_evil;
+
+    doc = "Pupod enemy base template - balanced for Dark Swamp";
+
+    // Defensive stats & XP from swamp_stinger - low-level Dark Swamp enemy
+	[aspect]
+	{
+		experience_value = 800;
+		life = 180;
+		max_life = 180;
+		mana = 8;
+		max_mana = 8;
+	}
+	[defend] { defense=150; }
+    // Offensive stats from swamp_slinger - combat magic Dark Swamp enemy
+	[actor]
+	{
+		[skills]
+		{
+			strength =  17, 0;
+			intelligence =  9, 0;
+			dexterity =  8, 0;
+			combat_magic =  9,  0;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 104;
+		damage_min = 90;
+	}
+    // Spell is also aligned to swamp_slinger
+	[inventory]
+	{
+		[other] { il_active_primary_spell = spell_pupod_gas_ds; }
+	}
+}
+
+[t:template,n:pupod_evil_ds_01] { specializes = pupod_evil_ds_01_base; }
+[t:template,n:pupod_evil_ds_01_base]
+{
+	specializes = base_pupod_evil_ds;
+
+	doc = "Pupod evil DS lg";
+	[aspect] { model = m_c_edm_pu_pos_1; }
+}
+
+[t:template,n:pupod_evil_ds_02] { specializes = pupod_evil_ds_02_base; }
+[t:template,n:pupod_evil_ds_02_base]
+{
+	specializes = base_pupod_evil_ds;
+
+	doc = "Pupod evil DS sm";
 	[aspect] { model = m_c_edm_pu_pos_2; }
 }

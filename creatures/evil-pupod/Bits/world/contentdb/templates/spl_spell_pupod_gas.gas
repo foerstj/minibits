@@ -1,0 +1,40 @@
+[t:template,n:spell_pupod_gas_base]  // = spell_pupod_gas
+{
+	category_name = "magic";
+	doc = "spell pupod gas";
+	specializes = base_spell_monster;
+	[attack]
+	{
+		area_damage_radius = 3;
+		damage_max = 5;
+		damage_min = 4;
+	}
+	[magic]
+	{
+		cast_range = 3;
+		cast_reload_delay = 1;
+		effect_duration = 5;
+		mana_cost = 0;
+		requires_line_of_sight = true;
+		speed_bias = 1;
+		target_type_flags = tt_conscious_enemy | tt_conscious_friend;
+		usage_context_flags = uc_offensive;
+	}
+	[spell_damage_volume]
+	{
+		caster_center = true;
+		effect_script = pupod_gas;
+	}
+}
+
+[t:template,n:spell_pupod_gas_ds]
+{
+    specializes = spell_pupod_gas_base;
+
+    // stats from spell_swamp_slinger_ball
+	[attack]
+	{
+		damage_max = 67;
+		damage_min = 65;
+	}
+}
