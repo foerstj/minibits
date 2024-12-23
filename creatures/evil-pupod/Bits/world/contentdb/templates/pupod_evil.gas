@@ -71,6 +71,7 @@
 
 		jat_cast	    				= world\ai\jobs\common\job_cast.skrit
 			?no_moveturn				= true;
+        jat_face = jat_none;
 
 		movement_orders					= mo_hold;
 
