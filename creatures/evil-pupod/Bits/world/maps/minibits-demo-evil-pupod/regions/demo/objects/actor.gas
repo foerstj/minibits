@@ -1,0 +1,14 @@
+[t:pupod_evil_sm,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -1.90041,0,-1.74077,0x55340663;
+	}
+}
+[t:pupod_evil_lg,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 2.47287,0,-2.446,0x55340663;
+	}
+}
