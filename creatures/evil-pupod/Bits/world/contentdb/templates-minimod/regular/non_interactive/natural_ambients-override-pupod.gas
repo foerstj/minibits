@@ -1,0 +1,2 @@
+[t:template,n:pupod_01] { specializes = pupod_evil_ds_01_base; }
+[t:template,n:pupod_02] { specializes = pupod_evil_ds_02_base; }
