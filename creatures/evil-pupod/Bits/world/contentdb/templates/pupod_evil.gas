@@ -86,7 +86,6 @@
 		ranged_engage_range = 10.0;
 		sight_range = 10.0;
 	}
-
 	[common]
 	{
 		[template_triggers]
@@ -99,6 +98,7 @@
 			}
 		}
 	}
+
     // Stats from skrubb_farm
     // Fitting to the original spell_pupod_gas which does 4-5 damage
 	[actor]
