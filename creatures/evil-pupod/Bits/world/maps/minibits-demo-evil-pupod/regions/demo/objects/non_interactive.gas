@@ -12,17 +12,3 @@
 	  p position = -1.76153,0,3.61026,0xb5e8d692;
 	}
 }
-[t:pupod_01,n:0x00100008]
-{
-	[placement]
-	{
-	  p position = -1.78152,-1.90735e-006,3.60727,0xcad400be;
-	}
-}
-[t:pupod_02,n:0x00100009]
-{
-	[placement]
-	{
-	  p position = 1.96581,0,2.9945,0xcad400be;
-	}
-}

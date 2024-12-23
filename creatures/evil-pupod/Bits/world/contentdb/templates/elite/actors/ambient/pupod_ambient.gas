@@ -1,0 +1,102 @@
+[t:template,n:3W_base_pupod_ambient]
+{
+	specializes = actor_ambient;
+
+	category_name = "3W_ambients";
+    doc = "3W_Pupod enemy base template";
+
+	[body]
+	{
+		initial_chore = chore_default;
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_pu_fs0;
+			[chore_default]
+			{
+				skrit = random_infinite_loop;
+				[anim_files] { 00 = dsf; }
+			}
+			[chore_die]
+			{
+				skrit = select_transition;
+				[anim_files] { 00 = di; }
+			}
+			[chore_fidget]
+			{
+				skrit = select_fidget;
+				[anim_files] { 00 = dsf; }
+			}
+		}
+	}
+	[common] { screen_name="Pupod"; }
+	[actor]
+	{
+		alignment = aa_neutral;
+		race = other;
+	}
+	[aspect]
+	{
+		material = flesh;
+		[voice]	{ [die]			{ priority = high; * = s_e_die_pupod;  } }
+		draw_selection_indicator = false;
+        is_selectable = true;
+	}
+	[mind]
+	{
+        jat_face = jat_none;
+
+		movement_orders					= mo_hold;
+
+
+		jat_flee_from_object		= jat_none;
+		jat_guard         			= jat_none;
+		jat_move          			= jat_none;
+		jat_patrol         			= jat_none;
+
+		melee_engage_range = 2;
+		personal_space_range = .5;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("pupod_dust");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+
+    // Defensive stats from 3W_skrubb_farm
+	[aspect]
+	{
+		//experience_value = 396978;
+		life = 342;
+		max_life = 342;
+		mana = 890;
+		max_mana = 890;
+	}
+    [defend] { defense=723.3; }
+}
+
+[t:template,n:3W_pupod_ambient_01] { specializes = 3W_pupod_ambient_01_base; }
+[t:template,n:3W_pupod_ambient_01_base]
+{
+	specializes = 3W_base_pupod_ambient;
+
+	doc = "3W_Pupod ambient lg";
+	[aspect] { model = m_c_edm_pu_pos_1; }
+}
+
+[t:template,n:3W_pupod_ambient_02] { specializes = 3W_pupod_ambient_02_base; }
+[t:template,n:3W_pupod_ambient_02_base]
+{
+	specializes = 3W_base_pupod_ambient;
+
+	doc = "3W_Pupod ambient sm";
+	[aspect] { model = m_c_edm_pu_pos_2; }
+}
