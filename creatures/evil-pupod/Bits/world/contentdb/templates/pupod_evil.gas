@@ -87,6 +87,18 @@
 		sight_range = 10.0;
 	}
 
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("pupod_dust");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
     // Stats from skrubb_farm
     // Fitting to the original spell_pupod_gas which does 4-5 damage
 	[actor]
