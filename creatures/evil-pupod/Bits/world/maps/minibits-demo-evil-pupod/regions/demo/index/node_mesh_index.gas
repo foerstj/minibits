@@ -1,4 +1,8 @@
 [node_mesh_index]
 {
+	0x001004c0 = t_xxx_cnr_h2o_02b-ccav;
+	0x001004c1 = t_xxx_cnr_h2o_02b-cnvx;
+	0x00100613 = t_xxx_flr_h2o_08x08-v0;
 	0x00100639 = t_xxx_flr_08x08-v0;
+	0x0010090f = t_xxx_wal_h2o_02b-thick;
 }
