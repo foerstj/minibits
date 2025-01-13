@@ -239,8 +239,8 @@
 	{
 		[skills]
 		{
-			strength = 11, 0;
-			dexterity = 13,  0;
+			strength = 11, 0;  // swapped with dex
+			dexterity = 13,  0;  // swapped with str
 			intelligence = 7,  0;
 			ranged = 12,  0;  // was 4
 		}

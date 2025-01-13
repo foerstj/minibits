@@ -248,7 +248,7 @@
 		}
 	}
 
-    // stats from krug_guard
+    // stats from krug_guard, edited
 	[actor]
 	{
 		[skills]
