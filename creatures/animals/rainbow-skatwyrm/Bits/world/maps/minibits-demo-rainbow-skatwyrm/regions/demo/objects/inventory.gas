@@ -1,0 +1,15 @@
+[t:bd_br_m_g_c_avg,n:0x00100009]
+{
+	[common]
+	{
+		screen_name = "New Char Test Brigandine";
+	}
+	[defend]
+	{
+	  f defense = 100;
+	}
+	[placement]
+	{
+	  p position = 1.41488,0,0.977038,0xe7542f38;
+	}
+}
