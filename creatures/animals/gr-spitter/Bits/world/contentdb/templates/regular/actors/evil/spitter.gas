@@ -55,6 +55,11 @@
 {
 	specializes = spitter_base;
 
+	[inventory]
+	{
+		[other] { il_active_primary_spell = gr_spell_spitter_steam; }
+	}
+
 	// stats from slarg, switched to combat magic
 	[actor]
 	{
