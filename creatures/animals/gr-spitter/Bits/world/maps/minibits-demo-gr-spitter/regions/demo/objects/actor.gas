@@ -1,3 +1,10 @@
+[t:gr_spitter,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 7.08018,5.60003,-53.7523,0x959748db;
+	}
+}
 [t:spitter,n:0x00100002]
 {
 	[common]
