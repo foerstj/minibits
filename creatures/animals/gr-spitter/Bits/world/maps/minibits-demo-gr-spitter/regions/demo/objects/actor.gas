@@ -1,0 +1,18 @@
+[t:spitter,n:0x00100002]
+{
+	[common]
+	{
+		screen_name = "Spitter (original)";
+	}
+	[placement]
+	{
+	  p position = 7.21368,5.60003,-53.4484,0x8d0812a6;
+	}
+}
+[t:slarg,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 7.38988,5.60002,-53.5923,0x8ffb0c1c;
+	}
+}
