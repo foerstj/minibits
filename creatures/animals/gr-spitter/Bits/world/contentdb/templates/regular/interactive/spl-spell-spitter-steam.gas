@@ -36,4 +36,11 @@
 	{
 		cast_range = 6;
 	}
+
+	// stats from spell_drake_breath_white
+	[attack]
+	{
+		damage_max = 74;
+		damage_min = 70;
+	}
 }
