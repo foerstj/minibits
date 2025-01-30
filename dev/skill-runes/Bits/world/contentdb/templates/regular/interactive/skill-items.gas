@@ -2,7 +2,7 @@
 {
 	specializes = c24_3_base_skill_item_melee;
 
-	[c24_skill_item]
+	[skill_rune]
 	{
 		uber_stat	= 10;
 		melee_stat	= 10;
@@ -19,7 +19,7 @@
 {
 	specializes = c24_3_base_skill_item_ranged;
 
-	[c24_skill_item]
+	[skill_rune]
 	{
 		uber_stat	= 10;
 		melee_stat	= 0;
@@ -36,7 +36,7 @@
 {
 	specializes = c24_3_base_skill_item_cmagic;
 
-	[c24_skill_item]
+	[skill_rune]
 	{
 		uber_stat	= 10;
 		melee_stat	= 0;
@@ -53,7 +53,7 @@
 {
 	specializes = c24_3_base_skill_item_nmagic;
 
-	[c24_skill_item]
+	[skill_rune]
 	{
 		uber_stat	= 10;
 		melee_stat	= 0;
