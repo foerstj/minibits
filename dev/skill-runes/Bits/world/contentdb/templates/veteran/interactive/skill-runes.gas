@@ -1,6 +1,6 @@
-[t:template,n:2W_c24_3_skill_item_melee]
+[t:template,n:2W_skill_rune_melee]
 {
-	specializes = c24_3_base_skill_item_melee;
+	specializes = base_skill_rune_melee;
 
 	[skill_rune]
 	{
@@ -15,9 +15,9 @@
 	}
 }
 
-[t:template,n:2W_c24_3_skill_item_ranged]
+[t:template,n:2W_skill_rune_ranged]
 {
-	specializes = c24_3_base_skill_item_ranged;
+	specializes = base_skill_rune_ranged;
 
 	[skill_rune]
 	{
@@ -32,9 +32,9 @@
 	}	
 }
 
-[t:template,n:2W_c24_3_skill_item_cmagic]
+[t:template,n:2W_skill_rune_cmagic]
 {
-	specializes = c24_3_base_skill_item_cmagic;
+	specializes = base_skill_rune_cmagic;
 
 	[skill_rune]
 	{
@@ -49,9 +49,9 @@
 	}
 }
 
-[t:template,n:2W_c24_3_skill_item_nmagic]
+[t:template,n:2W_skill_rune_nmagic]
 {
-	specializes = c24_3_base_skill_item_nmagic;
+	specializes = base_skill_rune_nmagic;
 
 	[skill_rune]
 	{

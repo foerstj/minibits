@@ -1,0 +1,15 @@
+[t:template,n:skill_runes_container]
+{
+    specializes = base_skill_runes_container;
+
+    [inventory]
+    {
+        [other]
+        {
+            il_main = skill_rune_melee;
+            il_main = skill_rune_ranged;
+            il_main = skill_rune_cmagic;
+            il_main = skill_rune_nmagic;
+        }
+    }
+}

@@ -1,25 +1,25 @@
-[t:c24_3_skill_item_melee,n:0x00100001]
+[t:skill_rune_melee,n:0x00100001]
 {
 	[placement]
 	{
 	  p position = -2.19582,0,-2.26596,0xf0fb4f6c;
 	}
 }
-[t:c24_3_skill_item_ranged,n:0x00100002]
+[t:skill_rune_ranged,n:0x00100002]
 {
 	[placement]
 	{
 	  p position = -0.72993,0,-2.38833,0xf0fb4f6c;
 	}
 }
-[t:c24_3_skill_item_nmagic,n:0x00100003]
+[t:skill_rune_nmagic,n:0x00100003]
 {
 	[placement]
 	{
 	  p position = 1.1826,0,-2.44812,0xf0fb4f6c;
 	}
 }
-[t:c24_3_skill_item_cmagic,n:0x00100004]
+[t:skill_rune_cmagic,n:0x00100004]
 {
 	[placement]
 	{

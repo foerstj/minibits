@@ -1,4 +1,4 @@
-[t:template,n:c24_3_base_skill_items_container]
+[t:template,n:base_skill_runes_container]
 {
 	specializes		= base_container_barrel;
 
