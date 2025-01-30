@@ -1,7 +1,8 @@
-[t:template,n:2W_skill_rune_melee]
+[t:template,n:2W_skill_rune_melee_10]
 {
 	specializes = base_skill_rune_melee;
 
+    common:screen_name = "Melee Level 58";
 	[skill_rune]
 	{
 		uber_stat	= 58;
@@ -15,10 +16,11 @@
 	}
 }
 
-[t:template,n:2W_skill_rune_ranged]
+[t:template,n:2W_skill_rune_ranged_10]
 {
 	specializes = base_skill_rune_ranged;
 
+    common:screen_name = "Ranged Level 58";
 	[skill_rune]
 	{
 		uber_stat	= 58;
@@ -32,10 +34,11 @@
 	}	
 }
 
-[t:template,n:2W_skill_rune_cmagic]
+[t:template,n:2W_skill_rune_cmagic_10]
 {
 	specializes = base_skill_rune_cmagic;
 
+    common:screen_name = "Combat Magic Level 58";
 	[skill_rune]
 	{
 		uber_stat	= 58;
@@ -49,10 +52,11 @@
 	}
 }
 
-[t:template,n:2W_skill_rune_nmagic]
+[t:template,n:2W_skill_rune_nmagic_10]
 {
 	specializes = base_skill_rune_nmagic;
 
+    common:screen_name = "Nature Magic Level 58";
 	[skill_rune]
 	{
 		uber_stat	= 58;
