@@ -1,7 +1,0 @@
-[t:tsd,n:b_d_dm01-a]
-{
-  b dither = true;
-  b hasalpha = true;
-    layer1texture1 = b_d_dm01-a;
-  i texturedetail = 0;
-}
