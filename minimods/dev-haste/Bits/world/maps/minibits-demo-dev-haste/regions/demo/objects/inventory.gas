@@ -1,0 +1,7 @@
+[t:spell_dev_haste,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -0.0284187,0,-1.97763,0x91c041be;
+	}
+}
