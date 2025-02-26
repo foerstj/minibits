@@ -7,4 +7,6 @@ Based on the skill award scrolls in Return to Arhok, I made these runes for bala
 - Includes runes for Veteran & Elite, and a container.\
   Containers are one of the object types that get replaced when generating Veteran & Elite.
 
+Requires LoA.
+
 src: foerstj / C24
