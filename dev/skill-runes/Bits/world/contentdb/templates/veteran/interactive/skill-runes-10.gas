@@ -10,7 +10,7 @@
 		ranged_stat	= 0;
 		cmagic_stat	= 0;
 		nmagic_stat	= 0;
-		int_stat	=  5.22;
+		int_stat	= 5.22;
 		dex_stat	= 15.66;
 		str_stat	= 37.12;
 	}
@@ -28,7 +28,7 @@
 		ranged_stat	= 58;
 		cmagic_stat	= 0;
 		nmagic_stat	= 0;
-		int_stat	=  7.54;
+		int_stat	= 7.54;
 		dex_stat	= 35.96;
 		str_stat	= 14.50;
 	}	
@@ -47,8 +47,8 @@
 		cmagic_stat	= 58;
 		nmagic_stat	= 0;
 		int_stat	= 40.60;
-		dex_stat	=  9.86;
-		str_stat	=  7.54;
+		dex_stat	= 9.86;
+		str_stat	= 7.54;
 	}
 }
 
@@ -66,6 +66,6 @@
 		nmagic_stat	= 58;
 		int_stat	= 42.34;
 		dex_stat	= 10.44;
-		str_stat	=  5.22;
+		str_stat	= 5.22;
 	}
 }
