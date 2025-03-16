@@ -96,7 +96,8 @@ startup state CastBegin$
 				}
 				
 				// Check to see if the enchantment has already been cast on this go
-				if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
+				//if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
+				if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) )
 				{
 					SetState( Abort$ );
 					return;
@@ -168,7 +169,7 @@ startup state CastBegin$
 	
 				// Add the effected state so this can only happen once
 				target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-				caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+				//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 				
 				// we want to be able to see the dude's health
 				target$.Go.Actor.SSetCanShowHealth( true );
