@@ -1,0 +1,140 @@
+[t:krug_scout,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.768911,4.0695,-26.4263,0xb9872a0f;
+	}
+}
+[t:krug_scout,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -3.56475,3.91738,-28.7143,0xb9872a0f;
+	}
+}
+[t:krug_scavenger,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -1.76429,5.07573,-37.8865,0xb9872a0f;
+	}
+}
+[t:krug_scavenger,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 11.151,6.50734,-30.4283,0xb9872a0f;
+	}
+}
+[t:krug_scavenger,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = 4.02005,3.82573,-33.3647,0xb9872a0f;
+	}
+}
+[t:krug_scavenger,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -8.75151,5.50735,-33.3189,0xb9872a0f;
+	}
+}
+[t:krug_scavenger_boss_01,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = -6.62999,5.17524,-27.197,0xb9872a0f;
+	}
+}
+[t:bandit_melee,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = -7.17443,4.94825,-32.1387,0xaeed9d6d;
+	}
+}
+[t:bandit_melee,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = -1.70977,3.46585,-29.3126,0xaeed9d6d;
+	}
+}
+[t:bandit_ranged,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -10.3164,5.87899,-30.9393,0xaeed9d6d;
+	}
+}
+[t:bandit_ranged,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = -5.33104,4.32762,-27.1672,0xaeed9d6d;
+	}
+}
+[t:bandit_ranged,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -0.604891,5.1759,-24.8859,0xaeed9d6d;
+	}
+}
+[t:bandit_melee_boss_01,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = -9.78921,6.12175,-24.1134,0xaeed9d6d;
+	}
+}
+[t:seck_grunt,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -8.8557,5.53756,-33.1659,0xeafcee6a;
+	}
+}
+[t:seck_grunt,n:0x00100012]
+{
+	[placement]
+	{
+	  p position = -1.4175,3.39735,-29.6415,0xeafcee6a;
+	}
+}
+[t:seck_archer,n:0x00100014]
+{
+	[placement]
+	{
+	  p position = -3.39785,3.66975,-25.7551,0xeafcee6a;
+	}
+}
+[t:seck_archer,n:0x00100015]
+{
+	[placement]
+	{
+	  p position = -9.33769,5.79226,-36.7685,0xeafcee6a;
+	}
+}
+[t:seck_mage,n:0x00100016]
+{
+	[placement]
+	{
+	  p position = -3.22539,3.68481,-32.0716,0xeafcee6a;
+	}
+}
+[t:seck_mage,n:0x00100017]
+{
+	[placement]
+	{
+	  p position = -9.17726,6.11213,-26.6059,0xeafcee6a;
+	}
+}
+[t:seck_mage_high,n:0x00100018]
+{
+	[placement]
+	{
+	  p position = -11.3582,5.67134,-25.2842,0xeafcee6a;
+	}
+}

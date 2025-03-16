@@ -1,0 +1,21 @@
+[t:spell_charm,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 1.29193,0,0.0102666,0xeed0c292;
+	}
+}
+[t:spell_major_heal,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = -1.85588,0,0,0xeed0c292;
+	}
+}
+[t:spell_healing_hands,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -1.87344,0,0.590625,0xeed0c292;
+	}
+}
