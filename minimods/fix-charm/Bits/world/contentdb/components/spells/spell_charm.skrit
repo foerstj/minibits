@@ -116,15 +116,12 @@ startup state CastBegin$
 					SetState( Abort$ );
 					return;
 				}
-				
+
 				target$.go.Mind.TempGopColl1.clear;
 				target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
-				
 				int j$ = 0;
 				int jend$ = target$.go.Mind.TempGopColl1.Size();
-				
 				Go Enemy$;
-				
 				while( j$ < jend$ )
 				{
 					Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
@@ -133,9 +130,9 @@ startup state CastBegin$
 						Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
 						Enemy$.Mind.ResetSensors();
 					}
-					j$ += 1;   
+					j$ += 1;
 				}
-				
+
 				// Get caster alignment
 				eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
 
@@ -211,6 +208,25 @@ state RestoreState$
 		// If the go is still alive then restore his state
 		if( target$.IsValid )
 		{
+            // ADDED: Stop engaged enemies, just like at the start
+            target$.go.Mind.TempGopColl1.clear;
+            target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
+            int j$ = 0;
+            int jend$ = target$.go.Mind.TempGopColl1.Size();
+            Go Enemy$;
+            while( j$ < jend$ )
+            {
+                Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
+                if( Enemy$ != NULL )
+                {
+                    Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
+                    Enemy$.Mind.ResetSensors();
+                }
+                j$ += 1;
+            }
+            // /ADDED
+
+
 			// Attempt to restore the game object based on his alignment
 			target$.go.actor.ssetalignment( OriginalAlignment$ );
 
