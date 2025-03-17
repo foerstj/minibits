@@ -1,0 +1,19 @@
+[t:spell_charm,n:0x00100000]
+{
+	[magic]
+	{
+	  f cast_range = 16;
+		effect_duration = 30;
+	}
+	[placement]
+	{
+	  p position = 1.48675,0,0.0102666,0xa326c217;
+	}
+}
+[t:spell_major_heal,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -1.61613,0,0.153442,0xa326c217;
+	}
+}

@@ -1,0 +1,26 @@
+[t:bandit_ranged,n:0x00100002]
+{
+	[aspect]
+	{
+	  f life = 1000;
+	  f max_life = 1000;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -8.06427,5.59995,-53.3143,0x8509638b;
+	}
+}
+[t:bandit_ranged,n:0x00100003]
+{
+	[aspect]
+	{
+	  f life = 1000;
+	  f max_life = 1000;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.98492,5.60001,-53.0202,0x8509638b;
+	}
+}
