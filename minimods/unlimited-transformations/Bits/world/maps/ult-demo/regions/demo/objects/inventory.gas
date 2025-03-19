@@ -1,0 +1,12 @@
+[t:spell_transform_wolf,n:0x00100000]
+{
+	[magic]
+	{
+		effect_duration = 30;
+	  f required_level = 0;
+	}
+	[placement]
+	{
+	  p position = 1.49701,-9.53674e-007,-7.45058e-009,0xf242d5b5;
+	}
+}
