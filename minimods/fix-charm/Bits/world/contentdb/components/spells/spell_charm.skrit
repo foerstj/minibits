@@ -153,14 +153,20 @@ startup state CastBegin$
 				{
 					active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
 				}
+
 				// Give the charmed actor new orders
 				target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
-				
+                // EDITED: make target guard caster similar to summons
 				if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
 				{
+                    if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
+                    {
+                        target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
+                    }
 					target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
 				}
-				
+				this.CreateTimer( 2, 5 );  // restart guarding from time to time
+
 				target$.Go.Mind.ResetSensors();
 	
 				// Add the effected state so this can only happen once
@@ -188,6 +194,32 @@ startup state CastBegin$
 			}
 		}
 	}
+
+    // ADDED: restart guarding from time to time
+	trigger OnTimer$ ( 2 )
+	{
+		this.CreateTimer( 2, 5 );
+		if( target$.isvalid && caster$.IsValid() )
+		{
+			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
+			{
+				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
+				{
+					Job action$ = target$.Go.Mind.GetFrontJob( JQ_ACTION );
+				
+					if( action$ != NULL )
+					{
+						if( action$.JobAbstractType != JAT_FIDGET )
+						{
+							return;
+						}
+					}
+					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
+				}
+			}
+		}
+	}
+
 	transition -> RestoreState$ :  OnTimer( 1 );
 }
 
