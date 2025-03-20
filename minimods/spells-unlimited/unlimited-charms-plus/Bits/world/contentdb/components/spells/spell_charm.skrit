@@ -171,7 +171,8 @@ startup state CastBegin$
 				target$.Go.Mind.ResetSensors();
 	
 				// Add the effected state so this can only happen once
-				target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+                // EDITED: provide -1 instead of duration$, so there's no pointless timer countdown displayed, and the state doesn't vanish.
+				target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, -1, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 				//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 				
 				// we want to be able to see the dude's health
