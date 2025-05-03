@@ -5,3 +5,17 @@
 	  p position = -0.00274079,0,2.37827,0xf0fb4f6c;
 	}
 }
+[t:skill_runes_container_0,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -2.40389,-0.104007,-0.979964,0x1815c9cb;
+	}
+}
+[t:skill_runes_container_25,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 1.63152,0.0276165,-0.820692,0x1815c9cb;
+	}
+}
