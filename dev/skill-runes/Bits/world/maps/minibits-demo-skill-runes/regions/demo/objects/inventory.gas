@@ -30,6 +30,13 @@
 {
 	[placement]
 	{
-	  p position = -0.0542688,-0.273116,-0.0896133,0x15e7e797;
+	  p position = -1.39919,0.0474836,2.2252,0x15e7e797;
+	}
+}
+[t:skill_rune_drdeath,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = -1.61668,0.020716,-2.0131,0x15e7e797;
 	}
 }
