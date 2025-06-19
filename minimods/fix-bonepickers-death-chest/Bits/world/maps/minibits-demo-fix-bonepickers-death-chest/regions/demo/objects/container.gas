@@ -1,0 +1,7 @@
+[t:chest_grs_02_tr_r1,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 0,0,-3,0xe11ab703;
+	}
+}
