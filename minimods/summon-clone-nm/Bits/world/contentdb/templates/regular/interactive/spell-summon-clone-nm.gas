@@ -103,25 +103,25 @@
 						}
 					[*]
 						{
-							alteration = alter_combat_magic;
+							alteration = alter_nature_magic;
 							duration = #infinite;
 							value = #SRC_MELEE;
 						}
 					[*]
 						{
-							alteration = alter_combat_magic;
+							alteration = alter_nature_magic;
 							duration = #infinite;
 							value = #SRC_RANGED;
 						}
 					[*]
 						{
-							alteration = alter_combat_magic;
+							alteration = alter_nature_magic;
 							duration = #infinite;
 							value = #SRC_COMBAT_MAGIC_LEVEL;
 						}
 					[*]
 						{
-							alteration = alter_combat_magic;
+							alteration = alter_nature_magic;
 							duration = #infinite;
 							value = #SRC_NATURE_MAGIC_LEVEL;
 						}
