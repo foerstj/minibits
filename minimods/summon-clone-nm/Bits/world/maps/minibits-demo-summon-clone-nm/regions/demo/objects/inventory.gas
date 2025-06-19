@@ -1,0 +1,7 @@
+[t:spell_summon_clone_nm,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 0,0,2,0xa108536d;
+	}
+}
