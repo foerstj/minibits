@@ -1,0 +1,19 @@
+[t:bd_ra_ro_m_g_c_002,n:0x00100004]
+{
+	[common]
+	{
+		screen_name = "Dirt Rags of Defense";
+	}
+	[defend]
+	{
+	  f defense = 991;
+	}
+	[gui]
+	{
+		equip_requirements = ;
+	}
+	[placement]
+	{
+	  p position = 0,0,2.5,0xe11ab703;
+	}
+}
