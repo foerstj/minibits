@@ -10920,8 +10920,12 @@
 	}
 	[attack]
 	{
-		damage_max = 8110;
-		damage_min = 4474;
+		// EDITED to fix ludicrous damage
+		//damage_max = 8110;
+		//damage_min = 4474;
+		// in line with chest_grs_02_tr_r2:
+		damage_max = 114;
+		damage_min = 76;
 	}
 	[inventory]
 	{
