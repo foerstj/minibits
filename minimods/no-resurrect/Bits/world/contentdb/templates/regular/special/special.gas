@@ -131,11 +131,14 @@
 		bounding_volume_scale       = 4.0;
 		is_selectable				= true;
 	}
-	[respawn_shrine]
-	{
-		resurrect_msg = WE_REQ_ACTIVATE;
-		use_data = true;
-	}
+
+	// DELETED
+	//[respawn_shrine]
+	//{
+	//	resurrect_msg = WE_REQ_ACTIVATE;
+	//	use_data = true;
+	//}
+
 	[fountain]
 	{
 		effect_script	= "";
@@ -188,11 +191,14 @@
 		bounding_volume_scale       = 4.0;
 		is_selectable				= true;
 	}
-	[respawn_shrine]
-	{
-		resurrect_msg = WE_REQ_ACTIVATE;
-		use_data = true;
-	}
+
+	// DELETED
+	//[respawn_shrine]
+	//{
+	//	resurrect_msg = WE_REQ_ACTIVATE;
+	//	use_data = true;
+	//}
+
 	[fountain]
 	{
 		effect_script	= "";
@@ -217,43 +223,7 @@
 	}
 }
 
-[t:template,n:respawn_statue]
-{
-	specializes 		= interactive;
-	doc 				= "statue_respawn";
-	category_name       = "interactive";
-
-	[aspect]
-	{
-		model = m_i_glb_statue-azunai-02;
-		is_ghost_usable = true;
-		draw_selection_indicator = false;
-	}
-
-	[respawn_shrine] { }
-
-	[common]
-	{
-		screen_name      = "Resurrection Shrine";
-		is_multi_player  = true;
-		is_single_player = false;
-		rollover_display = true;
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script("respawn_shrine");
-				condition* = receive_world_message("WE_ENTERED_WORLD");
-				single_shot = true;
-			}
-			[*]
-			{
-				action* = call_sfx_script("respawn_shrine_charge");
-				condition* = receive_world_message("we_req_use");
-			}
-		}
-	}
-}
+// DELETED: respawn_statue
 
 [t:template,n:point_snapper]
 {
