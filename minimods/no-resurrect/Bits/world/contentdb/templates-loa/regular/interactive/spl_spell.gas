@@ -10014,99 +10014,10 @@
 		award_mana = true;
 	}
 }
-[t:template,n:spell_resurrect]
-{
-	category_name = "magic";
-	doc = "spell resurrect";
-	specializes = base_spell_good;
-	[aspect]
-	{
-		gold_value = 41;
-	}
-	[common]
-	{
-		screen_name = "Resurrect";
-	}
-	[common]
-		{
-		description = "Grants the power to raise the dead. Mana cost dependant on power of the Target.";
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script( "nature_spell_sparkle" );
-				condition* = receive_world_message("we_dropped");
-			}
-		}
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_sp_005;
-		inventory_icon = b_gui_ig_i_ic_sp_005_inv;
-	}
-	[magic]
-	{
-		cast_experience = (#magic*2.8);
-		cast_range = 5;
-		cast_reload_delay = 1;
-		is_one_shot = true;
 
-		mana_cost = 0;
-		mana_cost_modifier = (#maxlife/2.3);
+// DELETED: spell_resurrect
+// DELETED: scroll_resurrect
 
-		mana_cost_ui = 21;
-		mana_cost_ui_modifier = (#maxmana-21);
-
-		max_level = 111;
-		required_level = 4;
-		speed_bias = 1;
-		target_type_flags = tt_dead_friend;
-		usage_context_flags = uc_passive | uc_reanimating;
-	}
-	[spell_resurrect] {}
-}
-[t:template,n:scroll_resurrect]
-{
-	category_name = "magic";
-	doc = "scroll resurrect";
-	specializes = base_scroll_good;
-	[aspect]
-	{
-		gold_value = 20;
-	}
-	[common]
-	{
-		screen_name = "Resurrect Scroll";
-		description = "Grants the power to raise the dead. Mana cost dependent on the power of the Target.";
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script( "nature_spell_sparkle" );
-				condition* = receive_world_message("we_dropped");
-			}
-		}
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_sc_005;
-		inventory_icon = b_gui_ig_i_ic_sc_005_inv;
-	}
-	[magic]
-	{
-		one_use = true;
-		pcontent_level = 0;
-		cast_range = 10;
-		cast_reload_delay = 1;
-		is_one_shot = true;
-		mana_cost = 30;
-		mana_cost_ui = 30;
-		speed_bias = 1;
-		target_type_flags = tt_dead_friend;
-		usage_context_flags = uc_passive | uc_reanimating;
-	}
-	[spell_resurrect] {}
-}
 [t:template,n:spell_resurrect_monster]
 {
 	category_name = "magic";
@@ -10125,61 +10036,9 @@
 	}
 	[spell_resurrect] {}
 }
-[t:template,n:spell_full_resurrect]
-{
-	category_name = "magic";
-	doc = "spell full resurrect";
-	specializes = base_spell_good;
-	[aspect]
-	{
-		gold_value = 42166;
-	}
-	[common]
-	{
-		screen_name = "Full Resurrect";
-	}
-	[common]
-		{
-		description = "Grants the power to raise the dead and restore them to full Health. Mana cost dependent on power of the Target.";
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script( "nature_spell_sparkle" );
-				condition* = receive_world_message("we_dropped");
-			}
-		}
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_sp_160;
-		inventory_icon = b_gui_ig_i_ic_sp_160_inv;
-	}
-	[magic]
-	{
-		cast_experience = (#magic*2.8);
-		cast_range = 5;
-		cast_reload_delay = 1;
-		is_one_shot = true;
 
-		mana_cost = 0;
-		mana_cost_modifier = (#maxlife/2.3);
+// DELETED: spell_full_resurrect
 
-		mana_cost_ui = 21;
-		mana_cost_ui_modifier = (#maxmana-21);
-
-		max_level = 111;
-		required_level = 40;
-		speed_bias = 1;
-		target_type_flags = tt_dead_friend;
-		usage_context_flags = uc_passive | uc_reanimating;
-	}
-	[spell_resurrect]
-	{
-		effect_script	= full_resurrect;
-		heal_ratio		= 1.0;
-	}
-}
 [t:template,n:spell_return_summoned]
 {
 	category_name = "magic";
@@ -10238,115 +10097,10 @@
 		health_per_level = 22.0;
 	}
 }
-[t:template,n:spell_revive]
-{
-	category_name = "magic";
-	doc = "spell revive";
-	specializes = base_spell_dark;
-	[aspect]
-	{
-		gold_value = 71;
-	}
-	[common]
-	{
-		screen_name = "Revive";
-	}
-	[common]
-		{
-		description = "Raises the corpse of a Party Member. Mana cost dependent on the power of the Target";
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script( "combat_spell_sparkle" );
-				condition* = receive_world_message("we_dropped");
-			}
-		}
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_sp_144;
-		inventory_icon = b_gui_ig_i_ic_sp_144_inv;
-	}
-	[magic]
-	{
-		cast_experience = (#magic*.25);
-		cast_range = 10;
-		cast_reload_delay = 1;
-		is_one_shot = true;
 
-		mana_cost = 0;
-		mana_cost_modifier = (#maxlife/1.7);
+// DELETED: spell_revive
+// DELETED: spell_shargs_revive
 
-		mana_cost_ui = 32;
-		mana_cost_ui_modifier = (#maxmana-32);
-
-		max_level = 111;
-		required_level = 5;
-		speed_bias = 1;
-		target_type_flags = tt_dead_friend;
-		usage_context_flags = uc_passive | uc_reanimating;
-	}
-	[spell_resurrect]
-	{
-		effect_script = revive;
-	}
-}
-[t:template,n:spell_shargs_revive]
-{
-	category_name = "magic";
-	doc = "spell revive";
-	specializes = base_spell_dark;
-	[aspect]
-	{
-		gold_value = 36251;
-	}
-	[common]
-	{
-		screen_name = "Sharg's Revive";
-	}
-	[common]
-		{
-		description = "Raises the corpse of a Party Member along with some health. Mana cost dependent on the power of the Target.";
-		[template_triggers]
-		{
-			[*]
-			{
-				action* = call_sfx_script( "combat_spell_sparkle" );
-				condition* = receive_world_message("we_dropped");
-			}
-		}
-	}
-	[gui]
-	{
-		active_icon = b_gui_ig_i_ic_sp_177;
-		inventory_icon = b_gui_ig_i_ic_sp_177_inv;
-	}
-	[magic]
-	{
-		cast_experience = (#magic*.22);
-		cast_range = 10;
-		cast_reload_delay = 1;
-		is_one_shot = true;
-
-		mana_cost = 0;
-		mana_cost_modifier = (#maxlife/1.5);
-
-		mana_cost_ui = 32;
-		mana_cost_ui_modifier = (#maxmana-32);
-
-		max_level = 111;
-		required_level = 45;
-		speed_bias = 1;
-		target_type_flags = tt_dead_friend;
-		usage_context_flags = uc_passive | uc_reanimating;
-	}
-	[spell_resurrect]
-	{
-		effect_script	= revive;
-		heal_ratio		= 0.5;
-	}
-}
 [t:template,n:spell_rip_mana]
 {
 	category_name = "magic";
