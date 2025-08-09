@@ -95,6 +95,7 @@
 			name="spells_combat";
 			[membership]
 				{
+					* = spells_combat;  // ADDED to enable supporting custom spells
 				}
 			[templates]
 				{
@@ -217,6 +218,7 @@
 			name="spells_nature";
 			[membership]
 				{
+					* = spells_nature;  // ADDED to enable supporting custom spells
 				}
 			[templates]
 				{
@@ -347,6 +349,7 @@
 			name="spells_fire";
 			[membership]
 				{
+					* = spells_fire;  // ADDED to enable supporting custom spells
 				}
 			[templates]
 				{
@@ -382,7 +385,10 @@
 	[group*]
 		{
 			name="spells_ice";
-			[membership]{}
+			[membership]
+				{
+					* = spells_ice;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					* = spell_freeze;
@@ -399,7 +405,10 @@
 	[group*]
 		{
 			name="spells_summon";
-			[membership] {}
+			[membership]
+				{
+					* = spells_summon;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					* = spell_summon_clone;
@@ -462,7 +471,10 @@
 	[group*]
 		{
 			name="spells_healing";
-			[membership] {}
+			[membership]
+				{
+					* = spells_healing;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					* = spell_purity;
@@ -490,7 +502,10 @@
 	[group*]
 		{
 			name="spells_transform";
-			[membership] {}
+			[membership]
+				{
+					* = spells_transform;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					* = spell_transform_bear;
@@ -511,7 +526,10 @@
 [group*]
 		{
 			name="spells_curse";
-			[membership] {}
+			[membership]
+				{
+					* = spells_curse;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					//DS
@@ -546,6 +564,10 @@
 	[group*] 
 		{
 			name = "spells_electric";
+			[membership]
+				{
+					* = spells_electric;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					//DSX
@@ -578,6 +600,10 @@
 	[group*] 
 		{
 			name = "spells_area_effect";
+			[membership]
+				{
+					* = spells_area_effect;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					//DSX
@@ -610,6 +636,10 @@
 	[group*]
 		{
 			name = "tricky_spells";
+			[membership]
+				{
+					* = tricky_spells;  // ADDED to enable supporting custom spells
+				}
 			[templates]
 				{
 					* = spell_lightofchadek;
