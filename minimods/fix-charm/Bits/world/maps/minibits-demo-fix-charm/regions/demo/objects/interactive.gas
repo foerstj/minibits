@@ -1,0 +1,17 @@
+[t:statue_cav_spin_02,n:0x0010000b]
+{
+	[common]
+	{
+		screen_name = "NIS";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0010000C;
+	  x on_scid = 0x0010000C;
+	}
+	[placement]
+	{
+	  p position = 13.9301,5.59996,-53.8734,0xb9171db7;
+	}
+}
