@@ -21,7 +21,7 @@
 		      mana             = 23;
 		      max_mana         = 23;
 		      model = m_c_edm_sb_pos_1;
-		    textures:0 = b_c_edm_sb-03;
+		    textures:0 = b_c_edm_sb-03-loa;
 		      //textures:0 = b_c_edm_ph_melee;
 		      draw_shadow = FALSE;
 		      [voice]
@@ -150,7 +150,7 @@
 	      max_life         = 120;
 	      mana             = 23;
 	      max_mana         = 23;
-	    textures:0 = b_c_edm_sb-03;
+	    textures:0 = b_c_edm_sb-03-loa;
 	      //    textures:0 = b_c_edm_ph_melee;
 	
 	      scale_base = 0.20;
