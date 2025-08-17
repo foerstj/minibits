@@ -27,9 +27,10 @@ PlayerId		OriginalPlayer$;
 
 trigger OnGoHandleMessage$( WE_WORLD_STATE_TRANSITION_DONE )
 {
-	if( WorldState.CurrentState == WS_SP_NIS )
+	// EDITED: Switched logic so it applies only to the Omni Go. Previously the spell itself got deleted by NIS!
+	if( target$.IsValid )
 	{
-		if( target$.IsValid )
+		if( WorldState.CurrentState == WS_SP_NIS )
 		{
 			GoDb.SMarkGoAndChildrenForDeletion( target$ );
 		}
