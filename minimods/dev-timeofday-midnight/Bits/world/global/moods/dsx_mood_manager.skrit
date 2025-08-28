@@ -529,7 +529,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
-		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
+//		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
 			// Night; fog color set to 50%
 
 			// find a new random color to use
@@ -538,38 +538,38 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.5, random_color_modifier$, false );
-		}
-		else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
-			// Sunset/Sunrise; fog color set to 75%
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.75, random_color_modifier$, false );
-		}
-		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-			// Bright Daylight; fog color set to 125%
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.25, random_color_modifier$, true );
-		}
-		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) )
-		{
-			// Daylight hours
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.0, random_color_modifier$, false );
-		}
+//		}
+//		else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
+//			// Sunset/Sunrise; fog color set to 75%
+//
+//			// find a new random color to use
+//			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
+//			else { random_color_modifier$ = 0; }
+//
+//			// get the new fog color
+//			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.75, random_color_modifier$, false );
+//		}
+//		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
+//			// Bright Daylight; fog color set to 125%
+//
+//			// find a new random color to use
+//			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
+//			else { random_color_modifier$ = 0; }
+//
+//			// get the new fog color
+//			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.25, random_color_modifier$, true );
+//		}
+//		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) )
+//		{
+//			// Daylight hours
+//
+//			// find a new random color to use
+//			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
+//			else { random_color_modifier$ = 0; }
+//
+//			// get the new fog color
+//			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.0, random_color_modifier$, false );
+//		}
 
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 && !RandomizeWeather$( focusedGo$ ) ) {
 			// Heavy Rain darkens the fog to 85% of current value
@@ -617,7 +617,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		
 		//report.genericf("base fog red / green / blue : 0x%x / 0x%x / 0x%x\n", redFogComponent$, greenFogComponent$, blueFogComponent$);
 
-		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
+//		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
 			// Night; fog color set to 125%
 			// This is really what I'm doing...
 
@@ -644,63 +644,63 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			//if ( ( blueFogComponent$ & 0x000000FF ) < ( baseFogColor$ & 0x000000FF ) ) { blueFogComponent$ = /*baseFogColor$ & */0x000000FF; }
 
 			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
-		}
-		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
-			// Normal day hours; fog color set to 75%
-
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.75 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
-		}
-		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-			// Noon; fog color set to 50%
-			
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.5 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
-		}
-
-		// This is the early morning/late evening hours, fog at 100% normal brightness
-		else if ( (( currentHour$ >= 5 ) && ( currentHour$ <= 6 )) || ( currentHour$ == 23 ) ) {
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$;
-		}
-
-		else {
-			// other cases...not that there should be any...
-			
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversion is to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 1.0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = 0; 
-			blueFogComponent$ = 0; 
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$;
-		}
+//		}
+//		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
+//			// Normal day hours; fog color set to 75%
+//
+//			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
+//			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
+//
+//			// The int (float () ) conversions are to suppress warnings
+//			redFogComponent$ = int ( (float (redFogComponent$)) * 0.75 ); 
+//			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
+//			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
+//
+//			redFogComponent$ = redFogComponent$ & 0x00FF0000;
+//			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
+//			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
+//			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+//		}
+//		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
+//			// Noon; fog color set to 50%
+//			
+//			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
+//			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
+//
+//			// The int (float () ) conversions are to suppress warnings
+//			redFogComponent$ = int ( (float (redFogComponent$)) * 0.5 ); 
+//			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
+//			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
+//
+//			redFogComponent$ = redFogComponent$ & 0x00FF0000;
+//			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
+//			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
+//			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+//		}
+//
+//		// This is the early morning/late evening hours, fog at 100% normal brightness
+//		else if ( (( currentHour$ >= 5 ) && ( currentHour$ <= 6 )) || ( currentHour$ == 23 ) ) {
+//			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
+//			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
+//
+//			newFogColor$ = alphaFogComponent$ | redFogComponent$;
+//		}
+//
+//		else {
+//			// other cases...not that there should be any...
+//			
+//			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
+//			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
+//
+//			// The int (float () ) conversion is to suppress warnings
+//			redFogComponent$ = int ( (float (redFogComponent$)) * 1.0 ); 
+//
+//			redFogComponent$ = redFogComponent$ & 0x00FF0000;
+//			greenFogComponent$ = 0; 
+//			blueFogComponent$ = 0; 
+//
+//			newFogColor$ = alphaFogComponent$ | redFogComponent$;
+//		}
 
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 			// Heavy Rain darkens the fog to 85% of current value
