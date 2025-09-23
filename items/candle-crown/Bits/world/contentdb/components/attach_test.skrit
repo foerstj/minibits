@@ -9,6 +9,10 @@ owner = GoSkritComponent;
 goid headCandle1$;
 goid headCandle2$;
 goid headCandle3$;
+goid headCandle4$;
+goid headCandle5$;
+goid headCandle6$;
+goid headCandle7$;
 goid helmetCandle$;
 
 startup state Start$
@@ -33,14 +37,22 @@ state Attach$
 		headCandle1$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle2$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle3$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle4$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle5$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle6$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle7$ = GoDb.SCloneGo( cloneReq$ );
 		this.CreateTimer( 1, 0 ); // continue right in the next cycle
 	}
 	trigger OnTimer$(1)
 	{
 		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.0 ,  0.02, 0.0) );  MCPManager.MakeRequest(	headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.0 ,  0.12, 0.0) );  MCPManager.MakeRequest(	headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.05, -0.08, 0.0) );  MCPManager.MakeRequest(	headCandle3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.02,  0.02,  0.0 ) );  MCPManager.MakeRequest(	headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.0 ,  0.12,  0.0 ) );  MCPManager.MakeRequest(	headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.06, -0.08,  0.0 ) );  MCPManager.MakeRequest(	headCandle3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle4$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02,  0.07,  0.08) );  MCPManager.MakeRequest(	headCandle4$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle5$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02,  0.07, -0.08) );  MCPManager.MakeRequest(	headCandle5$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle6$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04, -0.03,  0.08) );  MCPManager.MakeRequest(	headCandle6$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle7$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04, -0.03, -0.08) );  MCPManager.MakeRequest(	headCandle7$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_UNEQUIPPED )
 	{
@@ -49,6 +61,10 @@ state Attach$
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle1$.go.Aspect.AspectHandle );
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle2$.go.Aspect.AspectHandle );
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle3$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle4$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle5$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle6$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle7$.go.Aspect.AspectHandle );
 			this.CreateTimer( 2, 0 ); // continue right in the next cycle
 		}
 	}
@@ -57,6 +73,10 @@ state Attach$
 		GoDb.SMarkForDeletion( headCandle1$ );
 		GoDb.SMarkForDeletion( headCandle2$ );
 		GoDb.SMarkForDeletion( headCandle3$ );
+		GoDb.SMarkForDeletion( headCandle4$ );
+		GoDb.SMarkForDeletion( headCandle5$ );
+		GoDb.SMarkForDeletion( headCandle6$ );
+		GoDb.SMarkForDeletion( headCandle7$ );
 	}
 
 	trigger OnGoHandleMessage$( WE_DROPPED )
