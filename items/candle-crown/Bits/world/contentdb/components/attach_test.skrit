@@ -6,7 +6,9 @@ property string	candle_template$;
 
 owner = GoSkritComponent;
 
-goid headCandle$;
+goid headCandle1$;
+goid headCandle2$;
+goid headCandle3$;
 goid helmetCandle$;
 
 startup state Start$
@@ -28,26 +30,33 @@ state Attach$
 		SiegePos SpawnPos$ = owner.go.parent.placement.position;
 		cloneReq$.StartingPos	= SpawnPos$;
 		cloneReq$.SnapToTerrain = false;
-		headCandle$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle1$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle2$ = GoDb.SCloneGo( cloneReq$ );
+		headCandle3$ = GoDb.SCloneGo( cloneReq$ );
 		this.CreateTimer( 1, 0 ); // continue right in the next cycle
 	}
 	trigger OnTimer$(1)
 	{
 		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(0.05, 0, 0) );
-		MCPManager.MakeRequest(	headCandle$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.0 ,  0.02, 0.0) );  MCPManager.MakeRequest(	headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.0 ,  0.12, 0.0) );  MCPManager.MakeRequest(	headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.05, -0.08, 0.0) );  MCPManager.MakeRequest(	headCandle3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_UNEQUIPPED )
 	{
-		if (headCandle$.isValid)
+		if (headCandle1$.isValid)
 		{
-			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle1$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle2$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle3$.go.Aspect.AspectHandle );
 			this.CreateTimer( 2, 0 ); // continue right in the next cycle
 		}
 	}
 	trigger OnTimer$(2)
 	{
-		GoDb.SMarkForDeletion( headCandle$ );
+		GoDb.SMarkForDeletion( headCandle1$ );
+		GoDb.SMarkForDeletion( headCandle2$ );
+		GoDb.SMarkForDeletion( headCandle3$ );
 	}
 
 	trigger OnGoHandleMessage$( WE_DROPPED )
