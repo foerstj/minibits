@@ -19,6 +19,13 @@
 	  p position = -0.602088,9.53674e-007,1.55074,0x31d799df;
 	}
 }
+[t:tree_ice_pine_04,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -1.669,0,-1.37291,0x31d799df;
+	}
+}
 [t:candle_glb_skull_02,n:0x00100007]
 {
 	[placement]
@@ -55,6 +62,13 @@
 	  p position = 0.307835,0,-0.663069,0x05b5fb24;
 	}
 }
+[t:candle_thin,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = -1.07013,0,-0.768183,0x05b5fb24;
+	}
+}
 [t:tree_ice_pine_01,n:0x0010000e]
 {
 	[placement]
@@ -69,10 +83,10 @@
 	  p position = 1.3733,-1.90735e-006,-1.20314,0x4c33c70e;
 	}
 }
-[t:tree_ice_pine_04,n:0x00100011]
+[t:candle_thin,n:0x00100012]
 {
 	[placement]
 	{
-	  p position = -1.669,0,-1.37291,0x31d799df;
+	  p position = -2,0,2,0x05b5fb24;
 	}
 }

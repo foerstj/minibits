@@ -1,0 +1,22 @@
+[t:template,n:candle_thin]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candle thin";
+	[aspect]
+	{
+		model = m_i_csl_candle-thin;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("candle_fire_thin");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+			}
+		}
+	}
+}
