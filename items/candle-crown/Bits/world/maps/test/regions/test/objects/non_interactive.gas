@@ -1,0 +1,57 @@
+[t:candle_glb_01,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -0.565317,0,0.662236,0x31d799df;
+	}
+}
+[t:candle_glb_02,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -0.55303,0,1.13577,0x31d799df;
+	}
+}
+[t:candle_glb_skull_01,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -0.602088,9.53674e-007,1.55074,0x31d799df;
+	}
+}
+[t:candle_glb_skull_02,n:0x00100007]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 1.97685,9.53674e-007,-0.626526,0x05b5fb24;
+	}
+}
+[t:candlestand_csl_01,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = 1.45413,0,-0.602088,0x05b5fb24;
+	}
+}
+[t:candlestand_csl_02,n:0x00100009]
+{
+	[placement]
+	{
+	  p position = 0.976636,0,-0.67522,0x05b5fb24;
+	}
+}
+[t:candlestand_csl_02_noflame,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = 1.02882,0,-1.2642,0x05b5fb24;
+	}
+}
+[t:candlestand_csl_03,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.307835,0,-0.663069,0x05b5fb24;
+	}
+}

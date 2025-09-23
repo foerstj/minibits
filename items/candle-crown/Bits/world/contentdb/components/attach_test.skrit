@@ -1,0 +1,80 @@
+property bool   _server_only$			= false;
+property string _doc$					= "test";
+property string _required_component$	= "placement";
+
+property string	candle_template$;
+
+owner = GoSkritComponent;
+
+goid headCandle$;
+goid helmetCandle$;
+
+startup state Start$
+{
+	// Let's wait a moment for sync.
+	trigger OnGoHandleMessage$( WE_ENTERED_WORLD )
+	{
+		this.CreateTimer( 1, 0 ); // continue right in the next cycle
+	}
+	// Okay, done waiting, let's go to state-attach.
+	transition -> Attach$:OnTimer( 1 );
+}
+
+state Attach$
+{
+	trigger OnGoHandleMessage$( WE_EQUIPPED )
+	{
+		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
+		SiegePos SpawnPos$ = owner.go.parent.placement.position;
+		cloneReq$.StartingPos	= SpawnPos$;
+		cloneReq$.SnapToTerrain = false;
+		headCandle$ = GoDb.SCloneGo( cloneReq$ );
+		this.CreateTimer( 1, 0 ); // continue right in the next cycle
+	}
+	trigger OnTimer$(1)
+	{
+		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(0.05, 0, 0) );
+		MCPManager.MakeRequest(	headCandle$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+	}
+	trigger OnGoHandleMessage$( WE_UNEQUIPPED )
+	{
+		if (headCandle$.isValid)
+		{
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle$.go.Aspect.AspectHandle );
+			this.CreateTimer( 2, 0 ); // continue right in the next cycle
+		}
+	}
+	trigger OnTimer$(2)
+	{
+		GoDb.SMarkForDeletion( headCandle$ );
+	}
+
+	trigger OnGoHandleMessage$( WE_DROPPED )
+	{
+		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
+		SiegePos SpawnPos$ = owner.go.placement.position;
+		cloneReq$.StartingPos	= SpawnPos$;
+		cloneReq$.SnapToTerrain = false;
+		helmetCandle$ = GoDb.SCloneGo( cloneReq$ );
+		this.CreateTimer( 3, 0 ); // continue right in the next cycle
+	}
+	trigger OnTimer$(3)
+	{
+		Quat rotation$ = MakeQuat(0, 0, 0, 1);
+		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( helmetCandle$.go.Aspect.AspectHandle, "m_a_hlmt_type38", "dunno", rotation$, MakeVector(0, 0, 0) );
+		MCPManager.MakeRequest(	helmetCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
+	}
+	trigger OnGoHandleMessage$( WE_PICKED_UP )
+	{
+		if (helmetCandle$.isValid)
+		{
+			owner.Go.Aspect.AspectHandle.DetachChild( helmetCandle$.go.Aspect.AspectHandle );
+			this.CreateTimer( 4, 0 ); // continue right in the next cycle
+		}
+	}
+	trigger OnTimer$(4)
+	{
+		GoDb.SMarkForDeletion( helmetCandle$ );
+	}
+}

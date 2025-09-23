@@ -1,0 +1,21 @@
+[t:spell_orb_test,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 1.14763,-9.53674e-007,1.098,0x4f05dd09;
+	}
+}
+[t:he_un_ca_ro_felt_lucia,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -1.50867,0,0.879912,0x4f05dd09;
+	}
+}
+[t:he_un_ca_ro_felt_lucia2,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = -0.799249,0,-1.3409,0x4f05dd09;
+	}
+}
