@@ -1,0 +1,42 @@
+[effect_script*]
+{
+	name	=helmet_lucia_dropped;
+
+	script	=[[
+			sfx create fireb #TARGET 
+				"dark()flamesize(.05)count(10)alphafade(.55)color0(0,0,0)
+				offset(0,0.5,0)velocity(0,5,0)accel(0,0,0)lower_r1(1)";
+			sfx attach_point #PEEK m_a_hlmt_type38 target;
+			sfx start #POP;
+
+            sfx create fire #TARGET 
+	            "instant()scale(.525)count(20)color0(0,1,1)";
+			sfx attach_point #PEEK m_a_hlmt_type38 target;
+			sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=helmet_lucia_equipped;
+
+	script	=[[
+			sfx create fireb #TARGET 
+				"dark()flamesize(.05)count(10)alphafade(.55)color0(0,0,0)
+				offset(0,0.7,0)velocity(0,5,0)accel(0,0,0)lower_r1(1)";
+			sfx attach_point #PEEK Bip01_Head target;
+			sfx start #POP;
+
+            sfx create fire #TARGET 
+	            "instant()scale(.525)count(20)offset(0,0.2,0)";
+			sfx attach_point #PEEK Bip01_Head target;
+			sfx start #POP;
+
+
+			//sfx create spawn #TARGET
+			//	"model(candlestand_csl_01)spawn_int(0.01)spawn_count(7)count(7)sr_min(0)sr_max(0.1)er_min(0)er_max(0.1)lvel(0,0,0)lvel_var(0,0,0)";
+			//sfx attach_point #PEEK Bip01_Head target;
+			//sfx start #POP;
+			]];
+}
+
+// candlestand_csl_01

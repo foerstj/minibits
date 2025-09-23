@@ -1,0 +1,58 @@
+[effect_script*]
+{
+	name	=orb_testing_orbiter;
+
+	script	=[[
+
+
+			sfx create orbiter #TARGET 
+				"must_update()scale(1)offset(0,0.7,0)radius(0)model(chicken_grenade)model_smax(1)model_sin(4)
+				model_sout(4)rotate(0,0,0)rot_inc(0,0,0)";
+            set $orbiter #POP;
+            sfx start $orbiter;
+
+			// Primary center blobbie
+			sfx create explosion #SOURCE 
+				"color0(1,0,0)omni_dir()scale_range(.5,.5,0)fade_range(4,8,0)count(30)
+				vmin(0)vmax(.8)radius(.15)ts(.3)scale(.65)srate(0.002)offset(0,-.05,0)";
+            sfx rat #PEEK;
+			sfx target #PEEK $orbiter;
+			sfx start #POP;
+
+			sfx create explosion #SOURCE 
+				"color0(1,1,0)omni_dir()scale_range(.15,.15,0)fade_range(4,8,0)count(30)
+				vmin(0)vmax(.8)radius(.15)ts(.3)scale(.75)srate(0.002)";
+            sfx rat #PEEK;
+			sfx target #PEEK $orbiter;
+			sfx start #POP;
+
+			// Blobbie trail
+			sfx create explosion #SOURCE 
+				"texture(b_sfx_feather_white_tsd-01)rand_scale()scale_range(.03,.1,0)color0(0,1,0)omni_dir()fade_range(1,4,0)count(30)
+				vmin(0.1)vmax(1)radius(.35)ts(.35)scale(.75)srate(0.04)dark()";
+            sfx rat #PEEK;
+			sfx target #PEEK $orbiter;
+			sfx start #POP;
+
+			sfx create explosion #SOURCE 
+				"texture(b_sfx_feather_white_tsd-02)rand_scale()scale_range(.03,.1,0)color0(0,1,1)fade_range(1,4,0)count(30)
+				vmin(0.1)vmax(1)radius(.3)ts(.35)scale(1)srate(0.02)";
+            sfx rat #PEEK;
+			sfx target #PEEK $orbiter;
+			sfx start #POP;
+
+			sfx create explosion #SOURCE 
+				"texture(b_sfx_feather_white_tsd-02)color0(0,0,1)
+				color1(.05,.05,.05)dark()count(20)omni_dir()ivel(0,2,0)
+				vmin(3)vmax(5)rand_scale()scale_range(.03,.1,0)radius(.1)";
+
+            sfx rat #PEEK;
+			sfx target #PEEK $orbiter;
+			sfx start #POP;
+
+			//Send back a mid sync message with the ID of the orbiter.  This is important!  The skrit needs
+			//to know this ID so that it can use the ID to get the location of the orbiter.
+			worldmsg WE_SPELL_SYNC_MID #OWNER_GOID #OWNER_GOID $orbiter;
+
+			]];
+}
