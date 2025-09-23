@@ -55,3 +55,24 @@
 	  p position = 0.307835,0,-0.663069,0x05b5fb24;
 	}
 }
+[t:tree_ice_pine_01,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = -0.845957,0,-0.165129,0x4c33c70e;
+	}
+}
+[t:tree_ice_pine_03,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 1.3733,-1.90735e-006,-1.20314,0x4c33c70e;
+	}
+}
+[t:tree_ice_pine_04,n:0x00100011]
+{
+	[placement]
+	{
+	  p position = -1.669,0,-1.37291,0x31d799df;
+	}
+}

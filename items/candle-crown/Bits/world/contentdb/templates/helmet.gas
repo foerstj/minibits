@@ -58,5 +58,6 @@
 	[attach_test]
 	{
 		candle_template = candlestand_csl_01;
+		effect_script = helmet_lucia_light;
 	}
 }

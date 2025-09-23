@@ -2,4 +2,5 @@
 {
 	0x001006a5 = t_xxx_flr_04x04-v0;
 	0x001006aa = t_xxx_flr_08x08-v0;
+	0x001008dc = t_xxx_ruin_arch-a;
 }

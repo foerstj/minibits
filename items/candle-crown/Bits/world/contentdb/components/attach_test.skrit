@@ -3,6 +3,7 @@ property string _doc$					= "test";
 property string _required_component$	= "placement";
 
 property string	candle_template$;
+property string effect_script$;
 
 owner = GoSkritComponent;
 
@@ -42,6 +43,7 @@ state Attach$
 		headCandle6$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle7$ = GoDb.SCloneGo( cloneReq$ );
 		this.CreateTimer( 1, 0 ); // continue right in the next cycle
+		SiegeFX.SRunMpScript(effect_script$, owner.go.goid, owner.goid, "", owner.goid, WE_EQUIPPED);
 	}
 	trigger OnTimer$(1)
 	{
@@ -67,6 +69,7 @@ state Attach$
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle7$.go.Aspect.AspectHandle );
 			this.CreateTimer( 2, 0 ); // continue right in the next cycle
 		}
+		SiegeFx.SStopScript( owner.goid, effect_script$ );
 	}
 	trigger OnTimer$(2)
 	{
