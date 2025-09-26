@@ -100,7 +100,7 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 	return weather_current$;
 }
 
-int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_modifier$ )
+int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_modifier$, bool turn_red$ )
 {
 	int alphaFogComponent$, redFogComponent$, greenFogComponent$, blueFogComponent$;
 
@@ -128,6 +128,13 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_mo
 	redFogComponent$ = Math.MinInt(Math.MaxInt(redFogComponent$, 0), 255);
 	greenFogComponent$ = Math.MinInt(Math.MaxInt(greenFogComponent$, 0), 255);
 	blueFogComponent$ = Math.MinInt(Math.MaxInt(blueFogComponent$, 0), 255);
+
+	// turn red
+	if ( turn_red$ ) {
+		redFogComponent$ = Math.MaxInt(Math.MaxInt(redFogComponent$, greenFogComponent$), blueFogComponent$);
+		greenFogComponent$ = 0;
+		blueFogComponent$ = 0;
+	}
 
 	// shift them over a bit
 	redFogComponent$ = Math.LShift( redFogComponent$, 16 );
@@ -547,7 +554,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		}
 
 		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$ );
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, false );
 
 		// apply changes
 		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
@@ -579,117 +586,33 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	// Adding this block for the special "turn the whole world red" quest in multiplayer world
 	else if ( GameAuditor.GetDb.GetBool( "turn_world_red" ) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
 	{
+		int newFogColor$;
 
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
-		int newFogColor$;
 
-		int alphaFogComponent$	= baseFogColor$ & 0xFF000000; //I'm not going to mess with the alpha, it's just here for consistency
-		int redFogComponent$	= baseFogColor$ & 0x00FF0000;
-		int greenFogComponent$	= baseFogColor$ & 0x0000FF00;
-		int blueFogComponent$	= baseFogColor$ & 0x000000FF;
-		
-		//report.genericf("base fog red / green / blue : 0x%x / 0x%x / 0x%x\n", redFogComponent$, greenFogComponent$, blueFogComponent$);
-
+		float light_modifier$;
 		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
-			// Night; fog color set to 125%
-			// This is really what I'm doing...
-
-			// redFogComponent$ *= 1.25;
-			// greenFogComponent$ *= 1.25;
-			// blueFogComponent$ *= 1.25;
-
-			// ...I'm just forcing the conversions here to get rid of warnings.
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			redFogComponent$ = int ( (float (redFogComponent$)) * 1.50 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
-
-			redFogComponent$ 	= redFogComponent$   & 0x00FF0000;
-			greenFogComponent$	= greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$	= blueFogComponent$  & 0x000000FF;
-
-			// Upper bound check; this should prevent a bright fog from suddenly getting really dark thanks to the above calculations
-			// baseFogColor$ is commented out.  If commented, anything that fails the check gets set to FF, if not commented, set to original value.
-			if ( ( redFogComponent$ & 0x00FF0000 ) < ( baseFogColor$ & 0x00FF0000 ) ) { redFogComponent$ = /*baseFogColor$ & */0x00FF0000; }
-			//if ( ( greenFogComponent$ & 0x0000FF00 ) < ( baseFogColor$ & 0x0000FF00 ) ) { greenFogComponent$ = /*baseFogColor$ & */0x0000FF00; }
-			//if ( ( blueFogComponent$ & 0x000000FF ) < ( baseFogColor$ & 0x000000FF ) ) { blueFogComponent$ = /*baseFogColor$ & */0x000000FF; }
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+			light_modifier$ = 1.5;  // Night; fog color set to 125%
 		}
 		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
-			// Normal day hours; fog color set to 75%
-
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.50 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+			light_modifier$ = 0.5;  // Normal day hours; fog color set to 75%
 		}
 		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-			// Noon; fog color set to 50%
-			
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.0 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+			light_modifier$ = 0.0;  // Noon; fog color set to 50%
 		}
-
-		// This is the early morning/late evening hours, fog at 100% normal brightness
 		else if ( (( currentHour$ >= 5 ) && ( currentHour$ <= 6 )) || ( currentHour$ == 23 ) ) {
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$;
+			light_modifier$ = 1.0;  // This is the early morning/late evening hours, fog at 100% normal brightness
 		}
-
 		else {
-			// other cases...not that there should be any...
-			
-			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
-			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
-
-			// The int (float () ) conversion is to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 1.0 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = 0; 
-			blueFogComponent$ = 0; 
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$;
+			light_modifier$ = 1.0;  // other cases...not that there should be any...
 		}
-
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			// Heavy Rain darkens the fog to 85% of current value
-			
-			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.70 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.70 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.70 ); 
-
-			redFogComponent$ = redFogComponent$ & 0x00FF0000;
-			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
-			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
-
-			newFogColor$ = alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
 		}
+
+		// get the new fog color
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, 0.0, true );
 
 		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
