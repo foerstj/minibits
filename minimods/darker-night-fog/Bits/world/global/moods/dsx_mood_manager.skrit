@@ -102,15 +102,18 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 
 int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_modifier$, bool upper_bound_check$ )
 {
-
 	int alphaFogComponent$, redFogComponent$, greenFogComponent$, blueFogComponent$;
 
-	#only(game) [[
 	// setup the base values
 	alphaFogComponent$	= base_color$ & 0xFF000000;
-	redFogComponent$	= Math.RShift( base_color$ & 0x00FF0000, 16 );
-	greenFogComponent$	= Math.RShift( base_color$ & 0x0000FF00, 8 );
+	redFogComponent$	= base_color$ & 0x00FF0000;
+	greenFogComponent$	= base_color$ & 0x0000FF00;
 	blueFogComponent$	= base_color$ & 0x000000FF;
+
+	#only(game) [[
+	// shift them over a bit
+	redFogComponent$	= Math.RShift( redFogComponent$, 16 );
+	greenFogComponent$	= Math.RShift( greenFogComponent$, 8 );
 
 	// find min/max values
 	float min_color_modifier$ = -1 * color_modifier$;
