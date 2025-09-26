@@ -100,7 +100,7 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 	return weather_current$;
 }
 
-int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_modifier$, bool upper_bound_check$ )
+int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_modifier$ )
 {
 	int alphaFogComponent$, redFogComponent$, greenFogComponent$, blueFogComponent$;
 
@@ -124,18 +124,10 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_mo
 	blueFogComponent$ = int ( ( (float (blueFogComponent$)) * light_modifier$ ) + ( Math.RandomFloat( min_color_modifier$, max_color_modifier$ ) * 255 ) ); 
 	greenFogComponent$ = int ( ( (float (greenFogComponent$)) * light_modifier$ ) + ( Math.RandomFloat( min_color_modifier$, max_color_modifier$ ) * 255 ) );
 	
-	// do we want to do an upper bound check?
-	if( upper_bound_check$ )
-	{
-		if ( ( Math.LShift( redFogComponent$, 16 ) & 0x00FF0000 ) < ( base_color$ & 0x00FF0000 ) ) { redFogComponent$ = Math.RShift( 0x00FF0000, 16 ); }
-		if ( ( Math.LShift( greenFogComponent$, 8 ) & 0x0000FF00 ) < ( base_color$ & 0x0000FF00 ) ) { greenFogComponent$ = Math.RShift( 0x0000FF00, 8 ); }
-		if ( ( blueFogComponent$ & 0x000000FF ) < ( base_color$ & 0x000000FF ) ) { blueFogComponent$ = 0x000000FF; }
-	}
-
-	// make sure they're positive and cast a few more times....
-	redFogComponent$ = int( Math.Abs( float( redFogComponent$ ) ) );
-	blueFogComponent$ = int( Math.Abs( float( blueFogComponent$ ) ) );
-	greenFogComponent$ = int( Math.Abs( float( greenFogComponent$ ) ) );
+	// do bound checks
+	redFogComponent$ = Math.MinInt(Math.MaxInt(redFogComponent$, 0), 255);
+	greenFogComponent$ = Math.MinInt(Math.MaxInt(greenFogComponent$, 0), 255);
+	blueFogComponent$ = Math.MinInt(Math.MaxInt(blueFogComponent$, 0), 255);
 
 	// shift them over a bit
 	redFogComponent$ = Math.LShift( redFogComponent$, 16 );
@@ -540,7 +532,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			else { random_color_modifier$ = 0; }
 
 			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.0, random_color_modifier$, false );
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.0, random_color_modifier$ );
 		}
 		else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
 			// Sunset/Sunrise; fog color set to 75%
@@ -550,7 +542,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			else { random_color_modifier$ = 0; }
 
 			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.5, random_color_modifier$, false );
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.5, random_color_modifier$ );
 		}
 		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
 			// Bright Daylight; fog color set to 125%
@@ -560,7 +552,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			else { random_color_modifier$ = 0; }
 
 			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.5, random_color_modifier$, true );
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.5, random_color_modifier$ );
 		}
 		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) )
 		{
@@ -571,12 +563,12 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			else { random_color_modifier$ = 0; }
 
 			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.0, random_color_modifier$, false );
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.0, random_color_modifier$ );
 		}
 
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 && !RandomizeWeather$( focusedGo$ ) ) {
 			// Heavy Rain darkens the fog to 85% of current value
-			newFogColor$ = GetModifiedFogColor$( newFogColor$, 0.7, 0.0, false ); // FIX: use newFogColor instead of baseFogColor here
+			newFogColor$ = GetModifiedFogColor$( newFogColor$, 0.7, 0.0 ); // FIX: use newFogColor instead of baseFogColor here
 		}
 		// apply changes
 		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; 
