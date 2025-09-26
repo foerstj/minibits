@@ -524,54 +524,33 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
+		// find a new random color to use
+		if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
+		else { random_color_modifier$ = 0; }
+
+		// find the new light modifier
+		float light_modifier$;
 		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
-			// Night; fog color set to 50%
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.0, random_color_modifier$ );
+			light_modifier$ = 0.0;  // Night; fog color set to 50%
 		}
 		else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
-			// Sunset/Sunrise; fog color set to 75%
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 0.5, random_color_modifier$ );
+			light_modifier$ = 0.5;  // Sunset/Sunrise; fog color set to 75%
 		}
 		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-			// Bright Daylight; fog color set to 125%
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.5, random_color_modifier$ );
+			light_modifier$ = 1.5;  // Bright Daylight; fog color set to 125%
 		}
-		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) )
-		{
-			// Daylight hours
-
-			// find a new random color to use
-			if( RandomizeWeather$( focusedGo$ ) ) { random_color_modifier$ = fog_color_modifier$; }
-			else { random_color_modifier$ = 0; }
-
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, 1.0, random_color_modifier$ );
+		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
+			light_modifier$ = 1.0;  // Daylight hours
 		}
-
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 && !RandomizeWeather$( focusedGo$ ) ) {
-			// Heavy Rain darkens the fog to 85% of current value
-			newFogColor$ = GetModifiedFogColor$( newFogColor$, 0.7, 0.0 ); // FIX: use newFogColor instead of baseFogColor here
+			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
 		}
+
+		// get the new fog color
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$ );
+
 		// apply changes
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; 
+		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
 
 		// if we're in area nine we'll also want to mess with fog distance + density
 		if( RandomizeWeather$( focusedGo$ ) )
