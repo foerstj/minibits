@@ -554,7 +554,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		else {
 			light_modifier$ = 1.0;  // Daylight hours
 		}
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 && !RandomizeWeather$( focusedGo$ ) ) {
+		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
