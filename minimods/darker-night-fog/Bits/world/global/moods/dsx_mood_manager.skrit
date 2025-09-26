@@ -64,6 +64,11 @@ bool hail_storm$					= false;	// is the hail storm going?
 // Support Functions
 //////////////////////////////////////////////////////////////////////////////
 
+bool TurnWorldRed$()
+{
+	return GameAuditor.GetDb.GetBool( "turn_world_red" );
+}
+
 bool RandomizeWeather$( Goid target$ )
 {
 	return !Victory.IsQuestCompleted( "a1_staff", target$ ) && GameAuditor.GetDb.GetBool( "in_area_nine" );
@@ -257,7 +262,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 				// Now 100% chance of lightning above a certain threshold (used to be 70%).
 				// People rarely noticed that the lightning was random, and it makes maintaining
 				// the state of the lightning easier  --DT
-				if ( ( rainCurrent$ >= 200.0 ) || ( GameAuditor.GetDb.GetBool( "turn_world_red" ) && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
+				if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
 				{
 					Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
 					//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
@@ -506,7 +511,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	if (
 		( Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bLightning == false ) &&
 		( Mood.GetGoMoodSetting( focusedGo$ ).bLightning == true ) &&
-		!( GameAuditor.GetDb.GetBool( "turn_world_red" ) ) &&
+		!( TurnWorldRed$() ) &&
 		!( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
 	   )
 	{
@@ -522,7 +527,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	// Fog color should change with time of day...but not if they are inside.  
 
 	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-	if ( !GameAuditor.GetDb.GetBool( "turn_world_red" ) && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
+	if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
 	{
 		int newFogColor$;
 		float random_color_modifier$;
@@ -584,7 +589,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	}
 	
 	// Adding this block for the special "turn the whole world red" quest in multiplayer world
-	else if ( GameAuditor.GetDb.GetBool( "turn_world_red" ) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
+	else if ( TurnWorldRed$() && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
 	{
 		int newFogColor$;
 
