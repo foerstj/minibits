@@ -546,7 +546,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
 			light_modifier$ = 1.5;  // Bright Daylight; fog color set to 125%
 		}
-		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
+		else {
 			light_modifier$ = 1.0;  // Daylight hours
 		}
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 && !RandomizeWeather$( focusedGo$ ) ) {
@@ -595,17 +595,14 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
 			light_modifier$ = 1.5;  // Night; fog color set to 125%
 		}
-		else if ( ( ( currentHour$ >= 7 ) && ( currentHour$ <= 12) ) || ( ( currentHour$ >= 18 ) && ( currentHour$ <= 22 ) ) ) {
-			light_modifier$ = 0.5;  // Normal day hours; fog color set to 75%
+		else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
+			light_modifier$ = 1.0;  // This is the early morning/late evening hours, fog at 100% normal brightness
 		}
 		else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
 			light_modifier$ = 0.0;  // Noon; fog color set to 50%
 		}
-		else if ( (( currentHour$ >= 5 ) && ( currentHour$ <= 6 )) || ( currentHour$ == 23 ) ) {
-			light_modifier$ = 1.0;  // This is the early morning/late evening hours, fog at 100% normal brightness
-		}
 		else {
-			light_modifier$ = 1.0;  // other cases...not that there should be any...
+			light_modifier$ = 0.5;  // Normal day hours; fog color set to 75%
 		}
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
