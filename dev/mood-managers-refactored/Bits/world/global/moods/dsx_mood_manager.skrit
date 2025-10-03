@@ -153,13 +153,13 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, float color_mo
 float GetCurrentHourLightModifier$( int currentHour$ )
 {
 	if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
-		return 0.0;  // Night; fog color set to 50%
+		return 0.5;  // Night; fog color set to 50%
 	}
 	else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
-		return 0.5;  // Sunset/Sunrise; fog color set to 75%
+		return 0.75;  // Sunset/Sunrise; fog color set to 75%
 	}
 	else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-		return 1.5;  // Bright Daylight; fog color set to 125%
+		return 1.25;  // Bright Daylight; fog color set to 125%
 	}
 	else {
 		return 1.0;  // Daylight hours
@@ -559,7 +559,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		// find the new light modifier
 		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
+			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
 		// get the new fog color
@@ -601,9 +601,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
 		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
-		light_modifier$ = 1.5 - light_modifier$;  // flip brightness
+		light_modifier$ = 1.75 - light_modifier$;  // flip brightness
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
+			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
 		// get the new fog color

@@ -360,9 +360,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// blueFogComponent$ *= 0.5; 
 
 			// ...I'm just forcing the conversions here to get rid of warnings.
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.0 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.0 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.0 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.5 ); 
+			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.5 ); 
+			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.5 ); 
 			redFogComponent$ = redFogComponent$ & 0x00FF0000;
 			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
 			blueFogComponent$ = blueFogComponent$ & 0x000000FF;
@@ -372,9 +372,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// Sunset/Sunrise; fog color set to 75%
 
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.50 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.50 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.50 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.75 ); 
+			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.75 ); 
+			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.75 ); 
 
 			redFogComponent$ = redFogComponent$ & 0x00FF0000;
 			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
@@ -385,9 +385,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// Bright Daylight; fog color set to 125%
 			
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 1.50 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 1.50 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 1.50 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 1.25 ); 
+			greenFogComponent$ = int ( (float (greenFogComponent$)) * 1.25 ); 
+			blueFogComponent$ = int ( (float (blueFogComponent$)) * 1.25 ); 
 
 			redFogComponent$ = redFogComponent$ & 0x00FF0000;
 			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
@@ -411,9 +411,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// Heavy Rain darkens the fog to 85% of current value
 			
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.70 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.70 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.70 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.85 ); 
+			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.85 ); 
+			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.85 ); 
 
 			redFogComponent$ = redFogComponent$ & 0x00FF0000;
 			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
@@ -472,7 +472,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			if (redFogComponent$ < greenFogComponent$) { redFogComponent$ = greenFogComponent$; }
 			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
 
-			redFogComponent$ = int ( (float (redFogComponent$)) * 1.50 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 1.25 ); 
 			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
 			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
 
@@ -495,7 +495,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
 
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.50 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.75 ); 
 			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
 			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
 
@@ -511,7 +511,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			if (redFogComponent$ < blueFogComponent$) { redFogComponent$ = blueFogComponent$; }
 
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.0 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.5 ); 
 			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0 ); 
 			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0 ); 
 
@@ -549,9 +549,9 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// Heavy Rain darkens the fog to 85% of current value
 			
 			// The int (float () ) conversions are to suppress warnings
-			redFogComponent$ = int ( (float (redFogComponent$)) * 0.70 ); 
-			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.70 ); 
-			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.70 ); 
+			redFogComponent$ = int ( (float (redFogComponent$)) * 0.85 ); 
+			greenFogComponent$ = int ( (float (greenFogComponent$)) * 0.85 ); 
+			blueFogComponent$ = int ( (float (blueFogComponent$)) * 0.85 ); 
 
 			redFogComponent$ = redFogComponent$ & 0x00FF0000;
 			greenFogComponent$ = greenFogComponent$ & 0x0000FF00;
