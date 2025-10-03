@@ -1,0 +1,89 @@
+[t:template,n:candle_csl_01]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candle";
+	[aspect]
+	{
+		model = m_i_csl_candle;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("candle_fire1");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+			}
+		}
+	}
+}
+[t:template,n:candle_csl_01_thin]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candle thin";
+	[aspect]
+	{
+		model = m_i_csl_candle-thin;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("candle_fire1");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+			}
+		}
+	}
+}
+[t:template,n:candle_csl_01_empty]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candle empty";
+	[aspect]
+	{
+		model = m_i_csl_candle-empty;
+	}
+}
+
+[t:template,n:candlestand_csl_01_thin]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candlestand thin";
+	[aspect]
+	{
+		model = m_i_csl_candlestand-01-thin;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("candle_fire1");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+			}
+		}
+	}
+}
+[t:template,n:candlestand_csl_01_empty]
+{
+	specializes = base_light;
+
+	category_name = "lighting";
+	doc = "candlestand empty";
+	[aspect]
+	{
+		model = m_i_csl_candlestand-empty;
+	}
+}
