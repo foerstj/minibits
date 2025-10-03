@@ -14,7 +14,7 @@
 		{
 			[*]
 			{
-				action* = call_sfx_script("candle_fire1");
+				action* = call_sfx_script("fire_candle_csl_01");
 				condition* = receive_world_message("WE_ENTERED_WORLD");
 			}
 		}
@@ -36,7 +36,7 @@
 		{
 			[*]
 			{
-				action* = call_sfx_script("candle_fire1");
+				action* = call_sfx_script("fire_candle_csl_01_thin");
 				condition* = receive_world_message("WE_ENTERED_WORLD");
 			}
 		}
@@ -70,7 +70,7 @@
 		{
 			[*]
 			{
-				action* = call_sfx_script("candle_fire1");
+				action* = call_sfx_script("fire_candlestand_csl_01_thin");
 				condition* = receive_world_message("WE_ENTERED_WORLD");
 			}
 		}
