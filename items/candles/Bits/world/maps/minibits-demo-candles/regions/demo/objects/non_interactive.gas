@@ -1,0 +1,42 @@
+[t:candlestand_csl_01,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = -1.56987,0,-2.46501,0x92a99e5b;
+	}
+}
+[t:candlestand_csl_01_thin,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -0.94559,-2.38419e-007,-2.55269,0x92a99e5b;
+	}
+}
+[t:candlestand_csl_01_empty,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -0.338444,0,-2.58624,0x92a99e5b;
+	}
+}
+[t:candle_csl_01,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 0.648045,0,-2.66286,0x92a99e5b;
+	}
+}
+[t:candle_csl_01_empty,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = 1.72649,0,-2.69523,0x92a99e5b;
+	}
+}
+[t:candle_csl_01_thin,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 1.18561,0,-2.65887,0x92a99e5b;
+	}
+}
