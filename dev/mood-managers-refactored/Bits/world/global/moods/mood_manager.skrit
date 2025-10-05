@@ -73,8 +73,8 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 
 	#only(game) [[
 	// shift them over a bit
-	redFogComponent$	= Math.RShift( redFogComponent$, 16 );
-	greenFogComponent$	= Math.RShift( greenFogComponent$, 8 );
+	redFogComponent$	= redFogComponent$ / 256 / 256;
+	greenFogComponent$	= greenFogComponent$ / 256;
 
 	// find a new version
 	redFogComponent$ = int ( (float (redFogComponent$)) * light_modifier$ ); 
@@ -94,8 +94,8 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 	}
 
 	// shift them over a bit
-	redFogComponent$ = Math.LShift( redFogComponent$, 16 );
-	greenFogComponent$ = Math.LShift( greenFogComponent$, 8 );
+	redFogComponent$ = redFogComponent$ * 256 * 256;
+	greenFogComponent$ = greenFogComponent$ * 256;
 	]];
 
 	// and find the new one
