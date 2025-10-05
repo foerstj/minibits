@@ -166,9 +166,10 @@ float GetCurrentHourLightModifier$( int currentHour$ )
 	else {
 		return 1.0;  // Daylight hours
 	}
+	return 0.0;
 }
 
-void ChangeWeather$()
+void ChangeWeather$( Goid focusedGo$ )
 {
 	float randomNumber$;
 
@@ -370,7 +371,6 @@ void ChangeWeather$()
 
 ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElapsed$ )
 {
-
 	Goid focusedGo$; 	// get the focused go
 
 	int newFocused$;	// the number of the party member that is focused
@@ -422,7 +422,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		if (randomNumber$ > 0.4)
 		{
 			//report.generic( "Yep, I'm changing the weather.\n" );
-			ChangeWeather$();
+			ChangeWeather$( focusedGo$ );
 		} // end weather modification
 
 		#only(game) [[
