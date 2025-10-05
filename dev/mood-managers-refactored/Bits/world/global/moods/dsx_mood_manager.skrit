@@ -32,7 +32,8 @@
 // is a good chance of no change happening, or a small change.  There
 // are small chances for a large change in the weather (20% or 30% difference
 // in rain or snow density, for example).
-	 
+
+
 property float	fog_density_max$		= 1.0;
 property float	fog_far_dist_max$		= 40.0;
 property float	fog_near_dist_max$		= 20.0;
@@ -306,6 +307,9 @@ void ChangeWeather$( Goid focusedGo$ )
 		// This applies the changes
 		Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
 		Mood.ForceUpdateSnow(0);
+		
+		//report.genericF("Snow density is now %f,base snow is %f\n",snowCurrent$,snowBaseline$);
+		//report.genericF("Snow density is now %f,base snow is %f\nOriginal mood name: %s, snow value %f\n",snowCurrent$,snowBaseline$,originalMood$,originalSnow$);
 	} // end snow modification
 
 	// If it's windy, the wind will change
@@ -552,7 +556,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	// change the color of the fog based on the time of day.
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
-	
+
 	// Fog color should change with time of day...but not if they are inside.  
 
 	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
@@ -597,7 +601,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetNearDist = Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist;
 		}
 
-		// if the mood has changed and the fog color, update
+		// If the mood just changed, the engine will update the fog color to the value that we just created.
+		// If the mood has not changed, we have to prompt it to update.
 		if ( ( ( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$) ) || RandomizeWeather$( focusedGo$ ) ) { Mood.ForceUpdateFog( 15.0 ); }
 
 		LastMood$ = currentMood$; // cleanup
@@ -635,7 +640,6 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 		// If the mood just changed, the engine will update the fog color to the value that we just created.
 		// If the mood has not changed, we have to prompt it to update.
-		
 		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
 
 		LastMood$ = currentMood$; // cleanup

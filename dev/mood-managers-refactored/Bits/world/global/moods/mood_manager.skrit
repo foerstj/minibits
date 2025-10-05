@@ -399,13 +399,12 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	}
 
 
-	// This will change the color of the fog based on the time of day.
-	
+	// change the color of the fog based on the time of day.
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
-    
-    // Fog color should change with time of day...but not if they are inside.  
-	
+
+	// Fog color should change with time of day...but not if they are inside.  
+
 	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
 	if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
 	{
