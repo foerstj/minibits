@@ -102,21 +102,67 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 	return alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
 }
 
-float GetCurrentHourLightModifier$( int currentHour$ )
+int GetCurrentHourLightColor$( int currentHour$, bool isSnowEnabled$ )
 {
-	if ( ( currentHour$ >= 0 ) && ( currentHour$ <= 4 ) ) {
-		return 0.0;  // Night; fog color set to 50%
+	if (!isSnowEnabled$)
+	{
+		// see timeofday.gas
+		if (currentHour$ ==  0) { return 0xFF9E4DCA; }
+		if (currentHour$ ==  1) { return 0xFF000040; }
+		if (currentHour$ ==  2) { return 0xFF000020; }
+		if (currentHour$ ==  3) { return 0xFF000000; }
+		if (currentHour$ ==  4) { return 0xFF000010; }
+		if (currentHour$ ==  5) { return 0xFFA4700F; }
+		if (currentHour$ ==  6) { return 0xFFA4700F; }
+		if (currentHour$ ==  7) { return 0xFFE0A54B; }
+		if (currentHour$ ==  8) { return 0xFFE0A54B; }
+		if (currentHour$ ==  9) { return 0xFFE0C24B; }
+		if (currentHour$ == 10) { return 0xFFE0C24B; }
+		if (currentHour$ == 11) { return 0xFFF5F19A; }
+		if (currentHour$ == 12) { return 0xFFF5F19A; }
+		if (currentHour$ == 13) { return 0xFFF8FBD7; }
+		if (currentHour$ == 14) { return 0xFFF8FBD7; }
+		if (currentHour$ == 15) { return 0xFFF8FBD7; }
+		if (currentHour$ == 16) { return 0xFFF8FBD7; }
+		if (currentHour$ == 17) { return 0xFFF8FBD7; }
+		if (currentHour$ == 18) { return 0xFFF5F19A; }
+		if (currentHour$ == 19) { return 0xFFF5F19A; }
+		if (currentHour$ == 20) { return 0xFFE0C24B; }
+		if (currentHour$ == 21) { return 0xFFE0C24B; }
+		if (currentHour$ == 22) { return 0xFFE0A54B; }
+		if (currentHour$ == 23) { return 0xFFA4700F; }
 	}
-	else if ( ( currentHour$ == 5 ) || ( currentHour$ == 6 ) || ( currentHour$ == 23 ) ) {
-		return 0.5;  // Sunset/Sunrise; fog color set to 75%
-	}
-	else if ( ( currentHour$ >= 13 ) && ( currentHour$ <= 17 ) ) {
-		return 1.5;  // Bright Daylight; fog color set to 125%
-	}
-	else {
-		return 1.0;  // Daylight hours
+	else
+	{
+		// see any of the original snow moods
+		if (currentHour$ <=  0) { return 0xFF000000; }
+		if (currentHour$ <=  5) { return 0xFF1A1A00; }
+		if (currentHour$ <=  6) { return 0xFF66330D; }
+		if (currentHour$ <=  7) { return 0xFFB39A40; }
+		if (currentHour$ <=  8) { return 0xFFB3B3B3; }
+		if (currentHour$ <= 10) { return 0xFFF0F0FF; }
+		if (currentHour$ <= 12) { return 0xFFFFFFFF; }
+		if (currentHour$ <= 19) { return 0xFFB39A9A; }
+		if (currentHour$ <= 20) { return 0xFF66334D; }
+		if (currentHour$ <= 21) { return 0xFF330D40; }
+		if (currentHour$ <= 22) { return 0xFF000000; }
+		if (currentHour$ <= 23) { return 0xFF000000; }
 	}
 	return 0.0;
+}
+
+float GetCurrentHourLightModifier$( int currentHour$, bool isSnowEnabled$ )
+{
+	int currentColor$ = GetCurrentHourLightColor$(currentHour$, isSnowEnabled$);
+
+	int redFogComponent$	= currentColor$ & 0x00FF0000;
+	int greenFogComponent$	= currentColor$ & 0x0000FF00;
+	int blueFogComponent$	= currentColor$ & 0x000000FF;
+	// shift them over a bit
+	redFogComponent$	= redFogComponent$ / 256 / 256;
+	greenFogComponent$	= greenFogComponent$ / 256;
+
+	return (((float(redFogComponent$ + greenFogComponent$ + blueFogComponent$)) / 3) / 256) * 1.25;
 }
 
 void ChangeWeather$( Goid focusedGo$ )
@@ -403,7 +449,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
 
-	// Fog color should change with time of day...but not if they are inside.  
+	// Fog color should change with time of day...but not if they are inside.
+	bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
 
 	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
 	if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
@@ -415,7 +462,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
 		// find the new light modifier
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
+		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
 		}
@@ -443,8 +490,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
-		light_modifier$ = 1.5 - light_modifier$;  // flip brightness
+		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
+		light_modifier$ = 1.25 - light_modifier$;  // flip brightness
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
 		}
