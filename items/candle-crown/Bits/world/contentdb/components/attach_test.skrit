@@ -48,7 +48,7 @@ state Attach$
 	trigger OnTimer$(1)
 	{
 		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
-		float up$ = 0.24;
+		float up$ = 0.17;
 		float fr$ = -0.02;
 		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.02+up$,  0.00+fr$,  0.0 ) );  MCPManager.MakeRequest(	headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
 		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.00+up$,  0.10+fr$,  0.0 ) );  MCPManager.MakeRequest(	headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );

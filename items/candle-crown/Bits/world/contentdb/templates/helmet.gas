@@ -55,6 +55,10 @@
 {
 	specializes = he_ca_ro_felt_01_base;
 
+	[defend]
+	{
+		armor_type = head-03;
+	}
 	[attach_test]
 	{
 		candle_template = candle_csl_01_thin;
