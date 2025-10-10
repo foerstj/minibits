@@ -14,6 +14,13 @@ goid headCandle4$;
 goid headCandle5$;
 goid headCandle6$;
 goid headCandle7$;
+goid headLaurel1$;
+goid headLaurel2$;
+goid headLaurel3$;
+goid headLaurel4$;
+goid headLaurel5$;
+goid headLaurel6$;
+goid headLaurel7$;
 goid helmetCandle$;
 
 startup state Start$
@@ -42,21 +49,43 @@ state Attach$
 		headCandle5$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle6$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle7$ = GoDb.SCloneGo( cloneReq$ );
+
+		GoCloneReq cloneReq2$ = MakeGoCloneReq( owner.go.goid, "leaf_glb_laurel_01-static" );
+		cloneReq2$.StartingPos	= SpawnPos$;
+		cloneReq2$.SnapToTerrain = false;
+		headLaurel1$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel2$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel3$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel4$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel5$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel6$ = GoDb.SCloneGo( cloneReq2$ );
+		headLaurel7$ = GoDb.SCloneGo( cloneReq2$ );
+
 		this.CreateTimer( 1, 0 ); // continue right in the next cycle
 		SiegeFX.SRunMpScript(effect_script$, owner.go.goid, owner.goid, "", owner.goid, WE_EQUIPPED);
 	}
 	trigger OnTimer$(1)
 	{
-		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
 		float up$ = 0.17;
 		float fr$ = -0.02;
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.02+up$,  0.00+fr$,  0.0 ) );  MCPManager.MakeRequest(	headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.00+up$,  0.10+fr$,  0.0 ) );  MCPManager.MakeRequest(	headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.06+up$, -0.10+fr$,  0.0 ) );  MCPManager.MakeRequest(	headCandle3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle4$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02+up$,  0.05+fr$,  0.08) );  MCPManager.MakeRequest(	headCandle4$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle5$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02+up$,  0.05+fr$, -0.08) );  MCPManager.MakeRequest(	headCandle5$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle6$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04+up$, -0.05+fr$,  0.08) );  MCPManager.MakeRequest(	headCandle6$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
-		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle7$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04+up$, -0.05+fr$, -0.08) );  MCPManager.MakeRequest(	headCandle7$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+
+		Quat rotation$ = MakeQuat(0.062, 0.704, -0.062, 0.704); // Y 90°, then X 10°. https://tools.glowbuzzer.com/rotationconverter
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.02+up$,  0.00+fr$,  0.0 ) );  MCPManager.MakeRequest( headCandle1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector( 0.00+up$,  0.10+fr$,  0.0 ) );  MCPManager.MakeRequest( headCandle2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.06+up$, -0.10+fr$,  0.0 ) );  MCPManager.MakeRequest( headCandle3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle4$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02+up$,  0.05+fr$,  0.08) );  MCPManager.MakeRequest( headCandle4$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle5$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.02+up$,  0.05+fr$, -0.08) );  MCPManager.MakeRequest( headCandle5$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle6$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04+up$, -0.05+fr$,  0.08) );  MCPManager.MakeRequest( headCandle6$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headCandle7$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation$, MakeVector(-0.04+up$, -0.05+fr$, -0.08) );  MCPManager.MakeRequest( headCandle7$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+
+		Quat rotation2$ = MakeQuat(-0.542, -0.455, 0.542, -0.455); // Y 90°, then X 100°
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel1$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector( 0.02+up$,  0.00+fr$,  0.0 ) );  MCPManager.MakeRequest( headLaurel1$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel2$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector( 0.00+up$,  0.10+fr$,  0.0 ) );  MCPManager.MakeRequest( headLaurel2$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel3$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector(-0.06+up$, -0.10+fr$,  0.0 ) );  MCPManager.MakeRequest( headLaurel3$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel4$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector(-0.02+up$,  0.05+fr$,  0.08) );  MCPManager.MakeRequest( headLaurel4$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel5$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector(-0.02+up$,  0.05+fr$, -0.08) );  MCPManager.MakeRequest( headLaurel5$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel6$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector(-0.04+up$, -0.05+fr$,  0.08) );  MCPManager.MakeRequest( headLaurel6$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
+		owner.Go.Parent.Aspect.AspectHandle.AttachReverseLinkedChild( headLaurel7$.go.Aspect.AspectHandle, "Bip01_Head", "dunno", rotation2$, MakeVector(-0.04+up$, -0.05+fr$, -0.08) );  MCPManager.MakeRequest( headLaurel7$.go.Goid, PL_FOLLOW, owner.Go.Parent.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_UNEQUIPPED )
 	{
@@ -69,6 +98,15 @@ state Attach$
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle5$.go.Aspect.AspectHandle );
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle6$.go.Aspect.AspectHandle );
 			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headCandle7$.go.Aspect.AspectHandle );
+
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel1$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel2$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel3$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel4$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel5$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel6$.go.Aspect.AspectHandle );
+			owner.Go.Parent.Aspect.AspectHandle.DetachChild( headLaurel7$.go.Aspect.AspectHandle );
+
 			this.CreateTimer( 2, 0 ); // continue right in the next cycle
 		}
 		SiegeFx.SStopScript( owner.goid, effect_script$ );
@@ -82,6 +120,14 @@ state Attach$
 		GoDb.SMarkForDeletion( headCandle5$ );
 		GoDb.SMarkForDeletion( headCandle6$ );
 		GoDb.SMarkForDeletion( headCandle7$ );
+
+		GoDb.SMarkForDeletion( headLaurel1$ );
+		GoDb.SMarkForDeletion( headLaurel2$ );
+		GoDb.SMarkForDeletion( headLaurel3$ );
+		GoDb.SMarkForDeletion( headLaurel4$ );
+		GoDb.SMarkForDeletion( headLaurel5$ );
+		GoDb.SMarkForDeletion( headLaurel6$ );
+		GoDb.SMarkForDeletion( headLaurel7$ );
 	}
 
 	trigger OnGoHandleMessage$( WE_DROPPED )
@@ -96,7 +142,7 @@ state Attach$
 	trigger OnTimer$(3)
 	{
 		Quat rotation$ = MakeQuat(0, 0, 0, 1);
-		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( helmetCandle$.go.Aspect.AspectHandle, "m_a_hlmt_type38", "dunno", rotation$, MakeVector(0, 0, 0) );
+		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( helmetCandle$.go.Aspect.AspectHandle, "m_a_hlmt_head-03", "dunno", rotation$, MakeVector(0, 0, 0) );
 		MCPManager.MakeRequest(	helmetCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_PICKED_UP )

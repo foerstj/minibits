@@ -1,0 +1,17 @@
+[t:template,n:leaf_glb_laurel_01-static]
+{
+	specializes = non_interactive_nonblocking;
+
+	category_name = "leaf";
+	doc = "leaf_laurel (static)";
+	[aspect]
+	{
+		lodfi_lower = 0.05;
+		lodfi_upper = 0.05;
+		model = m_i_glb_leaf;
+		[textures]
+		{
+			0 = b_i_grs_leaf-laurel;
+		}
+	}
+}
