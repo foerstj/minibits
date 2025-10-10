@@ -1,11 +1,4 @@
-[t:he_un_ca_ro_felt_lucia,n:0x00100003]
-{
-	[placement]
-	{
-	  p position = -1.50867,0,0.879912,0x4f05dd09;
-	}
-}
-[t:he_un_ca_ro_felt_lucia2,n:0x0010000c]
+[t:he_un_ca_ro_candle_crown,n:0x0010000c]
 {
 	[placement]
 	{

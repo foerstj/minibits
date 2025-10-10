@@ -26,32 +26,7 @@
 	}
 }
 
-[t:template,n:he_un_ca_ro_felt_lucia]
-{
-	specializes = he_ca_ro_felt_01_base;
-
-	[common]
-	{
-		[template_triggers]
-		{
-			[*]
-			{
-				condition* = receive_world_message("we_dropped");
-				action* = call_sfx_script("helmet_lucia_dropped");
-				single_shot = true;
-			}
-			[*]
-			{
-				condition* = receive_world_message("we_equipped");
-				action* = call_sfx_script("helmet_lucia_equipped");
-				single_shot = true;
-			}
-		}
-	}
-}
-
-
-[t:template,n:he_un_ca_ro_felt_lucia2]
+[t:template,n:he_un_ca_ro_candle_crown]
 {
 	specializes = he_ca_ro_felt_01_base;
 

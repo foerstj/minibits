@@ -4,7 +4,7 @@
 	{
 		[equipment]
 		{
-			es_head = he_un_ca_ro_felt_lucia2;
+			es_head = he_un_ca_ro_candle_crown;
 		}
 	}
 	[placement]
@@ -35,7 +35,7 @@
 		}
 		[other]
 		{
-			il_main = bw_g_c_c_m_r_avg;
+			il_main = he_un_ca_ro_candle_crown;
 		}
 	}
 	[mind]
