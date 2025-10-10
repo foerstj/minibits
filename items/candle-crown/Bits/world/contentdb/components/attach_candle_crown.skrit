@@ -23,6 +23,7 @@ goid headLaurel5$;
 goid headLaurel6$;
 goid headLaurel7$;
 goid dropCandle$;
+goid dropLaurel$;
 
 startup state Start$
 {
@@ -39,8 +40,9 @@ state Attach$
 {
 	trigger OnGoHandleMessage$( WE_EQUIPPED )
 	{
-		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
 		SiegePos SpawnPos$ = owner.go.parent.placement.position;
+
+		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
 		cloneReq$.StartingPos	= SpawnPos$;
 		cloneReq$.SnapToTerrain = false;
 		headCandle1$ = GoDb.SCloneGo( cloneReq$ );
@@ -136,29 +138,41 @@ state Attach$
 	// Attach a single candle while the item is dropped on the ground.
 	trigger OnGoHandleMessage$( WE_DROPPED )
 	{
-		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
 		SiegePos SpawnPos$ = owner.go.placement.position;
+
+		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
 		cloneReq$.StartingPos	= SpawnPos$;
 		cloneReq$.SnapToTerrain = false;
 		dropCandle$ = GoDb.SCloneGo( cloneReq$ );
+
+		GoCloneReq cloneReq2$ = MakeGoCloneReq( owner.go.goid, leaf_template$ );
+		cloneReq2$.StartingPos	= SpawnPos$;
+		cloneReq2$.SnapToTerrain = false;
+		dropLaurel$ = GoDb.SCloneGo( cloneReq2$ );
+
 		this.CreateTimer( 3, 0 ); // continue right in the next cycle
 	}
 	trigger OnTimer$(3)
 	{
 		Quat rotation$ = MakeQuat(0, 0, 0, 1);
-		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( dropCandle$.go.Aspect.AspectHandle, "m_i_glb_amulet-01", "dunno", rotation$, MakeVector(0, 0, 0) );
-		MCPManager.MakeRequest(	dropCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
+		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( dropCandle$.go.Aspect.AspectHandle, "m_i_glb_amulet-01", "dunno", rotation$, MakeVector(0, 0, 0) );  MCPManager.MakeRequest( dropCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
+
+		Quat rotation2$ = MakeQuat(0.707, 0, 0, 0.707); // X 90°
+		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( dropLaurel$.go.Aspect.AspectHandle, "m_i_glb_amulet-01", "dunno", rotation2$, MakeVector(0, 0, 0) );  MCPManager.MakeRequest( dropLaurel$.go.Goid, PL_FOLLOW, owner.Go.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_PICKED_UP )
 	{
 		if (dropCandle$.isValid)
 		{
 			owner.Go.Aspect.AspectHandle.DetachChild( dropCandle$.go.Aspect.AspectHandle );
+			owner.Go.Aspect.AspectHandle.DetachChild( dropLaurel$.go.Aspect.AspectHandle );
+
 			this.CreateTimer( 4, 0 ); // continue right in the next cycle
 		}
 	}
 	trigger OnTimer$(4)
 	{
 		GoDb.SMarkForDeletion( dropCandle$ );
+		GoDb.SMarkForDeletion( dropLaurel$ );
 	}
 }
