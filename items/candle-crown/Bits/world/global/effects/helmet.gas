@@ -49,23 +49,3 @@
 			sfx start #POP;
 			]];
 }
-[effect_script*]
-{
-	name	=candle_fire_thin;
-
-	script	=[[
-	
-            if ( #LODFI > 0.5 )
-            {
-            	sfx create fire #TARGET 
-	            	"offset(0,.12,0)instant()scale(.05)count(20)min_count(10)";
-				//sfx attach_point #PEEK ap_light target;
-				sfx start #POP;
-			}
-			 
-			sfx create orbiter #TARGET 
-				"offset(0,.14,0)scale(.125)color0(.5,.35,.15)iphi(0)radius(0)";
-			//sfx attach_point #PEEK ap_light target;
-			sfx start #POP;
-			]];
-}

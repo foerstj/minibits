@@ -1,4 +1,4 @@
-[t:template,n:candle_thin]
+[t:template,n:candle_csl_01_thin]
 {
 	specializes = base_light;
 
@@ -14,7 +14,7 @@
 		{
 			[*]
 			{
-				action* = call_sfx_script("candle_fire_thin");
+				action* = call_sfx_script("fire_candle_csl_01_thin");
 				condition* = receive_world_message("WE_ENTERED_WORLD");
 			}
 		}
