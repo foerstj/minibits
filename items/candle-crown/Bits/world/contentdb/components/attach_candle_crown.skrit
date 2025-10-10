@@ -3,6 +3,7 @@ property string _doc$					= "test";
 property string _required_component$	= "placement";
 
 property string	candle_template$;
+property string	leaf_template$;
 property string effect_script$;
 
 owner = GoSkritComponent;
@@ -21,7 +22,7 @@ goid headLaurel4$;
 goid headLaurel5$;
 goid headLaurel6$;
 goid headLaurel7$;
-goid helmetCandle$;
+goid dropCandle$;
 
 startup state Start$
 {
@@ -50,7 +51,7 @@ state Attach$
 		headCandle6$ = GoDb.SCloneGo( cloneReq$ );
 		headCandle7$ = GoDb.SCloneGo( cloneReq$ );
 
-		GoCloneReq cloneReq2$ = MakeGoCloneReq( owner.go.goid, "leaf_glb_laurel_01-static" );
+		GoCloneReq cloneReq2$ = MakeGoCloneReq( owner.go.goid, leaf_template$ );
 		cloneReq2$.StartingPos	= SpawnPos$;
 		cloneReq2$.SnapToTerrain = false;
 		headLaurel1$ = GoDb.SCloneGo( cloneReq2$ );
@@ -62,7 +63,8 @@ state Attach$
 		headLaurel7$ = GoDb.SCloneGo( cloneReq2$ );
 
 		this.CreateTimer( 1, 0 ); // continue right in the next cycle
-		SiegeFX.SRunMpScript(effect_script$, owner.go.goid, owner.goid, "", owner.goid, WE_EQUIPPED);
+
+		SiegeFX.SRunMpScript(effect_script$, owner.go.parent.goid, owner.go.parent.goid, "", owner.go.parent.goid, WE_EQUIPPED);
 	}
 	trigger OnTimer$(1)
 	{
@@ -109,7 +111,8 @@ state Attach$
 
 			this.CreateTimer( 2, 0 ); // continue right in the next cycle
 		}
-		SiegeFx.SStopScript( owner.goid, effect_script$ );
+
+		SiegeFx.SStopScript( owner.go.parent.goid, effect_script$ );
 	}
 	trigger OnTimer$(2)
 	{
@@ -130,31 +133,32 @@ state Attach$
 		GoDb.SMarkForDeletion( headLaurel7$ );
 	}
 
+	// Attach a single candle while the item is dropped on the ground.
 	trigger OnGoHandleMessage$( WE_DROPPED )
 	{
 		GoCloneReq cloneReq$ = MakeGoCloneReq( owner.go.goid, candle_template$ );
 		SiegePos SpawnPos$ = owner.go.placement.position;
 		cloneReq$.StartingPos	= SpawnPos$;
 		cloneReq$.SnapToTerrain = false;
-		helmetCandle$ = GoDb.SCloneGo( cloneReq$ );
+		dropCandle$ = GoDb.SCloneGo( cloneReq$ );
 		this.CreateTimer( 3, 0 ); // continue right in the next cycle
 	}
 	trigger OnTimer$(3)
 	{
 		Quat rotation$ = MakeQuat(0, 0, 0, 1);
-		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( helmetCandle$.go.Aspect.AspectHandle, "m_a_hlmt_head-03", "dunno", rotation$, MakeVector(0, 0, 0) );
-		MCPManager.MakeRequest(	helmetCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
+		owner.Go.Aspect.AspectHandle.AttachReverseLinkedChild( dropCandle$.go.Aspect.AspectHandle, "m_i_glb_amulet-01", "dunno", rotation$, MakeVector(0, 0, 0) );
+		MCPManager.MakeRequest(	dropCandle$.go.Goid, PL_FOLLOW, owner.Go.Goid );
 	}
 	trigger OnGoHandleMessage$( WE_PICKED_UP )
 	{
-		if (helmetCandle$.isValid)
+		if (dropCandle$.isValid)
 		{
-			owner.Go.Aspect.AspectHandle.DetachChild( helmetCandle$.go.Aspect.AspectHandle );
+			owner.Go.Aspect.AspectHandle.DetachChild( dropCandle$.go.Aspect.AspectHandle );
 			this.CreateTimer( 4, 0 ); // continue right in the next cycle
 		}
 	}
 	trigger OnTimer$(4)
 	{
-		GoDb.SMarkForDeletion( helmetCandle$ );
+		GoDb.SMarkForDeletion( dropCandle$ );
 	}
 }

@@ -4,7 +4,7 @@
 	{
 		[equipment]
 		{
-			es_head = he_un_ca_ro_candle_crown;
+			es_amulet = candle_crown;
 		}
 	}
 	[placement]
@@ -29,13 +29,14 @@
 	}
 	[inventory]
 	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
 		[equipment]
 		{
 			es_chest = bd_ro_m_g_c_avg_spider_dsx;
 		}
 		[other]
 		{
-			il_main = he_un_ca_ro_candle_crown;
+			il_main = candle_crown;
 		}
 	}
 	[mind]
