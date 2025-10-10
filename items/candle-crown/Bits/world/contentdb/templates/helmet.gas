@@ -59,9 +59,9 @@
 	{
 		armor_type = head-03;
 	}
-	[attach_test]
+	[attach_candle_crown]
 	{
 		candle_template = candle_csl_01_thin;
-		effect_script = helmet_lucia_light;
+		effect_script = candle_crown_light;
 	}
 }

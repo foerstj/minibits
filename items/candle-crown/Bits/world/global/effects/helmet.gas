@@ -38,14 +38,3 @@
 			//sfx start #POP;
 			]];
 }
-
-[effect_script*]
-{
-	name	=helmet_lucia_light;
-
-	script	=[[
-			sfx create lightsource #TARGET 
-				"color0(0.7,0.7,0)color1(0.68,0.68,0)frequency(0.2)iradius(4)radius(12)offset(0,2,0)";
-			sfx start #POP;
-			]];
-}
