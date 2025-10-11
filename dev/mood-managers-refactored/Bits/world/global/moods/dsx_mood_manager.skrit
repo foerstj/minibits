@@ -470,11 +470,12 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		// Fog color should change with time of day...but not if they are inside.  
 
 		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-		if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) )
+		if ( !TurnWorldRed$() )
 		{
 			int newFogColor$;
+			bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
 			float random_color_modifier$;
-			bool isRandomizeWeather$ = RandomizeWeather$( focusedGo$ );
+			bool isRandomizeWeather$ = (!isInterior$) && RandomizeWeather$( focusedGo$ );
 
 			// get the base color, store the old color and get ready to receive a new one
 			int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
@@ -484,7 +485,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
 
 			// find the new light modifier
-			float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
+			float light_modifier$ = isInterior$ ? 1.0 : GetCurrentHourLightModifier$( currentHour$ );
 			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
 				light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 			}
