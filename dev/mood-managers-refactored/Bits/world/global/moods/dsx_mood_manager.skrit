@@ -468,18 +468,18 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
 	{
 		// Fog color should change with time of day...but not if they are inside.  
+		int newFogColor$;
+		bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
+
+		// get the base color, store the old color and get ready to receive a new one
+		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
+		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
 		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
 		if ( !TurnWorldRed$() )
 		{
-			int newFogColor$;
-			bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
 			float random_color_modifier$;
 			bool isRandomizeWeather$ = (!isInterior$) && RandomizeWeather$( focusedGo$ );
-
-			// get the base color, store the old color and get ready to receive a new one
-			int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-			int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
 			// find a new random color to use
 			random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
@@ -493,8 +493,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, false );
 
-			// apply changes
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
+			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
 			// if we're in area nine we'll also want to mess with fog distance + density
 			if( isRandomizeWeather$ )
@@ -520,11 +519,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		// Adding this block for the special "turn the whole world red" quest in multiplayer world
 		else if ( TurnWorldRed$() )
 		{
-			int newFogColor$;
-
-			int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-			int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
-
+			// find the new light modifier
 			float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
 			light_modifier$ = 1.75 - light_modifier$;  // flip brightness
 			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
@@ -540,7 +535,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 			// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
 			// when the fog is red
-			if ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) {
+			if ( !isInterior$ ) {
 				Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
 				Mood.ForceUpdateRain(0); // This applies the change
 			}
