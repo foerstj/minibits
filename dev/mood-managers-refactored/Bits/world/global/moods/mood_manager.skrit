@@ -175,7 +175,7 @@ void ChangeRain$( Goid focusedGo$ )
 	Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
 	Mood.ForceUpdateRain(0);
 
-	//report.genericF("Rain density is now %f,base rain is %f\n",rainCurrent$,rainBaseline$);
+	//report.genericF("Rain density is now %f, base rain is %f\n", rainCurrent$, rainBaseline$);
 }
 
 void ChangeSnow$( Goid focusedGo$ )
@@ -190,8 +190,7 @@ void ChangeSnow$( Goid focusedGo$ )
 	Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
 	Mood.ForceUpdateSnow(0);
 
-	//report.genericF("Snow density is now %f,base snow is %f\n",snowCurrent$,snowBaseline$);
-	//report.genericF("Snow density is now %f,base snow is %f\nOriginal mood name: %s, snow value %f\n",snowCurrent$,snowBaseline$,originalMood$,originalSnow$);
+	//report.genericF("Snow density is now %f, base snow is %f\n", snowCurrent$, snowBaseline$);
 }
 
 void ChangeWind$( Goid focusedGo$ )
@@ -206,8 +205,7 @@ void ChangeWind$( Goid focusedGo$ )
 	Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
 	Mood.ForceUpdateWind(0);
 
-	//report.genericF("Wind velocity is now %f,base wind is %f\n",windCurrent$,windBaseline$);
-	//report.genericF("Wind velocity is now %f,base wind is %f\nOriginal mood name: %s, wind value %f\n",windCurrent$,windBaseline$,originalMood$,originalWind$);
+	//report.genericF("Wind velocity is now %f, base wind is %f\n", windCurrent$, windBaseline$);
 }
 
 void ChangeWeather$( Goid focusedGo$ )
@@ -216,19 +214,19 @@ void ChangeWeather$( Goid focusedGo$ )
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled)
 	{
 		ChangeRain$( focusedGo$ );
-	} // end rain modification
+	}
 
 	// If it's snowing, the snow will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled)
 	{
 		ChangeSnow$( focusedGo$ );
-	} // end snow modification
+	}
 
 	// If it's windy, the wind will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bWindEnabled)
 	{
 		ChangeWind$( focusedGo$ );
-	} // end wind modification
+	}
 }
 
 
@@ -288,7 +286,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		{
 			//report.generic( "Yep, I'm changing the weather.\n" );
 			ChangeWeather$( focusedGo$ );
-		} // end weather modification
+		}
 	}
 
 	// This is a check to see if the lightning is enabled when it shouldn't be.
