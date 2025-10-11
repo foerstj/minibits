@@ -501,6 +501,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, false );
+			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
 			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
@@ -530,22 +531,21 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		{
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, 0.0, true );
-
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
 			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
-			// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
-			// when the fog is red
-			if ( !isInterior$ ) {
-				Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-				Mood.ForceUpdateRain(0); // This applies the change
-			}
+			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
 			// If the mood just changed, the engine will update the fog color to the value that we just created.
 			// If the mood has not changed, we have to prompt it to update.
 			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
 		}	// Now back to our regularly scheduled programming
+
+		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
+		// when the fog is red
+		if ( !isInterior$ ) {
+			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
+			Mood.ForceUpdateRain(0); // This applies the change
+		}
 
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
