@@ -475,6 +475,21 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
+		// find the new light modifier
+		float light_modifier$ = 1;
+		if (!isInterior$)
+		{
+			light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
+			if ( TurnWorldRed$() )
+			{
+				light_modifier$ = 1.75 - light_modifier$;  // flip brightness
+			}
+		}
+		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
+		{
+			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
+		}
+
 		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
 		if ( !TurnWorldRed$() )
 		{
@@ -483,12 +498,6 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 			// find a new random color to use
 			random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
-
-			// find the new light modifier
-			float light_modifier$ = isInterior$ ? 1.0 : GetCurrentHourLightModifier$( currentHour$ );
-			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-				light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
-			}
 
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, false );
@@ -519,13 +528,6 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		// Adding this block for the special "turn the whole world red" quest in multiplayer world
 		else if ( TurnWorldRed$() )
 		{
-			// find the new light modifier
-			float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
-			light_modifier$ = 1.75 - light_modifier$;  // flip brightness
-			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-				light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
-			}
-
 			// get the new fog color
 			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, 0.0, true );
 
