@@ -310,74 +310,72 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
 
-	// Fog color should change with time of day...but not if they are inside.  
-
-	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-	if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
+	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
 	{
-		int newFogColor$;
+		// Fog color should change with time of day...but not if they are inside.  
 
-		// get the base color, store the old color and get ready to receive a new one
-		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
+		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
+		if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) )
+		{
+			int newFogColor$;
 
-		// find the new light modifier
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
+			// get the base color, store the old color and get ready to receive a new one
+			int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
+			int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
+
+			// find the new light modifier
+			float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
+			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
+				light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
+			}
+
+			// get the new fog color
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, false );
+
+			// apply changes
+			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
+
+			// If the mood just changed, the engine will update the fog color to the value that we just created.
+			// If the mood has not changed, we have to prompt it to update.
+			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
 		}
 
-		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, false );
+		// Adding this block for the special "turn the whole world red" quest in multiplayer world
+		else if ( TurnWorldRed$() )
+		{
+			int newFogColor$;
 
-		// apply changes
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
+			int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
+			int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
-		// If the mood just changed, the engine will update the fog color to the value that we just created.
-		// If the mood has not changed, we have to prompt it to update.
-		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
+			float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
+			light_modifier$ = 1.75 - light_modifier$;  // flip brightness
+			if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
+				light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
+			}
+
+			// get the new fog color
+			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, true );
+
+			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
+
+			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
+
+			// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
+			// when the fog is red
+			if ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) {
+				Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
+				Mood.ForceUpdateRain(0); // This applies the change
+			}
+
+			// If the mood just changed, the engine will update the fog color to the value that we just created.
+			// If the mood has not changed, we have to prompt it to update.
+			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
+		}	// Now back to our regularly scheduled programming
 
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
-		
 	}
-
-	// Adding this block for the special "turn the whole world red" quest in multiplayer world
-	else if ( TurnWorldRed$() && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
-	{
-		int newFogColor$;
-
-		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
-
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$ );
-		light_modifier$ = 1.75 - light_modifier$;  // flip brightness
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
-		}
-
-		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, true );
-
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
-		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
-		// when the fog is red
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) {
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-			Mood.ForceUpdateRain(0); // This applies the change
-		}
-
-		// If the mood just changed, the engine will update the fog color to the value that we just created.
-		// If the mood has not changed, we have to prompt it to update.
-		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-
-		LastMood$ = currentMood$; // cleanup
-		LastHour$ = currentHour$; // cleanup
-
-	}	// Now back to our regularly scheduled programming
 
 	// Set the focused go as the active go for all mood components
 	Mood.SetActiveSunGo( focusedGo$, transitionTime$ );
