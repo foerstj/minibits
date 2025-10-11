@@ -167,203 +167,216 @@ float GetCurrentHourLightModifier$( int currentHour$ )
 	return 0.0;
 }
 
+void ChangeRain$( Goid focusedGo$ )
+{
+	float rainCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity;
+
+	// This is the original rain density
+	float rainBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
+
+	float weatherModifier$;
+
+	// 50/50 chance of more or less rain
+	float randomNumber$ = math.randomfloat( 1.0 );
+	if (randomNumber$ > 0.5)
+	{
+		weatherModifier$ = 1.0;
+		//report.generic( "More rain.\n" );
+	}
+	else
+	{
+		weatherModifier$ = -1.0;
+		//report.generic( "Less rain.\n" );
+	}
+	randomNumber$ = math.randomfloat( 1.0 );
+	// 80% chance of 10% weather change
+	// 10% chance of 20% weather change
+	// 6% chance of 30% weather change
+	// 4% chance of 50% weather change
+
+	if (randomNumber$ < 0.8)
+	{
+		weatherModifier$ *= 0.1;
+		//report.generic( "10% change.\n" );
+	}
+	else if (randomNumber$ < 0.9)
+	{
+		weatherModifier$ *= 0.2;
+		//report.generic( "20% change.\n" );
+	}
+	else if (randomNumber$ < 0.96)
+	{
+		weatherModifier$ *= 0.3;
+		//report.generic( "30% change.\n" );
+	}
+	else
+	{
+		weatherModifier$ *= 0.5;
+		//report.generic( "50% change.\n" );
+	}
+
+	rainCurrent$ += rainBaseline$ * weatherModifier$;				
+
+	// This will keep the weather from becoming too different from the base mood
+	if (rainCurrent$ < (rainBaseline$ * 0.5) ) { rainCurrent$ = (rainBaseline$ * 0.5); }
+	if (rainCurrent$ > (rainBaseline$ * 1.5) ) { rainCurrent$ = (rainBaseline$ * 1.5); }
+
+	// Now 100% chance of lightning above a certain threshold (used to be 70%).
+	// People rarely noticed that the lightning was random, and it makes maintaining
+	// the state of the lightning easier  --DT
+	if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
+	{
+		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
+		//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
+	}
+	else
+	{
+		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
+		//report.genericF("Rain density is now %f, turned off lightning.\n", rainCurrent$);
+	}
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
+	Mood.ForceUpdateRain(0);
+
+	//report.genericF("Rain density is now %f,base rain is %f\n",rainCurrent$,rainBaseline$);
+}
+
+void ChangeSnow$( Goid focusedGo$ )
+{
+	float snowCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).snowDensity;
+
+	// This is the original snow density
+	float snowBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
+
+	float weatherModifier$;
+
+	// 50/50 chance of more or less snow
+	float randomNumber$ = math.randomfloat( 1.0 );
+	if (randomNumber$ > 0.5)
+	{
+		weatherModifier$ = 1.0;
+		//report.generic( "More snow.\n" );
+	}
+	else
+	{
+		weatherModifier$ = -1.0;
+		//report.generic( "Less snow.\n" );
+	}
+	randomNumber$ = math.randomfloat( 1.0 );
+	// 80% chance of 10% weather change
+	// 10% chance of 20% weather change
+	// 6% chance of 30% weather change
+	// 4% chance of 50% weather change
+
+	if (randomNumber$ < 0.8)
+	{
+		weatherModifier$ *= 0.1;
+		//report.generic( "10% change.\n" );
+	}
+	else if (randomNumber$ < 0.9)
+	{
+		weatherModifier$ *= 0.2;
+		//report.generic( "20% change.\n" );
+	}
+	else if (randomNumber$ < 0.96)
+	{
+		weatherModifier$ *= 0.3;
+		//report.generic( "30% change.\n" );
+	}
+	else
+	{
+		weatherModifier$ *= 0.5;
+		//report.generic( "50% change.\n" );
+	}
+
+	snowCurrent$ += snowBaseline$ * weatherModifier$;
+
+	if (snowCurrent$ < (snowBaseline$ * 0.5) ) { snowCurrent$ = (snowBaseline$ * 0.5); }
+	if (snowCurrent$ > (snowBaseline$ * 1.5) ) { snowCurrent$ = (snowBaseline$ * 1.5); }
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
+	Mood.ForceUpdateSnow(0);
+
+	//report.genericF("Snow density is now %f,base snow is %f\n",snowCurrent$,snowBaseline$);
+	//report.genericF("Snow density is now %f,base snow is %f\nOriginal mood name: %s, snow value %f\n",snowCurrent$,snowBaseline$,originalMood$,originalSnow$);
+}
+
+void ChangeWind$( Goid focusedGo$ )
+{
+	float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
+	// This is the original wind velocity
+	float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
+	float weatherModifier$;
+
+	// 50/50 chance of more or less wind
+	float randomNumber$ = math.randomfloat( 1.0 );
+	if (randomNumber$ > 0.5)
+	{
+		weatherModifier$ = 1.0;
+		//report.generic( "More wind.\n" );
+	}
+	else
+	{
+		weatherModifier$ = -1.0;
+		//report.generic( "Less wind.\n" );
+	}
+	randomNumber$ = math.randomfloat( 1.0 );
+	// 80% chance of 10% weather change
+	// 10% chance of 20% weather change
+	// 6% chance of 30% weather change
+	// 4% chance of 50% weather change
+
+	if (randomNumber$ < 0.8)
+	{
+		weatherModifier$ *= 0.1;
+		//report.generic( "10% change.\n" );
+	}
+	else if (randomNumber$ < 0.9)
+	{
+		weatherModifier$ *= 0.2;
+		//report.generic( "20% change.\n" );
+	}
+	else if (randomNumber$ < 0.96)
+	{
+		weatherModifier$ *= 0.3;
+		//report.generic( "30% change.\n" );
+	}
+	else
+	{
+		weatherModifier$ *= 0.5;
+		//report.generic( "50% change.\n" );
+	}
+
+	windCurrent$ += windBaseline$ * weatherModifier$;				
+
+	if (windCurrent$ < (windBaseline$ * 0.5) ) { windCurrent$ = (windBaseline$ * 0.5); }
+	if (windCurrent$ > (windBaseline$ * 1.5) ) { windCurrent$ = (windBaseline$ * 1.5); }
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
+	Mood.ForceUpdateWind(0);
+}
+
 void ChangeWeather$( Goid focusedGo$ )
 {
-	float randomNumber$;
-
 	// If it's raining, the rain will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled)
 	{
-		float rainCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity;
-
-		// This is the original rain density
-		float rainBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
-
-		float weatherModifier$;
-
-		// 50/50 chance of more or less rain
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More rain.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less rain.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-
-		rainCurrent$ += rainBaseline$ * weatherModifier$;				
-
-		// This will keep the weather from becoming too different from the base mood
-		if (rainCurrent$ < (rainBaseline$ * 0.5) ) { rainCurrent$ = (rainBaseline$ * 0.5); }
-		if (rainCurrent$ > (rainBaseline$ * 1.5) ) { rainCurrent$ = (rainBaseline$ * 1.5); }
-
-		// Now 100% chance of lightning above a certain threshold (used to be 70%).
-		// People rarely noticed that the lightning was random, and it makes maintaining
-		// the state of the lightning easier  --DT
-		if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
-		{
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-			//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
-		}
-		else
-		{
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
-			//report.genericF("Rain density is now %f, turned off lightning.\n", rainCurrent$);
-		}
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
-		Mood.ForceUpdateRain(0);
-		
-		//report.genericF("Rain density is now %f,base rain is %f\n",rainCurrent$,rainBaseline$);
+		ChangeRain$();
 	} // end rain modification
 
 	// If it's snowing, the snow will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled)
 	{
-		float snowCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).snowDensity;
-
-		// This is the original snow density
-		float snowBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
-
-		float weatherModifier$;
-
-		// 50/50 chance of more or less snow
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More snow.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less snow.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-		
-		snowCurrent$ += snowBaseline$ * weatherModifier$;
-
-		if (snowCurrent$ < (snowBaseline$ * 0.5) ) { snowCurrent$ = (snowBaseline$ * 0.5); }
-		if (snowCurrent$ > (snowBaseline$ * 1.5) ) { snowCurrent$ = (snowBaseline$ * 1.5); }
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
-		Mood.ForceUpdateSnow(0);
-		
-		//report.genericF("Snow density is now %f,base snow is %f\n",snowCurrent$,snowBaseline$);
-		//report.genericF("Snow density is now %f,base snow is %f\nOriginal mood name: %s, snow value %f\n",snowCurrent$,snowBaseline$,originalMood$,originalSnow$);
+		ChangeSnow$();
 	} // end snow modification
 
 	// If it's windy, the wind will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bWindEnabled)
 	{
-		float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
-		// This is the original wind velocity
-		float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
-		float weatherModifier$;
-
-		// 50/50 chance of more or less wind
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More wind.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less wind.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-		
-		windCurrent$ += windBaseline$ * weatherModifier$;				
-
-		if (windCurrent$ < (windBaseline$ * 0.5) ) { windCurrent$ = (windBaseline$ * 0.5); }
-		if (windCurrent$ > (windBaseline$ * 1.5) ) { windCurrent$ = (windBaseline$ * 1.5); }
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
-		Mood.ForceUpdateWind(0);
+		ChangeWind$();
 	} // end wind modification
 }
 
