@@ -41,13 +41,9 @@ property bool   _server_only$		= false;
 property string _doc$				= "Controls mood management";
 
 
-//float battleTime$					= 0.0;		// Track of time the party has been in battle
-//float battleDelay$				= 2.0;		// Delay in seconds before battle music starts playing
-//float battleMusicTime$			= 0.0;		// Time the battle music will playing beyond the end of the battle
-                                            	
 int LastFocused$					= -1;		// Track which party member is the focus
 float Time$							= 0.0;		// This is to trigger time-based actions
-                                            	
+
 int LastHour$						= -1;		// This will help track when the hour of day changes
 string LastMood$					= "x";		// This will allow tracking of when the mood changes
 
@@ -59,6 +55,11 @@ string LastMood$					= "x";		// This will allow tracking of when the mood change
 bool TurnWorldRed$()
 {
 	return GameAuditor.GetDb.GetBool( "turn_world_red" );
+}
+
+bool GetRandomBool$()
+{
+	return Math.RandomFloat( 1.0 ) > 0.5;
 }
 
 int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$ )
@@ -165,207 +166,113 @@ float GetCurrentHourLightModifier$( int currentHour$, bool isSnowEnabled$ )
 	return (((float(redFogComponent$ + greenFogComponent$ + blueFogComponent$)) / 3) / 256) * 1.25;
 }
 
+float GetChangedWeatherValue$( float weather_baseline$, float weather_current$ )
+{
+	float weatherModifier$;
+
+	// more or less weather?
+	if ( GetRandomBool$() ) { weatherModifier$ = 1.0; }
+	else { weatherModifier$ = -1.0; }
+
+	// how much more or less?
+	float randomNumber$ = math.randomfloat( 1.0 );
+	// 80% chance of 10% weather change
+	// 10% chance of 20% weather change
+	// 6% chance of 30% weather change
+	// 4% chance of 50% weather change
+	if (randomNumber$ < 0.8) { weatherModifier$ *= 0.1; }
+	else if (randomNumber$ < 0.9) { weatherModifier$ *= 0.2; }
+	else if (randomNumber$ < 0.96) { weatherModifier$ *= 0.3; }
+	else { weatherModifier$ *= 0.5; }
+
+	// find the new current weather
+	weather_current$ += weather_baseline$ * weatherModifier$;
+
+	// This will keep the weather from becoming too different from the base mood
+	if (weather_current$ < (weather_baseline$ * 0.5) ) { weather_current$ = (weather_baseline$ * 0.5); }
+	if (weather_current$ > (weather_baseline$ * 1.5) ) { weather_current$ = (weather_baseline$ * 1.5); }
+
+	return weather_current$;
+}
+
+void ChangeRain$( Goid focusedGo$ )
+{
+	float rainCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity;
+	// This is the original rain density
+	float rainBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
+
+	rainCurrent$ = GetChangedWeatherValue$( rainBaseline$, rainCurrent$ );
+
+	// Now 100% chance of lightning above a certain threshold (used to be 70%).
+	// People rarely noticed that the lightning was random, and it makes maintaining
+	// the state of the lightning easier  --DT
+	if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
+	{
+		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
+		//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
+	}
+	else
+	{
+		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
+		//report.genericF("Rain density is now %f, turned off lightning.\n", rainCurrent$);
+	}
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
+	Mood.ForceUpdateRain(0);
+
+	//report.genericF("Rain density is now %f, base rain is %f\n", rainCurrent$, rainBaseline$);
+}
+
+void ChangeSnow$( Goid focusedGo$ )
+{
+	float snowCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).snowDensity;
+	// This is the original snow density
+	float snowBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
+
+	snowCurrent$ = GetChangedWeatherValue$( snowBaseline$, snowCurrent$ );
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
+	Mood.ForceUpdateSnow(0);
+
+	//report.genericF("Snow density is now %f, base snow is %f\n", snowCurrent$, snowBaseline$);
+}
+
+void ChangeWind$( Goid focusedGo$ )
+{
+	float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
+	// This is the original wind velocity
+	float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
+
+	windCurrent$ = GetChangedWeatherValue$( windBaseline$, windCurrent$ );
+
+	// This applies the changes
+	Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
+	Mood.ForceUpdateWind(0);
+
+	//report.genericF("Wind velocity is now %f, base wind is %f\n", windCurrent$, windBaseline$);
+}
+
 void ChangeWeather$( Goid focusedGo$ )
 {
-	float randomNumber$;
-
 	// If it's raining, the rain will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled)
 	{
-		float rainCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity;
-
-		// This is the original rain density
-		float rainBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
-
-		float weatherModifier$;
-
-		// 50/50 chance of more or less rain
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More rain.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less rain.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-
-		rainCurrent$ += rainBaseline$ * weatherModifier$;				
-
-		// This will keep the weather from becoming too different from the base mood
-		if (rainCurrent$ < (rainBaseline$ * 0.5) ) { rainCurrent$ = (rainBaseline$ * 0.5); }
-		if (rainCurrent$ > (rainBaseline$ * 1.5) ) { rainCurrent$ = (rainBaseline$ * 1.5); }
-
-		// Now 100% chance of lightning above a certain threshold (used to be 70%).
-		// People rarely noticed that the lightning was random, and it makes maintaining
-		// the state of the lightning easier  --DT
-		if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
-		{
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-			//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
-		}
-		else
-		{
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
-			//report.genericF("Rain density is now %f, turned off lightning.\n", rainCurrent$);
-		}
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
-		Mood.ForceUpdateRain(0);
-		
-		//report.genericF("Rain density is now %f,base rain is %f\n",rainCurrent$,rainBaseline$);
-	} // end rain modification
+		ChangeRain$( focusedGo$ );
+	}
 
 	// If it's snowing, the snow will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled)
 	{
-		float snowCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).snowDensity;
-
-		// This is the original snow density
-		float snowBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
-
-		float weatherModifier$;
-
-		// 50/50 chance of more or less snow
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More snow.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less snow.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-		
-		snowCurrent$ += snowBaseline$ * weatherModifier$;
-
-		if (snowCurrent$ < (snowBaseline$ * 0.5) ) { snowCurrent$ = (snowBaseline$ * 0.5); }
-		if (snowCurrent$ > (snowBaseline$ * 1.5) ) { snowCurrent$ = (snowBaseline$ * 1.5); }
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = snowCurrent$;
-		Mood.ForceUpdateSnow(0);
-		
-		//report.genericF("Snow density is now %f,base snow is %f\n",snowCurrent$,snowBaseline$);
-		//report.genericF("Snow density is now %f,base snow is %f\nOriginal mood name: %s, snow value %f\n",snowCurrent$,snowBaseline$,originalMood$,originalSnow$);
-	} // end snow modification
+		ChangeSnow$( focusedGo$ );
+	}
 
 	// If it's windy, the wind will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bWindEnabled)
 	{
-		float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
-		// This is the original wind velocity
-		float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
-		float weatherModifier$;
-
-		// 50/50 chance of more or less wind
-		randomNumber$ = math.randomfloat( 1.0 );
-		if (randomNumber$ > 0.5)
-		{
-			weatherModifier$ = 1.0;
-			//report.generic( "More wind.\n" );
-		}
-		else
-		{
-			weatherModifier$ = -1.0;
-			//report.generic( "Less wind.\n" );
-		}
-		randomNumber$ = math.randomfloat( 1.0 );
-		// 80% chance of 10% weather change
-		// 10% chance of 20% weather change
-		// 6% chance of 30% weather change
-		// 4% chance of 50% weather change
-		
-		if (randomNumber$ < 0.8)
-		{
-			weatherModifier$ *= 0.1;
-			//report.generic( "10% change.\n" );
-		}
-		else if (randomNumber$ < 0.9)
-		{
-			weatherModifier$ *= 0.2;
-			//report.generic( "20% change.\n" );
-		}
-		else if (randomNumber$ < 0.96)
-		{
-			weatherModifier$ *= 0.3;
-			//report.generic( "30% change.\n" );
-		}
-		else
-		{
-			weatherModifier$ *= 0.5;
-			//report.generic( "50% change.\n" );
-		}
-		
-		windCurrent$ += windBaseline$ * weatherModifier$;				
-
-		if (windCurrent$ < (windBaseline$ * 0.5) ) { windCurrent$ = (windBaseline$ * 0.5); }
-		if (windCurrent$ > (windBaseline$ * 1.5) ) { windCurrent$ = (windBaseline$ * 1.5); }
-		
-		// This applies the changes
-		Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
-		Mood.ForceUpdateWind(0);
-		
-		//report.genericF("Wind velocity is now %f,base wind is %f\n",windCurrent$,windBaseline$);
-		//report.genericF("Wind velocity is now %f,base wind is %f\nOriginal mood name: %s, wind value %f\n",windCurrent$,windBaseline$,originalMood$,originalWind$);
-	} // end wind modification
+		ChangeWind$( focusedGo$ );
+	}
 }
 
 
@@ -376,7 +283,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	Goid focusedGo$; 	// get the focused go
 
 	int newFocused$;	// the number of the party member that is focused
-	
+
 	// Run through the party looking for the person with the focus
 	int i$ = 0;
 	while( i$ < partyMembers$.Size() )
@@ -386,8 +293,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			focusedGo$ = partyMembers$.Get( i$ );
 			newFocused$ = i$; //once we find it, record which number they are
 		}
-        i$ += 1;
-    }
+		i$ += 1;
+	}
 
 	float transitionTime$ = Mood.GetGoMoodSetting( focusedGo$ ).transitionTime;
 
@@ -395,7 +302,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 	// We can't get the mood of the last focused mood if this if the first time we have tried to manage moods.
 	// We don't want to try and get a party member that doesn't exist, thus this check  --DT
-	
+
 	if ( ( LastFocused$ < 0 ) || ( LastFocused$ >= partyMembers$.Size() ) ) // if this is the first time through, OR we just disbanded a party member
 	{
 		transitionTime$ = 0;	
@@ -411,7 +318,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 
 	// Time to play with weather
-	
+
 	Time$ += secondsElapsed$;
 
 	if ( Time$ > 15.0 ) // time to see if the weather is going to change
@@ -425,7 +332,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		{
 			//report.generic( "Yep, I'm changing the weather.\n" );
 			ChangeWeather$( focusedGo$ );
-		} // end weather modification
+		}
 	}
 
 	// This is a check to see if the lightning is enabled when it shouldn't be.
@@ -449,75 +356,52 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
 
-	// Fog color should change with time of day...but not if they are inside.
-	bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
-
-	// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-	if ( !TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false) && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
+	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
 	{
+		// Fog color should change with time of day...but not if they are inside.  
 		int newFogColor$;
+		bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
 
 		// get the base color, store the old color and get ready to receive a new one
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
 		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
 
 		// find the new light modifier
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
+		float light_modifier$ = 1;
+		if (!isInterior$)
+		{
+			bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
+			light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
+			if ( TurnWorldRed$() )
+			{
+				light_modifier$ = 1.25 - light_modifier$;  // flip brightness
+			}
+		}
+		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
+		{
+			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
 		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, false );
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, TurnWorldRed$() );
+		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
-		// apply changes
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$;
+		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
 		// If the mood just changed, the engine will update the fog color to the value that we just created.
 		// If the mood has not changed, we have to prompt it to update.
 		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
 
-		LastMood$ = currentMood$; // cleanup
-		LastHour$ = currentHour$; // cleanup
-		
-	}
-	
-	// Adding this block for the special "turn the whole world red" quest in multiplayer world
-	else if ( TurnWorldRed$() && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
-	{
-		int newFogColor$;
-
-		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
-
-		float light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
-		light_modifier$ = 1.25 - light_modifier$;  // flip brightness
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 ) {
-			light_modifier$ *= 0.7;  // Heavy Rain darkens the fog to 85% of current value
-		}
-
-		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, true );
-
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
 		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
 		// when the fog is red
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) {
+		if ( TurnWorldRed$() && (!isInterior$) ) {
 			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
 			Mood.ForceUpdateRain(0); // This applies the change
 		}
 
-		// If the mood just changed, the engine will update the fog color to the value that we just created.
-		// If the mood has not changed, we have to prompt it to update.
-		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
-	
-	}	// Now back to our regularly scheduled programming
+	}
 
 	// Set the focused go as the active go for all mood components
 	Mood.SetActiveSunGo( focusedGo$, transitionTime$ );
@@ -530,17 +414,6 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	// Always play ambient theme and standard music
 	Mood.PlayAmbientTrack( 0.0 );
 	Mood.PlayStandardTrack( 0.0 );
-	
-	// If we decided to turn off the music (and fiddle with the "battle music" track),
-	// here's how we could turn it back on:
-	/*
-		// Play standard music if it is not already playing
-		if( !Mood.IsStandardTrackPlaying() )
-		{
-			Mood.PlayStandardTrack( 2.0 );
-		}
-	*/
-	
 }
 
 //////////////////////////////////////////////////////////////////////////////
