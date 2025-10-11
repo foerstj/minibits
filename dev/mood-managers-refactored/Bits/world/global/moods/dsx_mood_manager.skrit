@@ -49,13 +49,9 @@ property bool   _server_only$		= false;
 property string _doc$				= "Controls mood management";
 
 
-//float battleTime$					= 0.0;		// Track of time the party has been in battle
-//float battleDelay$				= 2.0;		// Delay in seconds before battle music starts playing
-//float battleMusicTime$			= 0.0;		// Time the battle music will playing beyond the end of the battle
-                                            	
 int LastFocused$					= -1;		// Track which party member is the focus
 float Time$							= 0.0;		// This is to trigger time-based actions
-                                            	
+
 int LastHour$						= -1;		// This will help track when the hour of day changes
 string LastMood$					= "x";		// This will allow tracking of when the mood changes
 
@@ -292,7 +288,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	Goid focusedGo$; 	// get the focused go
 
 	int newFocused$;	// the number of the party member that is focused
-	
+
 	// Run through the party looking for the person with the focus
 	int i$ = 0;
 	while( i$ < partyMembers$.Size() )
@@ -302,8 +298,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			focusedGo$ = partyMembers$.Get( i$ );
 			newFocused$ = i$; //once we find it, record which number they are
 		}
-        i$ += 1;
-    }
+		i$ += 1;
+	}
 
 	float transitionTime$ = Mood.GetGoMoodSetting( focusedGo$ ).transitionTime;
 
@@ -311,7 +307,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 	// We can't get the mood of the last focused mood if this if the first time we have tried to manage moods.
 	// We don't want to try and get a party member that doesn't exist, thus this check  --DT
-	
+
 	if ( ( LastFocused$ < 0 ) || ( LastFocused$ >= partyMembers$.Size() ) ) // if this is the first time through, OR we just disbanded a party member
 	{
 		transitionTime$ = 0;	
@@ -327,7 +323,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 
 	// Time to play with weather
-	
+
 	Time$ += secondsElapsed$;
 
 	if ( Time$ > 15.0 && !RandomizeWeather$( focusedGo$ ) ) // time to see if the weather is going to change
@@ -523,7 +519,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		LastHour$ = currentHour$; // cleanup
 		
 	}
-	
+
 	// Adding this block for the special "turn the whole world red" quest in multiplayer world
 	else if ( TurnWorldRed$() && ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) ) )
 	{
@@ -558,7 +554,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
-	
+
 	}	// Now back to our regularly scheduled programming
 
 	// Set the focused go as the active go for all mood components
@@ -572,17 +568,6 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 	// Always play ambient theme and standard music
 	Mood.PlayAmbientTrack( 0.0 );
 	Mood.PlayStandardTrack( 0.0 );
-	
-	// If we decided to turn off the music (and fiddle with the "battle music" track),
-	// here's how we could turn it back on:
-	/*
-		// Play standard music if it is not already playing
-		if( !Mood.IsStandardTrackPlaying() )
-		{
-			Mood.PlayStandardTrack( 2.0 );
-		}
-	*/
-	
 }
 
 //////////////////////////////////////////////////////////////////////////////
