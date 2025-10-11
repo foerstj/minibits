@@ -354,6 +354,9 @@ void ChangeWind$( Goid focusedGo$ )
 	// This applies the changes
 	Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = windCurrent$;
 	Mood.ForceUpdateWind(0);
+
+	//report.genericF("Wind velocity is now %f,base wind is %f\n",windCurrent$,windBaseline$);
+	//report.genericF("Wind velocity is now %f,base wind is %f\nOriginal mood name: %s, wind value %f\n",windCurrent$,windBaseline$,originalMood$,originalWind$);
 }
 
 void ChangeWeather$( Goid focusedGo$ )
@@ -361,19 +364,19 @@ void ChangeWeather$( Goid focusedGo$ )
 	// If it's raining, the rain will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled)
 	{
-		ChangeRain$();
+		ChangeRain$( focusedGo$ );
 	} // end rain modification
 
 	// If it's snowing, the snow will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled)
 	{
-		ChangeSnow$();
+		ChangeSnow$( focusedGo$ );
 	} // end snow modification
 
 	// If it's windy, the wind will change
 	if (Mood.GetGoMoodSetting( focusedGo$ ).bWindEnabled)
 	{
-		ChangeWind$();
+		ChangeWind$( focusedGo$ );
 	} // end wind modification
 }
 
