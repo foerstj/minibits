@@ -82,7 +82,7 @@ bool GetRandomBool$()
 	return Math.RandomFloat( 1.0 ) > 0.5;
 }
 
-float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
+float GetChangedWeatherValueRandomized$( float weather_baseline$, float weather_current$ )
 {
 	float weatherModifier$;
 
@@ -92,6 +92,12 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 
 	// how much more or less?
 	float randomNumber$ = math.randomfloat( 1.0 );
+	// 50% chance of 20% weather change
+	// 20% chance of 30% weather change
+	// 10% chance of 40% weather change
+	// 10% chance of 55% weather change
+	// 5% chance of 70% weather change
+	// 5% chance of 80% weather change
 	if( randomNumber$ < 0.5 ) { weatherModifier$ *= 0.2; }
 	else if( randomNumber$ < 0.7 ) { weatherModifier$ *= 0.3; }
 	else if( randomNumber$ < 0.8 ) { weatherModifier$ *= 0.4; }
@@ -100,7 +106,7 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 	else { weatherModifier$ *= 0.8; }
 
 	// find the new current weather
-	weather_current$ += weather_baseline$ * weatherModifier$;		
+	weather_current$ += weather_baseline$ * weatherModifier$;
 
 	return weather_current$;
 }
@@ -390,7 +396,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			float rain_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
 
 			// change the rain density
-			Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = GetModifiedWeather$( rain_baseline$, rain_current$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = GetChangedWeatherValueRandomized$( rain_baseline$, rain_current$ );
 
 			// lightning? si o no?
 			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = GetRandomBool$();
@@ -411,7 +417,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			float snow_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
 
 			// change the snow density
-			Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = GetModifiedWeather$( snow_baseline$, snow_current$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = GetChangedWeatherValueRandomized$( snow_baseline$, snow_current$ );
 		}
 
 		// update
@@ -429,7 +435,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			float wind_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
 
 			// change the wind speed
-			Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = GetModifiedWeather$( wind_baseline$, wind_current$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = GetChangedWeatherValueRandomized$( wind_baseline$, wind_current$ );
 
 			// find a new wind direction
 			Mood.GetGoMoodSetting( focusedGo$ ).windDirection = Math.RandomFloat( 6.28 );
