@@ -85,16 +85,13 @@ bool GetRandomBool$()
 float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 {
 	float weatherModifier$;
-	float randomNumber$;
 
 	// more or less weather?
-	randomNumber$ = math.randomfloat( 1.0 );
-	if ( randomNumber$ > 0.5 ) { weatherModifier$ = 1.0; }
+	if ( GetRandomBool$() ) { weatherModifier$ = 1.0; }
 	else { weatherModifier$ = -1.0; }
 
 	// how much more or less?
-	randomNumber$ = math.randomfloat( 1.0 );
-
+	float randomNumber$ = math.randomfloat( 1.0 );
 	if( randomNumber$ < 0.5 ) { weatherModifier$ *= 0.2; }
 	else if( randomNumber$ < 0.7 ) { weatherModifier$ *= 0.3; }
 	else if( randomNumber$ < 0.8 ) { weatherModifier$ *= 0.4; }
@@ -104,7 +101,7 @@ float GetModifiedWeather$( float weather_baseline$, float weather_current$ )
 
 	// find the new current weather
 	weather_current$ += weather_baseline$ * weatherModifier$;		
-	
+
 	return weather_current$;
 }
 
