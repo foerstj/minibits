@@ -470,6 +470,7 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		// Fog color should change with time of day...but not if they are inside.  
 		int newFogColor$;
 		bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
+		bool isRandomizeWeather$ = (!isInterior$) && RandomizeWeather$( focusedGo$ );
 
 		// get the base color, store the old color and get ready to receive a new one
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
@@ -490,55 +491,34 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
-		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-		if ( !TurnWorldRed$() )
+		// find a new random color to use
+		float random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
+
+		// get the new fog color
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, TurnWorldRed$() );
+		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
+
+		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
+
+		// if we're in area nine we'll also want to mess with fog distance + density
+		if( isRandomizeWeather$ )
 		{
-			float random_color_modifier$;
-			bool isRandomizeWeather$ = (!isInterior$) && RandomizeWeather$( focusedGo$ );
+			float max_modifier$ = fog_max_dist_modifier$;
+			float min_modifier$ = -1 * fog_max_dist_modifier$;
 
-			// find a new random color to use
-			random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
+			// find a new density
+			Mood.GetGoMoodSetting( focusedGo$ ).fogDensity = Math.RandomFloat( fog_density_max$ );
 
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, false );
-			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-			// if we're in area nine we'll also want to mess with fog distance + density
-			if( isRandomizeWeather$ )
-			{
-				float max_modifier$ = fog_max_dist_modifier$;
-				float min_modifier$ = -1 * fog_max_dist_modifier$;
-
-				// find a new density
-				Mood.GetGoMoodSetting( focusedGo$ ).fogDensity = Math.RandomFloat( fog_density_max$ );
-
-				// find new distances
-				Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist = fog_near_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
-				Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist = fog_far_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
-				Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetFarDist = Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist - 5.0;
-				Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetNearDist = Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist;
-			}
-
-			// If the mood just changed, the engine will update the fog color to the value that we just created.
-			// If the mood has not changed, we have to prompt it to update.
-			if ( ( ( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$) ) || isRandomizeWeather$ ) { Mood.ForceUpdateFog( 15.0 ); }
+			// find new distances
+			Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist = fog_near_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist = fog_far_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetFarDist = Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist - 5.0;
+			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetNearDist = Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist;
 		}
 
-		// Adding this block for the special "turn the whole world red" quest in multiplayer world
-		else if ( TurnWorldRed$() )
-		{
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, 0.0, true );
-			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-			// If the mood just changed, the engine will update the fog color to the value that we just created.
-			// If the mood has not changed, we have to prompt it to update.
-			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-		}	// Now back to our regularly scheduled programming
+		// If the mood just changed, the engine will update the fog color to the value that we just created.
+		// If the mood has not changed, we have to prompt it to update.
+		if ( ( ( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$) ) || isRandomizeWeather$ ) { Mood.ForceUpdateFog( 15.0 ); }
 
 		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
 		// when the fog is red

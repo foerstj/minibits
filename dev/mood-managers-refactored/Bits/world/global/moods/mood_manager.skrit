@@ -335,33 +335,15 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
 		}
 
-		// Adding a check for the multiplayer "turn_world_red" quest...this is the normal block, the "turn world red" block is after this
-		if ( !TurnWorldRed$() )
-		{
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, false );
-			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
+		// get the new fog color
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, TurnWorldRed$() );
+		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
+		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
 
-			// If the mood just changed, the engine will update the fog color to the value that we just created.
-			// If the mood has not changed, we have to prompt it to update.
-			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-		}
-
-		// Adding this block for the special "turn the whole world red" quest in multiplayer world
-		else if ( TurnWorldRed$() )
-		{
-			// get the new fog color
-			newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, true );
-			//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
-			Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-			// If the mood just changed, the engine will update the fog color to the value that we just created.
-			// If the mood has not changed, we have to prompt it to update.
-			if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-		}	// Now back to our regularly scheduled programming
+		// If the mood just changed, the engine will update the fog color to the value that we just created.
+		// If the mood has not changed, we have to prompt it to update.
+		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
 
 		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
 		// when the fog is red
