@@ -177,8 +177,7 @@ void ChangeRain$( Goid focusedGo$ )
 	float weatherModifier$;
 
 	// 50/50 chance of more or less rain
-	float randomNumber$ = math.randomfloat( 1.0 );
-	if (randomNumber$ > 0.5)
+	if (GetRandomBool$())
 	{
 		weatherModifier$ = 1.0;
 		//report.generic( "More rain.\n" );
@@ -188,12 +187,12 @@ void ChangeRain$( Goid focusedGo$ )
 		weatherModifier$ = -1.0;
 		//report.generic( "Less rain.\n" );
 	}
-	randomNumber$ = math.randomfloat( 1.0 );
+
+	float randomNumber$ = math.randomfloat( 1.0 );
 	// 80% chance of 10% weather change
 	// 10% chance of 20% weather change
 	// 6% chance of 30% weather change
 	// 4% chance of 50% weather change
-
 	if (randomNumber$ < 0.8)
 	{
 		weatherModifier$ *= 0.1;
@@ -252,8 +251,7 @@ void ChangeSnow$( Goid focusedGo$ )
 	float weatherModifier$;
 
 	// 50/50 chance of more or less snow
-	float randomNumber$ = math.randomfloat( 1.0 );
-	if (randomNumber$ > 0.5)
+	if (GetRandomBool$())
 	{
 		weatherModifier$ = 1.0;
 		//report.generic( "More snow.\n" );
@@ -263,12 +261,12 @@ void ChangeSnow$( Goid focusedGo$ )
 		weatherModifier$ = -1.0;
 		//report.generic( "Less snow.\n" );
 	}
-	randomNumber$ = math.randomfloat( 1.0 );
+
+	float randomNumber$ = math.randomfloat( 1.0 );
 	// 80% chance of 10% weather change
 	// 10% chance of 20% weather change
 	// 6% chance of 30% weather change
 	// 4% chance of 50% weather change
-
 	if (randomNumber$ < 0.8)
 	{
 		weatherModifier$ *= 0.1;
@@ -311,8 +309,7 @@ void ChangeWind$( Goid focusedGo$ )
 	float weatherModifier$;
 
 	// 50/50 chance of more or less wind
-	float randomNumber$ = math.randomfloat( 1.0 );
-	if (randomNumber$ > 0.5)
+	if (GetRandomBool$())
 	{
 		weatherModifier$ = 1.0;
 		//report.generic( "More wind.\n" );
@@ -322,12 +319,12 @@ void ChangeWind$( Goid focusedGo$ )
 		weatherModifier$ = -1.0;
 		//report.generic( "Less wind.\n" );
 	}
-	randomNumber$ = math.randomfloat( 1.0 );
+
+	float randomNumber$ = math.randomfloat( 1.0 );
 	// 80% chance of 10% weather change
 	// 10% chance of 20% weather change
 	// 6% chance of 30% weather change
 	// 4% chance of 50% weather change
-
 	if (randomNumber$ < 0.8)
 	{
 		weatherModifier$ *= 0.1;
