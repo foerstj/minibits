@@ -90,6 +90,18 @@
 			* = join;
 		}
 	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_sl_f_g_c_avg;
+			es_weapon_hand = ax_g_c_1h1b_avg;
+		}
+		[other]
+		{
+			il_main = book_glb_lore_goldsniffer;
+		}
+	}
 	[mind]
 	{
 		jat_talk = world\ai\jobs\common\job_talk.skrit;
