@@ -439,7 +439,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		}
 
 		// find a new random color to use
-		float random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0;
+		float random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0.0;
 
 		// get the new fog color
 		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, random_color_modifier$, TurnWorldRed$() );
