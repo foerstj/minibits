@@ -221,9 +221,9 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 
 	if ( Time$ > 15.0 ) // time to see if the weather is going to change
 	{
-		//report.generic( "I'm going to see if I should change the weather.\n" );
 		Time$ = 0.0;
 
+		//report.generic( "I'm going to see if I should change the weather.\n" );
 		float randomNumber$ = math.randomfloat( 1.0 );
 		// 40% of the time, the weather will not change
 		if (randomNumber$ > 0.4)
