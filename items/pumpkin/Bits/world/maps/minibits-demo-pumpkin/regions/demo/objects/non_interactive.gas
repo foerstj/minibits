@@ -1,3 +1,39 @@
+[t:pumpkin_noface,n:0x0010000c]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.933327;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.940535,0,0.339697;
+	  p position = -3.03714,0,0.406124,0xba816d86;
+	}
+}
+[t:pumpkin_noface,n:0x0010000d]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.03091;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.999151,0,0.0411958;
+	  p position = -3.66331,-9.53674e-007,0.780569,0xba816d86;
+	}
+}
+[t:pumpkin_noface,n:0x0010000e]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.03039;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.710302,0,0.703897;
+	  p position = -3.57214,-9.53674e-007,0.121513,0xba816d86;
+	}
+}
 [t:pumpkin,n:0x0010000f]
 {
 	[aspect]
