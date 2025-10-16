@@ -70,6 +70,7 @@
     {
         screen_name = "Dev Haste";
         description = "Special Haste spell for testing.";
+		is_pcontent_allowed = false;
     }
     [magic]
     {
