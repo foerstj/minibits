@@ -229,50 +229,8 @@ void ChangeWeather$( Goid focusedGo$ )
 	}
 }
 
-
-//////////////////////////////////////////////////////////////////////////////
-
-ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElapsed$ )
+void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 {
-	Goid focusedGo$; 	// get the focused go
-
-	int newFocused$;	// the number of the party member that is focused
-
-	// Run through the party looking for the person with the focus
-	int i$ = 0;
-	while( i$ < partyMembers$.Size() )
-	{
-		if(partyMembers$.Get( i$ ).GetGo.IsFocused())
-		{
-			focusedGo$ = partyMembers$.Get( i$ );
-			newFocused$ = i$; //once we find it, record which number they are
-		}
-		i$ += 1;
-	}
-
-	float transitionTime$ = Mood.GetGoMoodSetting( focusedGo$ ).transitionTime;
-
-	// If the focus has changed, and the mood is different, instantly switch to the new mood
-
-	// We can't get the mood of the last focused mood if this if the first time we have tried to manage moods.
-	// We don't want to try and get a party member that doesn't exist, thus this check  --DT
-
-	if ( ( LastFocused$ < 0 ) || ( LastFocused$ >= partyMembers$.Size() ) ) // if this is the first time through, OR we just disbanded a party member
-	{
-		transitionTime$ = 0;	
-	} 
-	else if ( newFocused$ != LastFocused$ )
-	{	
-		if ( Mood.GetGoRequestedMood( partyMembers$.Get( newFocused$ ) ) != Mood.GetGoRequestedMood( partyMembers$.Get( LastFocused$ ) ) )
-		{
-			transitionTime$ = 0;
-		}
-	}
-	LastFocused$ = newFocused$;
-
-
-	// Time to play with weather
-
 	Time$ += secondsElapsed$;
 
 	if ( Time$ > 15.0 ) // time to see if the weather is going to change
@@ -355,6 +313,53 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
 	}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElapsed$ )
+{
+	Goid focusedGo$; 	// get the focused go
+
+	int newFocused$;	// the number of the party member that is focused
+
+	// Run through the party looking for the person with the focus
+	int i$ = 0;
+	while( i$ < partyMembers$.Size() )
+	{
+		if(partyMembers$.Get( i$ ).GetGo.IsFocused())
+		{
+			focusedGo$ = partyMembers$.Get( i$ );
+			newFocused$ = i$; //once we find it, record which number they are
+		}
+		i$ += 1;
+	}
+
+	float transitionTime$ = Mood.GetGoMoodSetting( focusedGo$ ).transitionTime;
+
+	// If the focus has changed, and the mood is different, instantly switch to the new mood
+
+	// We can't get the mood of the last focused mood if this if the first time we have tried to manage moods.
+	// We don't want to try and get a party member that doesn't exist, thus this check  --DT
+
+	if ( ( LastFocused$ < 0 ) || ( LastFocused$ >= partyMembers$.Size() ) ) // if this is the first time through, OR we just disbanded a party member
+	{
+		transitionTime$ = 0;	
+	} 
+	else if ( newFocused$ != LastFocused$ )
+	{	
+		if ( Mood.GetGoRequestedMood( partyMembers$.Get( newFocused$ ) ) != Mood.GetGoRequestedMood( partyMembers$.Get( LastFocused$ ) ) )
+		{
+			transitionTime$ = 0;
+		}
+	}
+	LastFocused$ = newFocused$;
+
+
+	// Time to play with weather
+	DoManageMoods$( focusedGo$, secondsElapsed$ );
+
 
 	// Set the focused go as the active go for all mood components
 	Mood.SetActiveSunGo( focusedGo$, transitionTime$ );
