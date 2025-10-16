@@ -203,20 +203,6 @@ void ChangeRain$( Goid focusedGo$ )
 
 	rainCurrent$ = GetChangedWeatherValue$( rainBaseline$, rainCurrent$ );
 
-	// Now 100% chance of lightning above a certain threshold (used to be 70%).
-	// People rarely noticed that the lightning was random, and it makes maintaining
-	// the state of the lightning easier  --DT
-	if ( ( rainCurrent$ >= 200.0 ) || ( TurnWorldRed$() && ( Mood.GetGoMoodSetting( focusedGo$ ).bInterior == false ) ) )
-	{
-		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-		//report.genericF("Rain density is now %f, turned on lightning.\n", rainCurrent$);
-	}
-	else
-	{
-		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
-		//report.genericF("Rain density is now %f, turned off lightning.\n", rainCurrent$);
-	}
-
 	// This applies the changes
 	Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = rainCurrent$;
 	Mood.ForceUpdateRain(0);
@@ -275,6 +261,84 @@ void ChangeWeather$( Goid focusedGo$ )
 	}
 }
 
+void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
+{
+	Time$ += secondsElapsed$;
+
+	if ( Time$ > 15.0 ) // time to see if the weather is going to change
+	{
+		Time$ = 0.0;
+
+		//report.generic( "I'm going to see if I should change the weather.\n" );
+		float randomNumber$ = math.randomfloat( 1.0 );
+		// 40% of the time, the weather will not change
+		if (randomNumber$ > 0.4)
+		{
+			//report.generic( "Yep, I'm changing the weather.\n" );
+			ChangeWeather$( focusedGo$ );
+		}
+	}
+
+	bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
+
+	// Switch lightning on or off
+	bool shouldHaveLightning$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bLightning;
+	// completely ignore original mood setting, base it on rainDensity instead
+	shouldHaveLightning$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200;
+	if ( TurnWorldRed$() && (!isInterior$) )
+	{
+		shouldHaveLightning$ = true;
+	}
+	if ( Mood.GetGoMoodSetting( focusedGo$ ).bLightning != shouldHaveLightning$ )
+	{
+		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = shouldHaveLightning$;
+		Mood.ForceUpdateRain(0); // This applies the change
+		//report.genericF("Rain density is now %f, turned off lightning.\n", Mood.GetGoMoodSetting( focusedGo$ ).rainDensity);
+	}
+
+	// change the color of the fog based on the time of day.
+	int currentHour$ = TimeOfDay.GetHour();
+	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
+	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
+	{
+		// Fog color should change with time of day...but not if they are inside.  
+		int newFogColor$;
+
+		// get the base color, store the old color and get ready to receive a new one
+		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
+		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
+
+		// find the new light modifier
+		float light_modifier$ = 1;
+		if (!isInterior$)
+		{
+			bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
+			light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
+			if ( TurnWorldRed$() )
+			{
+				light_modifier$ = 1.25 - light_modifier$;  // flip brightness
+			}
+		}
+		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
+		{
+			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
+		}
+
+		// get the new fog color
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, TurnWorldRed$() );
+		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
+
+		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
+
+		// If the mood just changed, the engine will update the fog color to the value that we just created.
+		// If the mood has not changed, we have to prompt it to update.
+		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
+
+		LastMood$ = currentMood$; // cleanup
+		LastHour$ = currentHour$; // cleanup
+	}
+}
+
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -318,90 +382,8 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 
 	// Time to play with weather
+	DoManageMoods$( focusedGo$, secondsElapsed$ );
 
-	Time$ += secondsElapsed$;
-
-	if ( Time$ > 15.0 ) // time to see if the weather is going to change
-	{
-		//report.generic( "I'm going to see if I should change the weather.\n" );
-		Time$ = 0.0;
-
-		float randomNumber$ = math.randomfloat( 1.0 );
-		// 40% of the time, the weather will not change
-		if (randomNumber$ > 0.4)
-		{
-			//report.generic( "Yep, I'm changing the weather.\n" );
-			ChangeWeather$( focusedGo$ );
-		}
-	}
-
-	// This is a check to see if the lightning is enabled when it shouldn't be.
-	// This could happen if they were playing in the multiplayer world, and had the "turn_world_red" quest,
-	// and walked through outdoor areas.
-
-	if (
-		( Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bLightning == false ) &&
-		( Mood.GetGoMoodSetting( focusedGo$ ).bLightning == true ) &&
-		!( TurnWorldRed$() ) &&
-		!( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
-	   )
-	{
-		Mood.GetGoMoodSetting( focusedGo$ ).bLightning = false;
-		Mood.ForceUpdateRain(0); // This applies the change
-		//report.genericF("Rain density is now %f, turned off lightning.\n",Mood.GetGoMoodSetting( focusedGo$ ).rainDensity);
-	}
-
-
-	// change the color of the fog based on the time of day.
-	int currentHour$ = TimeOfDay.GetHour();
-	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
-
-	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
-	{
-		// Fog color should change with time of day...but not if they are inside.  
-		int newFogColor$;
-		bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
-
-		// get the base color, store the old color and get ready to receive a new one
-		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
-		int oldFogColor$ = Mood.GetGoMoodSetting( focusedGo$ ).fogColor;
-
-		// find the new light modifier
-		float light_modifier$ = 1;
-		if (!isInterior$)
-		{
-			bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
-			light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
-			if ( TurnWorldRed$() )
-			{
-				light_modifier$ = 1.25 - light_modifier$;  // flip brightness
-			}
-		}
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
-		{
-			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
-		}
-
-		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, TurnWorldRed$() );
-		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
-
-		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
-
-		// If the mood just changed, the engine will update the fog color to the value that we just created.
-		// If the mood has not changed, we have to prompt it to update.
-		if (( LastMood$ == currentMood$ ) && (oldFogColor$ != newFogColor$)) { Mood.ForceUpdateFog( 15.0 ); }
-
-		// Adding this by popular request -- there will now be lightning in all non-interior areas of the world
-		// when the fog is red
-		if ( TurnWorldRed$() && (!isInterior$) ) {
-			Mood.GetGoMoodSetting( focusedGo$ ).bLightning = true;
-			Mood.ForceUpdateRain(0); // This applies the change
-		}
-
-		LastMood$ = currentMood$; // cleanup
-		LastHour$ = currentHour$; // cleanup
-	}
 
 	// Set the focused go as the active go for all mood components
 	Mood.SetActiveSunGo( focusedGo$, transitionTime$ );
