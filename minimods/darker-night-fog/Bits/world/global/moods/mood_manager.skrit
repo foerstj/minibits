@@ -62,7 +62,7 @@ bool GetRandomBool$()
 	return Math.RandomFloat( 1.0 ) > 0.5;
 }
 
-int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifier$, bool turn_red$ )
+int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifier$, float light_grayifier$, bool turn_red$ )
 {
 	int alphaFogComponent$, redFogComponent$, greenFogComponent$, blueFogComponent$;
 
@@ -109,7 +109,11 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 		blueFogFactor$ = 0;
 	}
 
-	// apply light modifier
+	// apply light modifier & grayifier
+	float avgFogFactor$ = (redFogFactor$ + greenFogFactor$ + blueFogFactor$) / 3;
+	redFogFactor$	= (avgFogFactor$ * light_grayifier$) + (redFogFactor$ * (1.0 - light_grayifier$));
+	greenFogFactor$	= (avgFogFactor$ * light_grayifier$) + (greenFogFactor$ * (1.0 - light_grayifier$));
+	blueFogFactor$	= (avgFogFactor$ * light_grayifier$) + (blueFogFactor$ * (1.0 - light_grayifier$));
 	redFogFactor$	*= light_modifier$;
 	greenFogFactor$	*= light_modifier$;
 	blueFogFactor$	*= light_modifier$;
@@ -356,6 +360,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 
 		// find the new light modifier
 		float light_modifier$ = 1;
+		float light_grayifier$ = 0;
 		int light_color$ = 0xFFFFFFFF;
 		if (!isInterior$)
 		{
@@ -367,12 +372,12 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 			}
 		}
 		bool isHeavyRain$ = Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled && (Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200);
-		if ( isHeavyRain$ ) { light_modifier$ -= 0.15; }  // Heavy rain darkens the fog by -15%
+		if ( isHeavyRain$ ) { light_grayifier$ += 0.15; light_modifier$ -= 0.15; }  // Heavy rain darkens the fog by -15%
 		bool isHeavySnow$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled && (Mood.GetGoMoodSetting( focusedGo$ ).snowDensity > 200);
-		if ( isHeavySnow$ ) { light_modifier$ += 0.15; }  // Heavy snow brightens the fog by +15%
+		if ( isHeavySnow$ ) { light_grayifier$ += 0.15; light_modifier$ += 0.15; }  // Heavy snow brightens the fog by +15%
 
 		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_color$, light_modifier$, TurnWorldRed$() );
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_color$, light_modifier$, light_grayifier$, TurnWorldRed$() );
 		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
 		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
