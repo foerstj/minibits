@@ -361,10 +361,10 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 				light_color$ = InvertColor$( light_color$ );
 			}
 		}
-		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
-		{
-			light_modifier$ *= 0.85;  // Heavy Rain darkens the fog to 85% of current value
-		}
+		bool isHeavyRain$ = Mood.GetGoMoodSetting( focusedGo$ ).bRainEnabled && (Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200);
+		if ( isHeavyRain$ ) { light_modifier$ -= 0.15; }  // Heavy rain darkens the fog by -15%
+		bool isHeavySnow$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled && (Mood.GetGoMoodSetting( focusedGo$ ).snowDensity > 200);
+		if ( isHeavySnow$ ) { light_modifier$ += 0.15; }  // Heavy snow brightens the fog by +15%
 
 		// get the new fog color
 		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_color$, light_modifier$, TurnWorldRed$() );
