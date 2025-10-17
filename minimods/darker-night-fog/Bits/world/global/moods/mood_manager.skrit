@@ -95,22 +95,29 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 
 	// calculate the new color
 	float baseFactor$ = 1.25;
-	redFogComponent$	= int ( (float (redFogComponent$)) * baseFactor$ * (float (redLightFactor$)) * light_modifier$ );
-	greenFogComponent$	= int ( (float (greenFogComponent$)) * baseFactor$ * (float (greenLightFactor$)) * light_modifier$ );
-	blueFogComponent$	= int ( (float (blueFogComponent$)) * baseFactor$ * (float (blueLightFactor$)) * light_modifier$ );
+	float redFogFactor$		= (float (redFogComponent$)) / 255;
+	float greenFogFactor$	= (float (greenFogComponent$)) / 255;
+	float blueFogFactor$	= (float (blueFogComponent$)) / 255;
+	redFogFactor$	= redFogFactor$		* baseFactor$	* redLightFactor$	* light_modifier$;
+	greenFogFactor$	= greenFogFactor$	* baseFactor$	* greenLightFactor$	* light_modifier$;
+	blueFogFactor$	= blueFogFactor$	* baseFactor$	* blueLightFactor$	* light_modifier$;
 
 	// do bound checks
-	redFogComponent$ = Math.MinInt(Math.MaxInt(redFogComponent$, 0), 255);
-	greenFogComponent$ = Math.MinInt(Math.MaxInt(greenFogComponent$, 0), 255);
-	blueFogComponent$ = Math.MinInt(Math.MaxInt(blueFogComponent$, 0), 255);
+	redFogFactor$	= Math.MinFloat(Math.MaxFloat(redFogFactor$,	0.0), 1.0);
+	greenFogFactor$	= Math.MinFloat(Math.MaxFloat(greenFogFactor$,	0.0), 1.0);
+	blueFogFactor$	= Math.MinFloat(Math.MaxFloat(blueFogFactor$,	0.0), 1.0);
 
 	// turn red
 	if ( turn_red$ ) {
-		redFogComponent$ = Math.MaxInt(Math.MaxInt(redFogComponent$, greenFogComponent$), blueFogComponent$);
-		greenFogComponent$ = 0;
-		blueFogComponent$ = 0;
+		redFogFactor$ = Math.MaxFloat(Math.MaxFloat(redFogFactor$, greenFogFactor$), blueFogFactor$);
+		greenFogFactor$ = 0;
+		blueFogFactor$ = 0;
 	}
 
+	// convert back to integer component values
+	redFogComponent$	= int (redFogFactor$	* 255);
+	greenFogComponent$	= int (greenFogFactor$	* 255);
+	blueFogComponent$	= int (blueFogFactor$	* 255);
 	// shift them over a bit
 	redFogComponent$ = redFogComponent$ * 256 * 256;
 	greenFogComponent$ = greenFogComponent$ * 256;
