@@ -412,6 +412,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 {
 	Time$ += secondsElapsed$;
 
+	bool isWeatherChanged$ = false;
 	if ( Time$ > 15.0 && !RandomizeWeather$( focusedGo$ ) ) // time to see if the weather is going to change
 	{
 		Time$ = 0.0;
@@ -423,6 +424,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		{
 			//report.generic( "Yep, I'm changing the weather.\n" );
 			ChangeWeather$( focusedGo$ );
+			isWeatherChanged$ = true;
 		}
 
 		#only(game) [[
@@ -435,6 +437,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		Time$ = 0.0;
 
 		ChangeWeatherRandomized$( focusedGo$ );
+		isWeatherChanged$ = true;
 
 		#only(game) [[
 		// ok, now change the time of day speed
@@ -467,7 +470,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 	// change the color of the fog based on the time of day.
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
-	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) )
+	if ( (currentHour$ != LastHour$) || (currentMood$ != LastMood$ ) || isWeatherChanged$ )
 	{
 		// Fog color should change with time of day...but not if they are inside.  
 		int newFogColor$;
