@@ -86,6 +86,12 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 	float redLightFactor$	= (float (redLightComponent$)) / 255;
 	float greenLightFactor$	= (float (greenLightComponent$)) / 255;
 	float blueLightFactor$	= (float (blueLightComponent$)) / 255;
+	// tone down the saturation
+	float avgLightFactor$ = (redLightFactor$ + greenLightFactor$ + blueLightFactor$) / 3;
+	float lightColorFactor$ = 0.333;
+	redLightFactor$		= (avgLightFactor$ * (1.0 - lightColorFactor$)) + (redLightFactor$ * lightColorFactor$);
+	greenLightFactor$	= (avgLightFactor$ * (1.0 - lightColorFactor$)) + (greenLightFactor$ * lightColorFactor$);
+	blueLightFactor$	= (avgLightFactor$ * (1.0 - lightColorFactor$)) + (blueLightFactor$ * lightColorFactor$);
 
 	// calculate the new color
 	float baseFactor$ = 1.25;
