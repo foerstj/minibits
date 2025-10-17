@@ -104,6 +104,10 @@ float GetChangedWeatherValueRandomized$( float weather_baseline$, float weather_
 	// find the new current weather
 	weather_current$ += weather_baseline$ * weatherModifier$;
 
+	// This will keep the weather from becoming too different from the base mood
+	if (weather_current$ < (weather_baseline$ * 0.25) ) { weather_current$ = (weather_baseline$ * 0.25); }
+	if (weather_current$ > (weather_baseline$ * 2.0 ) ) { weather_current$ = (weather_baseline$ * 2.0 ); }
+
 	return weather_current$;
 }
 
