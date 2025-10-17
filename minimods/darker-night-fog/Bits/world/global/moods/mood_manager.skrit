@@ -98,9 +98,9 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 	float redFogFactor$		= (float (redFogComponent$)) / 255;
 	float greenFogFactor$	= (float (greenFogComponent$)) / 255;
 	float blueFogFactor$	= (float (blueFogComponent$)) / 255;
-	redFogFactor$	= redFogFactor$		* baseFactor$	* redLightFactor$	* light_modifier$;
-	greenFogFactor$	= greenFogFactor$	* baseFactor$	* greenLightFactor$	* light_modifier$;
-	blueFogFactor$	= blueFogFactor$	* baseFactor$	* blueLightFactor$	* light_modifier$;
+	redFogFactor$	= redFogFactor$		* baseFactor$	* redLightFactor$;
+	greenFogFactor$	= greenFogFactor$	* baseFactor$	* greenLightFactor$;
+	blueFogFactor$	= blueFogFactor$	* baseFactor$	* blueLightFactor$;
 
 	// turn red
 	if ( turn_red$ ) {
@@ -108,6 +108,11 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 		greenFogFactor$ = 0;
 		blueFogFactor$ = 0;
 	}
+
+	// apply light modifier
+	redFogFactor$	*= light_modifier$;
+	greenFogFactor$	*= light_modifier$;
+	blueFogFactor$	*= light_modifier$;
 
 	// do bound checks
 	redFogFactor$	= Math.MinFloat(Math.MaxFloat(redFogFactor$,	0.0), 1.0);
