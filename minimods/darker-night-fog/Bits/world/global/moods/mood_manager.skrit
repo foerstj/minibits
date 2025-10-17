@@ -62,11 +62,11 @@ bool GetRandomBool$()
 	return Math.RandomFloat( 1.0 ) > 0.5;
 }
 
-int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$ )
+int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifier$, bool turn_red$ )
 {
 	int alphaFogComponent$, redFogComponent$, greenFogComponent$, blueFogComponent$;
 
-	// setup the base values
+	// split base color into components
 	alphaFogComponent$	= base_color$ & 0xFF000000;
 	redFogComponent$	= base_color$ & 0x00FF0000;
 	greenFogComponent$	= base_color$ & 0x0000FF00;
@@ -77,11 +77,22 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 	redFogComponent$	= redFogComponent$ / 256 / 256;
 	greenFogComponent$	= greenFogComponent$ / 256;
 
-	// find a new version
-	redFogComponent$ = int ( (float (redFogComponent$)) * light_modifier$ ); 
-	blueFogComponent$ = int ( (float (blueFogComponent$)) * light_modifier$ ); 
-	greenFogComponent$ = int ( (float (greenFogComponent$)) * light_modifier$ );
-	
+	// calculate light factors
+	int redLightComponent$		= light_color$ & 0x00FF0000;
+	int greenLightComponent$	= light_color$ & 0x0000FF00;
+	int blueLightComponent$		= light_color$ & 0x000000FF;
+	redLightComponent$		= redLightComponent$ / 256 / 256;
+	greenLightComponent$	= greenLightComponent$ / 256;
+	float redLightFactor$	= (float (redLightComponent$)) / 255;
+	float greenLightFactor$	= (float (greenLightComponent$)) / 255;
+	float blueLightFactor$	= (float (blueLightComponent$)) / 255;
+
+	// calculate the new color
+	float baseFactor$ = 1.25;
+	redFogComponent$	= int ( (float (redFogComponent$)) * baseFactor$ * (float (redLightFactor$)) * light_modifier$ );
+	greenFogComponent$	= int ( (float (greenFogComponent$)) * baseFactor$ * (float (greenLightFactor$)) * light_modifier$ );
+	blueFogComponent$	= int ( (float (blueFogComponent$)) * baseFactor$ * (float (blueLightFactor$)) * light_modifier$ );
+
 	// do bound checks
 	redFogComponent$ = Math.MinInt(Math.MaxInt(redFogComponent$, 0), 255);
 	greenFogComponent$ = Math.MinInt(Math.MaxInt(greenFogComponent$, 0), 255);
@@ -99,8 +110,37 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 	greenFogComponent$ = greenFogComponent$ * 256;
 	]];
 
-	// and find the new one
+	// combine components into final color
 	return alphaFogComponent$ | redFogComponent$ | greenFogComponent$ | blueFogComponent$;
+}
+
+int InvertColor$( int color$ )
+{
+	int alpha$, red$, green$, blue$;
+
+	// setup the base values
+	alpha$	= color$ & 0xFF000000;
+	red$	= color$ & 0x00FF0000;
+	green$	= color$ & 0x0000FF00;
+	blue$	= color$ & 0x000000FF;
+
+	#only(game) [[
+	// shift them over a bit
+	red$	= red$ / 256 / 256;
+	green$	= green$ / 256;
+
+	// invert the values
+	red$	= 255 - red$;
+	green$	= 255 - green$;
+	blue$	= 255 - blue$;
+
+	// shift them over a bit
+	red$ = red$ * 256 * 256;
+	green$ = green$ * 256;
+	]];
+
+	// and find the new one
+	return alpha$ | red$ | green$ | blue$;
 }
 
 int GetCurrentHourLightColor$( int currentHour$, bool isSnowEnabled$ )
@@ -150,20 +190,6 @@ int GetCurrentHourLightColor$( int currentHour$, bool isSnowEnabled$ )
 		if (currentHour$ <= 23) { return 0xFF000000; }
 	}
 	return 0.0;
-}
-
-float GetCurrentHourLightModifier$( int currentHour$, bool isSnowEnabled$ )
-{
-	int currentColor$ = GetCurrentHourLightColor$(currentHour$, isSnowEnabled$);
-
-	int redFogComponent$	= currentColor$ & 0x00FF0000;
-	int greenFogComponent$	= currentColor$ & 0x0000FF00;
-	int blueFogComponent$	= currentColor$ & 0x000000FF;
-	// shift them over a bit
-	redFogComponent$	= redFogComponent$ / 256 / 256;
-	greenFogComponent$	= greenFogComponent$ / 256;
-
-	return (((float(redFogComponent$ + greenFogComponent$ + blueFogComponent$)) / 3) / 256) * 1.25;
 }
 
 float GetChangedWeatherValue$( float weather_baseline$, float weather_current$ )
@@ -310,13 +336,14 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 
 		// find the new light modifier
 		float light_modifier$ = 1;
+		int light_color$ = 0xFFFFFFFF;
 		if (!isInterior$)
 		{
 			bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
-			light_modifier$ = GetCurrentHourLightModifier$( currentHour$, isSnowEnabled$ );
+			light_color$ = GetCurrentHourLightColor$( currentHour$, isSnowEnabled$ );
 			if ( TurnWorldRed$() )
 			{
-				light_modifier$ = 1.25 - light_modifier$;  // flip brightness
+				light_color$ = InvertColor$( light_color$ );
 			}
 		}
 		if ( Mood.GetGoMoodSetting( focusedGo$ ).rainDensity > 200 )
@@ -325,7 +352,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		}
 
 		// get the new fog color
-		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_modifier$, TurnWorldRed$() );
+		newFogColor$ = GetModifiedFogColor$( baseFogColor$, light_color$, light_modifier$, TurnWorldRed$() );
 		//report.genericf( "Fog base / last / new : 0x%x / 0x%x / 0x%x.\n", baseFogColor$, oldFogColor$, newFogColor$);
 
 		Mood.GetGoMoodSetting( focusedGo$ ).fogColor = newFogColor$; // apply changes
