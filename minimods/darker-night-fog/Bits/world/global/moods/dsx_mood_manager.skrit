@@ -549,6 +549,7 @@ void DynamicFogChange$( Goid focusedGo$ )
 		if ( isHeavyRain$ ) { light_grayifier$ += 0.15; light_modifier$ -= 0.15; }  // Heavy rain darkens the fog by -15%
 		bool isHeavySnow$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled && (Mood.GetGoMoodSetting( focusedGo$ ).snowDensity > 200);
 		if ( isHeavySnow$ ) { light_grayifier$ += 0.15; light_modifier$ += 0.15; }  // Heavy snow brightens the fog by +15%
+		if ( isRandomizeWeather$ ) { light_grayifier$ += 0.15; }  // A little extra desaturation for Mt Kreth
 
 		// find a new random color to use
 		float random_color_modifier$ = isRandomizeWeather$ ? fog_color_modifier$ : 0.0;
