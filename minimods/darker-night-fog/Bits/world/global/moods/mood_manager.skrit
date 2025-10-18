@@ -309,7 +309,7 @@ void ChangeWeather$( Goid focusedGo$ )
 	}
 }
 
-void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
+void DynamicWeatherChange$( Goid focusedGo$, float secondsElapsed$ )
 {
 	Time$ += secondsElapsed$;
 
@@ -343,7 +343,10 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		Mood.ForceUpdateRain(0); // This applies the change
 		//report.genericF("Rain density is now %f, turned off lightning.\n", Mood.GetGoMoodSetting( focusedGo$ ).rainDensity);
 	}
+}
 
+void DynamicFogChange$( Goid focusedGo$ )
+{
 	// change the color of the fog based on the time of day.
 	int currentHour$ = TimeOfDay.GetHour();
 	string currentMood$ = Mood.GetGoRequestedMood( focusedGo$ ); // Get the name of the current mood
@@ -351,6 +354,7 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 	{
 		// Fog color should change with time of day...but not if they are inside.  
 		int newFogColor$;
+		bool isInterior$ = Mood.GetGoMoodSetting( focusedGo$ ).bInterior;
 
 		// get the base color, store the old color and get ready to receive a new one
 		int baseFogColor$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogColor;
@@ -387,6 +391,13 @@ void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 		LastMood$ = currentMood$; // cleanup
 		LastHour$ = currentHour$; // cleanup
 	}
+}
+
+void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
+{
+	DynamicWeatherChange$( focusedGo$, secondsElapsed$ );
+
+	DynamicFogChange$( focusedGo$ );
 }
 
 
