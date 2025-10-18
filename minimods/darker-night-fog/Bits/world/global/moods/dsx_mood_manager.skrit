@@ -151,12 +151,15 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 	float redFogFactor$		= (float (redFogComponent$)) / 255;
 	float greenFogFactor$	= (float (greenFogComponent$)) / 255;
 	float blueFogFactor$	= (float (blueFogComponent$)) / 255;
-	redFogFactor$	*= baseFactor$ * redLightFactor$;
-	greenFogFactor$	*= baseFactor$ * greenLightFactor$;
-	blueFogFactor$	*= baseFactor$ * blueLightFactor$;
+	redFogFactor$	*= baseFactor$;
+	greenFogFactor$	*= baseFactor$;
+	blueFogFactor$	*= baseFactor$;
 	redFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
 	greenFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
 	blueFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
+	redFogFactor$	*= redLightFactor$;
+	greenFogFactor$	*= greenLightFactor$;
+	blueFogFactor$	*= blueLightFactor$;
 
 	// turn red
 	if ( turn_red$ ) {
