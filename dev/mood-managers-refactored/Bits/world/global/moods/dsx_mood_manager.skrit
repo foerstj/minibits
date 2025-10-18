@@ -35,8 +35,8 @@
 
 
 property float	fog_density_max$		= 1.0;
-property float	fog_far_dist_max$		= 40.0;
-property float	fog_near_dist_max$		= 20.0;
+property float	fog_far_dist_max$		= 40.0; // now ignored
+property float	fog_near_dist_max$		= 20.0; // now ignored
 property float	fog_max_dist_modifier$	= 5.0;
 property float	fog_color_modifier$		= 0.5; // although it really doesn't matter too much what this value is, keep it between 0 and 1
 property float	minutes_modifier$		= 0.9; // 0 < minutes_modifier$ <= 1, larger value -> larger time swings
@@ -466,17 +466,20 @@ void DynamicFogChange$( Goid focusedGo$ )
 		// if we're in area nine we'll also want to mess with fog distance + density
 		if( isRandomizeWeather$ )
 		{
-			float max_modifier$ = fog_max_dist_modifier$;
-			float min_modifier$ = -1 * fog_max_dist_modifier$;
-
 			// find a new density
 			Mood.GetGoMoodSetting( focusedGo$ ).fogDensity = Math.RandomFloat( fog_density_max$ );
 
 			// find new distances
-			Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist = fog_near_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
-			Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist = fog_far_dist_max$ + Math.RandomFloat( min_modifier$, max_modifier$ );
-			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetFarDist = Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist - 5.0;
-			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetNearDist = Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist;
+			float max_modifier$ = fog_max_dist_modifier$;
+			float min_modifier$ = -1 * fog_max_dist_modifier$;
+			float baseFogNearDist$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogNearDist;
+			float baseFogFarDist$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogFarDist;
+			float baseFogLowDetNearDist$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogLowDetNearDist;
+			float baseFogLowDetFarDist$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).fogLowDetFarDist;
+			Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist = baseFogFarDist$ + Math.RandomFloat( min_modifier$, max_modifier$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist = baseFogNearDist$ + Math.RandomFloat( min_modifier$, max_modifier$ );
+			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetFarDist = Mood.GetGoMoodSetting( focusedGo$ ).fogFarDist - (baseFogFarDist$ - baseFogLowDetFarDist$);
+			Mood.GetGoMoodSetting( focusedGo$ ).fogLowDetNearDist = Mood.GetGoMoodSetting( focusedGo$ ).fogNearDist - (baseFogNearDist$ - baseFogLowDetNearDist$);
 		}
 
 		// If the mood just changed, the engine will update the fog color to the value that we just created.
