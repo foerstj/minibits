@@ -81,9 +81,9 @@ int GetModifiedFogColor$( int base_color$, float light_modifier$, bool turn_red$
 	float redFogFactor$		= (float (redFogComponent$)) / 255;
 	float greenFogFactor$	= (float (greenFogComponent$)) / 255;
 	float blueFogFactor$	= (float (blueFogComponent$)) / 255;
-	redFogFactor$	= redFogFactor$		* light_modifier$;
-	greenFogFactor$	= greenFogFactor$	* light_modifier$;
-	blueFogFactor$	= blueFogFactor$	* light_modifier$;
+	redFogFactor$	*= light_modifier$;
+	greenFogFactor$	*= light_modifier$;
+	blueFogFactor$	*= light_modifier$;
 
 	// turn red
 	if ( turn_red$ ) {
