@@ -297,14 +297,14 @@
 		item_markup = 2;
 		[item_restock]
 		{
-			potion_health_small = 9;
-			potion_mana_small = 9;
+			//potion_health_small = 9;
+			//potion_mana_small = 9;
 
-			potion_health_medium = 10;
-			potion_mana_medium = 10;
+			//potion_health_medium = 10;
+			//potion_mana_medium = 10;
 
-			potion_rejuvenation_small = 5;
-			potion_rejuvenation_medium = 4;
+			//potion_rejuvenation_small = 5;
+			//potion_rejuvenation_medium = 4;
 			
 			scroll_resurrect = 2;
 			spell_resurrect = 2;

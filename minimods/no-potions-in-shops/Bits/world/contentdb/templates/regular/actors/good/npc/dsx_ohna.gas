@@ -267,18 +267,18 @@
 			item_markup = 2;
 			[item_restock]
 				{
-					potion_health_small = 5;
-					potion_mana_small = 5;
+					//potion_health_small = 5;
+					//potion_mana_small = 5;
 
-					potion_health_medium = 12;
-					potion_mana_medium = 12;
+					//potion_health_medium = 12;
+					//potion_mana_medium = 12;
 
-					potion_mana_large = 8;
-					potion_health_large = 8;
+					//potion_mana_large = 8;
+					//potion_health_large = 8;
 
-					potion_rejuvenation_small = 3;
-					potion_rejuvenation_medium = 12;
-					potion_rejuvenation_large = 10;
+					//potion_rejuvenation_small = 3;
+					//potion_rejuvenation_medium = 12;
+					//potion_rejuvenation_large = 10;
 
 					scroll_resurrect = 3;
 					spell_healing_hands = 1;

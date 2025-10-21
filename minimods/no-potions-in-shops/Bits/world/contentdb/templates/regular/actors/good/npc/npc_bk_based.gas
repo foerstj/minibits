@@ -326,9 +326,9 @@
 
 		[item_restock]
 		{
-			potion_health_small = 18;
-			potion_mana_small = 18;
-			potion_rejuvenation_small = 4;
+			//potion_health_small = 18;
+			//potion_mana_small = 18;
+			//potion_rejuvenation_small = 4;
 
 			scroll_resurrect = 2;
             spell_resurrect = 2;
@@ -635,15 +635,15 @@
 
 		[item_restock]
 		{
-			potion_health_small = 4;
-			potion_health_medium = 6;
-			potion_health_large = 8;
-			potion_mana_small = 4;
-			potion_mana_medium = 6;
-			potion_mana_large = 8;
-			potion_rejuvenation_small = 2;
-			potion_rejuvenation_medium = 1;
-			potion_rejuvenation_large = 1;
+			//potion_health_small = 4;
+			//potion_health_medium = 6;
+			//potion_health_large = 8;
+			//potion_mana_small = 4;
+			//potion_mana_medium = 6;
+			//potion_mana_large = 8;
+			//potion_rejuvenation_small = 2;
+			//potion_rejuvenation_medium = 1;
+			//potion_rejuvenation_large = 1;
 
 			scroll_resurrect = 2;
             spell_resurrect = 2;
