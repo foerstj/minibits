@@ -22,7 +22,7 @@
 		max_level = 30;
 		required_level = 10;
 	}
-	[spell_transformation]
+	[spell_transformation_ambient]
 	{
 		Description = "Transformed";
 		effect_script = "transform_bear";
