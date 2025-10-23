@@ -126,10 +126,6 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 	redFogComponent$	= Math.RShift( redFogComponent$, 16 );
 	greenFogComponent$	= Math.RShift( greenFogComponent$, 8 );
 
-	// find min/max values
-	float min_color_modifier$ = -1 * color_modifier$;
-	float max_color_modifier$ = color_modifier$;
-
 	// calculate light factors
 	int redLightComponent$		= light_color$ & 0x00FF0000;
 	int greenLightComponent$	= light_color$ & 0x0000FF00;
@@ -154,9 +150,9 @@ int GetModifiedFogColor$( int base_color$, int light_color$, float light_modifie
 	redFogFactor$	*= baseFactor$;
 	greenFogFactor$	*= baseFactor$;
 	blueFogFactor$	*= baseFactor$;
-	redFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
-	greenFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
-	blueFogFactor$	+= Math.RandomFloat( min_color_modifier$, max_color_modifier$ );
+	redFogFactor$	+= Math.RandomFloat( color_modifier$ );
+	greenFogFactor$	+= Math.RandomFloat( color_modifier$ );
+	blueFogFactor$	+= Math.RandomFloat( color_modifier$ );
 	redFogFactor$	*= redLightFactor$;
 	greenFogFactor$	*= greenLightFactor$;
 	blueFogFactor$	*= blueLightFactor$;
