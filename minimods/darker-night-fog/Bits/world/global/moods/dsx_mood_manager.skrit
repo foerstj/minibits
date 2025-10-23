@@ -336,7 +336,7 @@ void ChangeWind$( Goid focusedGo$ )
 {
 	float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
 	// This is the original wind velocity
-	float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
+	float windBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
 
 	windCurrent$ = GetChangedWeatherValue$( windBaseline$, windCurrent$ );
 
@@ -410,7 +410,7 @@ void ChangeWeatherRandomized$( Goid focusedGo$ )
 	if( Mood.GetGoMoodSetting( focusedGo$).bRainEnabled )
 	{
 		float rain_current$ = Mood.GetGoMoodSetting( focusedGo$ ).rainDensity;
-		float rain_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
+		float rain_baseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).rainDensity;
 
 		// change the rain density
 		Mood.GetGoMoodSetting( focusedGo$ ).rainDensity = GetChangedWeatherValueRandomized$( rain_baseline$, rain_current$ );
@@ -428,7 +428,7 @@ void ChangeWeatherRandomized$( Goid focusedGo$ )
 	if( Mood.GetGoMoodSetting( focusedGo$).bSnowEnabled )
 	{
 		float snow_current$ = Mood.GetGoMoodSetting( focusedGo$ ).snowDensity;
-		float snow_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
+		float snow_baseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).snowDensity;
 
 		// change the snow density
 		Mood.GetGoMoodSetting( focusedGo$ ).snowDensity = GetChangedWeatherValueRandomized$( snow_baseline$, snow_current$ );
@@ -446,7 +446,7 @@ void ChangeWeatherRandomized$( Goid focusedGo$ )
 	if( Mood.GetGoMoodSetting( focusedGo$).bWindEnabled )
 	{
 		float wind_current$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
-		float wind_baseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
+		float wind_baseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
 
 		// change the wind speed
 		Mood.GetGoMoodSetting( focusedGo$ ).windVelocity = GetChangedWeatherValueRandomized$( wind_baseline$, wind_current$ );

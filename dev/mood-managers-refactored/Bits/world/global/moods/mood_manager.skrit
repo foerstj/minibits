@@ -190,7 +190,7 @@ void ChangeWind$( Goid focusedGo$ )
 {
 	float windCurrent$ = Mood.GetGoMoodSetting( focusedGo$ ).windVelocity;
 	// This is the original wind velocity
-	float windBaseline$ = Mood.GetMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
+	float windBaseline$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).windVelocity;
 
 	windCurrent$ = GetChangedWeatherValue$( windBaseline$, windCurrent$ );
 
