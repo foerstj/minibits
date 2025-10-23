@@ -168,9 +168,9 @@ int InvertColor$( int color$ )
 	return alpha$ | red$ | green$ | blue$;
 }
 
-int GetCurrentHourLightColor$( int currentHour$, bool isSnowEnabled$ )
+int GetCurrentHourLightColor$( int currentHour$, bool isSnowSunEnabled$ )
 {
-	if (!isSnowEnabled$)
+	if (!isSnowSunEnabled$)
 	{
 		// see timeofday.gas
 		if (currentHour$ ==  0) { return 0xFF9E4DCA; }
@@ -348,6 +348,11 @@ void DynamicWeatherChange$( Goid focusedGo$, float secondsElapsed$ )
 	}
 }
 
+bool GuessIsSnowSunEnabled$( Goid focusedGo$ )
+{
+	return Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bSnowEnabled;
+}
+
 void DynamicFogChange$( Goid focusedGo$ )
 {
 	// change the color of the fog based on the time of day.
@@ -369,8 +374,8 @@ void DynamicFogChange$( Goid focusedGo$ )
 		int light_color$ = 0xFFFFFFFF;
 		if (!isInterior$)
 		{
-			bool isSnowEnabled$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bSnowEnabled;
-			light_color$ = GetCurrentHourLightColor$( currentHour$, isSnowEnabled$ );
+			bool isSnowSunEnabled$ = GuessIsSnowSunEnabled$( focusedGo$ );
+			light_color$ = GetCurrentHourLightColor$( currentHour$, isSnowSunEnabled$ );
 			if ( TurnWorldRed$() )
 			{
 				light_color$ = InvertColor$( light_color$ );
