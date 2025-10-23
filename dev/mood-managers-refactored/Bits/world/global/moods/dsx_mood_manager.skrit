@@ -34,6 +34,8 @@
 // in rain or snow density, for example).
 
 
+property bool manage_moods$ = true;
+property bool dynamic_weather$ = true;
 property float	fog_density_max$		= 1.0;
 property float	fog_far_dist_max$		= 40.0;
 property float	fog_near_dist_max$		= 20.0;
@@ -495,7 +497,10 @@ void DynamicFogChange$( Goid focusedGo$ )
 
 void DoManageMoods$( Goid focusedGo$, float secondsElapsed$ )
 {
-	DynamicWeatherChange$( focusedGo$, secondsElapsed$ );
+	if (dynamic_weather$)
+	{
+		DynamicWeatherChange$( focusedGo$, secondsElapsed$ );
+	}
 
 	DynamicFogChange$( focusedGo$ );
 }
@@ -543,7 +548,10 @@ ManageMoods$( GoidColl partyMembers$, bool /*instantSwitch$*/, float secondsElap
 
 
 	// Time to play with weather
-	DoManageMoods$( focusedGo$, secondsElapsed$ );
+	if (manage_moods$)
+	{
+		DoManageMoods$( focusedGo$, secondsElapsed$ );
+	}
 
 
 	// Set the focused go as the active go for all mood components
