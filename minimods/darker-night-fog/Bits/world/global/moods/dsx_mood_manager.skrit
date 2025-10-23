@@ -534,7 +534,7 @@ void DynamicFogChange$( Goid focusedGo$ )
 		int light_color$ = 0xFFFFFFFF;
 		if (!isInterior$)
 		{
-			bool isSnowEnabled$ = Mood.GetGoMoodSetting( focusedGo$ ).bSnowEnabled;
+			bool isSnowEnabled$ = Mood.GetOriginalMoodSetting( Mood.GetGoRequestedMood( focusedGo$ ) ).bSnowEnabled;
 			light_color$ = GetCurrentHourLightColor$( currentHour$, isSnowEnabled$ );
 			if ( TurnWorldRed$() )
 			{
