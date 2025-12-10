@@ -239,7 +239,7 @@
 
 	[actor]
 	{
-		alignment = aa_evil;
+		alignment = aa_neutral;
 		drops_spellbook = false;
 	}
 
@@ -278,7 +278,7 @@
 
 	[actor]
 	{
-		alignment = aa_evil;
+		alignment = aa_neutral;
 		drops_spellbook = false;
 	}
 
