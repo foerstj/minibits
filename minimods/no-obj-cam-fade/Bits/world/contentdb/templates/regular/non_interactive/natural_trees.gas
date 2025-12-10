@@ -4,7 +4,7 @@
 	specializes = non_interactive_nonblocking;
 	[aspect]
 	{
-		does_block_camera = true;
+		does_block_camera = false;
 	}
 	[common]
 	{

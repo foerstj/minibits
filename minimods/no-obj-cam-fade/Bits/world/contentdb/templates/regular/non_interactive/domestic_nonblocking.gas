@@ -2298,7 +2298,7 @@
 	specializes = non_interactive_nonblocking;
 	[aspect]
 	{
-		does_block_camera = TRUE;
+		does_block_camera = false;
 		lodfi_lower = 0;
 		lodfi_upper = 0;
 		model = m_i_glb_tent-merchant;

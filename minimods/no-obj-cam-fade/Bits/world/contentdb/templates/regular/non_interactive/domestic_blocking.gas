@@ -538,7 +538,7 @@
 	specializes = non_interactive_blocking;
 	[aspect]
 	{
-		does_block_camera = TRUE;
+		does_block_camera = false;
 		model = m_i_grs_sbridge-millblades;
 	}
 	[body]

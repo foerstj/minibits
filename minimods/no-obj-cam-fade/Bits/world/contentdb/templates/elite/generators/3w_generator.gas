@@ -511,7 +511,7 @@
 		is_selectable = 	FALSE;
 		is_usable = 		FALSE;
         material = 			foliage;
-	    does_block_camera =	true;
+	    does_block_camera =	false;
    		model = 			m_i_glb_bush-10;
 	}
 	[body]
@@ -566,7 +566,7 @@
 		is_selectable = 	FALSE;
 		is_usable = 		FALSE;
         material = 			foliage;
-	    does_block_camera =	true;
+	    does_block_camera =	false;
    		model 		= m_i_swp_bush-08;
    		textures:0 	= b_i_swp_bush-05;
 	}
@@ -998,7 +998,7 @@
 		is_usable = 		FALSE;
 		model = 			m_i_glb_bush-10;
         material = 			foliage;
-	    does_block_camera =	true;
+	    does_block_camera =	false;
 	    [textures] { 0=b_i_grs_bush-rhod; }
 	}
 	[body]
@@ -1049,7 +1049,7 @@
 		is_usable = 		FALSE;
 		model = 			m_i_glb_bush-10;
         material = 			foliage;
-	    does_block_camera =	true;
+	    does_block_camera =	false;
 	    [textures] { 0=b_i_ice_bush-rhod; }
 	}
 	[body]

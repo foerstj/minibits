@@ -1499,7 +1499,7 @@
 	[aspect]
 	{
 		model = m_i_cav_ele-crane-01;
-		does_block_camera = true;
+		does_block_camera = false;
 		lodfi_lower = 0.0;  
 		lodfi_upper = 0.0;
 	}

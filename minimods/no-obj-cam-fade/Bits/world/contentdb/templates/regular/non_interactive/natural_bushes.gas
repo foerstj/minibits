@@ -5,7 +5,7 @@
 	[aspect]
 	{
 		cam_fade_alpha = 165;
-		does_block_camera = true;
+		does_block_camera = false;
 	}
 	[common]
 	{
@@ -55,7 +55,7 @@
 	specializes = base_bush;
 	[aspect]
 	{
-		does_block_camera = TRUE;
+		does_block_camera = false;
 		lodfi_lower = 0.05;
 		lodfi_upper = 0.7;
 		model = m_i_des_bush-04;
@@ -72,7 +72,7 @@
 	specializes = base_bush;
 	[aspect]
 	{
-		does_block_camera = TRUE;
+		does_block_camera = false;
 		lodfi_lower = 0.2;
 		lodfi_upper = 0.7;
 		model = m_i_des_bush-05;
