@@ -16,6 +16,20 @@
 {
 	[placement]
 	{
-	  p position = 1.63152,0.0276165,-0.820692,0x1815c9cb;
+	  p position = -0.57243,0.0276165,-1.13487,0x1815c9cb;
+	}
+}
+[t:skill_runes_container_30,n:0x0010000b]
+{
+	[placement]
+	{
+	  p position = 0.984829,0.107294,-1.28115,0x1815c9cb;
+	}
+}
+[t:skill_runes_container_60,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = 2.91884,-0.274168,-1.17716,0x1815c9cb;
 	}
 }
