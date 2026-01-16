@@ -19,7 +19,6 @@
 			&spells						= "c24_3_spell_crystal_mage_iceblast, c24_3_spell_summon_crystal_warriors_monster_teal";
     }
 }
-
 [t:template,n:c24_3_crystal_mage_purple] { specializes = c24_3_crystal_mage_purple_base; }
 [t:template,n:c24_3_crystal_mage_purple_base]
 {
@@ -41,7 +40,6 @@
 			&spells						= "c24_3_spell_crystal_mage_iceblast, c24_3_spell_summon_crystal_warriors_monster_purple";
     }
 }
-
 [t:template,n:c24_3_crystal_mage_green] { specializes = c24_3_crystal_mage_green_base; }
 [t:template,n:c24_3_crystal_mage_green_base]
 {
@@ -63,7 +61,6 @@
 			&spells						= "c24_3_spell_crystal_mage_iceblast, c24_3_spell_summon_crystal_warriors_monster_green";
     }
 }
-
 [t:template,n:c24_3_crystal_mage_blue] { specializes = c24_3_crystal_mage_blue_base; }
 [t:template,n:c24_3_crystal_mage_blue_base]
 {
@@ -85,7 +82,6 @@
 			&spells						= "c24_3_spell_crystal_mage_iceblast, c24_3_spell_summon_crystal_warriors_monster_blue";
     }
 }
-
 [t:template,n:c24_3_crystal_mage_red] { specializes = c24_3_crystal_mage_red_base; }
 [t:template,n:c24_3_crystal_mage_red_base]
 {
@@ -107,7 +103,6 @@
 			&spells						= "c24_3_spell_crystal_mage_iceblast, c24_3_spell_summon_crystal_warriors_monster_red";
     }
 }
-
 [t:template,n:c24_3_crystal_mage_gold] { specializes = c24_3_crystal_mage_gold_base; }
 [t:template,n:c24_3_crystal_mage_gold_base]
 {
@@ -130,9 +125,69 @@
     }
 }
 
+[t:template,n:c24_3_crystal_mage_teal_ar]
+{
+    specializes = c24_3_crystal_mage_teal_base;
+
+    // auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+            &auto_reveal = true;
+	}
+}
 [t:template,n:c24_3_crystal_mage_purple_ar]
 {
     specializes = c24_3_crystal_mage_purple_base;
+
+    // auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+            &auto_reveal = true;
+	}
+}
+[t:template,n:c24_3_crystal_mage_green_ar]
+{
+    specializes = c24_3_crystal_mage_green_base;
+
+    // auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+            &auto_reveal = true;
+	}
+}
+[t:template,n:c24_3_crystal_mage_blue_ar]
+{
+    specializes = c24_3_crystal_mage_blue_base;
+
+    // auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+            &auto_reveal = true;
+	}
+}
+[t:template,n:c24_3_crystal_mage_red_ar]
+{
+    specializes = c24_3_crystal_mage_red_base;
+
+    // auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+            &auto_reveal = true;
+	}
+}
+[t:template,n:c24_3_crystal_mage_gold_ar]
+{
+    specializes = c24_3_crystal_mage_gold_base;
 
     // auto-reveal
 	[mind]
