@@ -48,7 +48,6 @@
 		}
 	}
 }
-
 [t:template,n:3W_c24_3_crystal_warrior_purple]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
@@ -99,7 +98,6 @@
 		}
 	}
 }
-
 [t:template,n:3W_c24_3_crystal_warrior_green]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
@@ -150,7 +148,6 @@
 		}
 	}
 }
-
 [t:template,n:3W_c24_3_crystal_warrior_blue]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
@@ -201,7 +198,6 @@
 		}
 	}
 }
-
 [t:template,n:3W_c24_3_crystal_warrior_red]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
@@ -252,7 +248,6 @@
 		}
 	}
 }
-
 [t:template,n:3W_c24_3_crystal_warrior_gold]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
