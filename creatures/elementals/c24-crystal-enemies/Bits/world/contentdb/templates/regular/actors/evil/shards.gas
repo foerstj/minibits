@@ -35,7 +35,6 @@
 		[other] { il_active_primary_spell = c24_3_spell_shard_zap_teal; }
 	}
 }
-
 [t:template,n:c24_3_shard_purple]
 {
     specializes = c24_3_base_shard;
@@ -73,7 +72,6 @@
 		[other] { il_active_primary_spell = c24_3_spell_shard_zap_purple; }
 	}
 }
-
 [t:template,n:c24_3_shard_green]
 {
     specializes = c24_3_base_shard;
@@ -111,7 +109,6 @@
 		[other] { il_active_primary_spell = c24_3_spell_shard_zap_green; }
 	}
 }
-
 [t:template,n:c24_3_shard_blue]
 {
     specializes = c24_3_base_shard;
@@ -149,7 +146,6 @@
 		[other] { il_active_primary_spell = c24_3_spell_shard_zap_blue; }
 	}
 }
-
 [t:template,n:c24_3_shard_red]
 {
     specializes = c24_3_base_shard;
@@ -187,7 +183,6 @@
 		[other] { il_active_primary_spell = c24_3_spell_shard_zap_red; }
 	}
 }
-
 [t:template,n:c24_3_shard_gold]
 {
     specializes = c24_3_base_shard;
