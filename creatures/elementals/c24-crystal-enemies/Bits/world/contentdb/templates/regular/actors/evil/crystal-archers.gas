@@ -48,7 +48,6 @@
 		}
 	}
 }
-
 [t:template,n:c24_3_crystal_archer_purple]
 {
     specializes = c24_3_base_crystal_archer;
@@ -99,7 +98,6 @@
 		}
 	}
 }
-
 [t:template,n:c24_3_crystal_archer_green]
 {
     specializes = c24_3_base_crystal_archer;
@@ -150,7 +148,6 @@
 		}
 	}
 }
-
 [t:template,n:c24_3_crystal_archer_blue]
 {
     specializes = c24_3_base_crystal_archer;
@@ -201,7 +198,6 @@
 		}
 	}
 }
-
 [t:template,n:c24_3_crystal_archer_red]
 {
     specializes = c24_3_base_crystal_archer;
@@ -252,7 +248,6 @@
 		}
 	}
 }
-
 [t:template,n:c24_3_crystal_archer_gold]
 {
     specializes = c24_3_base_crystal_archer;
