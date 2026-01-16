@@ -1,3 +1,46 @@
+[t:template,n:2W_c24_3_crystal_golem_teal]
+{
+    specializes = 2W_c24_3_base_crystal_golem;
+
+    aspect:textures:0 = b_i_cav_gems-01-static;  // teal
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_cyan(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+		[other] 
+		{ 
+			il_active_primary_spell = c24_3_spell_golem_blast_teal; 
+		}
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_molten_golem_01_teal = 1;
+			frag_c24_3_crystal_molten_golem_02_teal = 6;
+			frag_c24_3_crystal_molten_golem_03_teal = 1;
+			frag_c24_3_crystal_molten_golem_04_teal = 2;
+			frag_c24_3_crystal_molten_golem_05_teal = 1;
+		}
+	}
+}
 [t:template,n:2W_c24_3_crystal_golem_purple]
 {
     specializes = 2W_c24_3_base_crystal_golem;
@@ -41,7 +84,92 @@
 		}
 	}
 }
+[t:template,n:2W_c24_3_crystal_golem_green]
+{
+    specializes = 2W_c24_3_base_crystal_golem;
 
+    aspect:textures:0 = b_i_cav_gems-03-static;  // green
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_green(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+		[other] 
+		{ 
+			il_active_primary_spell = c24_3_spell_golem_blast_green; 
+		}
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_molten_golem_01_green = 1;
+			frag_c24_3_crystal_molten_golem_02_green = 6;
+			frag_c24_3_crystal_molten_golem_03_green = 1;
+			frag_c24_3_crystal_molten_golem_04_green = 2;
+			frag_c24_3_crystal_molten_golem_05_green = 1;
+		}
+	}
+}
+[t:template,n:2W_c24_3_crystal_golem_blue]
+{
+    specializes = 2W_c24_3_base_crystal_golem;
+
+    aspect:textures:0 = b_i_cav_gems-04-static;  // blue
+  	[common]
+    {
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_blue(sgx)");
+			}
+		}
+    }
+    [inventory]
+    {
+		[other] 
+		{ 
+			il_active_primary_spell = c24_3_spell_golem_blast_blue; 
+		}
+    }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_molten_golem_01_blue = 1;
+			frag_c24_3_crystal_molten_golem_02_blue = 6;
+			frag_c24_3_crystal_molten_golem_03_blue = 1;
+			frag_c24_3_crystal_molten_golem_04_blue = 2;
+			frag_c24_3_crystal_molten_golem_05_blue = 1;
+		}
+	}
+}
 [t:template,n:2W_c24_3_crystal_golem_red]
 {
     specializes = 2W_c24_3_base_crystal_golem;
@@ -85,7 +213,6 @@
 		}
 	}
 }
-
 [t:template,n:2W_c24_3_crystal_golem_gold]
 {
     specializes = 2W_c24_3_base_crystal_golem;
