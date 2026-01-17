@@ -1,16 +1,3 @@
-[t:template,n:arrow_ice_base]  // = arrow_ice
-{
-	doc = "Ice arrow";
-	specializes = base_arrow;
-	[aspect] { model=m_w_arw_003; }
-	[common] { screen_name="Ice Arrow"; }
-}
-
-[t:template,n:base_arrow_crystal]
-{
-    specializes = arrow_ice_base;
-}
-
 [t:template,n:arrow_crystal_teal]   { specializes = base_arrow_crystal; aspect:textures:0 = b_i_cav_gems-01-static; }
 [t:template,n:arrow_crystal_purple] { specializes = base_arrow_crystal; aspect:textures:0 = b_i_cav_gems-02-static; }
 [t:template,n:arrow_crystal_green]  { specializes = base_arrow_crystal; aspect:textures:0 = b_i_cav_gems-03-static; }
