@@ -18,6 +18,15 @@
 			* = lf_dirt;
 		}
 	}
+	[t:lf_snode,n:0x45fd46cc]
+	{
+		[t:lf_lnode,n:0]
+		{
+			* = lf_human_player;
+			* = lf_computer_player;
+			* = lf_dirt;
+		}
+	}
 	[t:lf_snode,n:0x4aebbe14]
 	{
 		[t:lf_lnode,n:0]
@@ -91,6 +100,15 @@
 		}
 	}
 	[t:lf_snode,n:0xc5e281c1]
+	{
+		[t:lf_lnode,n:0]
+		{
+			* = lf_human_player;
+			* = lf_computer_player;
+			* = lf_dirt;
+		}
+	}
+	[t:lf_snode,n:0xe1ffdd4a]
 	{
 		[t:lf_lnode,n:0]
 		{

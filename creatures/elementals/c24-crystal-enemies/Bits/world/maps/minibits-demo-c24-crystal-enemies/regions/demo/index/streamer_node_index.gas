@@ -2,6 +2,7 @@
 {
   x * = 0x151D358F;
   x * = 0x27FD39D8;
+  x * = 0x45FD46CC;
   x * = 0x4AEBBE14;
   x * = 0x544B05AD;
   x * = 0x70183FCA;
@@ -11,5 +12,6 @@
   x * = 0xA0BD7844;
   x * = 0xAC054D7B;
   x * = 0xC5E281C1;
+  x * = 0xE1FFDD4A;
   x * = 0xFECB112E;
 }
