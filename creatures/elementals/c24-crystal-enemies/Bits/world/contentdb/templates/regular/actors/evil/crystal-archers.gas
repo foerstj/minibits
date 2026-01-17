@@ -1,4 +1,5 @@
-[t:template,n:c24_3_crystal_archer_teal]
+[t:template,n:c24_3_crystal_archer_teal] { specializes = c24_3_crystal_archer_teal_base; }
+[t:template,n:c24_3_crystal_archer_teal_base]
 {
     specializes = c24_3_base_crystal_archer;
 
@@ -48,7 +49,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_archer_purple]
+[t:template,n:c24_3_crystal_archer_purple] { specializes = c24_3_crystal_archer_purple_base; }
+[t:template,n:c24_3_crystal_archer_purple_base]
 {
     specializes = c24_3_base_crystal_archer;
 
@@ -98,7 +100,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_archer_green]
+[t:template,n:c24_3_crystal_archer_green] { specializes = c24_3_crystal_archer_green_base; }
+[t:template,n:c24_3_crystal_archer_green_base]
 {
     specializes = c24_3_base_crystal_archer;
 
@@ -148,7 +151,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_archer_blue]
+[t:template,n:c24_3_crystal_archer_blue] { specializes = c24_3_crystal_archer_blue_base; }
+[t:template,n:c24_3_crystal_archer_blue_base]
 {
     specializes = c24_3_base_crystal_archer;
 
@@ -198,7 +202,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_archer_red]
+[t:template,n:c24_3_crystal_archer_red] { specializes = c24_3_crystal_archer_red_base; }
+[t:template,n:c24_3_crystal_archer_red_base]
 {
     specializes = c24_3_base_crystal_archer;
 
@@ -248,7 +253,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_archer_gold]
+[t:template,n:c24_3_crystal_archer_gold] { specializes = c24_3_crystal_archer_gold_base; }
+[t:template,n:c24_3_crystal_archer_gold_base]
 {
     specializes = c24_3_base_crystal_archer;
 

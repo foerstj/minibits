@@ -1,4 +1,5 @@
-[t:template,n:3W_c24_3_crystal_warrior_teal]
+[t:template,n:3W_c24_3_crystal_warrior_teal] { specializes = 3W_c24_3_crystal_warrior_teal_base; }
+[t:template,n:3W_c24_3_crystal_warrior_teal_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 
@@ -48,7 +49,8 @@
 		}
 	}
 }
-[t:template,n:3W_c24_3_crystal_warrior_purple]
+[t:template,n:3W_c24_3_crystal_warrior_purple] { specializes = 3W_c24_3_crystal_warrior_purple_base; }
+[t:template,n:3W_c24_3_crystal_warrior_purple_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 
@@ -98,7 +100,8 @@
 		}
 	}
 }
-[t:template,n:3W_c24_3_crystal_warrior_green]
+[t:template,n:3W_c24_3_crystal_warrior_green] { specializes = 3W_c24_3_crystal_warrior_green_base; }
+[t:template,n:3W_c24_3_crystal_warrior_green_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 
@@ -148,7 +151,8 @@
 		}
 	}
 }
-[t:template,n:3W_c24_3_crystal_warrior_blue]
+[t:template,n:3W_c24_3_crystal_warrior_blue] { specializes = 3W_c24_3_crystal_warrior_blue_base; }
+[t:template,n:3W_c24_3_crystal_warrior_blue_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 
@@ -198,7 +202,8 @@
 		}
 	}
 }
-[t:template,n:3W_c24_3_crystal_warrior_red]
+[t:template,n:3W_c24_3_crystal_warrior_red] { specializes = 3W_c24_3_crystal_warrior_red_base; }
+[t:template,n:3W_c24_3_crystal_warrior_red_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 
@@ -248,7 +253,8 @@
 		}
 	}
 }
-[t:template,n:3W_c24_3_crystal_warrior_gold]
+[t:template,n:3W_c24_3_crystal_warrior_gold] { specializes = 3W_c24_3_crystal_warrior_gold_base; }
+[t:template,n:3W_c24_3_crystal_warrior_gold_base]
 {
     specializes = 3W_c24_3_base_crystal_warrior;
 

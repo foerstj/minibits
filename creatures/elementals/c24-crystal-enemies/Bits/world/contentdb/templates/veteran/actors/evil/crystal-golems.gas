@@ -1,4 +1,5 @@
-[t:template,n:2W_c24_3_crystal_golem_teal]
+[t:template,n:2W_c24_3_crystal_golem_teal] { specializes = 2W_c24_3_crystal_golem_teal_base; }
+[t:template,n:2W_c24_3_crystal_golem_teal_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 
@@ -41,7 +42,8 @@
 		}
 	}
 }
-[t:template,n:2W_c24_3_crystal_golem_purple]
+[t:template,n:2W_c24_3_crystal_golem_purple] { specializes = 2W_c24_3_crystal_golem_purple_base; }
+[t:template,n:2W_c24_3_crystal_golem_purple_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 
@@ -84,7 +86,8 @@
 		}
 	}
 }
-[t:template,n:2W_c24_3_crystal_golem_green]
+[t:template,n:2W_c24_3_crystal_golem_green] { specializes = 2W_c24_3_crystal_golem_green_base; }
+[t:template,n:2W_c24_3_crystal_golem_green_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 
@@ -127,7 +130,8 @@
 		}
 	}
 }
-[t:template,n:2W_c24_3_crystal_golem_blue]
+[t:template,n:2W_c24_3_crystal_golem_blue] { specializes = 2W_c24_3_crystal_golem_blue_base; }
+[t:template,n:2W_c24_3_crystal_golem_blue_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 
@@ -170,7 +174,8 @@
 		}
 	}
 }
-[t:template,n:2W_c24_3_crystal_golem_red]
+[t:template,n:2W_c24_3_crystal_golem_red] { specializes = 2W_c24_3_crystal_golem_red_base; }
+[t:template,n:2W_c24_3_crystal_golem_red_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 
@@ -213,7 +218,8 @@
 		}
 	}
 }
-[t:template,n:2W_c24_3_crystal_golem_gold]
+[t:template,n:2W_c24_3_crystal_golem_gold] { specializes = 2W_c24_3_crystal_golem_gold_base; }
+[t:template,n:2W_c24_3_crystal_golem_gold_base]
 {
     specializes = 2W_c24_3_base_crystal_golem;
 

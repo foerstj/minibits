@@ -1,4 +1,5 @@
-[t:template,n:c24_3_crystal_fly_teal]
+[t:template,n:c24_3_crystal_fly_teal] { specializes = c24_3_crystal_fly_teal_base; }
+[t:template,n:c24_3_crystal_fly_teal_base]
 {
     specializes = c24_3_base_crystal_fly;
 
@@ -37,7 +38,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_fly_purple]
+[t:template,n:c24_3_crystal_fly_purple] { specializes = c24_3_crystal_fly_purple_base; }
+[t:template,n:c24_3_crystal_fly_purple_base]
 {
     specializes = c24_3_base_crystal_fly;
 
@@ -76,7 +78,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_fly_green]
+[t:template,n:c24_3_crystal_fly_green] { specializes = c24_3_crystal_fly_green_base; }
+[t:template,n:c24_3_crystal_fly_green_base]
 {
     specializes = c24_3_base_crystal_fly;
 
@@ -115,7 +118,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_fly_blue]
+[t:template,n:c24_3_crystal_fly_blue] { specializes = c24_3_crystal_fly_blue_base; }
+[t:template,n:c24_3_crystal_fly_blue_base]
 {
     specializes = c24_3_base_crystal_fly;
 
@@ -154,7 +158,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_fly_red]
+[t:template,n:c24_3_crystal_fly_red] { specializes = c24_3_crystal_fly_red_base; }
+[t:template,n:c24_3_crystal_fly_red_base]
 {
     specializes = c24_3_base_crystal_fly;
 
@@ -193,7 +198,8 @@
 		}
 	}
 }
-[t:template,n:c24_3_crystal_fly_gold]
+[t:template,n:c24_3_crystal_fly_gold] { specializes = c24_3_crystal_fly_gold_base; }
+[t:template,n:c24_3_crystal_fly_gold_base]
 {
     specializes = c24_3_base_crystal_fly;
 
