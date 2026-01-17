@@ -10,6 +10,16 @@
 
 [effect_script*]
 {
+	name	=shard_zap_c24_3_purple;
+
+	script	=[[
+			call shard_zap_base s<color0(1,.5,1)> s<model(frag_c24_3_crystal_shard_03_purple)>;
+			worldmsg WE_SPELL_SYNC_END #INVALID_GOID #OWNER_GOID #TARGET_GOID;
+			]];
+}
+
+[effect_script*]
+{
 	name	=shard_zap_c24_3_green;
 
 	script	=[[
@@ -24,16 +34,6 @@
 
 	script	=[[
 			call shard_zap_base s<color0(.5,.5,1)> s<model(frag_c24_3_crystal_shard_03_blue)>;
-			worldmsg WE_SPELL_SYNC_END #INVALID_GOID #OWNER_GOID #TARGET_GOID;
-			]];
-}
-
-[effect_script*]
-{
-	name	=shard_zap_c24_3_purple;
-
-	script	=[[
-			call shard_zap_base s<color0(1,.5,1)> s<model(frag_c24_3_crystal_shard_03_purple)>;
 			worldmsg WE_SPELL_SYNC_END #INVALID_GOID #OWNER_GOID #TARGET_GOID;
 			]];
 }
