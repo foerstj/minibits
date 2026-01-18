@@ -1,0 +1,108 @@
+[t:sign_glb_beware,n:0x00100012]
+{
+	[common]
+	{
+		screen_name = "Original trees lg & sm snowy";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.49012e-007;
+	  p position = 14.169,6.24332,-36.7647,0x5128c446;
+	}
+}
+[t:sign_glb_beware,n:0x0010001a]
+{
+	[common]
+	{
+		screen_name = "Snowy xmas white";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 9.41032,6.01698,-49.1463,0x5128c446;
+	}
+}
+[t:sign_glb_beware,n:0x00100015]
+{
+	[common]
+	{
+		screen_name = "Original trees lg & sm green";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -5.60978,5.36161,-48.3551,0xde54c2ea;
+	}
+}
+[t:sign_glb_beware,n:0x00100018]
+{
+	[common]
+	{
+		screen_name = "Group of lg green xmas yellow";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -2.83245,3.61523,-31.9063,0xde54c2ea;
+	}
+}
+[t:sign_glb_beware,n:0x00100019]
+{
+	[common]
+	{
+		screen_name = "Green xmas yellow";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.49012e-007;
+	  p position = 10.466,6.49528,-45.0039,0xde54c2ea;
+	}
+}
+[t:sign_glb_beware,n:0x0010001e]
+{
+	[common]
+	{
+		screen_name = "Green xmas white";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.49012e-007;
+	  p position = 15.208,5.73663,-30.332,0xde54c2ea;
+	}
+}
+[t:sign_glb_beware,n:0x00100017]
+{
+	[common]
+	{
+		screen_name = "Group of lg snowy xmas yellow";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -4.23824,3.93904,-32.2733,0x35ae5a33;
+	}
+}
+[t:sign_glb_beware,n:0x0010001b]
+{
+	[common]
+	{
+		screen_name = "Snowy xmas yellow";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 9.96154,6.09885,-48.1732,0x35ae5a33;
+	}
+}
+[t:sign_glb_beware,n:0x00100016]
+{
+	[common]
+	{
+		screen_name = "Group of lg snowy xmas white";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -2.98311,4.2043,-34.1162,0x6a1c78a1;
+	}
+}
