@@ -1,0 +1,6 @@
+[t:tsd,n:b_i_ice_tree-ash-snowy]
+{
+  b hasalpha = true;
+	layer1texture1 = b_i_ice_tree-ash-snowy;
+  i texturedetail = 2;
+}
