@@ -77,6 +77,20 @@
 	  p position = -7.88918,5.91393,-50.1803,0xde54c2ea;
 	}
 }
+[t:tree_grs_xmas_white,n:0x0010001c]
+{
+	[placement]
+	{
+	  p position = 11.8276,6.8336,-31.0171,0xde54c2ea;
+	}
+}
+[t:tree_grs_xmas_white_lg,n:0x0010001d]
+{
+	[placement]
+	{
+	  p position = 14.6727,5.43737,-25.3075,0xde54c2ea;
+	}
+}
 [t:tree_ice_xmas,n:0x00100000]
 {
 	[placement]
