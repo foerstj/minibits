@@ -16,6 +16,14 @@
 	doc = "ice_ash_lg_bushy (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
 }
+[t:template,n:tree_ice_ash_lg_bushy_brown] { specializes = tree_ice_ash_lg_bushy_brown_base; }
+[t:template,n:tree_ice_ash_lg_bushy_brown_base]
+{
+	specializes = base_tree_deciduous_lg_bushy;
+
+	doc = "ice_ash_lg_bushy (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
+}
 
 [t:template,n:tree_ice_ash_med_bushy_snowy] { specializes = tree_ice_ash_med_bushy_snowy_base; }
 [t:template,n:tree_ice_ash_med_bushy_snowy_base]
@@ -32,6 +40,14 @@
 
 	doc = "ice_ash_med_bushy (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
+}
+[t:template,n:tree_ice_ash_med_bushy_brown] { specializes = tree_ice_ash_med_bushy_brown_base; }
+[t:template,n:tree_ice_ash_med_bushy_brown_base]
+{
+	specializes = base_tree_deciduous_med_bushy;
+
+	doc = "ice_ash_med_bushy (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
 }
 
 [t:template,n:tree_ice_ash_sm_bushy_snowy] { specializes = tree_ice_ash_sm_bushy_snowy_base; }
@@ -50,6 +66,14 @@
 	doc = "ice_ash_sm_bushy (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
 }
+[t:template,n:tree_ice_ash_sm_bushy_brown] { specializes = tree_ice_ash_sm_bushy_brown_base; }
+[t:template,n:tree_ice_ash_sm_bushy_brown_base]
+{
+	specializes = base_tree_deciduous_sm_bushy;
+
+	doc = "ice_ash_sm_bushy (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
+}
 
 [t:template,n:tree_ice_ash_lg_snowy] { specializes = tree_ice_ash_lg_snowy_base; }
 [t:template,n:tree_ice_ash_lg_snowy_base]
@@ -66,6 +90,14 @@
 
 	doc = "ice_ash_lg (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
+}
+[t:template,n:tree_ice_ash_lg_brown] { specializes = tree_ice_ash_lg_brown_base; }
+[t:template,n:tree_ice_ash_lg_brown_base]
+{
+	specializes = base_tree_deciduous_lg;
+
+	doc = "ice_ash_lg (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
 }
 
 [t:template,n:tree_ice_ash_med_snowy] { specializes = tree_ice_ash_med_snowy_base; }
@@ -84,6 +116,14 @@
 	doc = "ice_ash_med (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
 }
+[t:template,n:tree_ice_ash_med_brown] { specializes = tree_ice_ash_med_brown_base; }
+[t:template,n:tree_ice_ash_med_brown_base]
+{
+	specializes = base_tree_deciduous_med;
+
+	doc = "ice_ash_med (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
+}
 
 [t:template,n:tree_ice_ash_sm_snowy] { specializes = tree_ice_ash_sm_snowy_base; }
 [t:template,n:tree_ice_ash_sm_snowy_base]
@@ -100,6 +140,14 @@
 
 	doc = "ice_ash_sm (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
+}
+[t:template,n:tree_ice_ash_sm_brown] { specializes = tree_ice_ash_sm_brown_base; }
+[t:template,n:tree_ice_ash_sm_brown_base]
+{
+	specializes = base_tree_deciduous_sm;
+
+	doc = "ice_ash_sm (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
 }
 
 [t:template,n:tree_ice_ash_lg_sway_snowy] { specializes = tree_ice_ash_lg_sway_snowy_base; }
@@ -118,6 +166,14 @@
 	doc = "ice_ash_lg_sway (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
 }
+[t:template,n:tree_ice_ash_lg_sway_brown] { specializes = tree_ice_ash_lg_sway_brown_base; }
+[t:template,n:tree_ice_ash_lg_sway_brown_base]
+{
+	specializes = base_tree_deciduous_lg_sway;
+
+	doc = "ice_ash_lg_sway (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
+}
 
 [t:template,n:tree_ice_ash_med_sway_snowy] { specializes = tree_ice_ash_med_sway_snowy_base; }
 [t:template,n:tree_ice_ash_med_sway_snowy_base]
@@ -134,4 +190,12 @@
 
 	doc = "ice_ash_med_sway (bare)";
 	aspect:textures:0 = b_i_ice_tree-ash-bare;
+}
+[t:template,n:tree_ice_ash_med_sway_brown] { specializes = tree_ice_ash_med_sway_brown_base; }
+[t:template,n:tree_ice_ash_med_sway_brown_base]
+{
+	specializes = base_tree_deciduous_med_sway;
+
+	doc = "ice_ash_med_sway (brown)";
+	aspect:textures:0 = b_i_ice_tree-ash-brown;
 }
