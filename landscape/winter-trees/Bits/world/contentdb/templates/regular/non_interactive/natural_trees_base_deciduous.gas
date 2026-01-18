@@ -1,0 +1,135 @@
+[t:template,n:base_tree_deciduous_lg_bushy]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.65;
+		lodfi_upper = 1;
+		model = m_i_glb_tree-deciduous-01;
+	}
+}
+
+[t:template,n:base_tree_deciduous_med_bushy]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.3;
+		lodfi_upper = 0.8;
+		model = m_i_glb_tree-deciduous-02;
+	}
+}
+
+[t:template,n:base_tree_deciduous_sm_bushy]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.1;
+		lodfi_upper = 0.5;
+		model = m_i_glb_tree-deciduous-03;
+	}
+}
+
+[t:template,n:base_tree_deciduous_lg]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.15;
+		lodfi_upper = 0.6;
+		model = m_i_glb_tree-deciduous-04;
+	}
+}
+
+[t:template,n:base_tree_deciduous_med]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.4;
+		lodfi_upper = 0.7;
+		model = m_i_glb_tree-deciduous-05;
+	}
+}
+
+[t:template,n:base_tree_deciduous_sm]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.1;
+		lodfi_upper = 0.6;
+		model = m_i_glb_tree-deciduous-06;
+	}
+}
+
+[t:template,n:base_tree_deciduous_lg_sway]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.2;
+		lodfi_upper = 0.7;
+		model = m_i_glb_tree-deciduous-08;
+	}
+	[body]
+	{
+		initial_chore = chore_default;
+		[chore_dictionary]
+		{
+			chore_prefix = a_i_glb;
+			[chore_default]
+			{
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = tree-deciduous-08-sway;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:base_tree_deciduous_med_sway]
+{
+	specializes = base_tree;
+
+	category_name = "trees";
+	[aspect]
+	{
+		lodfi_lower = 0.35;
+		lodfi_upper = 1;
+		model = m_i_glb_tree-deciduous-09;
+	}
+	[body]
+	{
+		initial_chore = chore_default;
+		[chore_dictionary]
+		{
+			chore_prefix = a_i_glb;
+			[chore_default]
+			{
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = tree-deciduous-09-sway;
+				}
+			}
+		}
+	}
+}
