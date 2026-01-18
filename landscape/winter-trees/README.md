@@ -7,4 +7,4 @@ Deciduous trees in winter.
 - One with snow on the branches
 - One with brown leaves
 
-src: foerstj
+src: foerstj / Wintermod
