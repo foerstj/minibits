@@ -12,7 +12,7 @@
 	  p position = 1.23799,0,-3.09336,0xf25ddae7;
 	}
 }
-[t:gr_npc_ranger_greylin_coast,n:0x00100005]
+[t:gr_npc_ranger_greilyn_coast,n:0x00100005]
 {
 	[placement]
 	{
