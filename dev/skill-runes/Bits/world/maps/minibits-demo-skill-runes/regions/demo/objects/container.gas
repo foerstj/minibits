@@ -5,6 +5,34 @@
 	  p position = -0.00274079,0,2.37827,0xf0fb4f6c;
 	}
 }
+[t:skill_runes_container_melee,n:0x0010000d]
+{
+	[placement]
+	{
+	  p position = -2.69379,-0.3,0.856955,0x0015d157;
+	}
+}
+[t:skill_runes_container_ranged,n:0x0010000e]
+{
+	[placement]
+	{
+	  p position = -0.769096,-0.3,0.837543,0x0015d157;
+	}
+}
+[t:skill_runes_container_nmagic,n:0x0010000f]
+{
+	[placement]
+	{
+	  p position = 1.30897,-0.209665,1.08313,0x0015d157;
+	}
+}
+[t:skill_runes_container_cmagic,n:0x00100010]
+{
+	[placement]
+	{
+	  p position = 3.03034,-0.300001,1.26944,0x0015d157;
+	}
+}
 [t:skill_runes_container_0,n:0x00100007]
 {
 	[placement]
