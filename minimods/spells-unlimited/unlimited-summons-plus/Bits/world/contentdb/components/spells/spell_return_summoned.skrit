@@ -36,11 +36,11 @@ startup state CastBegin$
 			}
 			
 			// Check to see if the enchantment has already been cast on this go
-			if( !target$.Go.Actor.HasGenericState( state_name$ ) ) 
-			{	
-				SetState Abort$;
-				return;
-			}	
+			//if( !target$.Go.Actor.HasGenericState( state_name$ ) ) 
+			//{	
+			//	SetState Abort$;
+			//	return;
+			//}	
 			
 			if( target$.Go.Aspect.MaxLife > ( health_per_level$ * caster$.Go.Actor.GetSkillLevel( owner.Go.Magic.SkillClass ) ) )
 			{

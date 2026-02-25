@@ -120,11 +120,12 @@ startup state CastBegin$
 				return;
 			}
 			
-			if( caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
-			{
-				SetState Abort$;
-				return;
-			}
+			//Got rid of state checking... should allow for unlimited summons -MercuryPenguin
+			//if( caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
+			//{
+			//	SetState Abort$;
+			//	return;
+			//}
 				
 			// Copy the reference to the starting position into SiegeFx persistant storage
 			starting_pos$ = SiegeFx.AddVariable( target$.go.placement.position, owner.goid );
@@ -133,7 +134,7 @@ startup state CastBegin$
 			SiegeFx.SRunScript( effect_script$, target$, caster$, script_params$, owner.Goid, WE_REQ_CAST );
 		
 			summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, caster$.Go);
-			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$ + 2.0, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$ + 2.0, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 		} 
 		else if ( e$ == WE_SPELL_SYNC_MID ) 
 		{
@@ -294,7 +295,7 @@ state ControlSummoned$
 		{
 			summoned_goid$.Go.Actor.SAddGenericState( state_name$, description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 			caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );	
-			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 			
 			// we want to be able to see the dude's health
 			summoned_goid$.Go.Actor.SSetCanShowHealth( true );		
