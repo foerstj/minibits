@@ -126,15 +126,15 @@ startup state CastBegin$
 			//	SetState Abort$;
 			//	return;
 			//}
-				
+
 			// Copy the reference to the starting position into SiegeFx persistant storage
 			starting_pos$ = SiegeFx.AddVariable( target$.go.placement.position, owner.goid );
 			
 			// Start the visual effect
 			SiegeFx.SRunScript( effect_script$, target$, caster$, script_params$, owner.Goid, WE_REQ_CAST );
-		
-			summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, caster$.Go);
+
 			// REMOVED
+			//summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, caster$.Go);
 			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$ + 2.0, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 		} 
 		else if ( e$ == WE_SPELL_SYNC_MID ) 
@@ -157,8 +157,10 @@ startup state CastBegin$
 				SetState CleanUp$;
 				return;
 			}
-			
-			summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(summoned_goid$.Go, caster$.Go);
+
+			// REMOVED
+			//summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(summoned_goid$.Go, caster$.Go);
+
 			if( summoned_goid$.go.hasactor )
 			{
 				// buff the summoned guy up.
@@ -250,17 +252,19 @@ state ControlSummoned$
 		}
 		this.CreateTimer( 2, .1 );
 	}
-	
-	trigger OnTimer$ ( 1 )
-	{
-		if( summoned_goid$.IsValidMp) 
-		{
-			if ( end_script$ != "" ) {
-				SiegeFx.SRunScript( end_script$, summoned_goid$, summoned_goid$, script_params$, owner.Goid, WE_DAMAGED );
-			}		
-		}
-		this.CreateTimer( 2, .1 );
-	}
+
+	// REMOVED
+	//trigger OnTimer$ ( 1 )
+	//{
+	//	if( summoned_goid$.IsValidMp) 
+	//	{
+	//		if ( end_script$ != "" ) {
+	//			SiegeFx.SRunScript( end_script$, summoned_goid$, summoned_goid$, script_params$, owner.Goid, WE_DAMAGED );
+	//		}		
+	//	}
+	//	this.CreateTimer( 2, .1 );
+	//}
+
 	trigger OnTimer$ ( 3 )
 	{
 		this.CreateTimer( 3, 5 );
@@ -308,11 +312,12 @@ state ControlSummoned$
 		
 		if( caster$.IsValid() )
 		{
-			summoned_goid$.Go.Actor.SAddGenericState( state_name$, description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			// EDITED: use -1 as duration -> won't show countdown
+			summoned_goid$.Go.Actor.SAddGenericState( state_name$, description$, -1, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 			// REMOVED
 			//caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );	
 			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-			
+
 			// we want to be able to see the dude's health
 			summoned_goid$.Go.Actor.SSetCanShowHealth( true );		
 
@@ -320,7 +325,9 @@ state ControlSummoned$
 			summoned_goid$.Go.Common.SCopyMembership( caster$ );
 		}
 
-		this.CreateTimer( 1, summon_duration$ );
+		// REMOVED
+		//this.CreateTimer( 1, summon_duration$ );
+
 		if(guard_caster$)
 		{
 			this.CreateTimer( 3, 5 );
