@@ -1,0 +1,9 @@
+{% for color in data %}
+[t:template,n:c24_3_crystal_bow_{{ color['color_name'] }}]
+{
+	specializes = c24_3_base_crystal_bow;
+	aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static;
+	gui:inventory_icon = b_gui_ig_i_w_bow_087_{{ color['color_name'] }};
+	attack:ammo_template = arrow_crystal_{{ color['color_name'] }};
+}
+{% endfor %}

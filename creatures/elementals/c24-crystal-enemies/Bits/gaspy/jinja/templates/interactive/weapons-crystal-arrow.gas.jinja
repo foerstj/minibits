@@ -1,0 +1,7 @@
+{% for color in data %}
+[t:template,n:arrow_crystal_{{ color['color_name'] }}]
+{
+	specializes = base_arrow_crystal;
+	aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static;
+}
+{% endfor %}

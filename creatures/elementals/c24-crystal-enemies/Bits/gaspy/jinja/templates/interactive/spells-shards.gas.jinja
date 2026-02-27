@@ -1,0 +1,18 @@
+{% for color in data %}
+[t:template,n:c24_3_spell_shard_zap_{{ color['color_name'] }}]
+{
+	specializes = c24_3_base_spell_shard_zap;
+
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("shard_zap_c24_3_{{ color['color_name'] }}");
+				condition* = receive_world_message("we_req_cast");
+			}
+		}
+	}
+}
+{% endfor %}

@@ -1,0 +1,15 @@
+{% for color in data %}
+{% set r = (color['R']+1)/2 %}
+{% set g = (color['G']+1)/2 %}
+{% set b = (color['B']+1)/2 %}
+{% set color0 = [r, g, b] | join(',') %}
+[effect_script*]
+{
+	name	=shard_zap_c24_3_{{ color['color_name'] }};
+
+	script	=[[
+			call shard_zap_base s<color0({{ color0 }})> s<model(frag_c24_3_crystal_shard_03_{{ color['color_name'] }})>;
+			worldmsg WE_SPELL_SYNC_END #INVALID_GOID #OWNER_GOID #TARGET_GOID;
+			]];
+}
+{% endfor %}

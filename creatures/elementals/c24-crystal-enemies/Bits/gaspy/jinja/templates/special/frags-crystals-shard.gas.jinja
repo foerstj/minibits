@@ -1,0 +1,10 @@
+// Crystal frags based on the shard models
+{% for color in data %}
+
+// {{ color['color_name'] }}
+[t:template,n:frag_c24_3_crystal_shard_01_{{ color['color_name'] }}] { specializes = base_frag_c24_3_crystal_shard_01; aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; }
+[t:template,n:frag_c24_3_crystal_shard_02_{{ color['color_name'] }}] { specializes = base_frag_c24_3_crystal_shard_02; aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; }
+[t:template,n:frag_c24_3_crystal_shard_03_{{ color['color_name'] }}] { specializes = base_frag_c24_3_crystal_shard_03; aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; }
+[t:template,n:frag_c24_3_crystal_shard_04_{{ color['color_name'] }}] { specializes = base_frag_c24_3_crystal_shard_04; aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; }
+[t:template,n:frag_c24_3_crystal_shard_05_{{ color['color_name'] }}] { specializes = base_frag_c24_3_crystal_shard_05; aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; }
+{% endfor %}

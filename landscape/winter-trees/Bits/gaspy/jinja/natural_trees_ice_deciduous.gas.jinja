@@ -1,0 +1,14 @@
+// Winter tree templates in various colors
+{% for tree in data %}
+
+{% for color in ['snowy', 'bare', 'brown'] %}
+[t:template,n:tree_ice_ash_{{ tree['name'] }}_{{ color }}] { specializes = tree_ice_ash_{{ tree['name'] }}_{{ color }}_base; }
+[t:template,n:tree_ice_ash_{{ tree['name'] }}_{{ color }}_base]
+{
+	specializes = base_tree_deciduous_{{ tree['name'] }};
+
+	doc = "ice_ash_{{ tree['name'] }} ({{ color }})";
+	aspect:textures:0 = b_i_ice_tree-ash-{{ color }};
+}
+{% endfor %}
+{% endfor %}

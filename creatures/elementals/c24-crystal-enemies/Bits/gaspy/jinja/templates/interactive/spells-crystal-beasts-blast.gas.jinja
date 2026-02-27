@@ -1,0 +1,8 @@
+{% for color in data %}
+[t:template,n:c24_3_spell_beast_blast_{{ color['color_name'] }}]
+{
+	specializes = spell_rock_beast_blast_base;
+
+	spell_damage_volume:effect_script = crystal_beast_blast_c24_3_{{ color['color_name'] }};
+}
+{% endfor %}

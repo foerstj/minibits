@@ -1,0 +1,47 @@
+{% set wl_prefix = {'regular': '', 'veteran': '2W_', 'elite': '3W_' }[wl] %}
+{% for color in data %}
+[t:template,n:{{ wl_prefix }}c24_3_crystal_golem_{{ color['color_name'] }}] { specializes = {{ wl_prefix }}c24_3_crystal_golem_{{ color['color_name'] }}_base; }
+[t:template,n:{{ wl_prefix }}c24_3_crystal_golem_{{ color['color_name'] }}_base]
+{
+	specializes = {{ wl_prefix }}c24_3_base_crystal_golem;
+
+	aspect:textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static;  // {{ color['color_name'] }}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("crystal_light_{{ color['light_color'] }}(sgx)");
+			}
+		}
+	}
+	[inventory]
+	{
+		[other] 
+		{ 
+			il_active_primary_spell = c24_3_spell_golem_blast_{{ color['color_name'] }}; 
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_c24_3_crystal_molten_golem_01_{{ color['color_name'] }} = 1;
+			frag_c24_3_crystal_molten_golem_02_{{ color['color_name'] }} = 6;
+			frag_c24_3_crystal_molten_golem_03_{{ color['color_name'] }} = 1;
+			frag_c24_3_crystal_molten_golem_04_{{ color['color_name'] }} = 2;
+			frag_c24_3_crystal_molten_golem_05_{{ color['color_name'] }} = 1;
+		}
+	}
+}
+{% endfor %}

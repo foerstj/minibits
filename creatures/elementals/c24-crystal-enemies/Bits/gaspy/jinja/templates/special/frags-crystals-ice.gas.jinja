@@ -1,0 +1,13 @@
+// Crystal frags based on the ice models
+{% for color in data %}
+
+// {{ color['color_name'] }}
+[t:template,n:frag_c24_3_crystal_ice_01_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-01; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_02_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-02; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_03_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-03; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_04_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-04; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_05_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-05; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_06_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-06; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_07_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-07; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+[t:template,n:frag_c24_3_crystal_ice_08_{{ color['color_name'] }}] { specializes = fragment; [aspect] { model = m_i_glb_frag-ice-08; textures:0 = b_i_cav_gems-0{{ color['texture'] }}-static; } }
+{% endfor %}

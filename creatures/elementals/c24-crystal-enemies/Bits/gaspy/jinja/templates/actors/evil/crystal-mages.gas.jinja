@@ -1,0 +1,39 @@
+{% set wl_prefix = {'regular': '', 'veteran': '2W_', 'elite': '3W_' }[wl] %}
+{% for color in data %}
+[t:template,n:{{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}] { specializes = {{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_base; }
+[t:template,n:{{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_base]
+{
+	specializes = {{ wl_prefix }}c24_3_base_crystal_mage;
+
+	[inventory]
+	{
+		[other]
+		{
+			il_active_primary_spell = c24_3_spell_crystal_mage_iceblast;
+			il_spell_1 = {{ wl_prefix }}c24_3_spell_summon_crystal_warriors_monster_{{ color['color_name'] }};
+		}
+	}
+	[mind]
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&spell_chances				= "0.5,					 0.5"
+			&spells						= "c24_3_spell_crystal_mage_iceblast, {{ wl_prefix }}c24_3_spell_summon_crystal_warriors_monster_{{ color['color_name'] }}";
+	}
+}
+{% endfor %}
+
+{% for color in data %}
+[t:template,n:{{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_ar]
+{
+	specializes = {{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_base;
+
+	// auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+			&auto_reveal = true;
+	}
+}
+{% endfor %}

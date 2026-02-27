@@ -1,0 +1,27 @@
+{% set wl_prefix = {'regular': '', 'veteran': '2W_', 'elite': '3W_' }[wl] %}
+{% for color in data %}
+[t:template,n:{{ wl_prefix }}c24_3_spell_summon_crystal_warriors_monster_{{ color['color_name'] }}]
+{
+	specializes = {{ wl_prefix }}c24_3_base_spell_summon_crystal_warriors_monster;
+
+	[inventory]
+	{
+		[delayed_pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+					chance = 0.5;
+					il_main = {{ wl_prefix }}c24_3_crystal_archer_{{ color['color_name'] }};
+				}
+				[all*]
+				{
+					chance = 0.5;
+					il_main = {{ wl_prefix }}c24_3_crystal_warrior_{{ color['color_name'] }};
+				}
+			}
+		}
+	}
+}
+{% endfor %}
