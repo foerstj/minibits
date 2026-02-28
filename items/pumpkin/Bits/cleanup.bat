@@ -1,5 +1,3 @@
-:: This script is supposed to be executed from your DS installation folder.
-
 :: name of map, case-sensitive
 set map_cs=Pumpkin
 :: path of DS installation

@@ -1,6 +1,3 @@
-:: This script is supposed to be executed from your DS installation folder.
-:: TankCreator and gaspy are expected to be in sibling dirs.
-
 :: name of map
 set map=minibits-demo-pumpkin
 :: name of map, case-sensitive
