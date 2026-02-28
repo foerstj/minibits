@@ -1,5 +1,6 @@
 :: name of mod, case-sensitive
 set mod_cs=Transform Into Gremal
+
 :: path of DS installation
 set ds=%DungeonSiege%
 

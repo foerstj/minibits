@@ -1,5 +1,5 @@
 :: name of map
-set map=minibits-demo-transform-into-gremal
+set map=minibits-demo-light-spell
 
 :: path of Bits dir
 set bits=%~dp0.
@@ -7,7 +7,7 @@ set bits=%~dp0.
 set ds=%DungeonSiege%
 
 :: Compile main resource file
-call "%bits%\build.bat"
+call "%bits%\build.bat" %*
 
 ::pause
 
@@ -15,4 +15,4 @@ call "%bits%\build.bat"
 "%ds%\DSLOA.exe" nointro=true map=%map%
 
 :: Cleanup resources so as not to confuse Siege Editor
-call "%bits%\cleanup.bat"
+call "%bits%\cleanup.bat" %*
