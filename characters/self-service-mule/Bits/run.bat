@@ -1,5 +1,5 @@
 :: name of map
-set map=minibits-demo-transform-into-gremal
+set map=minibits-demo-self-service-mule
 
 :: path of Bits dir
 set bits=%~dp0.
