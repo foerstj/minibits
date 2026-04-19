@@ -55,15 +55,15 @@
 	[common] { screen_name="Gikk"; }
 	[mind]
 	{
-		flee_count = 1000;
+		//flee_count = 1000;
 		on_enemy_spotted_alert_friends = false;
 		//on_enemy_spotted_attack = false;  // REMOVED
 		//on_enemy_entered_ocz_flee = true;  // REMOVED
 		//on_friend_entered_ocz_flee = true;  // REMOVED
-		inner_comfort_zone_range = 0.1;
-		melee_engage_range = 0.1;
-		outer_comfort_zone_range = 6;
+		inner_comfort_zone_range = 12;  // EDITED was 0.1
+		melee_engage_range = 14;  // EDITED was 0.1
+		outer_comfort_zone_range = 16;  // EDITED was 6
 		personal_space_range = 0.4;
-		sight_range = 8;
+		sight_range = 20;  // EDITED was 8
 	}
 }
