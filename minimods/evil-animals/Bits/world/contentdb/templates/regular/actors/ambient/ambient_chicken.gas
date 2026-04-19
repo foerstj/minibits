@@ -1,7 +1,7 @@
 [t:template,n:base_chicken]
 {
 	doc = "Base template for all ambient chickens.";
-	specializes = actor_ambient;
+	specializes = actor_evil;  // EDITED
 	[actor]
 	{
 		race=other;
@@ -96,7 +96,7 @@
 }
 [t:template,n:chicken_grey]
 {
-	category_name = "1W_ambients";
+	category_name = "1W_evil_d";  // EDITED
 	doc = "chicken_grey";
 	specializes = base_chicken;
 	[aspect]
@@ -123,7 +123,7 @@
 }
 [t:template,n:chicken_red]
 {
-	category_name = "1W_ambients";
+	category_name = "1W_evil_d";  // EDITED
 	doc = "chicken_red";
 	specializes = base_chicken;
 	[aspect]
@@ -150,7 +150,7 @@
 }
 [t:template,n:chicken_white]
 {
-	category_name = "1W_ambients";
+	category_name = "1W_evil_d";  // EDITED
 	doc = "chicken_white";
 	specializes = base_chicken;
 	[aspect]

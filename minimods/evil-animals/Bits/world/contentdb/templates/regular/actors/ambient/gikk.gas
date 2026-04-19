@@ -1,8 +1,8 @@
 [t:template,n:gikk]
 {
-	category_name = "1W_ambients";
+	category_name = "1W_evil_d";  // EDITED
 	doc = "Gikk";
-	specializes = actor_ambient;
+	specializes = actor_evil;  // EDITED
 	[aspect] { model = m_c_edm_gk_pos_1; }
 
 	[body]

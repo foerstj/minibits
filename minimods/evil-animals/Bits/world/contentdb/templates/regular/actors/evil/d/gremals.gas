@@ -72,7 +72,7 @@
 	specializes = base_gremal;
 	[actor]
 	{
-		alignment			= aa_neutral;
+		//alignment			= aa_neutral;
 		[skills]
 		{
 			strength =  1, 0;
@@ -88,7 +88,7 @@
 		max_life = 1;
 		mana = 4;
         max_mana = 4;
-		megamap_icon = <none>;
+		//megamap_icon = <none>;
 		model = m_c_edm_gm_pos_2;
 		scale_base = 0.4;
 	}
@@ -100,7 +100,7 @@
 	[common]
 	{
 		screen_name="Gremal";
-		is_multi_player = false;
+		//is_multi_player = false;
 	}
 	[mind]
 	{
