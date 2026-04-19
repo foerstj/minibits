@@ -72,7 +72,7 @@
 	specializes = base_gremal;
 	[actor]
 	{
-		//alignment			= aa_neutral;
+		//alignment			= aa_neutral;  // REMOVED
 		[skills]
 		{
 			strength =  1, 0;
@@ -88,7 +88,7 @@
 		max_life = 1;
 		mana = 4;
         max_mana = 4;
-		//megamap_icon = <none>;
+		//megamap_icon = <none>;  // REMOVED
 		model = m_c_edm_gm_pos_2;
 		scale_base = 0.4;
 	}
@@ -100,16 +100,16 @@
 	[common]
 	{
 		screen_name="Gremal";
-		//is_multi_player = false;
+		//is_multi_player = false;  // REMOVED
 	}
 	[mind]
 	{
 		jat_fidget = world\ai\jobs\actors\evil\job_fidget_curious.skrit;
-		on_alert_projectile_near_missed_flee = true;
+		//on_alert_projectile_near_missed_flee = true;
 
 		on_enemy_spotted_alert_friends       = false;
-		on_enemy_entered_ocz_flee            = true;
-		on_friend_entered_ocz_flee           = true;
+		//on_enemy_entered_ocz_flee            = true;  // REMOVED
+		//on_friend_entered_ocz_flee           = true;  // REMOVED
 		on_enemy_entered_icz_attack          = true;
 
 		sensor_scan_period		 = 0.75;

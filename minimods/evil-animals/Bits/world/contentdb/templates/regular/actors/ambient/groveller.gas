@@ -67,9 +67,9 @@
 	{
 		flee_count = 1000;
 		on_enemy_spotted_alert_friends = false;
-		on_enemy_spotted_attack = false;
-		on_enemy_entered_ocz_flee = true;
-		on_friend_entered_ocz_flee = true;
+		//on_enemy_spotted_attack = false;  // REMOVED
+		//on_enemy_entered_ocz_flee = true;  // REMOVED
+		//on_friend_entered_ocz_flee = true;  // REMOVED
 		inner_comfort_zone_range = 0.1;
 		melee_engage_range = 0.1;
 		outer_comfort_zone_range = 6;

@@ -81,11 +81,11 @@
 	{
 		on_enemy_spotted_alert_friends 				= false;
 		on_enemy_spotted_attack 					= false;
-		on_enemy_entered_ocz_attack 				= false;
-		on_enemy_entered_icz_attack 				= false;
-		on_enemy_entered_ocz_flee 					= true;
-		on_friend_entered_ocz_flee 					= true;
-		on_enemy_entered_weapon_engage_range_attack = false;
+		//on_enemy_entered_ocz_attack 				= false;  // REMOVED
+		//on_enemy_entered_icz_attack 				= false;  // REMOVED
+		//on_enemy_entered_ocz_flee 					= true;  // REMOVED
+		//on_friend_entered_ocz_flee 					= true;  // REMOVED
+		//on_enemy_entered_weapon_engage_range_attack = false;  // REMOVED
 		inner_comfort_zone_range 					= 0.1;
 		melee_engage_range 							= 0.1;
 		outer_comfort_zone_range 					= 5.0;
