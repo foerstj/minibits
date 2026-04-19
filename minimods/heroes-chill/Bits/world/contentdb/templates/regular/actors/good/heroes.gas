@@ -143,7 +143,7 @@
 					high = at-02;
 					loww = at-03;
 					extr = at-04;
-					qffg = dff;
+					qffg = dsf;  // EDITED was dff
 				}
 		 	  	[anim_durations]
 				{
@@ -162,7 +162,7 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = simple_loop;
-				[anim_files] { 00=dff; }
+				[anim_files] { 00=dsf; }  // EDITED was dff
 			}
 			[chore_die]
 			{
@@ -176,8 +176,8 @@
 				skrit = select_fidget;
 				[anim_files]
 				{
-					00 = dff;
-					01 = dff-02;
+					00 = dsf;  // EDITED was dff
+					01 = dsf-03;  // EDITED was dff-02
 				}
 			}
 			[chore_magic]
@@ -287,7 +287,7 @@
 					high = at-02;
 					loww = at-03;
 					extr = at-04;
-					qffg = dff;
+					qffg = dsf;  // EDITED was dff
 				}
 		 	  	[anim_durations]
 				{
@@ -306,7 +306,7 @@
 			{
 				chore_stances = 0,1,2,3,4,5,6,7,8;
 				skrit = simple_loop;
-				[anim_files] { 00=dff; }
+				[anim_files] { 00=dsf; }  // EDITED was dff
 			}
 			[chore_die]
 			{
@@ -320,8 +320,8 @@
 				skrit = select_fidget;
 				[anim_files]
 				{
-					00 = dff;
-					01 = dff-02;
+					00 = dsf;  // EDITED was dff
+					01 = dsf-07;  // EDITED was dff-02
 				}
 			}
 			[chore_magic]
