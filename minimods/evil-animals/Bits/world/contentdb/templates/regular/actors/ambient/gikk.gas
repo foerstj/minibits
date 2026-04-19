@@ -1,0 +1,69 @@
+[t:template,n:gikk]
+{
+	category_name = "1W_ambients";
+	doc = "Gikk";
+	specializes = actor_ambient;
+	[aspect] { model = m_c_edm_gk_pos_1; }
+
+	[body]
+	{
+		avg_move_velocity = 6.50000;
+		[bone_translator]
+		{
+			body_anterior = bip01;
+			body_mid = bip01;
+			body_posterior = bip01;
+			kill_bone = bip01;
+			shield_bone = bip01;
+			weapon_bone = beakbone;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Gikk"; }
+	[mind]
+	{
+		flee_count = 1000;
+		on_enemy_spotted_alert_friends = false;
+		on_enemy_spotted_attack = false;
+		on_enemy_entered_ocz_flee = true;
+		on_friend_entered_ocz_flee = true;
+		inner_comfort_zone_range = 0.1;
+		melee_engage_range = 0.1;
+		outer_comfort_zone_range = 6;
+		personal_space_range = 0.4;
+		sight_range = 8;
+	}
+}

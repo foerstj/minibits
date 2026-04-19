@@ -1,0 +1,79 @@
+[t:template,n:groveller]
+{
+	category_name = "1W_ambients";
+	doc = "groveller";
+	specializes = actor_ambient;
+
+	[aspect]
+	{
+		model = m_c_edm_gv_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_groveller; }
+			[hit_critical]	{ priority = low; * = s_e_hit_groveller_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_groveller_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_groveller_SED; }
+		}
+	}
+	[body]
+	{
+		avg_move_velocity = 1.0000;         //0.07
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine;
+			body_posterior = bip01_tail;
+			kill_bone = bip01_spine;
+			shield_bone = bip01_l_hand;
+			weapon_bone = bip01_r_hand;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gv_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[common] { screen_name="Gorg"; }
+	[mind]
+	{
+		flee_count = 1000;
+		on_enemy_spotted_alert_friends = false;
+		on_enemy_spotted_attack = false;
+		on_enemy_entered_ocz_flee = true;
+		on_friend_entered_ocz_flee = true;
+		inner_comfort_zone_range = 0.1;
+		melee_engage_range = 0.1;
+		outer_comfort_zone_range = 6;
+		personal_space_range = 0.4;
+		sight_range = 8;
+	}
+}
