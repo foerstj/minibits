@@ -1,5 +1,6 @@
 :: names
 set mod=heroes-chill
+set map=minibits-demo-%mod%
 
 :: path of Bits dir
 set bits=%~dp0.
@@ -12,7 +13,7 @@ call "%bits%\build.bat" %*
 ::pause
 
 :: Run it!
-"%ds%\DSLOA.exe" nointro=true map=multiplayer_world
+"%ds%\DSLOA.exe" nointro=true map=%map%
 
 :: Cleanup resources so as not to confuse Siege Editor
 call "%bits%\cleanup.bat" %*

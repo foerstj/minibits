@@ -1,0 +1,102 @@
+[t:farmboy,n:0x00100000]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+	[placement]
+	{
+	  p position = -2.68961,0,-1.97354,0x096f5735;
+	}
+}
+[t:farmboy,n:0x00100001]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+			es_weapon_hand = st_g_c_r_avg;
+		}
+	}
+	[placement]
+	{
+	  p position = -0.687929,0,-2.01467,0x096f5735;
+	}
+}
+[t:farmgirl,n:0x00100002]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+	[placement]
+	{
+	  p position = 0.965876,0,-1.99694,0x096f5735;
+	}
+}
+[t:farmgirl,n:0x00100003]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+			es_weapon_hand = st_g_c_r_avg;
+		}
+	}
+	[placement]
+	{
+	  p position = 2.86788,0,-2.04499,0x096f5735;
+	}
+}
+[t:farmgirl,n:0x00100004]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[placement]
+	{
+	  p position = 1.98011,0,-1.96168,0x096f5735;
+	}
+}
+[t:farmboy,n:0x00100005]
+{
+	[aspect]
+	{
+	  f max_life = 49;
+	  f max_mana = 30;
+	}
+	[placement]
+	{
+	  p position = -1.78856,0,-1.9645,0x096f5735;
+	}
+}
