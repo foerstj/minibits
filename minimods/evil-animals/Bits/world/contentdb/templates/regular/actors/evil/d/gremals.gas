@@ -70,6 +70,43 @@
 	category_name = "1W_evil_d";
 	doc = "Gremal";
 	specializes = base_gremal;
+	[body]  // override to use 2nd attack anim
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gm_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at-02; }  // EDITED was 00=at
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
 	[actor]
 	{
 		//alignment			= aa_neutral;  // REMOVED
@@ -105,22 +142,32 @@
 	[mind]
 	{
 		jat_fidget = world\ai\jobs\actors\evil\job_fidget_curious.skrit;
-		//on_alert_projectile_near_missed_flee = true;
+		on_alert_projectile_near_missed_flee = true;
 
 		on_enemy_spotted_alert_friends       = false;
-		//on_enemy_entered_ocz_flee            = true;  // REMOVED
+		//on_enemy_entered_ocz_flee            = true;
 		//on_friend_entered_ocz_flee           = true;  // REMOVED
 		on_enemy_entered_icz_attack          = true;
 
-		sensor_scan_period		 = 0.75;
-		flee_count				 = 1000;
+		//sensor_scan_period		 = 0.75;
+		//flee_count				 = 1000;
 		com_range                = 7.0;
-		inner_comfort_zone_range = 0.5;
-		melee_engage_range       = 0.5;
-		ranged_engage_range      = 1.0;
-		outer_comfort_zone_range = 3.0;
+		//inner_comfort_zone_range = 0.5;
+		//melee_engage_range       = 0.5;
+		//ranged_engage_range      = 1.0;
+		//outer_comfort_zone_range = 3.0;
 		personal_space_range     = 0.7;
 		sight_range              = 12.0;
+		// values from Killer Gremal
+		inner_comfort_zone_range = 2;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		outer_comfort_zone_range = 5;
+	}
+	// ADDED
+	[defend]
+	{
+		defense = 5;
 	}
 }
 [t:template,n:gremal_boss_01]
