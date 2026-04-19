@@ -177,7 +177,7 @@
 				[anim_files]
 				{
 					00 = dsf;  // EDITED was dff
-					01 = dsf-03;  // EDITED was dff-02
+					//01 = dsf-03;  // EDITED was dff-02
 				}
 			}
 			[chore_magic]
