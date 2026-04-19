@@ -34,7 +34,11 @@
 			{
 				chore_stances = 0;
 				skrit = select_attack;
-				[anim_files] { 00=at; }
+				[anim_files]
+				{
+					00=at;
+					01=at-02;  // ADDED
+				}
 			}
 			[chore_default]
 			{
@@ -70,9 +74,9 @@
 		//on_enemy_spotted_attack = false;  // REMOVED
 		//on_enemy_entered_ocz_flee = true;  // REMOVED
 		//on_friend_entered_ocz_flee = true;  // REMOVED
-		inner_comfort_zone_range = 0.1;
-		melee_engage_range = 0.1;
-		outer_comfort_zone_range = 6;
+		inner_comfort_zone_range = 6;  // EDITED was 0.1
+		melee_engage_range = 7;  // EDITED was 0.1
+		outer_comfort_zone_range = 7;  // EDITED was 6
 		personal_space_range = 0.4;
 		sight_range = 8;
 	}
