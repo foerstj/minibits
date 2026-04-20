@@ -62,4 +62,31 @@
 		personal_space_range = 0.4;
 		sight_range = 20;
 	}
+
+	// Balancing: Soul Stinger (weak Grescal enemies)
+	// Note: there's one Gikk in LoA near the Cliff City, but he's not reachable
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	9, 0;
+			intelligence =  4, 0;
+			dexterity =  	15, 0;
+			melee =  		17, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 11000;
+		life = 560;
+		max_life = 560;
+		mana = 10;
+		max_mana = 10;
+	}
+	[attack]
+	{
+		damage_max = 145;
+		damage_min = 125;
+	}
+	[defend] { defense=250; }
 }

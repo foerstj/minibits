@@ -77,4 +77,30 @@
 		personal_space_range = 0.4;
 		sight_range = 8;
 	}
+
+	// Balancing: Wasped (weak Desert Canyon enemy), and with halved XP - they also occur in Emarard
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	8, 0;
+			intelligence =  6, 0;
+			dexterity =  	13, 0;
+			melee =  		20, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4500;  // HALVED was 9000
+		life = 720;
+		max_life = 720;
+		mana = 12;
+		max_mana = 12;
+	}
+	[attack]
+	{
+		damage_max = 110;
+		damage_min = 90;
+	}
+	[defend] { defense=333; }
 }
