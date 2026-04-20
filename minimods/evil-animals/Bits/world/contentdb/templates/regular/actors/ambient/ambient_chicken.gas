@@ -1,7 +1,8 @@
 [t:template,n:base_chicken]
 {
+	specializes = actor_evil;
+
 	doc = "Base template for all ambient chickens.";
-	specializes = actor_evil;  // EDITED
 	[actor]
 	{
 		race=other;
@@ -80,25 +81,14 @@
 	[mind]
 	{
 		on_enemy_spotted_alert_friends 				= false;
-		//on_enemy_spotted_attack 					= false;  // REMOVED
-		//on_enemy_entered_ocz_attack 				= false;  // REMOVED
-		//on_enemy_entered_icz_attack 				= false;  // REMOVED
-		//on_enemy_entered_ocz_flee 					= true;  // REMOVED
-		//on_friend_entered_ocz_flee 					= true;  // REMOVED
-		//on_enemy_entered_weapon_engage_range_attack = false;  // REMOVED
-		//inner_comfort_zone_range 					= 0.1;
-		//melee_engage_range 							= 0.1;
-		//outer_comfort_zone_range 					= 5.0;
-		//personal_space_range 						= 0.4;
-		//sight_range 								= 6.0;
-		//flee_count									= 1000;
 		// values from Big Chicken
 		melee_engage_range = 14;
 		personal_space_range = 0.7;
 		ranged_engage_range = 14.0;
 		sight_range = 14.0;
 	}
-	// ADDED
+
+	// Balancing
 	[actor]
 	{
 		[skills]

@@ -67,9 +67,10 @@
 }
 [t:template,n:gremal]
 {
+	specializes = base_gremal;
+
 	category_name = "1W_evil_d";
 	doc = "Gremal";
-	specializes = base_gremal;
 	[body]  // override to use 2nd attack anim
 	{
 		[chore_dictionary]
@@ -107,9 +108,36 @@
 			}
 		}
 	}
+	[aspect]
+	{
+		model = m_c_edm_gm_pos_2;
+		scale_base = 0.4;
+	}
+	[common]
+	{
+		screen_name="Gremal";
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\actors\evil\job_fidget_curious.skrit;
+
+		on_alert_projectile_near_missed_flee = true;
+		on_enemy_spotted_alert_friends       = false;
+		on_enemy_entered_icz_attack          = true;
+
+		com_range                = 7.0;
+		personal_space_range     = 0.7;
+		sight_range              = 12.0;
+		// values from Killer Gremal
+		inner_comfort_zone_range = 2;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		outer_comfort_zone_range = 5;
+	}
+
+	// Balancing
 	[actor]
 	{
-		//alignment			= aa_neutral;  // REMOVED
 		[skills]
 		{
 			strength =  1, 0;
@@ -125,46 +153,12 @@
 		max_life = 1;
 		mana = 4;
         max_mana = 4;
-		//megamap_icon = <none>;  // REMOVED
-		model = m_c_edm_gm_pos_2;
-		scale_base = 0.4;
 	}
 	[attack]
 	{
 		damage_max = 1;
 		damage_min = 1;
 	}
-	[common]
-	{
-		screen_name="Gremal";
-		//is_multi_player = false;  // REMOVED
-	}
-	[mind]
-	{
-		jat_fidget = world\ai\jobs\actors\evil\job_fidget_curious.skrit;
-		on_alert_projectile_near_missed_flee = true;
-
-		on_enemy_spotted_alert_friends       = false;
-		//on_enemy_entered_ocz_flee            = true;
-		//on_friend_entered_ocz_flee           = true;  // REMOVED
-		on_enemy_entered_icz_attack          = true;
-
-		//sensor_scan_period		 = 0.75;
-		//flee_count				 = 1000;
-		com_range                = 7.0;
-		//inner_comfort_zone_range = 0.5;
-		//melee_engage_range       = 0.5;
-		//ranged_engage_range      = 1.0;
-		//outer_comfort_zone_range = 3.0;
-		personal_space_range     = 0.7;
-		sight_range              = 12.0;
-		// values from Killer Gremal
-		inner_comfort_zone_range = 2;
-		melee_engage_range = 14.0;
-		ranged_engage_range = 14.0;
-		outer_comfort_zone_range = 5;
-	}
-	// ADDED
 	[defend]
 	{
 		defense = 5;

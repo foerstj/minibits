@@ -1,10 +1,10 @@
 [t:template,n:gikk]
 {
-	category_name = "1W_evil_d";  // EDITED
-	doc = "Gikk";
-	specializes = actor_evil;  // EDITED
-	[aspect] { model = m_c_edm_gk_pos_1; }
+	specializes = actor_evil;
 
+	category_name = "1W_evil_d";
+	doc = "Gikk";
+	[aspect] { model = m_c_edm_gk_pos_1; }
 	[body]
 	{
 		avg_move_velocity = 6.50000;
@@ -55,15 +55,11 @@
 	[common] { screen_name="Gikk"; }
 	[mind]
 	{
-		//flee_count = 1000;
 		on_enemy_spotted_alert_friends = false;
-		//on_enemy_spotted_attack = false;  // REMOVED
-		//on_enemy_entered_ocz_flee = true;  // REMOVED
-		//on_friend_entered_ocz_flee = true;  // REMOVED
-		inner_comfort_zone_range = 12;  // EDITED was 0.1
-		melee_engage_range = 14;  // EDITED was 0.1
-		outer_comfort_zone_range = 16;  // EDITED was 6
+		inner_comfort_zone_range = 12;
+		melee_engage_range = 14;
+		outer_comfort_zone_range = 16;
 		personal_space_range = 0.4;
-		sight_range = 20;  // EDITED was 8
+		sight_range = 20;
 	}
 }
