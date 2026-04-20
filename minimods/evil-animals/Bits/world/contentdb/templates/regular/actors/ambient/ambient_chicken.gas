@@ -88,33 +88,32 @@
 		sight_range = 14.0;
 	}
 
-	// Balancing
+	// Balancing: Phrak. Weak beginner level enemies
 	[actor]
 	{
 		[skills]
 		{
 			strength =  1, 0;
-			intelligence =  2, 0;
-			dexterity =  2, 0;
-			melee =  1,  0;
+			intelligence =  1, 0;
+			dexterity =  10, 0;
 		}
 	}
 	[aspect]
 	{
-		experience_value = 1;
-		life = 1;
-		max_life = 1;
-		mana = 4;
-        max_mana = 4;
+		experience_value = 3;
+		life = 6;
+        max_life = 6;
+        mana = 2;
+		max_mana = 2;
 	}
 	[attack]
 	{
-		damage_max = 2;
-		damage_min = 1;
+		damage_min = 4;
+		damage_max = 6;
 	}
 	[defend]
 	{
-		defense = 5;
+		defense = 1;
 	}
 }
 [t:template,n:chicken_grey]

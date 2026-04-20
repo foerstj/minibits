@@ -135,33 +135,33 @@
 		outer_comfort_zone_range = 5;
 	}
 
-	// Balancing
+	// Balancing: halved values of Killer Gremal, but none stronger than Krug Dog. Beginner level enemies
 	[actor]
 	{
 		[skills]
 		{
-			strength =  1, 0;
-			intelligence =  2, 0;
-			dexterity =  2, 0;
+			strength =  3, 0;
+			intelligence =  1, 0;
+			dexterity =  5, 0;
 			melee =  1,  0;
 		}
 	}
 	[aspect]
 	{
-		experience_value = 1;
-		life = 1;
-		max_life = 1;
-		mana = 4;
-        max_mana = 4;
+		experience_value = 9;
+		life = 12;
+		max_life = 12;
+		mana = 2;
+        max_mana = 2;
 	}
 	[attack]
 	{
-		damage_max = 1;
-		damage_min = 1;
+		damage_min = 4;
+		damage_max = 7;
 	}
 	[defend]
 	{
-		defense = 5;
+		defense = 6;
 	}
 }
 [t:template,n:gremal_boss_01]
