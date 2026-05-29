@@ -1,16 +1,17 @@
 [t:template,n:spell_resurrect_enemy]
 {
+	specializes = base_spell_dark;
+
 	category_name = "magic";
-	doc = "spell charm";
-	specializes = base_spell_good;
+	doc = "spell resurrect enemy";
 	[aspect]
 	{
 		gold_value = 13844;
 	}
 	[common]
 	{
-		description = "Forces the Enemy to guard the Caster. Mana cost dependent on power of the Target.";
-		screen_name = "Charm";
+		screen_name = "Resurrect Enemy";
+		description = "Resurrects the Enemy to guard the Caster. Mana cost dependent on power of the Target.";
 		[template_triggers]
 		{
 			[*]
@@ -20,15 +21,15 @@
 			}
 			[*]
 			{
-				action* = call_sfx_script( "nature_spell_sparkle" );
+				action* = call_sfx_script( "combat_spell_sparkle" );
 				condition* = receive_world_message("we_dropped");
 			}
 		}
 	}
 	[gui]
 	{
-		active_icon = b_gui_ig_i_ic_sp_030;
-		inventory_icon = b_gui_ig_i_ic_sp_030_inv;
+		active_icon = b_gui_ig_i_ic_sp_177;
+		inventory_icon = b_gui_ig_i_ic_sp_177_inv;
 	}
 	[magic]
 	{
