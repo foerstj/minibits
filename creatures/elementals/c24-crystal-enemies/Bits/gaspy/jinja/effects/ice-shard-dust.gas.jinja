@@ -1,0 +1,52 @@
+{% for color in data %}
+{% set r0 = (color['R']*2 + 1)/5 %}
+{% set g0 = (color['G']*2 + 1)/5 %}
+{% set b0 = (color['B']*2 + 1)/5 %}
+{% set color0 = [r0, g0, b0] | join(',') %}
+{% set r1 = (color['R']*2 + 0)/5 %}
+{% set g1 = (color['G']*2 + 0)/5 %}
+{% set b1 = (color['B']*2 + 0)/5 %}
+{% set color1 = [r1, g1, b1] | join(',') %}
+[effect_script*]
+{
+	name	=ice_shard_dust_{{ color['color_name'] }};
+
+	// based on ice_shard_dust
+	script	=[[
+			sfx create fire #TARGET
+				"must_update()grey_tex()color0(0.2,0.2,0.4)color1(0,0,0)velocity(0,-3,0)
+				accel(0,-3,0)";
+			set $mist #POP;
+			
+			sfx create fire #TARGET
+				"must_update()flamesize(.5)texture(b_sfx_sparkle01)color0(0.3,0.4,0.7)
+				color1(0,.1,.3)velocity(0,-3,0)accel(0,-3,0)";
+			set $spark #POP;
+			
+			sfx create linetracer #TARGET
+				"fade_rate(4)dur(#DEFAULT_TIMEOUT)color0({{ color0 }})
+				color1({{ color1 }})";
+			sfx target #PEEK target;
+			sfx attach_point #PEEK ap_tip target;
+			sfx attach_point #PEEK ap_tip source;
+			sfx offset_bone #PEEK v<.05 .02 -.2> target;
+			sfx offset_bone #PEEK v<.05 -.05 -.2> source;
+			set $tracer #POP;
+
+			sfx start $tracer;
+			sfx start $mist;
+			sfx start $spark;
+
+			waitfor sig we_collided #DEFAULT_TIMEOUT;
+			if ( #POP )
+			{
+				sound play s_e_FBbow_hit at #TARGET_POSITION dist 1 30;
+			}
+			sfx finish $tracer;
+			sfx finish $mist;
+			sfx finish $spark;
+			
+			
+			]];
+}
+{% endfor %}

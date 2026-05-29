@@ -1,0 +1,8 @@
+{% for color in data %}
+[t:template,n:c24_3_spell_crystal_mage_iceblast_{{ color['color_name'] }}]
+{
+	specializes = c24_3_spell_crystal_mage_iceblast_base;
+
+	attack:ammo_template = ice_shard_03_{{ color['color_name'] }};
+}
+{% endfor %}
