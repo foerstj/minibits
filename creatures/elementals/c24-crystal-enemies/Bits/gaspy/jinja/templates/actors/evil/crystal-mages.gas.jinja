@@ -36,4 +36,20 @@
 			&auto_reveal = true;
 	}
 }
+[t:template,n:{{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_summon]
+{
+	specializes = {{ wl_prefix }}c24_3_crystal_mage_{{ color['color_name'] }}_base;
+
+	// auto-reveal
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+			&auto_reveal = true;
+	}
+	[inventory]
+	{
+		[pcontent] { /* ERASED */ }
+	}
+}
 {% endfor %}
