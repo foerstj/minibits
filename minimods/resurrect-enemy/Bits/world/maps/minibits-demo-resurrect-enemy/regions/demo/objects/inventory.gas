@@ -1,0 +1,7 @@
+[t:spell_resurrect_enemy,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = -2.01603,0,0.0397215,0x7dbe963e;
+	}
+}
