@@ -41,7 +41,7 @@
 		caster_state_name = "Controlling";
 
 		cast_experience = (#magic*0.25);
-		effect_duration = 20;//15+(#magic*1.56);
+		effect_duration = 15+(#magic*1.56);
 
 		mana_cost = 0;
 		mana_cost_modifier = (#maxlife*2.8);
