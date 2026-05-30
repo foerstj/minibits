@@ -45,6 +45,60 @@ event OnGoHandleCcMessage$( eWorldEvent e$, WorldMessage msg$ )
 	}
 }
 
+bool PreCheck$
+{
+	if( !target$.IsValid || !caster$.Isvalid )
+	{
+		return false;
+	}
+
+	// Filter out bogus targets
+	if( !target$.go.hasactor || !caster$.go.hasactor ) {
+		report.genericf( "%s being cast on invalid target!!\n", description$ );
+		return false;
+	}
+
+	// Check to see if the enchantment has already been cast on this go
+	if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
+	{
+		return false;
+	}
+
+	if( !StringTool.IsEmpty( immunity$ ) )
+	{
+		if( target$.Go.Common.Membership.Contains( immunity$ ) )
+		{
+			return false;
+		}
+	}
+
+	if( target$.Go.Player.Controller != PC_COMPUTER  )
+	{
+		return false;
+	}
+
+	return true;
+}
+
+void ClearEngaged$
+{
+	target$.go.Mind.TempGopColl1.clear;
+	target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
+	int j$ = 0;
+	int jend$ = target$.go.Mind.TempGopColl1.Size();
+	Go Enemy$;
+	while( j$ < jend$ )
+	{
+		Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
+		if( Enemy$ != NULL )
+		{
+			Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
+			Enemy$.Mind.ResetSensors();
+		}
+		j$ += 1;
+	}
+}
+
 startup state CastBegin$
 {
  	event OnGoHandleMessage$( eWorldEvent e$, WorldMessage msg$ )
@@ -78,58 +132,15 @@ startup state CastBegin$
 			target$ = MakeGoid( msg$.GetData1() );
 			caster$ = msg$.GetSendFrom();
 
-			if( !target$.IsValid || !caster$.Isvalid )
+			if( !PreCheck$() )
 			{
 				SetState Abort$;
 				return;
 			}
 
-			// Filter out bogus targets
-			if( !target$.go.hasactor || !caster$.go.hasactor ) {
-				report.genericf( "%s being cast on invalid target!!\n", description$ );
-				SetState( Abort$ );
-				return;
-			}
-
-			// Check to see if the enchantment has already been cast on this go
-			if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
-			{
-				SetState( Abort$ );
-				return;
-			}
-
-			if( !StringTool.IsEmpty( immunity$ ) )
-			{
-				if( target$.Go.Common.Membership.Contains( immunity$ ) )
-				{
-					SetState( Abort$ );
-					return;
-				}
-			}
-
-			if( target$.Go.Player.Controller != PC_COMPUTER  )
-			{
-				SetState( Abort$ );
-				return;
-			}
-
 			spell_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, target$.Go);
 
-			target$.go.Mind.TempGopColl1.clear;
-			target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
-			int j$ = 0;
-			int jend$ = target$.go.Mind.TempGopColl1.Size();
-			Go Enemy$;
-			while( j$ < jend$ )
-			{
-				Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
-				if( Enemy$ != NULL )
-				{
-					Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
-					Enemy$.Mind.ResetSensors();
-				}
-				j$ += 1;
-			}
+			ClearEngaged$();
 
 			// Get caster alignment
 			eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
@@ -186,12 +197,11 @@ startup state CastBegin$
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
 		{
-			SetState RestoreState$;  // TODO make alive
-			return;
+			// TODO make alive
 		}
 	}
 
-    // restart guarding from time to time
+	// restart guarding from time to time
 	trigger OnTimer$ ( 2 )
 	{
 		this.CreateTimer( 2, 5 );
@@ -210,6 +220,7 @@ startup state CastBegin$
 							return;
 						}
 					}
+
 					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
 				}
 			}
@@ -235,22 +246,8 @@ state RestoreState$
 		// If the go is still alive then restore his state
 		if( target$.IsValid )
 		{
-            // Stop engaged enemies, just like at the start
-            target$.go.Mind.TempGopColl1.clear;
-            target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
-            int j$ = 0;
-            int jend$ = target$.go.Mind.TempGopColl1.Size();
-            Go Enemy$;
-            while( j$ < jend$ )
-            {
-                Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
-                if( Enemy$ != NULL )
-                {
-                    Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
-                    Enemy$.Mind.ResetSensors();
-                }
-                j$ += 1;
-            }
+			// Stop engaged enemies, just like at the start
+			ClearEngaged$();
 
 			// Attempt to restore the game object based on his alignment
 			target$.go.actor.ssetalignment( OriginalAlignment$ );
@@ -279,6 +276,8 @@ state RestoreState$
 			{
 				SiegeFx.SStopScript( active_effect$ );
 			}
+
+			// TODO make dead
 		}
 
 		SetState( Finished$ );
