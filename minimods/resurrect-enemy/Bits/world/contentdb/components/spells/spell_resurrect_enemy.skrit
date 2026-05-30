@@ -99,6 +99,29 @@ void ClearEngaged$
 	}
 }
 
+void ReGuard$
+{
+	if( target$.isvalid && caster$.IsValid() )
+	{
+		if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
+		{
+			if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
+			{
+				Job action$ = target$.Go.Mind.GetFrontJob( JQ_ACTION );
+				if( action$ != NULL )
+				{
+					if( action$.JobAbstractType != JAT_FIDGET )
+					{
+						return;
+					}
+				}
+
+				target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
+			}
+		}
+	}
+}
+
 startup state CastBegin$
 {
  	event OnGoHandleMessage$( eWorldEvent e$, WorldMessage msg$ )
@@ -142,21 +165,15 @@ startup state CastBegin$
 
 			ClearEngaged$();
 
-			// Get caster alignment
-			eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
-			// Save the old alignment so we can restore it later when the actor is un-charmed
+			// Set the alignment to the casters alignment
 			OriginalAlignment$ = target$.go.actor.alignment;
-			if( caster_alignment$ != OriginalAlignment$ ) {
-				// Set the alignment to the casters alignment
-				target$.go.actor.ssetalignment( caster$.go.actor.getalignment );
-			}
+			target$.go.actor.ssetalignment( caster$.go.actor.getalignment );
 
 			// set the right playerID so the creature will attack in a multiplayer competative game.
 			OriginalPlayer$ = target$.Go.PlayerID;
 			target$.Go.SSetPlayer( caster$.Go.PlayerID );
 
 			// Start the visual
-			SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );
 			if(effect_script$ != "")
 			{
 				active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
@@ -193,6 +210,9 @@ startup state CastBegin$
 			// watch our pet, so if he dies we can control a new pet.
 			GoDb.StartWatching( owner.Goid, target$);
 
+			// Revive
+			SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );  // -> WE_SPELL_SYNC_MID
+
 			this.CreateTimer( 1, spell_duration$ );  // -> RestoreState$
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
@@ -206,30 +226,57 @@ startup state CastBegin$
 	{
 		this.CreateTimer( 2, 5 );
 
-		if( target$.isvalid && caster$.IsValid() )
-		{
-			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
-			{
-				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
-				{
-					Job action$ = target$.Go.Mind.GetFrontJob( JQ_ACTION );
-					if( action$ != NULL )
-					{
-						if( action$.JobAbstractType != JAT_FIDGET )
-						{
-							return;
-						}
-					}
-
-					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
-				}
-			}
-		}
+		ReGuard$();
 	}
 
 	transition -> RestoreState$ :  OnTimer( 1 );
 }
 
+
+void DoRestoreState$
+{
+	if( caster$.IsValid )
+	{
+		caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
+	}
+
+	// If the go is still alive then restore his state
+	if( target$.IsValid )
+	{
+		// Stop engaged enemies, just like at the start
+		ClearEngaged$();
+
+		// Attempt to restore the game object based on his alignment
+		target$.go.actor.ssetalignment( OriginalAlignment$ );
+
+		// Restore original player ID.
+		target$.Go.SSetPlayer( OriginalPlayer$ );
+
+		// Now tell the actor to defend himself
+		target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
+		target$.Go.Mind.ResetSensors();
+
+		target$.Go.Aspect.ClearExperienceBenefactor();
+
+		// remove the state so this can be affected again
+		target$.Go.Actor.SRemoveGenericState( owner.Go.Magic.StateName );	
+
+		// we dont want to be able to see the dude's health
+		target$.Go.Actor.SSetCanShowHealth( false );
+
+		GoDb.StopWatching( owner.Goid, target$);
+
+		// Restore the targets original membership before this spell was cast on him
+		target$.Go.Common.SRestoreLastMembership();
+
+		if (active_effect$ != 0)
+		{
+			SiegeFx.SStopScript( active_effect$ );
+		}
+
+		// TODO make dead
+	}
+}
 
 state RestoreState$
 {
@@ -238,47 +285,7 @@ state RestoreState$
 
 	event OnEnterState$
 	{
-		if( caster$.IsValid )
-		{
-			caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
-		}
-
-		// If the go is still alive then restore his state
-		if( target$.IsValid )
-		{
-			// Stop engaged enemies, just like at the start
-			ClearEngaged$();
-
-			// Attempt to restore the game object based on his alignment
-			target$.go.actor.ssetalignment( OriginalAlignment$ );
-
-			// Restore original player ID.
-			target$.Go.SSetPlayer( OriginalPlayer$ );
-
-			// Now tell the actor to defend himself
-			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
-			target$.Go.Mind.ResetSensors();
-
-			target$.Go.Aspect.ClearExperienceBenefactor();
-
-			// remove the state so this can be affected again
-			target$.Go.Actor.SRemoveGenericState( owner.Go.Magic.StateName );	
-
-			// we dont want to be able to see the dude's health
-			target$.Go.Actor.SSetCanShowHealth( false );
-
-			GoDb.StopWatching( owner.Goid, target$);
-
-			// Restore the targets original membership before this spell was cast on him
-			target$.Go.Common.SRestoreLastMembership();
-
-			if (active_effect$ != 0)
-			{
-				SiegeFx.SStopScript( active_effect$ );
-			}
-
-			// TODO make dead
-		}
+		DoRestoreState$();
 
 		SetState( Finished$ );
 	}
