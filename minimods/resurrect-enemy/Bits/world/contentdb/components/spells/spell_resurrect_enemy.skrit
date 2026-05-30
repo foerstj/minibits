@@ -126,14 +126,17 @@ void MakeAlive$
 {
 	if( target$.isValid )
 	{
-		// TODO make alive
+		target$.Go.Aspect.SSetLifeState( LS_ALIVE_CONSCIOUS );
+		Rules.ChangeLife( target$, 3.0 - target$.go.aspect.GetCurrentLife() );
 	}
 }
 void MakeDead$
 {
 	if( target$.isValid )
 	{
-		// TODO make dead
+		Rules.DamageGo( target$, caster$, owner.goid, target$.go.aspect.GetCurrentLife(), true, false );
+		Rules.ChangeLife( target$, -target$.go.aspect.GetCurrentLife() );
+		target$.Go.Aspect.SSetLifeState( LS_DEAD_NORMAL );
 	}
 }
 
