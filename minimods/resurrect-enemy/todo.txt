@@ -1,0 +1,10 @@
+Revive Enemy - TODO
+- Problematische Enemies
+  - Explodiert nicht (wenn's deaktiviert ist) & ist nicht immun & droppt Waffe / nutzt Spell
+  - GasPy Printout: problematische Enemies
+  - Problem lösen???
+    - Neuen Actor erstellen & alten verschwinden lassen?? Problem mit neuer XP?
+- Rename zu "Revive" wg. Kampfzauber
+- Icon
+- Charm Effekte andere Farben? Hmm nö
+- Publish
