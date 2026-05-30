@@ -12,3 +12,10 @@
 	  p position = 1.9877,0,0.652328,0x7dbe963e;
 	}
 }
+[t:spell_battle_healing,n:0x0010000c]
+{
+	[placement]
+	{
+	  p position = 1.61973,0,1.60747,0x7dbe963e;
+	}
+}
