@@ -21,13 +21,12 @@ Goid target$;
 Goid caster$;
 float spell_duration$;
 SFxSID	active_effect$ = 0;
-
 eActorAlignment OriginalAlignment$;
 PlayerId		OriginalPlayer$;
 
+
 trigger OnGoHandleMessage$( WE_WORLD_STATE_TRANSITION_DONE )
 {
-	// EDITED: Switched logic so it applies only to the Omni Go. Previously the spell itself got deleted by NIS!
 	if( target$.IsValid )
 	{
 		if( WorldState.CurrentState == WS_SP_NIS )
@@ -54,20 +53,20 @@ startup state CastBegin$
 		{
 			////////////////////
 			// Normal Go
-			
+
 			caster$ = msg$.GetSendFrom();
-			
+
 			if ( Owner.go.Parent != NULL )
 			{
 				// create Omni version of the spell.
 				GoCloneReq cloneReq$ = MakeGoCloneReq( Owner.go.Parent.Goid, owner.goid );
 				cloneReq$.Omni = true;
 				Goid new_spell$ = GoDb.SCloneGo( cloneReq$ );
-				
+
 				// send Omni version an Activate to get it started.
 				PostWorldMessage( WE_REQ_ACTIVATE, caster$, new_spell$, msg$.GetData1(), 0 );
 			}
-			
+
 			// delete normal version of the spell.
 			SetState Finished$;
 		}
@@ -75,17 +74,15 @@ startup state CastBegin$
 		{
 			////////////////////
 			// Omni Go
-			
+
 			target$ = MakeGoid( msg$.GetData1() );
 			caster$ = msg$.GetSendFrom();
-			
+
 			if( !target$.IsValid || !caster$.Isvalid )
 			{
-				SetState RestoreState$;
+				SetState Abort$;
 				return;
 			}
-			
-			spell_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, target$.Go);
 
 			// Filter out bogus targets
 			if( !target$.go.hasactor || !caster$.go.hasactor ) {
@@ -93,14 +90,14 @@ startup state CastBegin$
 				SetState( Abort$ );
 				return;
 			}
-			
+
 			// Check to see if the enchantment has already been cast on this go
 			if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
 			{
 				SetState( Abort$ );
 				return;
 			}
-			
+
 			if( !StringTool.IsEmpty( immunity$ ) )
 			{
 				if( target$.Go.Common.Membership.Contains( immunity$ ) )
@@ -109,12 +106,14 @@ startup state CastBegin$
 					return;
 				}
 			}
-			
+
 			if( target$.Go.Player.Controller != PC_COMPUTER  )
 			{
 				SetState( Abort$ );
 				return;
 			}
+
+			spell_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, target$.Go);
 
 			target$.go.Mind.TempGopColl1.clear;
 			target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
@@ -134,15 +133,13 @@ startup state CastBegin$
 
 			// Get caster alignment
 			eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
-
 			// Save the old alignment so we can restore it later when the actor is un-charmed
 			OriginalAlignment$ = target$.go.actor.alignment;
-
 			if( caster_alignment$ != OriginalAlignment$ ) {
 				// Set the alignment to the casters alignment
 				target$.go.actor.ssetalignment( caster$.go.actor.getalignment );
 			}
-			
+
 			// set the right playerID so the creature will attack in a multiplayer competative game.
 			OriginalPlayer$ = target$.Go.PlayerID;
 			target$.Go.SSetPlayer( caster$.Go.PlayerID );
@@ -156,7 +153,7 @@ startup state CastBegin$
 
 			// Give the charmed actor new orders
 			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
-			// EDITED: make target guard caster similar to summons
+			// make target guard caster similar to summons
 			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
 			{
 				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
@@ -165,40 +162,40 @@ startup state CastBegin$
 				}
 				target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
 			}
-			this.CreateTimer( 2, 5 );  // restart guarding from time to time
-
 			target$.Go.Mind.ResetSensors();
+			this.CreateTimer( 2, 5 );  // restart guarding from time to time
 
 			// Add the effected state so this can only happen once
 			target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-			
+
 			// we want to be able to see the dude's health
 			target$.Go.Actor.SSetCanShowHealth( true );
-			
+
 			// Setup where experience will go from who this actor damages
 			target$.Go.aspect.SetExperienceBenefactor( caster$ );
 			target$.Go.aspect.SetExperienceBenefactorSkill( owner.go.magic.skillclass );
-			
-			this.CreateTimer( 1, spell_duration$ );
-			
+
 			// Make it have the same membership as the caster
 			target$.Go.Common.SCopyMembership( caster$ );
 
-			// watch out pet, so if he dies we can control a new pet.
+			// watch our pet, so if he dies we can control a new pet.
 			GoDb.StartWatching( owner.Goid, target$);
+
+			this.CreateTimer( 1, spell_duration$ );  // -> RestoreState$
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
 		{
-			SetState RestoreState$;
+			SetState RestoreState$;  // TODO make alive
 			return;
 		}
 	}
 
-    // ADDED: restart guarding from time to time
+    // restart guarding from time to time
 	trigger OnTimer$ ( 2 )
 	{
 		this.CreateTimer( 2, 5 );
+
 		if( target$.isvalid && caster$.IsValid() )
 		{
 			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
@@ -206,7 +203,6 @@ startup state CastBegin$
 				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
 				{
 					Job action$ = target$.Go.Mind.GetFrontJob( JQ_ACTION );
-				
 					if( action$ != NULL )
 					{
 						if( action$.JobAbstractType != JAT_FIDGET )
@@ -224,23 +220,22 @@ startup state CastBegin$
 }
 
 
-
 state RestoreState$
 {
 	////////////////////
 	// Omni Go
-	
+
 	event OnEnterState$
 	{
 		if( caster$.IsValid )
 		{
 			caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
 		}
-		
+
 		// If the go is still alive then restore his state
 		if( target$.IsValid )
 		{
-            // ADDED: Stop engaged enemies, just like at the start
+            // Stop engaged enemies, just like at the start
             target$.go.Mind.TempGopColl1.clear;
             target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
             int j$ = 0;
@@ -256,8 +251,6 @@ state RestoreState$
                 }
                 j$ += 1;
             }
-            // /ADDED
-
 
 			// Attempt to restore the game object based on his alignment
 			target$.go.actor.ssetalignment( OriginalAlignment$ );
@@ -266,28 +259,28 @@ state RestoreState$
 			target$.Go.SSetPlayer( OriginalPlayer$ );
 
 			// Now tell the actor to defend himself
-			
 			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
 			target$.Go.Mind.ResetSensors();
-		
+
 			target$.Go.Aspect.ClearExperienceBenefactor();
-			
+
 			// remove the state so this can be affected again
 			target$.Go.Actor.SRemoveGenericState( owner.Go.Magic.StateName );	
-			
+
 			// we dont want to be able to see the dude's health
 			target$.Go.Actor.SSetCanShowHealth( false );
-			
+
 			GoDb.StopWatching( owner.Goid, target$);
 
 			// Restore the targets original membership before this spell was cast on him
 			target$.Go.Common.SRestoreLastMembership();
-					
+
 			if (active_effect$ != 0)
 			{
 				SiegeFx.SStopScript( active_effect$ );
 			}
 		}
+
 		SetState( Finished$ );
 	}
 }
@@ -297,7 +290,7 @@ state Abort$
 {
 	////////////////////
 	// Omni Go
-	
+
 	event OnEnterState$
 	{
 		// Refund the players mana
@@ -312,7 +305,7 @@ state Finished$
 {
 	////////////////////
 	// Both Gos
-	
+
 	event OnEnterState$
 	{
 		// Delete this skrit
