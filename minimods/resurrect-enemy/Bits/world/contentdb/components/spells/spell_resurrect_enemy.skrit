@@ -150,6 +150,7 @@ startup state CastBegin$
 				target$.Go.SSetPlayer( caster$.Go.PlayerID );
 
 				// Start the visual
+				SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );
 				if(effect_script$ != "")
 				{
 					active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
@@ -193,6 +194,11 @@ startup state CastBegin$
 			{
 				SetState Finished$;
 			}
+		}
+		else if ( e$ == WE_SPELL_SYNC_MID )
+		{
+			SetState RestoreState$;
+			return;
 		}
 	}
 
