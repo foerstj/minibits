@@ -50,8 +50,8 @@ startup state CastBegin$
 {
  	event OnGoHandleMessage$( eWorldEvent e$, WorldMessage msg$ )
 	{
-		if( e$ == WE_REQ_CAST ) {
-
+		if( e$ == WE_REQ_CAST )
+		{
 			////////////////////
 			// Normal Go
 			
@@ -70,9 +70,9 @@ startup state CastBegin$
 			
 			// delete normal version of the spell.
 			SetState Finished$;
-		
-		} else if ( e$ == WE_REQ_ACTIVATE ) {
-		
+		}
+		else if ( e$ == WE_REQ_ACTIVATE )
+		{
 			////////////////////
 			// Omni Go
 			
@@ -87,113 +87,106 @@ startup state CastBegin$
 			
 			spell_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, target$.Go);
 
-			if(caster$.IsValid() && target$.IsValid() )
-			{                                         
-				// Filter out bogus targets
-				if( !target$.go.hasactor || !caster$.go.hasactor ) {
-					report.genericf( "%s being cast on invalid target!!\n", description$ );
-					SetState( Abort$ );
-					return;
-				}
-				
-				// Check to see if the enchantment has already been cast on this go
-				if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
-				{
-					SetState( Abort$ );
-					return;
-				}
-				
-				if( !StringTool.IsEmpty( immunity$ ) )
-				{
-					if( target$.Go.Common.Membership.Contains( immunity$ ) )
-					{
-						SetState( Abort$ );
-						return;
-					}
-				}
-				
-				if( target$.Go.Player.Controller != PC_COMPUTER  )
-				{
-					SetState( Abort$ );
-					return;
-				}
-
-				target$.go.Mind.TempGopColl1.clear;
-				target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
-				int j$ = 0;
-				int jend$ = target$.go.Mind.TempGopColl1.Size();
-				Go Enemy$;
-				while( j$ < jend$ )
-				{
-					Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
-					if( Enemy$ != NULL )
-					{
-						Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
-						Enemy$.Mind.ResetSensors();
-					}
-					j$ += 1;
-				}
-
-				// Get caster alignment
-				eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
-
-				// Save the old alignment so we can restore it later when the actor is un-charmed
-				OriginalAlignment$ = target$.go.actor.alignment;
-
-				if( caster_alignment$ != OriginalAlignment$ ) {
-					// Set the alignment to the casters alignment
-					target$.go.actor.ssetalignment( caster$.go.actor.getalignment );
-				}
-				
-				// set the right playerID so the creature will attack in a multiplayer competative game.
-				OriginalPlayer$ = target$.Go.PlayerID;
-				target$.Go.SSetPlayer( caster$.Go.PlayerID );
-
-				// Start the visual
-				SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );
-				if(effect_script$ != "")
-				{
-					active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
-				}
-
-				// Give the charmed actor new orders
-				target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
-                // EDITED: make target guard caster similar to summons
-				if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
-				{
-                    if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
-                    {
-                        target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
-                    }
-					target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
-				}
-				this.CreateTimer( 2, 5 );  // restart guarding from time to time
-
-				target$.Go.Mind.ResetSensors();
-	
-				// Add the effected state so this can only happen once
-				target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-				caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-				
-				// we want to be able to see the dude's health
-				target$.Go.Actor.SSetCanShowHealth( true );
-				
-				// Setup where experience will go from who this actor damages
-				target$.Go.aspect.SetExperienceBenefactor( caster$ );
-				target$.Go.aspect.SetExperienceBenefactorSkill( owner.go.magic.skillclass );
-				
-				this.CreateTimer( 1, spell_duration$ );
-				
-				// Make it have the same membership as the caster
-				target$.Go.Common.SCopyMembership( caster$ );
-
-				// watch out pet, so if he dies we can control a new pet.
-				GoDb.StartWatching( owner.Goid, target$);
+			// Filter out bogus targets
+			if( !target$.go.hasactor || !caster$.go.hasactor ) {
+				report.genericf( "%s being cast on invalid target!!\n", description$ );
+				SetState( Abort$ );
+				return;
 			}
-			else
+			
+			// Check to see if the enchantment has already been cast on this go
+			if( target$.Go.Actor.HasGenericState( owner.Go.Magic.StateName ) || caster$.Go.Actor.HasGenericState( owner.Go.Magic.CasterStateName ) )
 			{
-				SetState Finished$;
+				SetState( Abort$ );
+				return;
 			}
+			
+			if( !StringTool.IsEmpty( immunity$ ) )
+			{
+				if( target$.Go.Common.Membership.Contains( immunity$ ) )
+				{
+					SetState( Abort$ );
+					return;
+				}
+			}
+			
+			if( target$.Go.Player.Controller != PC_COMPUTER  )
+			{
+				SetState( Abort$ );
+				return;
+			}
+
+			target$.go.Mind.TempGopColl1.clear;
+			target$.go.Mind.GetEngagedMeEnemies( target$.go.Mind.TempGopColl1 );
+			int j$ = 0;
+			int jend$ = target$.go.Mind.TempGopColl1.Size();
+			Go Enemy$;
+			while( j$ < jend$ )
+			{
+				Enemy$ = target$.go.Mind.TempGopColl1.Get( j$ );
+				if( Enemy$ != NULL )
+				{
+					Enemy$.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_COMMAND ));
+					Enemy$.Mind.ResetSensors();
+				}
+				j$ += 1;
+			}
+
+			// Get caster alignment
+			eActorAlignment caster_alignment$ = caster$.go.actor.getalignment;
+
+			// Save the old alignment so we can restore it later when the actor is un-charmed
+			OriginalAlignment$ = target$.go.actor.alignment;
+
+			if( caster_alignment$ != OriginalAlignment$ ) {
+				// Set the alignment to the casters alignment
+				target$.go.actor.ssetalignment( caster$.go.actor.getalignment );
+			}
+			
+			// set the right playerID so the creature will attack in a multiplayer competative game.
+			OriginalPlayer$ = target$.Go.PlayerID;
+			target$.Go.SSetPlayer( caster$.Go.PlayerID );
+
+			// Start the visual
+			SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );
+			if(effect_script$ != "")
+			{
+				active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
+			}
+
+			// Give the charmed actor new orders
+			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
+			// EDITED: make target guard caster similar to summons
+			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
+			{
+				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
+				{
+					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
+				}
+				target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
+			}
+			this.CreateTimer( 2, 5 );  // restart guarding from time to time
+
+			target$.Go.Mind.ResetSensors();
+
+			// Add the effected state so this can only happen once
+			target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			
+			// we want to be able to see the dude's health
+			target$.Go.Actor.SSetCanShowHealth( true );
+			
+			// Setup where experience will go from who this actor damages
+			target$.Go.aspect.SetExperienceBenefactor( caster$ );
+			target$.Go.aspect.SetExperienceBenefactorSkill( owner.go.magic.skillclass );
+			
+			this.CreateTimer( 1, spell_duration$ );
+			
+			// Make it have the same membership as the caster
+			target$.Go.Common.SCopyMembership( caster$ );
+
+			// watch out pet, so if he dies we can control a new pet.
+			GoDb.StartWatching( owner.Goid, target$);
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
 		{
