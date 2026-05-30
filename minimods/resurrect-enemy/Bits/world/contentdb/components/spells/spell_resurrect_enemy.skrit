@@ -122,6 +122,21 @@ void ReGuard$
 	}
 }
 
+void MakeAlive$
+{
+	if( target$.isValid )
+	{
+		// TODO make alive
+	}
+}
+void MakeDead$
+{
+	if( target$.isValid )
+	{
+		// TODO make dead
+	}
+}
+
 startup state CastBegin$
 {
  	event OnGoHandleMessage$( eWorldEvent e$, WorldMessage msg$ )
@@ -173,11 +188,8 @@ startup state CastBegin$
 			OriginalPlayer$ = target$.Go.PlayerID;
 			target$.Go.SSetPlayer( caster$.Go.PlayerID );
 
-			// Start the visual
-			if(effect_script$ != "")
-			{
-				active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
-			}
+			// Make it have the same membership as the caster
+			target$.Go.Common.SCopyMembership( caster$ );
 
 			// Give the charmed actor new orders
 			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
@@ -191,33 +203,36 @@ startup state CastBegin$
 				target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
 			}
 			target$.Go.Mind.ResetSensors();
-			this.CreateTimer( 2, 5 );  // restart guarding from time to time
-
-			// Add the effected state so this can only happen once
-			target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-
-			// we want to be able to see the dude's health
-			target$.Go.Actor.SSetCanShowHealth( true );
 
 			// Setup where experience will go from who this actor damages
 			target$.Go.aspect.SetExperienceBenefactor( caster$ );
 			target$.Go.aspect.SetExperienceBenefactorSkill( owner.go.magic.skillclass );
 
-			// Make it have the same membership as the caster
-			target$.Go.Common.SCopyMembership( caster$ );
+			// we want to be able to see the dude's health
+			target$.Go.Actor.SSetCanShowHealth( true );
 
 			// watch our pet, so if he dies we can control a new pet.
 			GoDb.StartWatching( owner.Goid, target$);
 
+			// Start the visual
+			if(effect_script$ != "")
+			{
+				active_effect$ = SiegeFx.SRunMpScript( effect_script$, target$, caster$, effect_params$, owner.Goid, e$ );
+			}
+
+			// Add the effected state so this can only happen once
+			target$.Go.Actor.SAddGenericState( owner.Go.Magic.StateName, description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+			caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, spell_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
+
 			// Revive
 			SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );  // -> WE_SPELL_SYNC_MID
 
+			this.CreateTimer( 2, 5 );  // restart guarding from time to time
 			this.CreateTimer( 1, spell_duration$ );  // -> RestoreState$
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
 		{
-			// TODO make alive
+			MakeAlive$();
 		}
 	}
 
@@ -235,9 +250,14 @@ startup state CastBegin$
 
 void DoRestoreState$
 {
+	// GenericState
 	if( caster$.IsValid )
 	{
 		caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
+	}
+	if( target$.IsValid )
+	{
+		target$.Go.Actor.SRemoveGenericState( owner.Go.Magic.StateName );	
 	}
 
 	// If the go is still alive then restore his state
@@ -252,29 +272,26 @@ void DoRestoreState$
 		// Restore original player ID.
 		target$.Go.SSetPlayer( OriginalPlayer$ );
 
+		// Restore the targets original membership before this spell was cast on him
+		target$.Go.Common.SRestoreLastMembership();
+
 		// Now tell the actor to defend himself
 		target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
 		target$.Go.Mind.ResetSensors();
 
 		target$.Go.Aspect.ClearExperienceBenefactor();
 
-		// remove the state so this can be affected again
-		target$.Go.Actor.SRemoveGenericState( owner.Go.Magic.StateName );	
-
 		// we dont want to be able to see the dude's health
 		target$.Go.Actor.SSetCanShowHealth( false );
 
 		GoDb.StopWatching( owner.Goid, target$);
-
-		// Restore the targets original membership before this spell was cast on him
-		target$.Go.Common.SRestoreLastMembership();
 
 		if (active_effect$ != 0)
 		{
 			SiegeFx.SStopScript( active_effect$ );
 		}
 
-		// TODO make dead
+		MakeDead$();
 	}
 }
 
