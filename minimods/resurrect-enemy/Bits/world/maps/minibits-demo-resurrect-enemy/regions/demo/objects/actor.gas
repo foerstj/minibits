@@ -1,0 +1,21 @@
+[t:krug_scavenger,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = 2.91749,5.60003,-53.4291,0xf59a5bf2;
+	}
+}
+[t:krug_scavenger_boss_01,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -2.10453,5.60003,-53.405,0xf59a5bf2;
+	}
+}
+[t:krug_scout,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = 16.3906,5.59997,-28.6529,0x5a0fe2c5;
+	}
+}

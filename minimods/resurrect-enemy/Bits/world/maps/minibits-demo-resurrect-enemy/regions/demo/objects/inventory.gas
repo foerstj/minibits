@@ -5,3 +5,10 @@
 	  p position = -2.01603,0,0.0397215,0x7dbe963e;
 	}
 }
+[t:spell_charm,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 1.9877,0,0.652328,0x7dbe963e;
+	}
+}
