@@ -41,16 +41,16 @@
 		caster_state_name = "Controlling";
 
 		cast_experience = (#magic*0.25);
-		cast_range = 5;
-		cast_reload_delay = 1;
-		effect_duration = 15+(#magic*1.56);
-		is_one_shot = true;
+		effect_duration = 20;//15+(#magic*1.56);
 
 		mana_cost = 0;
 		mana_cost_modifier = (#maxlife*2.8);
 		mana_cost_ui = 2;
 		mana_cost_ui_modifier = (#maxmana*2.8);
 
+		cast_range = 5;
+		cast_reload_delay = 1;
+		is_one_shot = true;
 		requires_line_of_sight = true;
 		target_type_flags = tt_dead_enemy;
 		target_type_flags_not = tt_human_party_member;
