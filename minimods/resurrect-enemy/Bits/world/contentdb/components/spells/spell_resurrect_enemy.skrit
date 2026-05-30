@@ -127,7 +127,11 @@ void MakeAlive$
 	if( target$.isValid )
 	{
 		target$.Go.Aspect.SSetLifeState( LS_ALIVE_CONSCIOUS );
-		Rules.ChangeLife( target$, 3.0 - target$.go.aspect.GetCurrentLife() );
+
+		// health formula from spell_resurrect
+		float n$ = 2.0 + caster$.go.actor.getskilllevel( owner.go.magic.skillclass ) - target$.go.aspect.currentlife;
+		n$ = Math.Maxfloat( 3, n$ );
+		Rules.ChangeLife( target$, n$ );
 	}
 }
 void MakeDead$
@@ -194,19 +198,6 @@ startup state CastBegin$
 			// Make it have the same membership as the caster
 			target$.Go.Common.SCopyMembership( caster$ );
 
-			// Give the charmed actor new orders
-			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
-			// make target guard caster similar to summons
-			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
-			{
-				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
-				{
-					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
-				}
-				target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
-			}
-			target$.Go.Mind.ResetSensors();
-
 			// Setup where experience will go from who this actor damages
 			target$.Go.aspect.SetExperienceBenefactor( caster$ );
 			target$.Go.aspect.SetExperienceBenefactorSkill( owner.go.magic.skillclass );
@@ -230,12 +221,26 @@ startup state CastBegin$
 			// Revive
 			SiegeFx.SRunScript( "revive", target$, caster$, "", owner.Goid, WE_REQ_CAST );  // -> WE_SPELL_SYNC_MID
 
-			this.CreateTimer( 2, 5 );  // restart guarding from time to time
 			this.CreateTimer( 1, spell_duration$ );  // -> RestoreState$
 		}
 		else if ( e$ == WE_SPELL_SYNC_MID )
 		{
 			MakeAlive$();
+
+			// Give the resurrected & charmed actor new orders
+			target$.Go.Mind.SDoJob( MakeJobReq( JAT_STOP, JQ_ACTION, QP_CLEAR, AO_REFLEX ));
+			// make target guard caster similar to summons
+			if( target$.Go.Mind.UnderstandsJob( JAT_GUARD ) )
+			{
+				if( target$.Go.Mind.CanOperateOn( caster$.Go ) )
+				{
+					target$.go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_FRONT, AO_COMMAND, caster$ ) );
+				}
+				target$.Go.Mind.SDoJob( MakeJobReq( JAT_GUARD, JQ_ACTION, QP_CLEAR, AO_REFLEX, caster$ ) );
+			}
+			target$.Go.Mind.ResetSensors();
+
+			this.CreateTimer( 2, 5 );  // restart guarding from time to time
 		}
 	}
 
