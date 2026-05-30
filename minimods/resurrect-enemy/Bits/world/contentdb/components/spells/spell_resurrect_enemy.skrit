@@ -132,6 +132,8 @@ void MakeAlive$
 		float n$ = 2.0 + caster$.go.actor.getskilllevel( owner.go.magic.skillclass ) - target$.go.aspect.currentlife;
 		n$ = Math.Maxfloat( 3, n$ );
 		Rules.ChangeLife( target$, n$ );
+
+		target$.go.mind.SDoJob( MakeJobReq( JAT_BRAIN, JQ_BRAIN, QP_CLEAR, AO_REFLEX ));
 	}
 }
 void MakeDead$
