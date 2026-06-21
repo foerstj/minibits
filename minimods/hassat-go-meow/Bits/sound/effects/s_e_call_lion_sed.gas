@@ -1,6 +1,6 @@
 [t:sed,n:s_e_call_lion_SED]
 {
-	sound_effect_file = "s_e_call_lion";
+	sound_effect_file = "s_e_gen_meow3";
 	//max_simultaneous_samples = 2;
 	min_playback_rate = 0.75;
 	max_playback_rate = 1.15;
