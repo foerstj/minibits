@@ -1,0 +1,78 @@
+[t:dsx_hassat_bowman,n:0x00100000]
+{
+	[placement]
+	{
+	  p position = 8.04847,7.09989,-41.0668,0x0352a29e;
+	}
+}
+[t:dsx_hassat_shaman,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 0.184183,5.16937,-37.6865,0x0352a29e;
+	}
+}
+[t:dsx_hassat_scavenger,n:0x00100002]
+{
+	[placement]
+	{
+	  p position = -2.44159,4.6147,-35.1422,0x0352a29e;
+	}
+}
+[t:dsx_hassat_panther,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -5.50978,4.38462,-32.2764,0x0352a29e;
+	}
+}
+[t:dsx_hassat_commander,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -9.02625,5.91308,-29.2303,0x0352a29e;
+	}
+}
+[t:dsx_hassat_fighter,n:0x00100007]
+{
+	[placement]
+	{
+	  p position = -0.359791,5.0521,-36.6284,0xa687a784;
+	}
+}
+[t:dsx_hassat_ranger,n:0x00100008]
+{
+	[placement]
+	{
+	  p position = -4.35797,4.04096,-32.6162,0xa687a784;
+	}
+}
+[t:dsx_hassat_mage,n:0x0010000a]
+{
+	[placement]
+	{
+	  p position = -10.6525,5.96237,-28.8129,0xa687a784;
+	}
+}
+[t:dsx_hassat_archer,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = -1.86524,5.04386,-41.9226,0x622b372c;
+	}
+}
+[t:dsx_hassat_caster,n:0x00100006]
+{
+	[placement]
+	{
+	  p position = -4.25959,4.84363,-37.4877,0x622b372c;
+	}
+}
+[t:dsx_hassat_grunt,n:0x00100009]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 1.06605,4.78104,-36.4205,0x622b372c;
+	}
+}
