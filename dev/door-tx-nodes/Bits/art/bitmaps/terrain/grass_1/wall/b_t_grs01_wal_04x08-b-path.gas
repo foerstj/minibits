@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_grs01_wal_04x08-b-path]
+{
+	layer1texture1 = b_t_grs01_wal_04x08-b-path;
+  i texturedetail = 2;
+}
