@@ -3,8 +3,24 @@
 	name = light;
 
 	script = [[
-        sfx create lightsource #TARGET 
-            "color0(1,1,1)iradius(8)radius(24)offset(0,1.1,0)";
-        sfx start #POP;
-    ]];
+		sfx create lightsource #TARGET "
+			offset(0,2,0)
+			iradius(8)
+			radius(24)
+			color0(1,1,1)
+		";
+		sfx start #POP;
+
+		sfx create orbiter #TARGET "
+			must_update()
+			smooth()
+			world_orient()
+			offset(0,2,0)
+			radius(0)
+			iphi(0)
+			scale(1)
+			color0(1,1,1)
+		";
+		sfx start #POP;
+	]];
 }
