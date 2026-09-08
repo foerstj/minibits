@@ -1,5 +1,6 @@
-:: name of map
-set map=minibits-demo-light-spell
+:: names
+set mod=light-spell
+set map=minibits-demo-%mod%
 
 :: path of Bits dir
 set bits=%~dp0.
