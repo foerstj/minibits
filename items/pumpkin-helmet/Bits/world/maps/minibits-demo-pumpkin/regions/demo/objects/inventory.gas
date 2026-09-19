@@ -38,3 +38,27 @@
 	  p position = 2.53467,0,0.209158,0xba816d86;
 	}
 }
+[t:he_ca_pumpkin,n:0x0010000c]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.182264,0,0.98325;
+	  p position = -2.25666,0,-2.0793,0xba816d86;
+	}
+}
+[t:he_ca_pumpkin,n:0x0010000d]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.182264,0,0.98325;
+	  p position = -3.23009,0,-2.12898,0xba816d86;
+	}
+}
+[t:he_ca_pumpkin,n:0x0010000e]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.182264,0,0.98325;
+	  p position = -3.37384,0,-3.27603,0xba816d86;
+	}
+}
