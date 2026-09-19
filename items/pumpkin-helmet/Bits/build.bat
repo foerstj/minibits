@@ -1,7 +1,8 @@
 :: name of map
-set map=minibits-demo-pumpkin
+set res=pumpkin-helmet
+set map=minibits-demo-%res%
 :: name of map, case-sensitive
-set map_cs=Pumpkin
+set map_cs=Pumpkin Helmet
 
 :: path of Bits dir
 set bits=%~dp0.

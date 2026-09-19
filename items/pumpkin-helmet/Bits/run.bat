@@ -1,5 +1,6 @@
 :: name of map
-set map=minibits-demo-pumpkin
+set res=pumpkin-helmet
+set map=minibits-demo-%res%
 
 :: path of Bits dir
 set bits=%~dp0.

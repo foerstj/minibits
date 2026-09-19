@@ -1,5 +1,5 @@
 :: name of map, case-sensitive
-set map_cs=Pumpkin
+set map_cs=Pumpkin Helmet
 :: path of DS installation
 set ds=%DungeonSiege%
 
