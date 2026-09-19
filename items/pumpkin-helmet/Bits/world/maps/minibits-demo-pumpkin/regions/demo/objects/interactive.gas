@@ -1,0 +1,7 @@
+[t:door_glb_woodfence_left_01,n:0x00100018]
+{
+	[placement]
+	{
+	  p position = 1.97785,-0.8,1.00909,0x504e42e8;
+	}
+}
