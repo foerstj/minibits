@@ -5,7 +5,7 @@
 	  p position = -0.00274079,0,2.37827,0xf0fb4f6c;
 	}
 }
-[t:skill_runes_container_0,n:0x00100007]
+[t:skill_runes_container_mb_0,n:0x00100007]
 {
 	[placement]
 	{
