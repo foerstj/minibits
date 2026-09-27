@@ -7,10 +7,7 @@
     {
         [other]
         {
-            il_main = skill_rune_melee_0;
-            il_main = skill_rune_ranged_0;
-            il_main = skill_rune_cmagic_0;
-            il_main = skill_rune_nmagic_0;
+            il_main = skill_rune_0;
         }
     }
 }
