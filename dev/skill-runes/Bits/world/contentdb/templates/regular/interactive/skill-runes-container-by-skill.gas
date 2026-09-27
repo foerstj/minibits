@@ -7,15 +7,7 @@
     {
         [other]
         {
-            il_main = skill_rune_melee_10;
-            il_main = skill_rune_melee_15;
-            il_main = skill_rune_melee_20;
-            il_main = skill_rune_melee_25;
-            il_main = skill_rune_melee_30;
-            il_main = skill_rune_melee_40;
-            il_main = skill_rune_melee_45;
-            il_main = skill_rune_melee_50;
-            il_main = skill_rune_melee_60;
+            il_main = skill_rune_melee_0;
         }
     }
 }
@@ -28,15 +20,7 @@
     {
         [other]
         {
-            il_main = skill_rune_ranged_10;
-            il_main = skill_rune_ranged_15;
-            il_main = skill_rune_ranged_20;
-            il_main = skill_rune_ranged_25;
-            il_main = skill_rune_ranged_30;
-            il_main = skill_rune_ranged_40;
-            il_main = skill_rune_ranged_45;
-            il_main = skill_rune_ranged_50;
-            il_main = skill_rune_ranged_60;
+            il_main = skill_rune_ranged_0;
         }
     }
 }
@@ -49,15 +33,7 @@
     {
         [other]
         {
-            il_main = skill_rune_nmagic_10;
-            il_main = skill_rune_nmagic_15;
-            il_main = skill_rune_nmagic_20;
-            il_main = skill_rune_nmagic_25;
-            il_main = skill_rune_nmagic_30;
-            il_main = skill_rune_nmagic_40;
-            il_main = skill_rune_nmagic_45;
-            il_main = skill_rune_nmagic_50;
-            il_main = skill_rune_nmagic_60;
+            il_main = skill_rune_nmagic_0;
         }
     }
 }
@@ -70,15 +46,7 @@
     {
         [other]
         {
-            il_main = skill_rune_cmagic_10;
-            il_main = skill_rune_cmagic_15;
-            il_main = skill_rune_cmagic_20;
-            il_main = skill_rune_cmagic_25;
-            il_main = skill_rune_cmagic_30;
-            il_main = skill_rune_cmagic_40;
-            il_main = skill_rune_cmagic_45;
-            il_main = skill_rune_cmagic_50;
-            il_main = skill_rune_cmagic_60;
+            il_main = skill_rune_cmagic_0;
         }
     }
 }
