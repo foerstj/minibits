@@ -5,3 +5,25 @@
 	  p position = 1.97785,-0.8,1.00909,0x504e42e8;
 	}
 }
+[t:door_glb_woodfence_left_01,n:0x00100010]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.1;
+	}
+	[placement]
+	{
+	  p position = -0.0258818,-0.95,0.967125,0xca54cb87;
+	}
+}
+[t:door_glb_woodfence_left_01,n:0x0010000f]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.1;
+	}
+	[placement]
+	{
+	  p position = -0.00927734,-0.95,0.966374,0xf023590f;
+	}
+}

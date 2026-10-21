@@ -1,6 +1,8 @@
 *.psd
 *.xcf
+*.gmax
 *.bak
 *.exe
 PsdToRaw.bat
 git-ignore
+dsdll_log.txt

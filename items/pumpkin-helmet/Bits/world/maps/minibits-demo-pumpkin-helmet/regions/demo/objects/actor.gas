@@ -134,3 +134,206 @@
 	  p position = 1.99063,-0.8,-1.29241,0x0e5c2171;
 	}
 }
+[t:skeleton,n:0x00100015]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -0.717248,-0.849999,0.569507,0xe4b0ff7d;
+	}
+}
+[t:skeleton_archer,n:0x00100016]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -0.755428,-0.85,-0.548382,0xe4b0ff7d;
+	}
+}
+[t:lord_hovart,n:0x0010001c]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.76674,-0.849999,-1.1083,0xe4b0ff7d;
+	}
+}
+[t:skeleton_guard,n:0x0010001f]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.40774,-0.850001,-0.10888,0xe4b0ff7d;
+	}
+}
+[t:skeleton_guard_boss_01,n:0x00100020]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.76036,-0.85,0.493328,0xe4b0ff7d;
+	}
+}
+[t:skeleton_large,n:0x00100017]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,5.96046e-008,0,1;
+	  p position = 0.786954,-0.949999,-0.769278,0xca54cb87;
+	}
+}
+[t:skeleton_mercenary,n:0x00100019]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,5.96046e-008,0,1;
+	  p position = -1.9442,-0.95,-0.729592,0xca54cb87;
+	}
+}
+[t:skeleton_mercenary_archer,n:0x0010001a]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = -1.11266,-0.949999,-0.79584,0xca54cb87;
+	}
+}
+[t:skeleton_mercenary_boss_01,n:0x0010001b]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = -0.353081,-0.949999,-1.59191,0xca54cb87;
+	}
+}
+[t:skeleton_large_boss_01,n:0x0010001d]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = 1.68707,-0.95,-1.60406,0xca54cb87;
+	}
+}
+[t:bandit_boss,n:0x00100013]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = -1.95924,-0.85,0.284547,0xaf928edf;
+	}
+}
+[t:bandit_melee_boss_01,n:0x00100014]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = -0.664897,-0.85,0.260692,0xaf928edf;
+	}
+}
+[t:bandit_melee,n:0x00100011]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = -0.602551,-0.949999,0.242867,0xf023590f;
+	}
+}
+[t:bandit_ranged,n:0x00100012]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_head = he_ca_pumpkin;
+		}
+	}
+	[placement]
+	{
+	  p position = 0.737823,-0.95,0.27369,0xf023590f;
+	}
+}
