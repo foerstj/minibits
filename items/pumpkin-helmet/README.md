@@ -19,3 +19,5 @@ The Halfgiant works more or less out of the box, probably due to the model being
 src: ghastley / HS LLS; foerstj / Halloween mod; Biddle
 
 License: © 2007 Dominique Faure
+
+![pic](pic2.jpg)
