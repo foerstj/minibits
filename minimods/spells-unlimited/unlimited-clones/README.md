@@ -1,5 +1,5 @@
 # unlimited-clones
 
-The original UnlimitedClones by Alcardian.
+Essentially the original UnlimitedClones by Alcardian.
 
 src: Alcardian

@@ -1,5 +1,8 @@
 # unlimited-clones-plus
 
-The original UnlimitedClonesPlus by Alcardian.
+An improved version of the original UnlimitedClonesPlus by Alcardian.
 
-src: Alcardian
+Improvements:
+- Removed the pointless countdown display
+
+src: Alcardian, foerstj
