@@ -344,7 +344,7 @@ startup state CastBegin$
 			SiegeFx.SRunScript( effect_script$, target$, caster$, script_params$, owner.Goid, WE_REQ_CAST );
 		
 			summon_duration$ = owner.Go.Magic.EvaluateEffectDuration(caster$.Go, caster$.Go);
-			// AUC: Removed if statement to enable unlimited clones
+			// AUC: Removed statement to enable unlimited clones
 			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$ + 2.0, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 		} 
 		else if ( e$ == WE_SPELL_SYNC_MID ) 
@@ -691,8 +691,9 @@ state ControlSummoned$
 		if( caster$.IsValid() )
 		{
 			summoned_goid$.Go.Actor.SAddGenericState( state_name$, description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
-			caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
-			// AUC: Removed if statement to enable unlimited clones
+			// REMOVED
+			//caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );
+			// AUC: Removed statement to enable unlimited clones
 			//caster$.Go.Actor.SAddGenericState( owner.Go.Magic.CasterStateName, caster_description$, summon_duration$, caster$, owner.goid, owner.go.magic.GetMagicLevel( caster$.go ) );
 			
 			// we want to be able to see the dude's health
