@@ -1,5 +1,8 @@
 # unlimited-clones
 
-Essentially the original UnlimitedClones by Alcardian.
+An improved version of the original UnlimitedClones by Alcardian.
 
-src: Alcardian
+Improvements:
+- Integrated fix from fix-clone (Clone Item Duping Fix) by Andreou
+
+src: Alcardian, foerstj, Andreou
