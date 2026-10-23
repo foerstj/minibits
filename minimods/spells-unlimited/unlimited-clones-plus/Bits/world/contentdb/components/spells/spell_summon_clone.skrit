@@ -9,6 +9,10 @@
 //
 // Summons a duplicate of the character to guard and attack for them
 //
+// Andreou:
+// ADDED - This skrit now cleans after itself and deletes the inventory in the
+// case of an untimely demise of our clone
+//
 //////////////////////////////////////////////////////////////////////////////
 
 property string effect_script$		= ""	doc = "Name of the SiegeFx script that will be providing the visual.";
@@ -35,6 +39,11 @@ Goid caster$;
 float summon_duration$;
 
 Go secondary_spell$;
+
+//ADDED - for use of the inventory cleaning
+string cloned_items_list$ = "";
+bool inventory_cleaned$ = false;
+////////
 
 // copies the inventory item specified by il and es from the inventory of copy_from_goid$ to the inventory of copy_to_goid$
 // the only spell that is copied is the one that is NOT selected in the copy_from_goid$'s inventory
@@ -168,6 +177,102 @@ void DeleteInventory$( go target_go$ )
 	}
 }
 
+// ADDED - similar to DeleteInventory, but it just lists the items in a comma delimited string
+void RecordCloneInventory$( Go target_go$ )
+{
+	//reset the string just in case
+	cloned_items_list$ = "";
+
+	// do we have an inventory
+	if(target_go$.HasInventory())
+	{
+		// clear a collection to use
+		target_go$.Mind.TempGopColl1.Clear();
+
+		// get everything in the inventory
+		target_go$.Inventory.ListItems(IL_ALL, target_go$.Mind.TempGopColl1);
+
+		// get set to loop
+		int i$ = 0;
+		int iend$ = target_go$.Mind.TempGopColl1.Size();
+		Go temp$;
+
+		// loop through and search for items that have inventories. then record the item
+		while( i$ < iend$ )
+		{
+			if (i$ > 0)
+			{
+				//set up the comma seperator
+				StringTool.Append(cloned_items_list$, ",");
+			}
+			// get the go
+			temp$ = target_go$.Mind.TempGopColl1.Get( i$ );
+
+			// do we have an inventory?  if yes, go one level deeper.  i hope no one
+			// is planning on going farther than that...
+			if( temp$.HasInventory() )
+			{
+				// get all the items in this inventory
+				target_go$.Mind.TempGopColl2.Clear();
+				temp$.Inventory.ListItems(IL_ALL, target_go$.Mind.TempGopColl2);
+
+				// loop and record
+				int j$ = 0;
+				int jend$ = target_go$.Mind.TempGopColl2.Size();
+				Go temp2$;
+
+				while(j$ < jend$)
+				{
+					temp2$ = target_go$.Mind.TempGopColl2.Get( j$ );
+
+					// record the item goid in our string
+					StringTool.AppendF(cloned_items_list$, "0x%08x", temp2$.goid );
+					
+					//set up the comma seperator
+					StringTool.Append(cloned_items_list$, ",");
+
+					j$ = j$ + 1;
+				}
+			}
+
+			// record the item goid in our string
+			StringTool.AppendF(cloned_items_list$, "0x%08x", temp$.goid );
+
+			i$ = i$ + 1;
+		}
+	}
+}
+
+
+//ADDED - this function deletes the cloned items
+void DeleteCloneInventory$( )
+{
+	if (inventory_cleaned$) { return; } //We already cleaned the inventory, no need to do that again
+
+	int i$ = 0;
+	int iend$ = StringTool.GetNumDelimitedValues( cloned_items_list$ );
+	Goid temp$;
+	
+	// loop through and search for items that have inventories.  then delete the item
+	while( i$ < iend$ )
+	{
+		// get the go
+		temp$ = MakeGoid( StringTool.GetDelimitedInt( cloned_items_list$, i$ ) );
+		
+		if ( !temp$.IsValid)
+		{
+			i$ = i$ + 1;
+			continue;
+		}
+		
+		// delete the item itself
+		PostWorldMessage(WE_REQ_DELETE, owner.Goid, temp$, 0);
+
+		i$ = i$ + 1;
+	}
+	inventory_cleaned$ = true; //We don't want to do that again
+}
+
 // JCD 9/3/03
 // copy inventory of from_go to to_go.
 void CopyInventory$( go from_go$, go to_go$ )
@@ -211,7 +316,13 @@ void CopyInventory$( go from_go$, go to_go$ )
 					continue;
 				}
 			}
-
+			else if ( slot$ == ES_SPELLBOOK || slot$ == es_weapon_hand || slot$ == es_shield_hand ) 
+			{
+				//ADDED - These are getting cloned directly, no need to clone them here
+				i$ = i$ + 1;
+				continue;
+			}
+			
 			// if the location is not the selected location, we don't want to put it there.
 			if( location$ != from_go$.inventory.GetSelectedLocation() )
 			{
@@ -236,6 +347,8 @@ void CopyInventory$( go from_go$, go to_go$ )
 
 			i$ = i$ + 1;
 		}
+		to_go$.Aspect.SSetGoldValue( 0, true ); //ADDED - DELETING GOLD
+		to_go$.Inventory.RSSetGold( 0 ); //ADDED - DELETING GOLD
 	}
 }
 
@@ -250,6 +363,8 @@ event OnGoHandleCcMessage$( eWorldEvent e$, WorldMessage msg$ )
 	{
 		if( summoned_goid$.IsValidMp) 
 		{
+			// ADDED - we delete the cloned items
+			DeleteCloneInventory$();
 			if ( end_script$ != "" ) {
 				SiegeFx.SRunScript( end_script$, summoned_goid$, summoned_goid$, script_params$, owner.Goid, WE_KILLED );
 			}		
@@ -585,7 +700,8 @@ state SummonGo$
 			Goid new_spell$ = GoDb.SCloneGo( cloneReq$ );
 			
 			// send Omni version an Activate to get it started.
-			PostWorldMessage( WE_REQ_ACTIVATE, caster$, new_spell$, MakeInt( summoned_goid$ ), 1);
+			// CHANGED - the delay timer is now 0.1 instead of 1. We need that omni asap to record the items
+			PostWorldMessage( WE_REQ_ACTIVATE, caster$, new_spell$, MakeInt( summoned_goid$ ), 0.1);
 		}
 		// delete normal version of the spell.
 		SetState Finished$;
@@ -708,6 +824,10 @@ state ControlSummoned$
 
 			// Make him have the same membership as the caster
 			summoned_goid$.Go.Common.SCopyMembership( caster$ );
+			
+			// ADDED - we check the clone's inventory and record all the items
+			RecordCloneInventory$ ( summoned_goid$.Go );
+			
 		}
 
 		// REMOVED
@@ -732,6 +852,9 @@ state CleanUp$
 		if( caster$.IsValid )
 		{
 			caster$.Go.Actor.SRemoveGenericState( owner.Go.Magic.CasterStateName );	
+			
+			// ADDED - Claning inventory, this is a backup option
+			DeleteCloneInventory$( );
 		}
 				
 		if( summoned_goid$.isvalid) 
