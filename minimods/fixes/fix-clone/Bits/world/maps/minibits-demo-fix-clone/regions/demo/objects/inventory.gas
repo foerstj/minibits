@@ -1,0 +1,7 @@
+[t:spell_summon_clone,n:0x00100001]
+{
+	[placement]
+	{
+	  p position = 1.93916,0,-0.013257,0xf2693604;
+	}
+}

@@ -1,0 +1,25 @@
+[t:mangler,n:0x00100002]
+{
+	[aspect]
+	{
+	  f life = 10000;
+	  f max_life = 10000;
+	}
+	[attack]
+	{
+	  f damage_max = 10000;
+	  f damage_min = 10000;
+	}
+	[common]
+	{
+		screen_name = "Gorgorax the Devourer";
+	}
+	[defend]
+	{
+	  f defense = 10000;
+	}
+	[placement]
+	{
+	  p position = -2.76016,0,-0.834495,0xe12191ff;
+	}
+}

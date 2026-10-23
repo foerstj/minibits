@@ -1,4 +1,6 @@
 [node_mesh_index]
 {
+	0x0010053f = t_xxx_cnr_04-ccav;
 	0x001006aa = t_xxx_flr_08x08-v0;
+	0x001009fa = t_xxx_wal_04-thck;
 }
