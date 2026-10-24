@@ -14,6 +14,7 @@
 	0x001006b0 = t_xxx_flr_04x04-v0;
 	0x001006b5 = t_xxx_flr_08x08-v0;
 	0x00100a03 = t_xxx_wal_04-pth-l;
+	0x00100a04 = t_xxx_wal_04-pth-r;
 	0x00100a06 = t_xxx_wal_04-thin;
 	0x00100a1b = t_xxx_wal_08-thin;
 	0x00100a31 = t_xxx_wal_12-thin;
