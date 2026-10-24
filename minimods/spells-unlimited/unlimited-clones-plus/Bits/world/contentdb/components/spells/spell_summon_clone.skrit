@@ -347,8 +347,7 @@ void CopyInventory$( go from_go$, go to_go$ )
 
 			i$ = i$ + 1;
 		}
-		to_go$.Aspect.SSetGoldValue( 0, true ); //ADDED - DELETING GOLD
-		to_go$.Inventory.RSSetGold( 0 ); //ADDED - DELETING GOLD
+		to_go$.Inventory.RCSetGold( 0 ); //ADDED - DELETING GOLD
 	}
 }
 
