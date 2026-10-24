@@ -1,5 +1,7 @@
 # generic-double-corner-walls
 
+![pic](pic.png)
+
 Modders resource for generic double stacked corner walls.
 
 src: Sadowson
