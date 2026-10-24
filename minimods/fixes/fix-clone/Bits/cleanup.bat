@@ -1,5 +1,5 @@
 :: name of mod
-set mod_cs=fix-clone
+set mod_cs=Clone Item Duping Fix
 :: name of map
 set map_cs=%mod_cs%
 
