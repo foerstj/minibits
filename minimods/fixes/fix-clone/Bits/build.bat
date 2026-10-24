@@ -23,7 +23,7 @@ robocopy "%bits%\world\contentdb" "%tmp%\Bits\world\contentdb" /S
 "%tc%\RTC.exe" -source "%tmp%\Bits" -out "%ds%\DSLOA\%mod_cs%.dsres" -copyright "%copyright%" -title "%mod_cs%" -author "%author%"
 if %errorlevel% neq 0 pause
 :: copy to minimod build dir
-robocopy "%ds%\DSLOA" "%bits%\..\build" "%mod_cs%.dsres"
+::robocopy "%ds%\DSLOA" "%bits%\..\build" "%mod_cs%.dsres"
 
 :: Compile demo map file
 rmdir /S /Q "%tmp%\Bits"
