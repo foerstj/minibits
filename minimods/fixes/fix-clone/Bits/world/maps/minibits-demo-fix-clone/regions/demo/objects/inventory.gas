@@ -5,3 +5,24 @@
 	  p position = 1.93916,0,-0.013257,0xf2693604;
 	}
 }
+[t:bd_ra_ro_m_d_c_003,n:0x00100003]
+{
+	[placement]
+	{
+	  p position = -2.46692,-9.53674e-007,2.6333,0xf2693604;
+	}
+}
+[t:potion_mana_super,n:0x00100004]
+{
+	[placement]
+	{
+	  p position = -0.0271659,0,2.39871,0xf2693604;
+	}
+}
+[t:skill_rune_cmagic_15,n:0x00100005]
+{
+	[placement]
+	{
+	  p position = 2.05,0,2.36765,0xf2693604;
+	}
+}
