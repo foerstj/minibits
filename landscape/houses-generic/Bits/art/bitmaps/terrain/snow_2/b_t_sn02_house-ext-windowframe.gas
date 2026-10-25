@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_sn02_ext-windowframe]
+{
+	layer1texture1 = b_t_sn02_ext-windowframe;
+  i texturedetail = 2;
+}

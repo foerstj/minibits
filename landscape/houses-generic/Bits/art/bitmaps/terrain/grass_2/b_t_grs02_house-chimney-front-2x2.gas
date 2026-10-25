@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_grs02_house-chimney-front-2x2]
+{
+	layer1texture1 = b_t_grs02_house-chimney-front-2x2;
+  i texturedetail = 2;
+}

@@ -1,0 +1,13 @@
+[node_mesh_index]
+{
+	0x001006aa = t_xxx_flr_08x08-v0;
+	0x00100735 = t_xxx_houses_generic-b-roof-shingle;
+	0x00100736 = t_xxx_houses_generic-b-stone-door-top;
+	0x00100737 = t_xxx_houses_generic-b-stone;
+	0x00100c33 = t_grs01_houses_generic-b-roof-shingle;
+	0x00100c38 = t_grs01_houses_generic-b-stone-door-top;
+	0x00100c39 = t_grs01_houses_generic-b-stone;
+	0x00100db2 = t_nt01_house-1-door-top;
+	0x00100db3 = t_nt01_house-1;
+	0x00100dba = t_nt01_house1-roof;
+}

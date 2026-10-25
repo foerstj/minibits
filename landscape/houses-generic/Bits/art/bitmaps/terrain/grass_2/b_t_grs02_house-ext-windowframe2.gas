@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_grs02_house-ext-windowframe2]
+{
+	layer1texture1 = b_t_grs02_house-ext-windowframe2;
+  i texturedetail = 2;
+}

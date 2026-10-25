@@ -1,0 +1,5 @@
+[t:tsd,n:b_t_sn02_house-shingles-4x4]
+{
+	layer1texture1 = b_t_sn02_house-shingles-4x4;
+  i texturedetail = 2;
+}
