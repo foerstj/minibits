@@ -1,6 +1,6 @@
 # tx-flr
 
-![pic](pic.jpg)
+![pic](pic.png)
 
 Terrain texture transition nodes made with consistency.
 
