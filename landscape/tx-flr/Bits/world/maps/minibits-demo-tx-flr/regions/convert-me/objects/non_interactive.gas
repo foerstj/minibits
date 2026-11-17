@@ -1,0 +1,33 @@
+[t:bush_grs_04,n:0x00200004]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.5;
+	}
+	[placement]
+	{
+	  p position = 1.16055,0,0.972732,0x12d5a295;
+	}
+}
+[t:bush_grs_05,n:0x00200005]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.5;
+	}
+	[placement]
+	{
+	  p position = -0.816284,0,-0.770475,0xe3f65f9f;
+	}
+}
+[t:bush_grs_03,n:0x00200003]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.5;
+	}
+	[placement]
+	{
+	  p position = -1.23524,0,0.975522,0xbbf8ccf1;
+	}
+}

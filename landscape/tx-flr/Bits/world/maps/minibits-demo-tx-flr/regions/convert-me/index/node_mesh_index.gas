@@ -1,0 +1,8 @@
+[node_mesh_index]
+{
+	0x00200494 = t_for01_tx_grs01-04x04-b;
+	0x00200495 = t_for01_tx_grs01-04x04-c;
+	0x00200496 = t_for01_tx_grs01-04x04-e;
+	0x002006b2 = t_xxx_flr_04x08-v0;
+	0x002006b3 = t_xxx_flr_08x08-v0;
+}
