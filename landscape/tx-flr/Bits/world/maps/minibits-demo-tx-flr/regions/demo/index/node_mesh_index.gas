@@ -6,6 +6,7 @@
 	0x00100497 = t_for01_tx_sn02-04x04-b;
 	0x00100498 = t_for01_tx_sn02-04x04-c;
 	0x00100499 = t_for01_tx_sn02-04x04-e;
+	0x001006ab = t_xxx_flr_04x04-v0;
 	0x001006b0 = t_xxx_flr_08x08-v0;
 	0x0010084f = t_xxx_pth_04x04-a;
 	0x00100850 = t_xxx_pth_04x04-b;
@@ -14,19 +15,16 @@
 	0x00100853 = t_xxx_pth_04x04-e;
 	0x00100854 = t_xxx_pth_04x04-f;
 	0x00100855 = t_xxx_pth_04x04-g;
-	0x00100a8a = t_xxx_tx_for01-04x04-b;
-	0x00100a8b = t_xxx_tx_for01-04x04-c;
-	0x00100a8c = t_xxx_tx_for01-04x04-e;
-	0x00100a8d = t_xxx_tx_grs01-04x04-b;
-	0x00100a8e = t_xxx_tx_grs01-04x04-c;
-	0x00100a8f = t_xxx_tx_grs01-04x04-e;
-	0x00100a90 = t_xxx_tx_sn02-04x04-b;
-	0x00100a91 = t_xxx_tx_sn02-04x04-c;
-	0x00100a92 = t_xxx_tx_sn02-04x04-e;
+	0x0010097e = t_xxx_tx_for01-04x04-b;
+	0x0010097f = t_xxx_tx_for01-04x04-c;
+	0x00100980 = t_xxx_tx_for01-04x04-e;
+	0x00100981 = t_xxx_tx_grs01-04x04-b;
+	0x00100982 = t_xxx_tx_grs01-04x04-c;
+	0x00100983 = t_xxx_tx_grs01-04x04-e;
+	0x00100984 = t_xxx_tx_sn02-04x04-b;
+	0x00100985 = t_xxx_tx_sn02-04x04-c;
+	0x00100986 = t_xxx_tx_sn02-04x04-e;
 	0x00100cfc = t_grs01_tx_for01-04x04-b;
 	0x00100cfd = t_grs01_tx_for01-04x04-c;
 	0x00100cfe = t_grs01_tx_for01-04x04-e;
-	0x00100e53 = t_sn02_tx_for01-04x04-b;
-	0x00100e54 = t_sn02_tx_for01-04x04-c;
-	0x00100e55 = t_sn02_tx_for01-04x04-e;
 }
