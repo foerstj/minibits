@@ -1,10 +1,12 @@
 [light_locks]
 {
   b 0x010b4b74 = false;
+  b 0x0ca71815 = false;
   b 0x1a285e65 = false;
   b 0x1bb8807b = false;
   b 0x1bcb7c39 = false;
   b 0x1d08d7e9 = false;
+  b 0x1efe6682 = false;
   b 0x1f28cb63 = false;
   b 0x21133a55 = false;
   b 0x2f8b5ce9 = false;
@@ -15,14 +17,19 @@
   b 0x438f495d = false;
   b 0x4bf305a1 = false;
   b 0x55f9a744 = false;
+  b 0x56274297 = false;
   b 0x5ca85cfc = false;
   b 0x6031881c = false;
+  b 0x610768f8 = false;
   b 0x631e44d2 = false;
+  b 0x64b15a0e = false;
   b 0x7248f99f = false;
+  b 0x72991daf = false;
   b 0x772236f4 = false;
   b 0x7b0b4120 = false;
   b 0x7c8e577a = false;
   b 0x7cc07094 = false;
+  b 0x7d21040a = false;
   b 0x7e9414c6 = false;
   b 0x8207dd03 = false;
   b 0x82aa3223 = false;
@@ -31,10 +38,12 @@
   b 0x8a8cb5f1 = false;
   b 0x93f8d3f9 = false;
   b 0x94c959cc = false;
+  b 0x965a8ddd = false;
   b 0x9f4854d3 = false;
   b 0xa2b06ff3 = false;
   b 0xa58f7018 = false;
   b 0xa7fd0855 = false;
+  b 0xa8327bf2 = false;
   b 0xacc2a64b = false;
   b 0xad15866d = false;
   b 0xb2958eec = false;
@@ -46,11 +55,13 @@
   b 0xccdca8ae = false;
   b 0xceb06795 = false;
   b 0xcec95638 = false;
+  b 0xd11d1d72 = false;
   b 0xd21eb183 = false;
   b 0xd5321d34 = false;
   b 0xd6da6051 = false;
   b 0xd945ff88 = false;
   b 0xd948c164 = false;
+  b 0xdbc8e4e6 = false;
   b 0xdbcc48dc = false;
   b 0xe382f527 = false;
   b 0xe57df0f5 = false;
@@ -58,6 +69,7 @@
   b 0xeba9fd0d = false;
   b 0xecff4f9b = false;
   b 0xee44038e = false;
+  b 0xf4451f41 = false;
   b 0xfa810f7c = false;
   b 0xfaf6d450 = false;
   b 0xfc1bc8f8 = false;

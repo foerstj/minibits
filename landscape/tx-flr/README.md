@@ -12,6 +12,8 @@ Generic nodes & textures means you can also transition grs01 to grs01.
 
 Done so far:
 - Nodes: 04x04 floors b/c/e
-- Textures: for01-tx-grs01
+- Textures: grs01 / for01 / sn02
 
 src: foerstj; AndreouNG
+
+![pic](pic2.png)

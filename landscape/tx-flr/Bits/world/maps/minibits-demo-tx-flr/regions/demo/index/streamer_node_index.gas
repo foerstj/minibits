@@ -1,10 +1,12 @@
 [streamer_node_index]
 {
   x * = 0x010B4B74;
+  x * = 0x0CA71815;
   x * = 0x1A285E65;
   x * = 0x1BB8807B;
   x * = 0x1BCB7C39;
   x * = 0x1D08D7E9;
+  x * = 0x1EFE6682;
   x * = 0x1F28CB63;
   x * = 0x21133A55;
   x * = 0x2F8B5CE9;
@@ -15,14 +17,19 @@
   x * = 0x438F495D;
   x * = 0x4BF305A1;
   x * = 0x55F9A744;
+  x * = 0x56274297;
   x * = 0x5CA85CFC;
   x * = 0x6031881C;
+  x * = 0x610768F8;
   x * = 0x631E44D2;
+  x * = 0x64B15A0E;
   x * = 0x7248F99F;
+  x * = 0x72991DAF;
   x * = 0x772236F4;
   x * = 0x7B0B4120;
   x * = 0x7C8E577A;
   x * = 0x7CC07094;
+  x * = 0x7D21040A;
   x * = 0x7E9414C6;
   x * = 0x8207DD03;
   x * = 0x82AA3223;
@@ -31,10 +38,12 @@
   x * = 0x8A8CB5F1;
   x * = 0x93F8D3F9;
   x * = 0x94C959CC;
+  x * = 0x965A8DDD;
   x * = 0x9F4854D3;
   x * = 0xA2B06FF3;
   x * = 0xA58F7018;
   x * = 0xA7FD0855;
+  x * = 0xA8327BF2;
   x * = 0xACC2A64B;
   x * = 0xAD15866D;
   x * = 0xB2958EEC;
@@ -46,11 +55,13 @@
   x * = 0xCCDCA8AE;
   x * = 0xCEB06795;
   x * = 0xCEC95638;
+  x * = 0xD11D1D72;
   x * = 0xD21EB183;
   x * = 0xD5321D34;
   x * = 0xD6DA6051;
   x * = 0xD945FF88;
   x * = 0xD948C164;
+  x * = 0xDBC8E4E6;
   x * = 0xDBCC48DC;
   x * = 0xE382F527;
   x * = 0xE57DF0F5;
@@ -58,6 +69,7 @@
   x * = 0xEBA9FD0D;
   x * = 0xECFF4F9B;
   x * = 0xEE44038E;
+  x * = 0xF4451F41;
   x * = 0xFA810F7C;
   x * = 0xFAF6D450;
   x * = 0xFC1BC8F8;
